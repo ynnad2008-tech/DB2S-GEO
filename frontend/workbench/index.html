@@ -42,29 +42,34 @@
       <!-- INICIO -->
       <section id="panel-home" class="panel active">
         <div class="hero">
+          <p class="hero-eyebrow">Asistente geoespacial</p>
           <h1>DB2S-GEO</h1>
-          <p class="hero-subtitle">Plataforma de conocimiento geoespacial</p>
+          <p class="hero-subtitle">
+            Describe el problema territorial, ambiental o geoespacial que deseas resolver.
+          </p>
           <p class="trust-badge" aria-label="Insignia de confianza">
             <span class="trust-badge-mark" aria-hidden="true">✓</span>
             <span>¡Validada por humanos!</span>
           </p>
           <p class="lede">
-            Descubra, evalúe y cite fuentes de datos territoriales —
-            con validación humana y sin caja negra.
+            Sin caja negra: cada orientación incluye qué hacer, con qué fuente oficial y por qué.
           </p>
           <form id="home-search-form" class="home-search" role="search">
-            <label class="sr-only" for="home-q">Buscar concepto o fuente</label>
+            <label class="sr-only" for="home-q">
+              Describe el problema territorial, ambiental o geoespacial que deseas resolver.
+            </label>
             <input
               id="home-q"
               type="search"
-              placeholder="Buscar: precipitación, inundaciones, biodiversidad…"
+              placeholder="Ej. inundación rural, aptitud agropecuaria, amenaza sísmica…"
               autocomplete="off"
             />
-            <button type="submit" class="btn primary">Buscar</button>
+            <button type="submit" class="btn primary">Orientar</button>
           </form>
+          <div id="home-advice" class="home-advice" aria-live="polite" hidden></div>
           <div class="hero-actions">
-            <button type="button" class="btn" data-go="explore">Explorar fuentes</button>
-            <button type="button" class="btn" data-go="observatory">Ver observatorio</button>
+            <button type="button" class="btn" data-go="recommend">Ver ranking de fuentes</button>
+            <button type="button" class="btn" data-go="explore">Explorar catálogo</button>
           </div>
         </div>
 
@@ -76,7 +81,7 @@
           <div id="home-cloud" class="home-cloud" aria-label="Nube de conceptos en uso"></div>
         </section>
 
-        <div class="metrics" id="home-metrics" aria-label="Métricas clave">
+        <div class="metrics metrics-secondary" id="home-metrics" aria-label="Métricas del catálogo">
           <button type="button" class="metric" data-go="explore">
             <span class="metric-value" id="m-sources">—</span>
             <span class="metric-label">Fuentes</span>
@@ -102,7 +107,7 @@
         <div class="cards">
           <article class="card">
             <h2>¿Qué hace DB2S-GEO?</h2>
-            <p>Integra descubrimiento, metadatos, recomendaciones y monitoreo de fuentes oficiales y científicas.</p>
+            <p>Orienta decisiones territoriales con fuentes curadas, recomendaciones explicables y monitoreo sin auto-aplicación.</p>
           </article>
           <article class="card">
             <h2>Desarrolladores</h2>
@@ -113,7 +118,7 @@
           </article>
           <article class="card">
             <h2>Sin caja negra</h2>
-            <p>Cada recomendación incluye score, razones y relaciones utilizadas.</p>
+            <p>Cada orientación y recomendación incluye score, razones y relaciones utilizadas.</p>
           </article>
         </div>
       </section>
@@ -164,18 +169,21 @@
           <button type="button" id="rec-run" class="btn primary">Recomendar</button>
         </div>
         <div id="rec-meta" class="meta-line"></div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Score</th>
-                <th>Fuente</th>
-                <th>Por qué</th>
-                <th>Recursos</th>
-              </tr>
-            </thead>
-            <tbody id="rec-body"></tbody>
-          </table>
+        <div class="rec-results">
+          <div class="table-wrap rec-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Score</th>
+                  <th>Fuente</th>
+                  <th>Por qué</th>
+                  <th>Recursos</th>
+                </tr>
+              </thead>
+              <tbody id="rec-body"></tbody>
+            </table>
+          </div>
+          <div id="rec-cards" class="rec-cards" aria-live="polite"></div>
         </div>
         <p class="privacy-hint">
           Las consultas pueden registrarse de forma anónima para mejorar la plataforma.
@@ -313,7 +321,10 @@
               <tbody id="cand-body"></tbody>
             </table>
           </div>
-          <pre id="cand-detail" class="detail-box" hidden></pre>
+          <details id="cand-detail-wrap" class="cand-detail-wrap" hidden>
+            <summary>JSON técnico</summary>
+            <pre id="cand-detail" class="detail-box"></pre>
+          </details>
         </div>
 
         <details class="advanced">
@@ -428,7 +439,7 @@
         <article class="info-block">
           <h2>Estado Alpha</h2>
           <p>
-            <strong>DB2S-GEO v0.9 Alpha</strong> está listo para demostraciones y pruebas
+            <strong>DB2S-GEO v0.1.0 Preview</strong> está listo para demostraciones y pruebas
             con usuarios externos. La arquitectura principal es funcional; la prioridad
             es presentación, documentación, identidad y despliegue — no nuevos motores.
           </p>
@@ -449,7 +460,7 @@
           <h2>Cita sugerida</h2>
           <blockquote class="cite-box" id="cite-suggested">
             Benavides, D. A. (2026). DB2S-GEO: Plataforma de conocimiento geoespacial
-            (versión 0.9 Alpha) [plataforma de software]. Consultado el [fecha].
+            (versión 0.1.0-preview) [plataforma de software]. Consultado el [fecha].
           </blockquote>
         </article>
         <article class="info-block">
@@ -458,7 +469,7 @@
         </article>
         <article class="info-block">
           <h2>Versión</h2>
-          <p>DB2S-GEO v0.9 Alpha · <code>0.9.0-alpha</code></p>
+          <p>DB2S-GEO v0.1.0 Preview · <code>0.1.0-preview</code></p>
         </article>
         <article class="info-block">
           <h2>Fecha de consulta recomendada</h2>
@@ -469,11 +480,11 @@
         </article>
         <article class="info-block">
           <h2>Referencia corta</h2>
-          <pre class="cite-box" id="cite-short">Benavides, D. A. (2026). DB2S-GEO: Plataforma de conocimiento geoespacial (v0.9 Alpha).</pre>
+          <pre class="cite-box" id="cite-short">Benavides, D. A. (2026). DB2S-GEO: Plataforma de conocimiento geoespacial (v0.1.0-preview).</pre>
         </article>
         <article class="info-block">
           <h2>Referencia larga</h2>
-          <pre class="cite-box" id="cite-long">Benavides, D. A. (2026). DB2S-GEO: Plataforma de conocimiento geoespacial (versión 0.9 Alpha) [plataforma de software]. Consultado el [fecha].</pre>
+          <pre class="cite-box" id="cite-long">Benavides, D. A. (2026). DB2S-GEO: Plataforma de conocimiento geoespacial (versión 0.1.0-preview) [plataforma de software]. Consultado el [fecha].</pre>
         </article>
         <p class="info-nav">
           <button type="button" class="btn" data-go="about">Acerca de</button>
@@ -579,7 +590,7 @@
         </div>
       </div>
       <p class="footer-version-line">
-        <span id="app-version">DB2S-GEO v0.9 Alpha</span>
+        <span id="app-version">DB2S-GEO v0.1.0 Preview</span>
       </p>
     </footer>
   </div>

@@ -150,13 +150,132 @@ _RESOURCES: dict[str, dict[str, Any]] = {
         ),
         "doi": "",
     },
+    "gee:chirps": {
+        "resource_id": "gee:chirps",
+        "title": "CHIRPS precipitación (vía Earth Engine)",
+        "type": "collection",
+        "domains": ["clima", "hidrologia"],
+        "primary_domain": "clima",
+        "keywords": [
+            "precipitacion",
+            "series",
+            "temporales",
+            "sequia",
+            "variabilidad",
+            "climatica",
+            "chirps",
+            "gee",
+            "clima",
+        ],
+        "description": (
+            "Colección CHIRPS (Climate Hazards Group InfraRed Precipitation "
+            "with Station data) en Google Earth Engine: precipitación "
+            "cuasi-global para series temporales, sequía y variabilidad "
+            "climática. DB2S-GEO no ejecuta código GEE ni descarga datos."
+        ),
+        "spatial_coverage": "Cuasi-global (latitudes tropicales / subtropicales)",
+        "temporal_coverage": "1981–presente (según colección)",
+        "formats": ["Earth Engine ImageCollection"],
+        "homepage": (
+            "https://developers.google.com/earth-engine/datasets/catalog/"
+            "UCSB-CHG_CHIRPS_DAILY"
+        ),
+        "portal_url": (
+            "https://developers.google.com/earth-engine/datasets/catalog/"
+            "UCSB-CHG_CHIRPS_DAILY"
+        ),
+        "documentation_url": "https://www.chc.ucsb.edu/data/chirps",
+        "endpoints": [
+            {
+                "method": "portal",
+                "url": (
+                    "https://developers.google.com/earth-engine/datasets/"
+                    "catalog/UCSB-CHG_CHIRPS_DAILY"
+                ),
+                "label": "UCSB-CHG/CHIRPS/DAILY (GEE Catalog)",
+            },
+            {
+                "method": "platform",
+                "url": "https://code.earthengine.google.com",
+                "label": "Earth Engine Code Editor",
+            },
+        ],
+        "access_methods": ["platform", "api", "portal"],
+        "citation_reference": (
+            "Funk, C., et al. (2015). The climate hazards infrared "
+            "precipitation with stations—a new environmental record for "
+            "monitoring extremes. Scientific Data. Accessed via Google "
+            "Earth Engine: UCSB-CHG/CHIRPS/DAILY."
+        ),
+        "doi": "10.1038/sdata.2015.66",
+    },
+    "gee:chirps-colombia": {
+        "resource_id": "gee:chirps-colombia",
+        "title": "CHIRPS precipitación para Colombia (vía Earth Engine)",
+        "type": "collection",
+        "domains": ["clima", "hidrologia"],
+        "primary_domain": "clima",
+        "keywords": [
+            "precipitacion",
+            "historica",
+            "climatologia",
+            "cuencas",
+            "series",
+            "temporales",
+            "sequias",
+            "chirps",
+            "colombia",
+            "gee",
+        ],
+        "description": (
+            "Uso de la colección CHIRPS (UCSB-CHG/CHIRPS/DAILY) en Google "
+            "Earth Engine acotada a Colombia: precipitación histórica, "
+            "climatología, análisis de cuencas, series temporales y sequías. "
+            "DB2S-GEO no ejecuta código GEE ni descarga datos; el recorte "
+            "espacial a Colombia se realiza en la plataforma GEE."
+        ),
+        "spatial_coverage": "Colombia (vía filtro espacial en GEE)",
+        "temporal_coverage": "1981–presente (según colección CHIRPS)",
+        "formats": ["Earth Engine ImageCollection"],
+        "homepage": (
+            "https://developers.google.com/earth-engine/datasets/catalog/"
+            "UCSB-CHG_CHIRPS_DAILY"
+        ),
+        "portal_url": (
+            "https://developers.google.com/earth-engine/datasets/catalog/"
+            "UCSB-CHG_CHIRPS_DAILY"
+        ),
+        "documentation_url": "https://www.chc.ucsb.edu/data/chirps",
+        "endpoints": [
+            {
+                "method": "portal",
+                "url": (
+                    "https://developers.google.com/earth-engine/datasets/"
+                    "catalog/UCSB-CHG_CHIRPS_DAILY"
+                ),
+                "label": "UCSB-CHG/CHIRPS/DAILY (GEE Catalog)",
+            },
+            {
+                "method": "platform",
+                "url": "https://code.earthengine.google.com",
+                "label": "Earth Engine Code Editor (filtrar AOI Colombia)",
+            },
+        ],
+        "access_methods": ["platform", "api", "portal"],
+        "citation_reference": (
+            "Funk, C., et al. (2015). CHIRPS — Climate Hazards Group. "
+            "Scientific Data. Uso orientado a Colombia vía Google Earth "
+            "Engine: UCSB-CHG/CHIRPS/DAILY."
+        ),
+        "doi": "10.1038/sdata.2015.66",
+    },
 }
 
 
 class GeeConnector(BaseConnector):
     connector_id = SOURCE_ID
     source_name = "Google Earth Engine"
-    version = "1.0.0"
+    version = "1.2.0"
 
     def identify(self) -> dict[str, Any]:
         return normalize_source(

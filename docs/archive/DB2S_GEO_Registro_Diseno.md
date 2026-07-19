@@ -1779,3 +1779,26 @@ Apoya el desarrollo de DB2S-GEO
 
 Derecha:
 API
+
+EJECUTAR SEGÚN ENRICHMENT_INDEX
+
+Tomar los siguientes 2 recursos marcados como PENDIENTE.
+
+Aplicar el patrón validado de enriquecimiento.
+
+Validar:
+
+- Discovery
+- Access
+- Knowledge Graph
+- Recommendation
+- Tests
+
+Actualizar el índice.
+
+Reportar PENDIENTES.
+
+Generar informe técnico.
+
+Sin commit.
+Sin push.

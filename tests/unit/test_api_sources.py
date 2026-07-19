@@ -25,8 +25,8 @@ def test_list_sources(client: TestClient) -> None:
     response = client.get("/sources")
     assert response.status_code == 200
     body = response.json()
-    assert body["count"] == 6
-    assert len(body["sources"]) == 6
+    assert body["count"] == 23
+    assert len(body["sources"]) == 23
 
 
 def test_get_source_ideam(client: TestClient) -> None:

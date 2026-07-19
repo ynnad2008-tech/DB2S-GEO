@@ -29,13 +29,13 @@ def citation(discovery: DiscoveryEngine) -> CitationEngine:
 def test_mvp_connectors_registered(discovery: DiscoveryEngine) -> None:
     info = discovery.info()
     assert info["status"] == "mvp"
-    assert info["connectors_registered"] == 6
+    assert info["connectors_registered"] == 23
     assert set(info["connector_ids"]) == set(MVP_CONNECTOR_IDS)
 
 
 def test_list_sources_normalized(discovery: DiscoveryEngine) -> None:
     sources = discovery.list_sources()
-    assert len(sources) == 6
+    assert len(sources) == 23
     for item in sources:
         assert "source" in item
         assert "institution" in item
@@ -60,7 +60,7 @@ def test_ideam_identity_shape(discovery: DiscoveryEngine) -> None:
 def test_search_by_domain(discovery: DiscoveryEngine) -> None:
     results = discovery.search(domain="biodiversidad")
     ids = {r["source_id"] for r in results}
-    assert ids == {"gbif", "invemar"}
+    assert ids == {"gbif", "invemar", "invias"}
 
 
 def test_search_by_query(discovery: DiscoveryEngine) -> None:
@@ -95,7 +95,7 @@ def test_citation_faostat(citation: CitationEngine) -> None:
 
 
 def test_unknown_source(discovery: DiscoveryEngine) -> None:
-    assert discovery.get_source("nasa") is None
+    assert discovery.get_source("fuente_inexistente") is None
 
 
 def test_connector_contract_methods() -> None:

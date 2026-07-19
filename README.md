@@ -2,7 +2,7 @@
 
 **Plataforma de conocimiento geoespacial**
 
-**Estado:** v0.9 Alpha · **Autor:** Dany Arbey Benavides
+**Estado:** v0.1.0-preview · **Autor:** Dany Arbey Benavides
 
 > ✅ **¡Validada por humanos!** — Supervisado, recomendaciones explicables, sin auto-aplicación al catálogo.
 
@@ -56,6 +56,7 @@ uvicorn backend.api.main:app --host 127.0.0.1 --port 8000 --app-dir .
 - API docs: http://127.0.0.1:8000/docs
 
 Guía de despliegue Alpha: [ALPHA_DEPLOYMENT.md](ALPHA_DEPLOYMENT.md)  
+Cloud Run Private Preview: [deployment/cloudrun/README.md](deployment/cloudrun/README.md)  
 Historial de versiones: [CHANGELOG.md](CHANGELOG.md)
 
 ---

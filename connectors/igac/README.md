@@ -1,19 +1,8 @@
-# Conector: IGAC
+# Conector IGAC
 
 | Campo | Valor |
-|-------|-------|
-| ID | `igac` |
-| Fuente | IGAC |
-| Ámbito | Colombia |
-| MVP | False |
-| Estado | skeleton |
+|-------|--------|
+| MVP | True |
+| Read-only | Sí |
 
-## Responsabilidad prevista
-
-Integrar `IGAC` mediante el Connector Framework.
-
-## Estado
-
-Placeholder. **Sin** lógica de acceso a APIs ni descarga de datos.
-
-Ver `docs/07_connectors_framework.md`.
+Cartografía básica y modelos digitales de terreno de Colombia.

@@ -1,0 +1,13 @@
+connector_id: "invias"
+source_name: "INVIAS"
+version: "1.1.0"
+status: "mvp"
+mvp: true
+country_or_scope: "Colombia"
+domains:
+  - observacion_tierra
+  - biodiversidad
+protocols:
+  - portal
+  - arcgis
+notes: "Enriquecimiento operativo — metadatos curados, read-only, sin descarga."

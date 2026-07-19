@@ -138,13 +138,111 @@ _RESOURCES: dict[str, dict[str, Any]] = {
         ),
         "doi": "",
     },
+    "gbif:occurrence-colombia": {
+        "resource_id": "gbif:occurrence-colombia",
+        "title": "Ocurrencias de biodiversidad en Colombia (GBIF)",
+        "type": "api",
+        "domains": ["biodiversidad"],
+        "primary_domain": "biodiversidad",
+        "keywords": [
+            "biodiversidad",
+            "especies",
+            "ocurrencias",
+            "registros",
+            "biologicos",
+            "conservacion",
+            "colombia",
+            "gbif",
+        ],
+        "description": (
+            "Acceso a ocurrencias y registros biológicos de biodiversidad "
+            "en Colombia publicados en GBIF (filtro country=CO). "
+            "Apoya conservación, inventarios de especies y análisis de "
+            "distribución. DB2S-GEO solo documenta el endpoint; "
+            "no descarga ocurrencias."
+        ),
+        "spatial_coverage": "Colombia",
+        "temporal_coverage": "Histórico a presente (según datasets publicados)",
+        "formats": ["JSON", "DwC-A"],
+        "homepage": "https://www.gbif.org/occurrence/search?country=CO",
+        "portal_url": "https://www.gbif.org/occurrence/search?country=CO",
+        "documentation_url": "https://techdocs.gbif.org/en/openapi/v1/occurrence",
+        "endpoints": [
+            {
+                "method": "api",
+                "url": f"{API_BASE}/occurrence/search?country=CO",
+                "label": "Occurrence search (Colombia)",
+            },
+            {
+                "method": "portal",
+                "url": "https://www.gbif.org/occurrence/search?country=CO",
+                "label": "Portal GBIF ocurrencias Colombia",
+            },
+        ],
+        "access_methods": ["api", "portal"],
+        "citation_reference": (
+            "GBIF.org. Occurrence search — Colombia (country=CO). "
+            "Global Biodiversity Information Facility. "
+            "https://api.gbif.org/v1/occurrence/search?country=CO"
+        ),
+        "doi": "10.15468/dl.gbif",
+    },
+    "gbif:species-colombia": {
+        "resource_id": "gbif:species-colombia",
+        "title": "Especies y taxonomía en Colombia (GBIF)",
+        "type": "api",
+        "domains": ["biodiversidad"],
+        "primary_domain": "biodiversidad",
+        "keywords": [
+            "biodiversidad",
+            "taxonomia",
+            "especies",
+            "conservacion",
+            "observaciones",
+            "biologicas",
+            "colombia",
+            "gbif",
+        ],
+        "description": (
+            "Acceso a información de especies y taxonomía asociada a "
+            "biodiversidad en Colombia a través de GBIF (portal país CO "
+            "y Species API). Apoya conservación, inventarios y "
+            "observaciones biológicas. DB2S-GEO solo documenta el endpoint; "
+            "no descarga datos."
+        ),
+        "spatial_coverage": "Colombia",
+        "temporal_coverage": "Actualizaciones continuas (según publicación GBIF)",
+        "formats": ["JSON"],
+        "homepage": "https://www.gbif.org/country/CO/search",
+        "portal_url": "https://www.gbif.org/country/CO/search",
+        "documentation_url": "https://www.gbif.org/developer/species",
+        "endpoints": [
+            {
+                "method": "api",
+                "url": f"{API_BASE}/species/search",
+                "label": "Species search API",
+            },
+            {
+                "method": "portal",
+                "url": "https://www.gbif.org/country/CO/search",
+                "label": "Portal GBIF especies Colombia",
+            },
+        ],
+        "access_methods": ["api", "portal"],
+        "citation_reference": (
+            "GBIF.org. Species / taxonomy — Colombia. "
+            "Global Biodiversity Information Facility. "
+            "https://www.gbif.org/country/CO/search"
+        ),
+        "doi": "10.15468/39omei",
+    },
 }
 
 
 class GbifConnector(BaseConnector):
     connector_id = SOURCE_ID
     source_name = "GBIF"
-    version = "1.0.0"
+    version = "1.2.0"
 
     def identify(self) -> dict[str, Any]:
         return normalize_source(

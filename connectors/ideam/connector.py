@@ -140,13 +140,236 @@ _RESOURCES: dict[str, dict[str, Any]] = {
         ),
         "doi": "",
     },
+    "ideam:capas-ideam-rest": {
+        "resource_id": "ideam:capas-ideam-rest",
+        "title": "Capas IDEAM (ArcGIS REST FeatureServer)",
+        "type": "geoservice",
+        "domains": ["clima", "hidrologia"],
+        "primary_domain": "clima",
+        "keywords": [
+            "arcgis",
+            "rest",
+            "featureserver",
+            "capas",
+            "geoservicio",
+            "ideam"
+        ],
+        "description": (
+            "Servicio ArcGIS REST FeatureServer Capas_Ideam del visualizador "
+            "IDEAM: acceso programático a capas geoespaciales institucionales. "
+            "DB2S-GEO solo documenta el endpoint; no ejecuta consultas remotas."
+        ),
+        "spatial_coverage": "Colombia",
+        "temporal_coverage": "Según publicación institucional del servicio",
+        "formats": ["ArcGIS REST", "JSON", "GeoJSON (vía query del servicio)"],
+        "homepage": "https://visualizador.ideam.gov.co/gisserver/rest/services",
+        "portal_url": "https://visualizador.ideam.gov.co/gisserver/rest/services",
+        "documentation_url": (
+            "https://visualizador.ideam.gov.co/gisserver/rest/services/"
+            "Capas_Ideam/FeatureServer"
+        ),
+        "endpoints": [
+            {
+                "method": "arcgis",
+                "url": (
+                    "https://visualizador.ideam.gov.co/gisserver/rest/services/"
+                    "Capas_Ideam/FeatureServer"
+                ),
+                "label": "Capas_Ideam FeatureServer",
+            },
+            {
+                "method": "arcgis",
+                "url": "https://visualizador.ideam.gov.co/gisserver/rest/services",
+                "label": "Directorio ArcGIS REST IDEAM",
+            },
+        ],
+        "access_methods": ["arcgis", "portal"],
+        "citation_reference": (
+            "IDEAM. Capas_Ideam (ArcGIS REST FeatureServer). "
+            "Instituto de Hidrología, Meteorología y Estudios Ambientales. "
+            "https://visualizador.ideam.gov.co/gisserver/rest/services/"
+            "Capas_Ideam/FeatureServer"
+        ),
+        "doi": "",
+    },
+    "ideam:amenaza-inundacion": {
+        "resource_id": "ideam:amenaza-inundacion",
+        "title": "Amenaza por inundación (ArcGIS REST MapServer)",
+        "type": "geoservice",
+        "domains": ["hidrologia", "clima"],
+        "primary_domain": "hidrologia",
+        "keywords": [
+            "inundacion",
+            "amenaza",
+            "riesgo",
+            "hidrologia",
+            "arcgis",
+            "mapserver",
+            "ideam"
+        ],
+        "description": (
+            "Servicio ArcGIS REST MapServer Amenaza_Ambiental del visualizador "
+            "IDEAM, con capas de amenaza e inundación para centros poblados y "
+            "productos relacionados. DB2S-GEO solo documenta el endpoint; "
+            "no ejecuta consultas remotas."
+        ),
+        "spatial_coverage": "Colombia",
+        "temporal_coverage": "Según publicación institucional del servicio",
+        "formats": ["ArcGIS REST", "JSON", "GeoJSON (vía query del servicio)"],
+        "homepage": "https://visualizador.ideam.gov.co/gisserver/rest/services",
+        "portal_url": "https://visualizador.ideam.gov.co/gisserver/rest/services",
+        "documentation_url": (
+            "https://visualizador.ideam.gov.co/gisserver/rest/services/"
+            "Amenaza_Ambiental/MapServer"
+        ),
+        "endpoints": [
+            {
+                "method": "arcgis",
+                "url": (
+                    "https://visualizador.ideam.gov.co/gisserver/rest/services/"
+                    "Amenaza_Ambiental/MapServer"
+                ),
+                "label": "Amenaza_Ambiental MapServer",
+            },
+            {
+                "method": "arcgis",
+                "url": (
+                    "https://visualizador.ideam.gov.co/gisserver/rest/services/"
+                    "Amenaza_Ambiental/MapServer/layers"
+                ),
+                "label": "Capas Amenaza_Ambiental (listado)",
+            },
+        ],
+        "access_methods": ["arcgis", "portal"],
+        "citation_reference": (
+            "IDEAM. Amenaza_Ambiental (ArcGIS REST MapServer). "
+            "Instituto de Hidrología, Meteorología y Estudios Ambientales. "
+            "https://visualizador.ideam.gov.co/gisserver/rest/services/"
+            "Amenaza_Ambiental/MapServer"
+        ),
+        "doi": "",
+    },
+    "ideam:estado-ecosistemas": {
+        "resource_id": "ideam:estado-ecosistemas",
+        "title": "Estado de los ecosistemas (IDEAM)",
+        "type": "geoservice",
+        "domains": ["biodiversidad", "oceanos_costas"],
+        "primary_domain": "biodiversidad",
+        "keywords": [
+            "ecosistemas",
+            "conservacion",
+            "restauracion",
+            "monitoreo",
+            "ambiental",
+            "estado",
+            "cobertura",
+            "arcgis",
+            "mapserver",
+            "ideam",
+        ],
+        "description": (
+            "Servicio ArcGIS REST Estado_Ecosistemas del IDEAM: capas de "
+            "ecosistemas continentales, marinos y costeros. Apoya "
+            "conservación, restauración y monitoreo ambiental. "
+            "DB2S-GEO solo documenta el endpoint; no ejecuta consultas remotas."
+        ),
+        "spatial_coverage": "Colombia",
+        "temporal_coverage": "Según publicación institucional (p. ej. 100K 2024)",
+        "formats": ["ArcGIS REST", "JSON", "GeoJSON (vía query del servicio)"],
+        "homepage": "https://visualizador.ideam.gov.co/gisserver/rest/services",
+        "portal_url": "https://ideam.gov.co/geoportal-ambiental-institucional",
+        "documentation_url": (
+            "https://visualizador.ideam.gov.co/gisserver/rest/services/"
+            "Estado_Ecosistemas/MapServer"
+        ),
+        "endpoints": [
+            {
+                "method": "arcgis",
+                "url": (
+                    "https://visualizador.ideam.gov.co/gisserver/rest/services/"
+                    "Estado_Ecosistemas/MapServer"
+                ),
+                "label": "Estado_Ecosistemas MapServer",
+            },
+            {
+                "method": "arcgis",
+                "url": (
+                    "https://visualizador.ideam.gov.co/gisserver/rest/services/"
+                    "Estado_Ecosistemas/FeatureServer"
+                ),
+                "label": "Estado_Ecosistemas FeatureServer",
+            },
+        ],
+        "access_methods": ["arcgis", "portal"],
+        "citation_reference": (
+            "IDEAM. Estado de los ecosistemas (Estado_Ecosistemas MapServer). "
+            "Instituto de Hidrología, Meteorología y Estudios Ambientales. "
+            "https://visualizador.ideam.gov.co/gisserver/rest/services/"
+            "Estado_Ecosistemas/MapServer"
+        ),
+        "doi": "",
+    },
+    "ideam:fews-colombia": {
+        "resource_id": "ideam:fews-colombia",
+        "title": "FEWS Colombia — alertas y pronóstico hidrológico (IDEAM)",
+        "type": "portal",
+        "domains": ["hidrologia", "clima"],
+        "primary_domain": "hidrologia",
+        "keywords": [
+            "alertas",
+            "tempranas",
+            "pronostico",
+            "hidrologico",
+            "niveles",
+            "rio",
+            "inundaciones",
+            "monitoreo",
+            "fews",
+            "ideam"
+        ],
+        "description": (
+            "Plataforma FEWS-Colombia del IDEAM (sistema operacional de "
+            "pronóstico hidrológico): monitoreo de estaciones, niveles y "
+            "alertas tempranas por inundación. Apoya gestión del riesgo "
+            "hidrológico. DB2S-GEO solo documenta el acceso; no opera FEWS."
+        ),
+        "spatial_coverage": "Colombia",
+        "temporal_coverage": "Operativo / actualizaciones institucionales",
+        "formats": ["portal web", "series de tiempo (visor)"],
+        "homepage": "https://www.ideam.gov.co/web/agua/fews",
+        "portal_url": "https://fews.ideam.gov.co/colombia/MapaEstacionesColombiaEstado.html",
+        "documentation_url": "https://www.ideam.gov.co/web/agua/fews",
+        "endpoints": [
+            {
+                "method": "portal",
+                "url": (
+                    "https://fews.ideam.gov.co/colombia/"
+                    "MapaEstacionesColombiaEstado.html"
+                ),
+                "label": "Visor FEWS-Colombia (estaciones)",
+            },
+            {
+                "method": "portal",
+                "url": "https://www.ideam.gov.co/web/agua/fews",
+                "label": "Información institucional FEWS IDEAM",
+            },
+        ],
+        "access_methods": ["portal"],
+        "citation_reference": (
+            "IDEAM. FEWS-Colombia — Sistema operacional de pronóstico "
+            "hidrológico. Instituto de Hidrología, Meteorología y Estudios "
+            "Ambientales. "
+            "https://fews.ideam.gov.co/colombia/MapaEstacionesColombiaEstado.html"
+        ),
+        "doi": "",
+    },
 }
 
 
 class IdeamConnector(BaseConnector):
     connector_id = SOURCE_ID
     source_name = "IDEAM"
-    version = "1.0.0"
+    version = "1.4.0"
 
     def identify(self) -> dict[str, Any]:
         return normalize_source(

@@ -134,13 +134,191 @@ _RESOURCES: dict[str, dict[str, Any]] = {
         ),
         "doi": "",
     },
+    "invemar:manglares-colombia": {
+        "resource_id": "invemar:manglares-colombia",
+        "title": "Manglares de Colombia (INVEMAR)",
+        "type": "geoservice",
+        "domains": ["oceanos_costas", "biodiversidad"],
+        "primary_domain": "oceanos_costas",
+        "keywords": [
+            "manglar",
+            "manglares",
+            "carbono",
+            "carbono_azul",
+            "ecosistema",
+            "costero",
+            "costas",
+            "sigma",
+            "arcgis",
+            "mapserver",
+            "invemar",
+            "colombia",
+        ],
+        "description": (
+            "Servicio geoespacial oficial de INVEMAR para la consulta, "
+            "visualización y acceso a información sobre los manglares "
+            "de Colombia. Apoya procesos de conservación, "
+            "planificación costera, biodiversidad, carbono azul "
+            "y gestión de ecosistemas marino-costeros."
+        ),
+        "spatial_coverage": "Colombia (litorales Caribe, Pacífico e insular)",
+        "temporal_coverage": "Según publicación institucional del servicio SIGMA",
+        "formats": ["ArcGIS REST", "JSON", "GeoJSON (vía query del servicio)"],
+        "homepage": "https://sigma.invemar.org.co/geovisor",
+        "portal_url": "https://sigma.invemar.org.co/geovisor",
+        "documentation_url": (
+            "https://gis.invemar.org.co/arcgis/rest/services/"
+            "SIGMA/MANGLARES_COLOMBIA/MapServer"
+        ),
+        "endpoints": [
+            {
+                "method": "arcgis",
+                "url": (
+                    "https://gis.invemar.org.co/arcgis/rest/services/"
+                    "SIGMA/MANGLARES_COLOMBIA/MapServer"
+                ),
+                "label": "SIGMA MANGLARES_COLOMBIA MapServer",
+            },
+            {
+                "method": "portal",
+                "url": "https://sigma.invemar.org.co/geovisor",
+                "label": "Geovisor SIGMA (manglares)",
+            },
+        ],
+        "access_methods": ["arcgis", "portal"],
+        "citation_reference": (
+            "INVEMAR. Manglares de Colombia. "
+            "Instituto de Investigaciones Marinas y Costeras "
+            "José Benito Vives de Andréis. "
+            "Servicio ArcGIS REST MapServer. "
+            "https://gis.invemar.org.co/arcgis/rest/services/"
+            "SIGMA/MANGLARES_COLOMBIA/MapServer"
+        ),
+        "doi": "",
+    },
+    "invemar:ecorregiones-marinas": {
+        "resource_id": "invemar:ecorregiones-marinas",
+        "title": "Ecorregiones marinas de Colombia (INVEMAR)",
+        "type": "geoservice",
+        "domains": ["oceanos_costas", "biodiversidad"],
+        "primary_domain": "oceanos_costas",
+        "keywords": [
+            "ecorregion",
+            "ecorregiones",
+            "marinas",
+            "marino",
+            "ecosistemas",
+            "marinos",
+            "ordenamiento",
+            "planificacion",
+            "costera",
+            "biodiversidad",
+            "oceanos",
+            "costas",
+            "arcgis",
+            "featureserver",
+            "invemar",
+            "colombia",
+        ],
+        "description": (
+            "Servicio geoespacial oficial de INVEMAR para la consulta y "
+            "visualización de las ecorregiones marinas de Colombia. "
+            "Apoya ordenamiento marino, planificación costera, "
+            "gestión de ecosistemas marinos y biodiversidad marina."
+        ),
+        "spatial_coverage": "Colombia (jurisdicción marina y costera)",
+        "temporal_coverage": "Según publicación institucional del servicio",
+        "formats": ["ArcGIS REST", "JSON", "GeoJSON (vía query del servicio)"],
+        "homepage": "https://geovisorsiam.invemar.org.co/",
+        "portal_url": "https://geovisorsiam.invemar.org.co/",
+        "documentation_url": (
+            "https://gis.invemar.org.co/arcgis/rest/services/"
+            "Hosted/Ecorregiones_Marinas_de_Colombia/FeatureServer"
+        ),
+        "endpoints": [
+            {
+                "method": "arcgis",
+                "url": (
+                    "https://gis.invemar.org.co/arcgis/rest/services/"
+                    "Hosted/Ecorregiones_Marinas_de_Colombia/FeatureServer"
+                ),
+                "label": "Ecorregiones_Marinas_de_Colombia FeatureServer",
+            },
+            {
+                "method": "portal",
+                "url": "https://geovisorsiam.invemar.org.co/",
+                "label": "GeoVisor SIAM INVEMAR",
+            },
+        ],
+        "access_methods": ["arcgis", "portal"],
+        "citation_reference": (
+            "INVEMAR. Ecorregiones marinas de Colombia. "
+            "Instituto de Investigaciones Marinas y Costeras "
+            "José Benito Vives de Andréis. "
+            "Servicio ArcGIS REST FeatureServer. "
+            "https://gis.invemar.org.co/arcgis/rest/services/"
+            "Hosted/Ecorregiones_Marinas_de_Colombia/FeatureServer"
+        ),
+        "doi": "",
+    },
+    "invemar:siam": {
+        "resource_id": "invemar:siam",
+        "title": "SIAM — Sistema de Información Ambiental Marina (INVEMAR)",
+        "type": "portal",
+        "domains": ["oceanos_costas", "biodiversidad"],
+        "primary_domain": "oceanos_costas",
+        "keywords": [
+            "informacion",
+            "marina",
+            "indicadores",
+            "costeros",
+            "monitoreo",
+            "marino",
+            "siam",
+            "observatorio",
+            "invemar",
+            "colombia",
+        ],
+        "description": (
+            "Sistema de Información Ambiental Marina (SIAM) de INVEMAR: "
+            "portal e indicadores de información marina y costera, con "
+            "acceso al GeoVisor SIAM. Apoya monitoreo marino e indicadores "
+            "costeros. DB2S-GEO solo documenta el acceso; no descarga datos."
+        ),
+        "spatial_coverage": "Colombia (marino-costero)",
+        "temporal_coverage": "Actualizaciones institucionales SIAM",
+        "formats": ["portal web", "servicios web", "mapas"],
+        "homepage": "https://siam.invemar.org.co/",
+        "portal_url": "https://siam.invemar.org.co/",
+        "documentation_url": "https://siam.invemar.org.co/que-es-siam.html",
+        "endpoints": [
+            {
+                "method": "portal",
+                "url": "https://siam.invemar.org.co/",
+                "label": "Portal SIAM INVEMAR",
+            },
+            {
+                "method": "portal",
+                "url": "https://geovisorsiam.invemar.org.co/",
+                "label": "GeoVisor SIAM",
+            },
+        ],
+        "access_methods": ["portal", "arcgis"],
+        "citation_reference": (
+            "INVEMAR. Sistema de Información Ambiental Marina (SIAM). "
+            "Instituto de Investigaciones Marinas y Costeras "
+            "José Benito Vives de Andréis. "
+            "https://siam.invemar.org.co/"
+        ),
+        "doi": "",
+    },
 }
 
 
 class InvemarConnector(BaseConnector):
     connector_id = SOURCE_ID
     source_name = "INVEMAR"
-    version = "1.0.0"
+    version = "1.3.0"
 
     def identify(self) -> dict[str, Any]:
         return normalize_source(

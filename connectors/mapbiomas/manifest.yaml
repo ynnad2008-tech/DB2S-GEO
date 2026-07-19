@@ -1,9 +1,15 @@
 connector_id: "mapbiomas"
 source_name: "MapBiomas"
-version: "0.0.0"
-status: "skeleton"
-mvp: false
-country_or_scope: "Regional/Global"
-domains: []
-protocols: []
-notes: "Placeholder — sin implementacion."
+version: "1.2.0"
+status: "mvp"
+mvp: true
+country_or_scope: "Colombia"
+domains:
+  - hidrologia
+  - observacion_tierra
+  - agricultura
+protocols:
+  - portal
+  - platform
+  - gee
+notes: "Enriquecimiento operativo — metadatos curados, read-only, sin descarga."

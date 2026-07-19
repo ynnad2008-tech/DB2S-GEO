@@ -1,12 +1,14 @@
 # Deployment — DB2S-GEO
 
-Placeholders de despliegue. Ver `docs/16_deployment_architecture.md`.
-
 ```text
 deployment/
-├── docker/
-├── compose/
-└── env/
+├── cloudrun/     # Cloud Run Private Preview (operativo)
+├── docker/       # notas
+├── compose/      # placeholder
+├── env/          # .env.example
+└── huggingface/  # Spaces (opcional)
 ```
 
-**No** hay imágenes ni orquestación operativa en Fase 0.
+Guía Cloud Run: [cloudrun/README.md](cloudrun/README.md)
+
+Dockerfile en la **raíz** del repositorio (servicio único FastAPI + Workbench).

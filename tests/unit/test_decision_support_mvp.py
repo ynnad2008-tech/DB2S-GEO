@@ -111,7 +111,7 @@ def test_api_decision_support() -> None:
 
         root = client.get("/")
         assert "GET /decision-support?q=" in root.json()["endpoints"]
-        assert root.json()["version"].startswith("0.9")
+        assert root.json()["version"].startswith("0.1")
 
         health = client.get("/health")
         assert "decision_support" in health.json()

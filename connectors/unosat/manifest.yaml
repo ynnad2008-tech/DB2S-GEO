@@ -1,9 +1,11 @@
 connector_id: "unosat"
 source_name: "UNOSAT"
-version: "0.0.0"
-status: "skeleton"
-mvp: false
+version: "1.0.0"
+status: "mvp"
+mvp: true
 country_or_scope: "Global"
-domains: []
-protocols: []
-notes: "Placeholder — sin implementacion."
+domains:
+  - observacion_tierra
+protocols:
+  - portal
+notes: "Enriquecimiento operativo — metadatos curados, read-only, sin descarga."

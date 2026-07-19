@@ -52,6 +52,240 @@ function pills(items) {
   return items.map((x) => `<span class="pill">${esc(x)}</span>`).join("");
 }
 
+/* ---------- UX Sprint 1: etiquetas humanas (Q1–Q3) ---------- */
+const resourceTitleCache = new Map();
+
+const REASON_EXACT = {
+  "fuente oficial nacional": "Es una fuente oficial nacional de Colombia.",
+};
+
+function titleFromResourceId(resourceId) {
+  const id = String(resourceId || "");
+  const leaf = id.includes(":") ? id.split(":").slice(1).join(":") : id;
+  return leaf
+    .replace(/[-_]+/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase())
+    .trim() || id;
+}
+
+async function ensureResourceTitles(sourceId) {
+  if (!sourceId) return {};
+  if (resourceTitleCache.has(sourceId)) return resourceTitleCache.get(sourceId);
+  try {
+    const data = await api(`/sources/${encodeURIComponent(sourceId)}/resources`);
+    const map = {};
+    for (const r of data.resources || []) {
+      if (r.resource_id) map[r.resource_id] = r.title || titleFromResourceId(r.resource_id);
+    }
+    resourceTitleCache.set(sourceId, map);
+    return map;
+  } catch (_) {
+    const empty = {};
+    resourceTitleCache.set(sourceId, empty);
+    return empty;
+  }
+}
+
+function lookupResourceTitle(resourceId, titleMap) {
+  if (!resourceId) return "—";
+  if (titleMap && titleMap[resourceId]) return titleMap[resourceId];
+  for (const map of resourceTitleCache.values()) {
+    if (map[resourceId]) return map[resourceId];
+  }
+  return titleFromResourceId(resourceId);
+}
+
+function humanReason(raw, titleMap) {
+  const text = String(raw || "").trim();
+  if (!text) return "";
+  if (REASON_EXACT[text]) return REASON_EXACT[text];
+
+  let m = text.match(/^keyword\s+(.+)$/i);
+  if (m) {
+    const topic = m[1].replace(/_/g, " ");
+    return `Coincide con el tema «${topic}».`;
+  }
+  m = text.match(/^recurso\s+(.+)$/i);
+  if (m) {
+    const title = lookupResourceTitle(m[1], titleMap);
+    return `Incluye el recurso «${title}».`;
+  }
+  m = text.match(/^fuente\s+(.+)$/i);
+  if (m) return `La fuente «${m[1]}» coincide con su consulta.`;
+  m = text.match(/^dominio\s+(.+)$/i);
+  if (m) {
+    const d = m[1].replace(/_/g, " ");
+    return `Está asociada al dominio «${d}».`;
+  }
+  m = text.match(/^dominio compartido\s+(.+)$/i);
+  if (m) {
+    const d = m[1].replace(/_/g, " ");
+    return `Comparte el dominio «${d}» con su consulta.`;
+  }
+  m = text.match(/^keyword compartida\s+(.+)$/i);
+  if (m) {
+    const topic = m[1].replace(/_/g, " ");
+    return `Comparte el tema «${topic}» con su consulta.`;
+  }
+  m = text.match(/^contiene recurso\s+(.+)$/i);
+  if (m) {
+    const title = lookupResourceTitle(m[1], titleMap);
+    return `Contiene el recurso «${title}».`;
+  }
+  return text;
+}
+
+function formatResourceLabels(resourceIds, titleMap, sourceId, limit = 3) {
+  const ids = (resourceIds || []).slice(0, limit);
+  if (!ids.length) return "—";
+  return ids
+    .map((id) => {
+      const title = lookupResourceTitle(id, titleMap);
+      return `<a href="#recommend" class="res-link" data-resource-id="${esc(id)}" data-source-id="${esc(sourceId || "")}" title="${esc(id)}">${esc(title)}</a>`;
+    })
+    .join("");
+}
+
+function reasonsHtml(reasons, titleMap, limit = 4) {
+  const list = (reasons || []).slice(0, limit);
+  if (!list.length) return "—";
+  return list
+    .map((x) => `<div class="reason-line">${esc(humanReason(x, titleMap))}</div>`)
+    .join("");
+}
+
+function candidateStatusBadges(c) {
+  const parts = [];
+  if (c.already_registered) {
+    parts.push('<span class="pill badge-registered">Ya en catálogo</span>');
+  }
+  const curation = c.curation || "human_required";
+  if (curation === "human_required" && !c.already_registered) {
+    parts.push('<span class="pill badge-pending">Pendiente de revisión</span>');
+  } else if (curation === "human_required" && c.already_registered) {
+    /* already shown Ya en catálogo */
+  } else if (curation && curation !== "human_required") {
+    parts.push(`<span class="pill">${esc(curation)}</span>`);
+  }
+  if (!parts.length) {
+    parts.push('<span class="pill badge-pending">Pendiente de revisión</span>');
+  }
+  return parts.join(" ");
+}
+
+function showCandidateJson(payload) {
+  const wrap = $("#cand-detail-wrap");
+  const box = $("#cand-detail");
+  if (!wrap || !box) return;
+  box.textContent = JSON.stringify(payload, null, 2);
+  wrap.hidden = false;
+  wrap.open = false;
+  wrap.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+function renderRecommendRows(items, titleMapsBySource) {
+  return items
+    .map((r) => {
+      const titleMap = titleMapsBySource[r.source_id] || {};
+      return `
+        <tr>
+          <td><strong>${esc(r.score)}</strong></td>
+          <td>
+            <strong>${esc(r.source)}</strong>
+            <div class="id-secondary">${esc(r.source_id)}</div>
+          </td>
+          <td>${reasonsHtml(r.reason, titleMap)}</td>
+          <td class="res-cell">${formatResourceLabels(r.resources, titleMap, r.source_id)}</td>
+        </tr>`;
+    })
+    .join("");
+}
+
+function renderRecommendCards(items, titleMapsBySource) {
+  return items
+    .map((r) => {
+      const titleMap = titleMapsBySource[r.source_id] || {};
+      return `
+        <article class="rec-card">
+          <div class="rec-card-head">
+            <span class="rec-score">${esc(r.score)}</span>
+            <div>
+              <strong>${esc(r.source)}</strong>
+              <div class="id-secondary">${esc(r.source_id)}</div>
+            </div>
+          </div>
+          <div class="rec-card-block">
+            <div class="rec-card-label">Por qué</div>
+            ${reasonsHtml(r.reason, titleMap)}
+          </div>
+          <div class="rec-card-block">
+            <div class="rec-card-label">Recursos</div>
+            <div class="res-cell">${formatResourceLabels(r.resources, titleMap, r.source_id)}</div>
+          </div>
+        </article>`;
+    })
+    .join("");
+}
+
+function navigateToResource(resourceId, sourceId) {
+  if (!resourceId) return;
+  // Telemetría: clic de recurso (fire-and-forget)
+  const payload = {
+    resource_id: resourceId,
+    source_id: sourceId || (String(resourceId).includes(":") ? String(resourceId).split(":")[0] : null),
+  };
+  fetch("/telemetry/click", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  }).catch(() => {});
+
+  go("recommend");
+  const mode = $("#rec-mode");
+  const input = $("#rec-input");
+  if (mode) mode.value = "resource";
+  if (input) input.value = resourceId;
+  runRecommend();
+}
+
+function openAdminGraphSection() {
+  go("admin");
+  const advanced = $("#panel-admin details.advanced");
+  if (advanced) advanced.open = true;
+  $$(".chip").forEach((c) => c.classList.toggle("active", c.dataset.adv === "graph"));
+  $$(".adv-pane").forEach((p) => p.classList.toggle("active", p.id === "adv-graph"));
+}
+
+async function focusGraphView(kind) {
+  openAdminGraphSection();
+  await loadGraphAdvanced();
+  const nodesSelect = $("#nodes-type");
+  const relsSelect = $("#rels-type");
+  if (kind === "relations") {
+    if (nodesSelect) nodesSelect.value = "";
+    if (relsSelect) relsSelect.value = "";
+    await loadNodes();
+    await loadRelations();
+    $("#rels-body")?.closest(".split")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    setStatus("Vista de relaciones del Knowledge Graph", "ok");
+    return;
+  }
+  const typeMap = {
+    institutions: "Institution",
+    sources: "Source",
+    resources: "Resource",
+    domains: "Domain",
+    keywords: "Keyword",
+  };
+  const nodeType = typeMap[kind];
+  if (nodesSelect && nodeType) nodesSelect.value = nodeType;
+  if (relsSelect) relsSelect.value = "";
+  await loadNodes();
+  await loadRelations();
+  $("#nodes-body")?.closest(".split")?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  setStatus(`Vista de nodos: ${nodeType}`, "ok");
+}
+
 function setNavOpen(open) {
   const topbar = $(".topbar");
   const toggle = $("#nav-toggle");
@@ -329,19 +563,25 @@ async function runRecommend() {
     const data = await api(path);
     $("#rec-meta").textContent = `${data.count || 0} resultados · recomendaciones explicables`;
     const items = data.recommendations || [];
-    $("#rec-body").innerHTML = items.length
-      ? items
-          .map(
-            (r) => `
-        <tr>
-          <td><strong>${esc(r.score)}</strong></td>
-          <td>${esc(r.source)}<div class="mono">${esc(r.source_id)}</div></td>
-          <td>${(r.reason || []).slice(0, 4).map((x) => `<div>${esc(x)}</div>`).join("")}</td>
-          <td class="mono">${esc((r.resources || []).slice(0, 3).join(", ") || "—")}</td>
-        </tr>`
-          )
-          .join("")
-      : `<tr><td colspan="4" class="empty">Sin recomendaciones</td></tr>`;
+
+    const titleMapsBySource = {};
+    await Promise.all(
+      [...new Set(items.map((r) => r.source_id).filter(Boolean))].map(async (sid) => {
+        titleMapsBySource[sid] = await ensureResourceTitles(sid);
+      })
+    );
+
+    const body = $("#rec-body");
+    const cards = $("#rec-cards");
+    if (!items.length) {
+      if (body) {
+        body.innerHTML = `<tr><td colspan="4" class="empty">Sin recomendaciones</td></tr>`;
+      }
+      if (cards) cards.innerHTML = `<p class="empty">Sin recomendaciones</p>`;
+    } else {
+      if (body) body.innerHTML = renderRecommendRows(items, titleMapsBySource);
+      if (cards) cards.innerHTML = renderRecommendCards(items, titleMapsBySource);
+    }
     setStatus("Recomendaciones listas", "ok");
   } catch (err) {
     setStatus(err.message, "error");
@@ -410,26 +650,28 @@ async function loadCandidates() {
       ? items
           .map(
             (c) => `
-        <tr class="clickable" data-id="${esc(c.id)}">
-          <td><strong>${esc(c.name)}</strong><div class="mono">${esc(c.url)}</div></td>
+        <tr data-id="${esc(c.id)}">
+          <td>
+            <strong>${esc(c.name)}</strong>
+            <div class="url-secondary">${esc(c.url)}</div>
+            <a href="#cand-detail-wrap" class="text-link cand-detail-link" data-id="${esc(c.id)}">Ver detalle</a>
+          </td>
           <td>${esc(c.source_type)}</td>
           <td>${esc(c.institution)}</td>
-          <td class="mono">${esc(c.confidence)}</td>
-          <td>
-            <span class="pill">${esc(c.curation || "human_required")}</span>
-            ${c.already_registered ? '<span class="pill sev-warning">ya registrada</span>' : ""}
-          </td>
+          <td>${esc(c.confidence)}</td>
+          <td class="cand-status">${candidateStatusBadges(c)}</td>
         </tr>`
           )
           .join("")
       : `<tr><td colspan="5" class="empty">Sin candidatos</td></tr>`;
 
-    $$("#cand-body tr.clickable").forEach((tr) => {
-      tr.addEventListener("click", async () => {
-        const detail = await api(`/source-discovery/candidates/${tr.dataset.id}`);
-        const box = $("#cand-detail");
-        box.hidden = false;
-        box.textContent = JSON.stringify(detail, null, 2);
+    $$("#cand-body .cand-detail-link").forEach((link) => {
+      link.addEventListener("click", async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const detail = await api(`/source-discovery/candidates/${link.dataset.id}`);
+        showCandidateJson(detail);
+        setStatus(`Detalle de candidato · ${detail.name || link.dataset.id}`, "ok");
       });
     });
     setStatus(`${data.count} candidatos pendientes de curaduría`, "ok");
@@ -452,9 +694,7 @@ async function analyzeCandidate() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url, persist: true }),
     });
-    const box = $("#cand-detail");
-    box.hidden = false;
-    box.textContent = JSON.stringify(data, null, 2);
+    showCandidateJson(data);
     setStatus(`Propuesta: ${data.name} · confianza ${data.confidence}`, "ok");
     await loadCandidates();
   } catch (err) {
@@ -467,19 +707,27 @@ async function loadGraphAdvanced() {
   try {
     const stats = await api("/graph/stats");
     const keys = [
-      ["institutions", "Institutions"],
-      ["sources", "Sources"],
-      ["resources", "Resources"],
-      ["domains", "Domains"],
+      ["institutions", "Instituciones"],
+      ["sources", "Fuentes"],
+      ["resources", "Recursos"],
+      ["domains", "Dominios"],
       ["keywords", "Keywords"],
-      ["relations", "Relations"],
+      ["relations", "Relaciones"],
     ];
     $("#graph-stats").innerHTML = keys
       .map(
         ([k, label]) => `
-      <div class="stat"><div class="n">${esc(stats[k] ?? 0)}</div><div class="l">${label}</div></div>`
+      <button type="button" class="stat stat-link" data-graph-view="${esc(k)}" title="Ver ${esc(label)}">
+        <span class="n">${esc(stats[k] ?? 0)}</span>
+        <span class="l">${label}</span>
+      </button>`
       )
       .join("");
+    $$("#graph-stats .stat-link").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        focusGraphView(btn.dataset.graphView).catch((e) => setStatus(e.message, "error"));
+      });
+    });
     await loadNodes();
     await loadRelations();
   } catch (_) {
@@ -661,10 +909,14 @@ function boot() {
     e.preventDefault();
     const q = $("#home-q")?.value.trim();
     if (!q) return;
-    go("recommend");
-    $("#rec-mode").value = "q";
-    $("#rec-input").value = q;
-    runRecommend();
+    runHomeAdvice(q).catch((err) => setStatus(err.message, "error"));
+  });
+
+  document.addEventListener("click", (e) => {
+    const resLink = e.target.closest?.(".res-link");
+    if (!resLink) return;
+    e.preventDefault();
+    navigateToResource(resLink.dataset.resourceId, resLink.dataset.sourceId);
   });
 
   window.addEventListener("resize", () => {
@@ -676,6 +928,53 @@ function boot() {
 
   loadAppMeta();
   loadHome();
+}
+
+async function runHomeAdvice(q) {
+  const box = $("#home-advice");
+  if (!box) return;
+  box.hidden = false;
+  box.innerHTML = `<p class="home-advice-loading">Orientando con el catálogo curado…</p>`;
+  setStatus("Orientando…");
+  const data = await api(`/decision-support?q=${encodeURIComponent(q)}&limit=4`);
+  const routes = data.routes || [];
+  if (!routes.length) {
+    box.innerHTML = `
+      <p class="empty">No encontré rutas claras. Pruebe con más contexto o revise el ranking de fuentes.</p>
+      <button type="button" class="btn" data-go="recommend">Abrir recomendaciones</button>`;
+    setStatus("Sin rutas de orientación", "error");
+    return;
+  }
+  box.innerHTML = `
+    <div class="home-advice-head">
+      <h2>Orientación</h2>
+      <p>${esc(data.count || routes.length)} rutas · Decision Support (explicable, sin LLM)</p>
+    </div>
+    <div class="home-advice-list">
+      ${routes
+        .map(
+          (r) => `
+        <article class="advice-card">
+          <p class="advice-rank">#${esc(r.rank)} · ${esc(r.score ?? "—")}</p>
+          <h3>${esc(r.title || r.source || r.source_id)}</h3>
+          <p class="advice-what"><strong>Qué hacer:</strong> ${esc(r.what_to_do || "—")}</p>
+          <p class="advice-source"><strong>Fuente:</strong> ${esc(r.source || r.source_id)} · ${esc(r.institution || "")}</p>
+          <p class="advice-why"><strong>Por qué:</strong> ${esc((r.why || []).slice(0, 2).join(" · ") || "—")}</p>
+          <p class="advice-res">${pills((r.resources || []).map((x) => x.resource_id || x.title).filter(Boolean).slice(0, 4))}</p>
+        </article>`
+        )
+        .join("")}
+    </div>
+    <div class="home-advice-actions">
+      <button type="button" class="btn" id="home-to-rec">Ver ranking completo</button>
+    </div>`;
+  $("#home-to-rec")?.addEventListener("click", () => {
+    go("recommend");
+    $("#rec-mode").value = "q";
+    $("#rec-input").value = q;
+    runRecommend();
+  });
+  setStatus("Orientación lista", "ok");
 }
 
 document.addEventListener("DOMContentLoaded", boot);

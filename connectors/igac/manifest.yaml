@@ -1,9 +1,14 @@
 connector_id: "igac"
 source_name: "IGAC"
-version: "0.0.0"
-status: "skeleton"
-mvp: false
+version: "1.6.0"
+status: "mvp"
+mvp: true
 country_or_scope: "Colombia"
-domains: []
-protocols: []
-notes: "Placeholder — sin implementacion."
+domains:
+  - observacion_tierra
+  - suelos
+  - agricultura
+protocols:
+  - portal
+  - arcgis_rest
+notes: "Enriquecimiento operativo — metadatos curados, read-only, sin descarga."

@@ -25,7 +25,7 @@ def kg() -> KnowledgeGraphEngine:
 
 def test_stats_counts(kg: KnowledgeGraphEngine) -> None:
     stats = kg.stats()
-    assert stats["sources"] == 6
+    assert stats["sources"] == 23
     assert stats["institutions"] >= 1
     assert stats["resources"] >= 6
     assert stats["domains"] == 8

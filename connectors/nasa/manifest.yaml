@@ -1,9 +1,14 @@
 connector_id: "nasa"
 source_name: "NASA"
-version: "0.0.0"
-status: "skeleton"
-mvp: false
+version: "1.1.0"
+status: "mvp"
+mvp: true
 country_or_scope: "Global"
-domains: []
-protocols: []
-notes: "Placeholder — sin implementacion."
+domains:
+  - clima
+  - observacion_tierra
+protocols:
+  - portal
+  - platform
+  - api
+notes: "Enriquecimiento operativo — metadatos curados, read-only, sin descarga."

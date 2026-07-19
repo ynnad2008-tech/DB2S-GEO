@@ -26,9 +26,33 @@ def metadata(discovery: DiscoveryEngine) -> MetadataEngine:
     return MetadataEngine(discovery)
 
 
-def test_six_mvp_sources(discovery: DiscoveryEngine) -> None:
+def test_mvp_sources(discovery: DiscoveryEngine) -> None:
     ids = {s["source_id"] for s in discovery.list_sources()}
-    assert ids == {"ideam", "invemar", "gbif", "fao", "worldpop", "gee"}
+    assert ids == {
+        "ideam",
+        "invemar",
+        "gbif",
+        "fao",
+        "worldpop",
+        "gee",
+        "sgc",
+        "dynamicworld",
+        "nasa",
+        "mapbiomas",
+        "unosat",
+        "igac",
+        "upra",
+        "dane",
+        "dnp",
+        "contraloria",
+        "superservicios",
+        "mintransporte",
+        "upit",
+        "invias",
+        "ansv",
+        "ani",
+        "supertransporte",
+    }
 
 
 def test_list_ideam_resources(metadata: MetadataEngine) -> None:
@@ -75,7 +99,7 @@ def test_get_domain_with_resources(metadata: MetadataEngine) -> None:
 
 
 def test_unknown_source(metadata: MetadataEngine) -> None:
-    assert metadata.list_resources("nasa") is None
+    assert metadata.list_resources("fuente_inexistente") is None
 
 
 def test_does_not_invent_empty_keywords(metadata: MetadataEngine) -> None:

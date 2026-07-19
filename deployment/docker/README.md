@@ -1,9 +1,7 @@
 # Dockerfiles
 
-Reservado para:
+El **Dockerfile operativo** está en la raíz del repositorio:
 
-- API (FastAPI)
-- Frontend
-- Workers (futuro)
+`Dockerfile` → servicio único FastAPI + Workbench (Cloud Run / local).
 
-Sin Dockerfiles funcionales aún.
+Ver: [../cloudrun/README.md](../cloudrun/README.md)

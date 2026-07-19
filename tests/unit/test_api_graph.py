@@ -25,7 +25,7 @@ def test_graph_stats(client: TestClient) -> None:
     response = client.get("/graph/stats")
     assert response.status_code == 200
     body = response.json()
-    assert body["sources"] == 6
+    assert body["sources"] == 23
     assert body["relations"] > 0
     assert body["stores_full_metadata"] is False
 
@@ -34,13 +34,13 @@ def test_graph_nodes(client: TestClient) -> None:
     response = client.get("/graph/nodes", params={"type": "Source"})
     assert response.status_code == 200
     body = response.json()
-    assert body["count"] == 6
+    assert body["count"] == 23
 
 
 def test_graph_relations(client: TestClient) -> None:
     response = client.get("/graph/relations", params={"type": "contains"})
     assert response.status_code == 200
-    assert response.json()["count"] >= 6
+    assert response.json()["count"] >= 23
 
 
 def test_graph_domain_clima(client: TestClient) -> None:

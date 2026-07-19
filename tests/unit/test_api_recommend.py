@@ -27,10 +27,14 @@ def test_recommend_q_precipitacion(client: TestClient) -> None:
     body = response.json()
     assert body["count"] >= 1
     top = body["recommendations"][0]
-    assert top["source"] == "IDEAM"
+    assert top["source"] in {"IDEAM", "Google Earth Engine", "NASA"}
     assert top["score"] >= 50
     assert top["reason"]
     assert top["relations_used"]
+    ideam = next(r for r in body["recommendations"] if r["source"] == "IDEAM")
+    assert ideam["score"] >= 50
+    assert ideam["reason"]
+    assert ideam["relations_used"]
 
 
 def test_recommend_domain(client: TestClient) -> None:

@@ -1,19 +1,8 @@
-# Conector: UNOSAT
+# Conector UNOSAT
 
 | Campo | Valor |
-|-------|-------|
-| ID | `unosat` |
-| Fuente | UNOSAT |
-| Ámbito | Global |
-| MVP | False |
-| Estado | skeleton |
+|-------|--------|
+| MVP | True |
+| Read-only | Sí |
 
-## Responsabilidad prevista
-
-Integrar `UNOSAT` mediante el Connector Framework.
-
-## Estado
-
-Placeholder. **Sin** lógica de acceso a APIs ni descarga de datos.
-
-Ver `docs/07_connectors_framework.md`.
+Cartografía satelital operacional para desastres (UNITAR-UNOSAT).

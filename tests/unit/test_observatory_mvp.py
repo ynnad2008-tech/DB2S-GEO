@@ -136,10 +136,14 @@ def test_api_observatory_and_autolog(tmp_path: Path) -> None:
         assert info.json()["stores_ip"] is False
 
         root = client.get("/")
-        assert root.json()["version"].startswith("0.9")
-        assert "Alpha" in root.json().get("release", "")
+        assert root.json()["version"].startswith("0.1")
+        assert "Preview" in root.json().get("release", "")
         assert root.json().get("author") == "Dany Arbey Benavides"
         assert "GET /observatory/dashboard" in root.json()["endpoints"]
+        assert "GET /telemetry/recent" in root.json()["endpoints"]
+        assert "POST /telemetry/click" in root.json()["endpoints"]
+        assert "GET /healthz" in root.json()["endpoints"]
+        assert "GET /version" in root.json()["endpoints"]
 
         html = client.get("/workbench/")
         assert "Observatorio" in html.text

@@ -24,12 +24,13 @@ from backend.metadata.engine import MetadataEngine
 from backend.observatory.engine import ObservatoryEngine
 from backend.recommendation.engine import RecommendationEngine
 from backend.source_discovery.engine import SourceDiscoveryAssistant
+from backend.telemetry import get_telemetry_store
 from backend.watcher.engine import WatcherEngine
 
 APP_NAME = "DB2S-GEO"
-APP_PHASE = "alpha-release"
-APP_VERSION = "0.9.0-alpha"
-APP_RELEASE_LABEL = "DB2S-GEO v0.9 Alpha"
+APP_PHASE = "preview"
+APP_VERSION = "0.1.0-preview"
+APP_RELEASE_LABEL = "DB2S-GEO v0.1.0 Preview"
 APP_AUTHOR = "Dany Arbey Benavides"
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
@@ -39,6 +40,11 @@ WORKBENCH_DIR = ROOT_DIR / "frontend" / "workbench"
 class AnalyzeRequest(BaseModel):
     url: str = Field(..., description="URL de la fuente desconocida")
     persist: bool = Field(default=True, description="Guardar como candidato")
+
+
+class TelemetryClickRequest(BaseModel):
+    resource_id: str = Field(..., min_length=1, max_length=200)
+    source_id: str | None = Field(default=None, max_length=120)
 
 
 def create_engines() -> tuple[
@@ -214,6 +220,23 @@ def root() -> dict[str, Any]:
     return get_app_info()
 
 
+@app.get("/version")
+def version() -> dict[str, str]:
+    """Endpoint liviano de versión (sondas / Cloud Run)."""
+    return {
+        "name": APP_NAME,
+        "version": APP_VERSION,
+        "phase": APP_PHASE,
+        "release": APP_RELEASE_LABEL,
+    }
+
+
+@app.get("/healthz")
+def healthz() -> dict[str, str]:
+    """Health check liviano para Cloud Run / load balancers."""
+    return {"status": "ok"}
+
+
 @app.get("/workbench")
 @app.get("/workbench/")
 def workbench_home() -> FileResponse:
@@ -229,6 +252,7 @@ def health(request: Request) -> dict[str, Any]:
     return {
         "status": "ok",
         "phase": APP_PHASE,
+        "version": APP_VERSION,
         "discovery": _discovery(request).info(),
         "metadata": _metadata(request).info(),
         "citation": _citation(request).info(),
@@ -238,6 +262,7 @@ def health(request: Request) -> dict[str, Any]:
         "source_discovery": _source_discovery(request).info(),
         "decision_support": _decision_support(request).info(),
         "observatory": _observatory(request).info(),
+        "telemetry": get_telemetry_store().info(),
     }
 
 
@@ -438,6 +463,10 @@ def recommend_query(
         _observatory(request).log_from_recommend(q, payload)
     except Exception:
         pass
+    try:
+        get_telemetry_store().log(q, int(payload.get("count") or 0))
+    except Exception:
+        pass
     return payload
 
 
@@ -620,6 +649,10 @@ def decision_support_advise(
         _observatory(request).log_from_decision_support(q, payload)
     except Exception:
         pass
+    try:
+        get_telemetry_store().log(q, int(payload.get("count") or 0))
+    except Exception:
+        pass
     return payload
 
 
@@ -690,6 +723,41 @@ def observatory_wordcloud(
     return _observatory(request).wordcloud(limit=limit)
 
 
+# --- Telemetría mínima (preview) ---
+
+
+@app.get("/telemetry/info")
+def telemetry_info() -> dict[str, Any]:
+    return get_telemetry_store().info()
+
+
+@app.get("/telemetry/recent")
+def telemetry_recent(
+    limit: int = Query(default=50, ge=1, le=200),
+) -> dict[str, Any]:
+    """Últimos eventos: query · timestamp · result_count."""
+    items = get_telemetry_store().recent(limit=limit)
+    return {"count": len(items), "items": items}
+
+
+@app.get("/telemetry/clicks")
+def telemetry_clicks(
+    limit: int = Query(default=50, ge=1, le=200),
+) -> dict[str, Any]:
+    """Últimos clics de recurso."""
+    items = get_telemetry_store().recent_clicks(limit=limit)
+    return {"count": len(items), "items": items}
+
+
+@app.post("/telemetry/click")
+def telemetry_click(body: TelemetryClickRequest) -> dict[str, Any]:
+    """Registra clic anónimo sobre un resource_id."""
+    event = get_telemetry_store().log_click(body.resource_id, body.source_id)
+    if event is None:
+        raise HTTPException(status_code=400, detail="resource_id inválido")
+    return {"ok": True, "event": event}
+
+
 def get_app_info() -> dict[str, Any]:
     return {
         "name": APP_NAME,
@@ -697,8 +765,11 @@ def get_app_info() -> dict[str, Any]:
         "version": APP_VERSION,
         "release": APP_RELEASE_LABEL,
         "author": APP_AUTHOR,
-        "status": "alpha",
+        "status": "preview",
         "endpoints": [
+            "GET /version",
+            "GET /healthz",
+            "GET /health",
             "GET /sources",
             "GET /sources/{source_id}",
             "GET /sources/{source_id}/citation",
@@ -738,6 +809,10 @@ def get_app_info() -> dict[str, Any]:
             "GET /observatory/emerging",
             "GET /observatory/timeline",
             "GET /observatory/wordcloud",
+            "GET /telemetry/info",
+            "GET /telemetry/recent",
+            "GET /telemetry/clicks",
+            "POST /telemetry/click",
             "GET /workbench/",
         ],
         "workbench": "/workbench/",

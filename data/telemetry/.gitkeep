@@ -1,0 +1,2 @@
+data/telemetry/*
+!data/telemetry/.gitkeep

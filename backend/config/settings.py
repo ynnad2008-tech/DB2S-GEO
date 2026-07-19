@@ -1,14 +1,17 @@
 """
-Configuración placeholder.
+Configuración mínima — Preview 0.1.0.
 
-Reservado para variables de entorno y settings (Pydantic Settings / similar).
-No cargar secretos en el repositorio.
+Variables de entorno (opcionales):
+  ENVIRONMENT, TELEMETRY_DB_PATH, PORT, HOST
 """
 
-# Configuración mínima Alpha 0.9 (sin secretos)
-ENVIRONMENT = "alpha"
-APP_PHASE = "alpha-release"
-APP_VERSION = "0.9.0-alpha"
+from __future__ import annotations
+
+import os
+
+ENVIRONMENT = os.environ.get("ENVIRONMENT", "preview")
+APP_PHASE = "preview"
+APP_VERSION = "0.1.0-preview"
 READ_ONLY = True
 DOWNLOADS_ENABLED = False
 GRAPH_BACKEND = "python_memory"
@@ -19,3 +22,4 @@ DECISION_SUPPORT_AI = False
 OBSERVATORY_STORE_PII = False
 OBSERVATORY_STORE_IP = False
 WORKBENCH_ENABLED = True
+TELEMETRY_DB_PATH = os.environ.get("TELEMETRY_DB_PATH", "")

@@ -25,6 +25,23 @@ Ver `base.py`, `models.py` y `docs/07_connectors_framework.md`.
 | fao | FAOSTAT | MVP |
 | worldpop | WorldPop | MVP |
 | gee | Google Earth Engine | MVP |
+| sgc | SGC | MVP (enriquecimiento) |
+| dynamicworld | Dynamic World | MVP (enriquecimiento) |
+| nasa | NASA | MVP (enriquecimiento) |
+| mapbiomas | MapBiomas | MVP (enriquecimiento) |
+| unosat | UNOSAT | MVP (enriquecimiento) |
+| igac | IGAC | MVP (enriquecimiento) |
+| upra | UPRA | MVP (enriquecimiento) |
+| dane | DANE | MVP (enriquecimiento) |
+| dnp | DNP | MVP (enriquecimiento) |
+| contraloria | Contraloría | MVP (enriquecimiento) |
+| superservicios | Superservicios | MVP (enriquecimiento) |
+| mintransporte | MinTransporte | MVP (enriquecimiento) |
+| upit | UPIT | MVP (enriquecimiento) |
+| invias | INVIAS | MVP (enriquecimiento) |
+| ansv | ANSV | MVP (enriquecimiento) |
+| ani | ANI | MVP (enriquecimiento) |
+| supertransporte | Supertransporte | MVP (enriquecimiento) |
 
 Registro: `connectors/registry.py` → `build_mvp_connectors()`.
 

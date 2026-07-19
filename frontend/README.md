@@ -26,6 +26,9 @@ Abrir tras arrancar la API:
 
 Stack: HTML · CSS · JavaScript vanilla (sin React/Vue/Angular).
 
+Private Preview: el buscador de Inicio llama a `GET /decision-support` y muestra
+rutas de orientación (qué hacer / fuente / por qué). No hay app React en este repo.
+
 ## Público / producto (futuro)
 
 Reservado: interfaz pública de descubrimiento y recomendaciones.

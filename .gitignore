@@ -50,6 +50,8 @@ data/source_discovery/candidates.json
 !data/source_discovery/.gitkeep
 data/observatory/queries.json
 !data/observatory/.gitkeep
+data/telemetry/*.db
+!data/telemetry/.gitkeep
 
 # IDE / OS / agentes locales
 .idea/

@@ -73,4 +73,4 @@ def test_unknown_domain(client: TestClient) -> None:
 def test_sources_count_is_six(client: TestClient) -> None:
     response = client.get("/sources")
     assert response.status_code == 200
-    assert response.json()["count"] == 6
+    assert response.json()["count"] == 23

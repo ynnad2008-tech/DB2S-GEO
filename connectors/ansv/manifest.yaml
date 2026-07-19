@@ -1,0 +1,13 @@
+connector_id: "ansv"
+source_name: "ANSV"
+version: "1.0.0"
+status: "mvp"
+mvp: true
+country_or_scope: "Colombia"
+domains:
+  - observacion_tierra
+  - poblacion
+protocols:
+  - portal
+  - arcgis
+notes: "Enriquecimiento operativo — metadatos curados, read-only, sin descarga."

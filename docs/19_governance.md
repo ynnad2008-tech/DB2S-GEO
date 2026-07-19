@@ -55,3 +55,10 @@ Propuesta → Alineación con visión → Impacto en fases → Documentar → Ej
 ---
 
 *Gobernanza fundacional.*
+
+## Modelo de Colaboración
+
+La colaboración, revisión y gobernanza operativa de DB2S-GEO se documentan en:
+
+- 20_collaboration_model.md
+`

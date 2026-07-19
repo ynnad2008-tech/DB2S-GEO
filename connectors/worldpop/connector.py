@@ -137,13 +137,62 @@ _RESOURCES: dict[str, dict[str, Any]] = {
         ),
         "doi": "",
     },
+    "worldpop:colombia": {
+        "resource_id": "worldpop:colombia",
+        "title": "Población de Colombia (WorldPop)",
+        "type": "dataset",
+        "domains": ["poblacion"],
+        "primary_domain": "poblacion",
+        "keywords": [
+            "poblacion",
+            "colombia",
+            "exposicion",
+            "riesgo",
+            "planeacion",
+            "territorial",
+            "densidad",
+            "worldpop",
+        ],
+        "description": (
+            "Productos demográficos espaciales de WorldPop filtrados a "
+            "Colombia (ISO3=COL): densidad y conteos poblacionales de "
+            "alta resolución. Apoya exposición, riesgo y planeación "
+            "territorial. DB2S-GEO solo documenta el endpoint; "
+            "no descarga rasters."
+        ),
+        "spatial_coverage": "Colombia",
+        "temporal_coverage": "Años de referencia según producto WorldPop",
+        "formats": ["GeoTIFF", "JSON (metadatos REST)"],
+        "homepage": "https://hub.worldpop.org",
+        "portal_url": "https://hub.worldpop.org",
+        "documentation_url": "https://www.worldpop.org/methods/",
+        "endpoints": [
+            {
+                "method": "api",
+                "url": "https://www.worldpop.org/rest/data/pop/wpgp?iso3=COL",
+                "label": "WorldPop REST población Colombia (iso3=COL)",
+            },
+            {
+                "method": "portal",
+                "url": "https://hub.worldpop.org",
+                "label": "WorldPop Data Hub",
+            },
+        ],
+        "access_methods": ["api", "portal"],
+        "citation_reference": (
+            "WorldPop. Population datasets — Colombia (ISO3=COL). "
+            "University of Southampton. "
+            "https://www.worldpop.org/rest/data/pop/wpgp?iso3=COL"
+        ),
+        "doi": "10.5258/SOTON/WP00647",
+    },
 }
 
 
 class WorldpopConnector(BaseConnector):
     connector_id = SOURCE_ID
     source_name = "WorldPop"
-    version = "1.0.0"
+    version = "1.1.0"
 
     def identify(self) -> dict[str, Any]:
         return normalize_source(
