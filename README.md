@@ -4,7 +4,7 @@
 
 **Estado:** v0.9 Alpha · **Autor:** Dany Arbey Benavides
 
-> ✅ **¡Validada por humanos!** — Curaduría humana, recomendaciones explicables, sin auto-aplicación al catálogo.
+> ✅ **¡Validada por humanos!** — Supervisado, recomendaciones explicables, sin auto-aplicación al catálogo.
 
 Repositorio oficial: [github.com/ynnad2008-tech/DB2S-GEO](https://github.com/ynnad2008-tech/DB2S-GEO)
 
