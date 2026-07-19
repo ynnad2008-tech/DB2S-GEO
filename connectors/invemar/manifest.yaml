@@ -1,0 +1,13 @@
+connector_id: "invemar"
+source_name: "INVEMAR"
+version: "1.0.0"
+status: "mvp"
+mvp: true
+country_or_scope: "Colombia"
+domains:
+  - oceanos_costas
+  - biodiversidad
+protocols:
+  - portal
+  - arcgis_rest
+notes: "Fase 2 MVP — metadatos curados, read-only, sin descarga."

@@ -1,0 +1,8 @@
+# Stub de esquema — no normativo
+entity:
+  id: ""
+  type: ""   # Institution | Source | Dataset | ...
+  name: ""
+  attributes: {}
+  links: []
+status: skeleton

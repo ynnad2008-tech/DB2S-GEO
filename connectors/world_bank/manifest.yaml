@@ -1,0 +1,9 @@
+connector_id: "world_bank"
+source_name: "World Bank"
+version: "0.0.0"
+status: "skeleton"
+mvp: false
+country_or_scope: "Global"
+domains: []
+protocols: []
+notes: "Placeholder — sin implementacion."

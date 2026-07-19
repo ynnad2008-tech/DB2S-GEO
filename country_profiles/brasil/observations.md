@@ -1,0 +1,3 @@
+# Observaciones — Brasil
+
+- *Espacio para notas de campo, cobertura y calidad percibida.*

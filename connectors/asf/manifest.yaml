@@ -1,0 +1,9 @@
+connector_id: "asf"
+source_name: "ASF"
+version: "0.0.0"
+status: "skeleton"
+mvp: false
+country_or_scope: "Global"
+domains: []
+protocols: []
+notes: "Placeholder — sin implementacion."

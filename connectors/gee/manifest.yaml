@@ -1,0 +1,14 @@
+connector_id: "gee"
+source_name: "Google Earth Engine"
+version: "1.0.0"
+status: "mvp"
+mvp: true
+country_or_scope: "Global"
+domains:
+  - observacion_tierra
+  - cobertura
+protocols:
+  - platform
+  - api
+  - portal
+notes: "Fase 1 MVP — metadatos curados, read-only, sin ejecución de código GEE ni descarga."

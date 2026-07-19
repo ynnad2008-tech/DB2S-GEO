@@ -1,0 +1,9 @@
+connector_id: "sib_colombia"
+source_name: "SiB Colombia"
+version: "0.0.0"
+status: "skeleton"
+mvp: false
+country_or_scope: "Colombia"
+domains: []
+protocols: []
+notes: "Placeholder — sin implementacion."

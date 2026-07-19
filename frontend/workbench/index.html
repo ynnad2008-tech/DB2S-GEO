@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DB2S-GEO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;500;600;700&family=Source+Code+Pro:wght@450;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/workbench/static/workbench.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#home" data-go="home">
+        <span class="brand-mark">DB2S-GEO</span>
+      </a>
+      <button
+        type="button"
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-expanded="false"
+        aria-controls="nav-primary"
+        aria-label="Abrir menú"
+      >
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+      <nav class="nav-primary" id="nav-primary" aria-label="Principal">
+        <button type="button" class="nav-btn active" data-panel="home">Inicio</button>
+        <button type="button" class="nav-btn" data-panel="explore">Explorar</button>
+        <button type="button" class="nav-btn" data-panel="recommend">Recomendaciones</button>
+        <button type="button" class="nav-btn" data-panel="monitor">Monitoreo</button>
+        <button type="button" class="nav-btn" data-panel="observatory">Observatorio</button>
+        <button type="button" class="nav-btn" data-panel="admin" id="nav-admin">
+          Administración
+        </button>
+      </nav>
+      <p id="status" class="sr-only" role="status" aria-live="polite"></p>
+    </header>
+
+    <main class="main">
+      <!-- INICIO -->
+      <section id="panel-home" class="panel active">
+        <div class="hero">
+          <h1>DB2S-GEO</h1>
+          <p class="hero-subtitle">Plataforma de conocimiento geoespacial</p>
+          <p class="trust-badge" aria-label="Insignia de confianza">
+            <span class="trust-badge-mark" aria-hidden="true">✓</span>
+            <span>¡Validada por humanos!</span>
+          </p>
+          <p class="lede">
+            Descubra, evalúe y cite fuentes de datos territoriales —
+            con validación humana y sin caja negra.
+          </p>
+          <form id="home-search-form" class="home-search" role="search">
+            <label class="sr-only" for="home-q">Buscar concepto o fuente</label>
+            <input
+              id="home-q"
+              type="search"
+              placeholder="Buscar: precipitación, inundaciones, biodiversidad…"
+              autocomplete="off"
+            />
+            <button type="submit" class="btn primary">Buscar</button>
+          </form>
+          <div class="hero-actions">
+            <button type="button" class="btn" data-go="explore">Explorar fuentes</button>
+            <button type="button" class="btn" data-go="observatory">Ver observatorio</button>
+          </div>
+        </div>
+
+        <section class="community-trends" aria-labelledby="trends-title">
+          <div class="community-trends-head">
+            <h2 id="trends-title">Tendencias de la comunidad</h2>
+            <p>Conceptos más consultados · datos anónimos del Observatorio</p>
+          </div>
+          <div id="home-cloud" class="home-cloud" aria-label="Nube de conceptos en uso"></div>
+        </section>
+
+        <div class="metrics" id="home-metrics" aria-label="Métricas clave">
+          <button type="button" class="metric" data-go="explore">
+            <span class="metric-value" id="m-sources">—</span>
+            <span class="metric-label">Fuentes</span>
+          </button>
+          <button type="button" class="metric" data-go="explore">
+            <span class="metric-value" id="m-resources">—</span>
+            <span class="metric-label">Recursos</span>
+          </button>
+          <button type="button" class="metric" data-go="explore">
+            <span class="metric-value" id="m-domains">—</span>
+            <span class="metric-label">Dominios</span>
+          </button>
+          <button type="button" class="metric" data-go="monitor">
+            <span class="metric-value" id="m-events">—</span>
+            <span class="metric-label">Eventos</span>
+          </button>
+          <button type="button" class="metric" data-go="admin">
+            <span class="metric-value" id="m-candidates">—</span>
+            <span class="metric-label">Candidatos</span>
+          </button>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h2>¿Qué hace DB2S-GEO?</h2>
+            <p>Integra descubrimiento, metadatos, recomendaciones y monitoreo de fuentes oficiales y científicas.</p>
+          </article>
+          <article class="card">
+            <h2>Desarrolladores</h2>
+            <p>
+              Acceda a la API documentada, explore endpoints y construya sobre el catálogo
+              curado sin descargas masivas ni cajas negras.
+            </p>
+          </article>
+          <article class="card">
+            <h2>Sin caja negra</h2>
+            <p>Cada recomendación incluye score, razones y relaciones utilizadas.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- EXPLORAR -->
+      <section id="panel-explore" class="panel">
+        <div class="panel-head">
+          <h1>Explorar</h1>
+          <p>Fuentes registradas y sus dominios temáticos.</p>
+        </div>
+        <div class="toolbar">
+          <input id="sources-q" type="search" placeholder="Buscar por nombre o institución…" />
+          <select id="sources-domain">
+            <option value="">Todos los dominios</option>
+          </select>
+          <button type="button" id="sources-refresh" class="btn">Actualizar</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Fuente</th>
+                <th>Institución</th>
+                <th>Dominios</th>
+                <th>Cómo acceder</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="sources-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- RECOMENDACIONES -->
+      <section id="panel-recommend" class="panel">
+        <div class="panel-head">
+          <h1>Recomendaciones</h1>
+          <p>Indique un tema, dominio, fuente o recurso. Obtendrá fuentes justificadas.</p>
+        </div>
+        <div class="toolbar wrap">
+          <select id="rec-mode">
+            <option value="q">Tema o palabra clave</option>
+            <option value="domain">Dominio</option>
+            <option value="source">Fuente</option>
+            <option value="resource">Recurso</option>
+          </select>
+          <input id="rec-input" class="grow" type="search" placeholder="Ej. precipitacion, clima, ideam…" />
+          <button type="button" id="rec-run" class="btn primary">Recomendar</button>
+        </div>
+        <div id="rec-meta" class="meta-line"></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Score</th>
+                <th>Fuente</th>
+                <th>Por qué</th>
+                <th>Recursos</th>
+              </tr>
+            </thead>
+            <tbody id="rec-body"></tbody>
+          </table>
+        </div>
+        <p class="privacy-hint">
+          Las consultas pueden registrarse de forma anónima para mejorar la plataforma.
+          No se recopila información personal identificable.
+        </p>
+      </section>
+
+      <!-- MONITOREO -->
+      <section id="panel-monitor" class="panel">
+        <div class="panel-head">
+          <h1>Monitoreo</h1>
+          <p>Cambios detectados en fuentes. Nada se aplica al catálogo sin revisión humana.</p>
+        </div>
+        <div class="toolbar wrap">
+          <select id="watcher-filter">
+            <option value="">Todos los eventos</option>
+            <option>BASELINE_CREATED</option>
+            <option>NEW_RESOURCE</option>
+            <option>REMOVED_RESOURCE</option>
+            <option>RESOURCE_CHANGED</option>
+            <option>METADATA_CHANGED</option>
+            <option>NEW_ACCESS_METHOD</option>
+            <option>ACCESS_METHOD_REMOVED</option>
+            <option>SOURCE_UNAVAILABLE</option>
+          </select>
+          <input id="watcher-source" type="search" placeholder="Filtrar fuente…" />
+          <button type="button" id="watcher-refresh" class="btn">Actualizar</button>
+          <button type="button" id="watcher-run" class="btn primary">Ejecutar monitoreo</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Evento</th>
+                <th>Fuente</th>
+                <th>Recurso</th>
+                <th>Severidad</th>
+                <th>Fecha</th>
+              </tr>
+            </thead>
+            <tbody id="watcher-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- OBSERVATORIO -->
+      <section id="panel-observatory" class="panel">
+        <div class="panel-head">
+          <h1>Observatorio</h1>
+          <p>Uso anónimo del conocimiento: tendencias, vacíos y señales para expandir el catálogo.</p>
+        </div>
+        <aside class="privacy-notice" role="note">
+          Las consultas realizadas en DB2S-GEO pueden registrarse de forma anónima
+          para mejorar recomendaciones, identificar vacíos de conocimiento y fortalecer
+          la plataforma. No se recopila información personal identificable.
+        </aside>
+        <div class="toolbar wrap">
+          <button type="button" id="obs-refresh" class="btn primary">Actualizar</button>
+          <span id="obs-summary" class="meta-line"></span>
+        </div>
+        <div class="obs-grid obs-grid-top">
+          <article class="obs-block obs-cloud-block">
+            <h2>Nube de palabras</h2>
+            <div id="obs-cloud" class="wordcloud" aria-label="Nube de términos"></div>
+          </article>
+          <article class="obs-block">
+            <h2>Tendencia temporal</h2>
+            <div id="obs-timeline" class="timeline" aria-label="Consultas por día"></div>
+          </article>
+        </div>
+        <div class="obs-grid">
+          <article class="obs-block">
+            <h2>Consultas frecuentes</h2>
+            <div class="table-wrap compact">
+              <table>
+                <thead><tr><th>Consulta</th><th>Veces</th></tr></thead>
+                <tbody id="obs-top"></tbody>
+              </table>
+            </div>
+          </article>
+          <article class="obs-block">
+            <h2>Consultas sin resultado</h2>
+            <div class="table-wrap compact">
+              <table>
+                <thead><tr><th>Consulta</th><th>Veces</th></tr></thead>
+                <tbody id="obs-empty"></tbody>
+              </table>
+            </div>
+          </article>
+          <article class="obs-block">
+            <h2>Dominios más usados</h2>
+            <div id="obs-domains" class="rank-bars"></div>
+          </article>
+          <article class="obs-block">
+            <h2>Conceptos emergentes</h2>
+            <div class="table-wrap compact">
+              <table>
+                <thead><tr><th>Término</th><th>Señal</th></tr></thead>
+                <tbody id="obs-emerging"></tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ADMINISTRACIÓN -->
+      <section id="panel-admin" class="panel">
+        <div class="panel-head">
+          <h1>Administración</h1>
+          <p>
+            Herramientas de curaduría y secciones avanzadas.
+            <span id="admin-candidates-count" class="admin-count">— candidatos para revisión</span>
+          </p>
+        </div>
+
+        <div class="admin-block">
+          <h2>Candidatos a incorporar</h2>
+          <p class="block-desc">URLs analizadas pendientes de decisión humana.</p>
+          <div class="toolbar wrap">
+            <input id="cand-url" class="grow" type="url" placeholder="Pegar URL de una fuente desconocida…" />
+            <button type="button" id="cand-analyze" class="btn primary">Analizar</button>
+            <button type="button" id="cand-refresh" class="btn">Actualizar lista</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Tipo</th>
+                  <th>Institución</th>
+                  <th>Confianza</th>
+                  <th>Revisión</th>
+                </tr>
+              </thead>
+              <tbody id="cand-body"></tbody>
+            </table>
+          </div>
+          <pre id="cand-detail" class="detail-box" hidden></pre>
+        </div>
+
+        <details class="advanced">
+          <summary>Secciones avanzadas</summary>
+          <div class="advanced-tabs">
+            <button type="button" class="chip active" data-adv="graph">Knowledge Graph</button>
+            <button type="button" class="chip" data-adv="watcher-tech">Watcher (detalle)</button>
+          </div>
+
+          <div id="adv-graph" class="adv-pane active">
+            <p class="block-desc">Nodos y relaciones del grafo de conocimiento (vista técnica).</p>
+            <div id="graph-stats" class="stat-grid"></div>
+            <div class="split">
+              <div>
+                <div class="toolbar">
+                  <select id="nodes-type">
+                    <option value="">Todos los nodos</option>
+                    <option>Institution</option>
+                    <option>Source</option>
+                    <option>Resource</option>
+                    <option>Domain</option>
+                    <option>Keyword</option>
+                  </select>
+                  <button type="button" id="nodes-refresh" class="btn">Nodos</button>
+                </div>
+                <div class="table-wrap compact">
+                  <table>
+                    <thead><tr><th>ID</th><th>Tipo</th><th>Etiqueta</th></tr></thead>
+                    <tbody id="nodes-body"></tbody>
+                  </table>
+                </div>
+              </div>
+              <div>
+                <div class="toolbar">
+                  <select id="rels-type">
+                    <option value="">Todas las relaciones</option>
+                    <option>publishes</option>
+                    <option>contains</option>
+                    <option>belongs_to</option>
+                    <option>associated_with</option>
+                  </select>
+                  <button type="button" id="rels-refresh" class="btn">Relaciones</button>
+                </div>
+                <div class="table-wrap compact">
+                  <table>
+                    <thead><tr><th>Tipo</th><th>Desde</th><th>Hacia</th></tr></thead>
+                    <tbody id="rels-body"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="adv-watcher-tech" class="adv-pane">
+            <p class="block-desc">
+              El Watcher solo observa y registra. No actualiza catálogo ni conectores.
+              Use la pestaña <strong>Monitoreo</strong> para la vista operativa diaria.
+            </p>
+            <ul class="plain-list">
+              <li>Persistencia: <code>data/watcher/</code></li>
+              <li>Principio: el sistema se automonitorea; no se autogobierna.</li>
+              <li>API: <code>GET /watcher/events</code> · <code>POST /watcher/run</code></li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <!-- ACERCA DE -->
+      <section id="panel-about" class="panel">
+        <div class="panel-head">
+          <h1>Acerca de DB2S-GEO</h1>
+          <p>Presentación pública del proyecto · estado Alpha.</p>
+        </div>
+        <article class="info-block">
+          <h2>Propósito</h2>
+          <p>
+            DB2S-GEO es una plataforma de descubrimiento y gestión de conocimiento territorial.
+            Ayuda a curadores, analistas e instituciones a encontrar fuentes confiables,
+            entender sus relaciones y orientar acciones — siempre con validación humana.
+          </p>
+        </article>
+        <article class="info-block">
+          <h2>Alcance (Alpha)</h2>
+          <p>
+            Incluye descubrimiento de fuentes MVP, metadatos, grafo de conocimiento,
+            recomendaciones explicables, monitoreo de cambios, asistente de candidatos,
+            observatorio de uso anónimo y consola operativa.
+          </p>
+          <p>
+            No realiza descargas masivas, no inventa fuentes fuera del catálogo curado
+            y no aplica cambios al catálogo de forma automática.
+          </p>
+        </article>
+        <article class="info-block">
+          <h2>Visión</h2>
+          <p>
+            Actuar como capa de inteligencia entre personas y fuentes geoespaciales,
+            ambientales y científicas, facilitando descubrir, evaluar, citar y decidir
+            con evidencia trazable.
+          </p>
+        </article>
+        <article class="info-block">
+          <h2>Principios</h2>
+          <ul class="plain-list">
+            <li>Validación humana</li>
+            <li>Atribución y trazabilidad</li>
+            <li>Read-only / sin auto-aplicación al catálogo</li>
+            <li>Recomendaciones explicables (sin caja negra)</li>
+            <li>Minimización y anonimato en el Observatorio</li>
+          </ul>
+        </article>
+        <article class="info-block">
+          <h2>Estado Alpha</h2>
+          <p>
+            <strong>DB2S-GEO v0.9 Alpha</strong> está listo para demostraciones y pruebas
+            con usuarios externos. La arquitectura principal es funcional; la prioridad
+            es presentación, documentación, identidad y despliegue — no nuevos motores.
+          </p>
+        </article>
+        <p class="info-nav">
+          <button type="button" class="btn" data-go="cite">Cómo citar</button>
+          <button type="button" class="btn" data-go="author">Autoría</button>
+        </p>
+      </section>
+
+      <!-- CÓMO CITAR -->
+      <section id="panel-cite" class="panel">
+        <div class="panel-head">
+          <h1>Cómo citar esta plataforma</h1>
+          <p>Referencias sugeridas para uso académico e institucional.</p>
+        </div>
+        <article class="info-block">
+          <h2>Cita sugerida</h2>
+          <blockquote class="cite-box" id="cite-suggested">
+            Benavides, D. A. (2026). DB2S-GEO: Plataforma de conocimiento geoespacial
+            (versión 0.9 Alpha) [plataforma de software]. Consultado el [fecha].
+          </blockquote>
+        </article>
+        <article class="info-block">
+          <h2>Autor</h2>
+          <p>Dany Arbey Benavides</p>
+        </article>
+        <article class="info-block">
+          <h2>Versión</h2>
+          <p>DB2S-GEO v0.9 Alpha · <code>0.9.0-alpha</code></p>
+        </article>
+        <article class="info-block">
+          <h2>Fecha de consulta recomendada</h2>
+          <p>
+            Indique la fecha en que consultó la plataforma (formato AAAA-MM-DD).
+            Ejemplo: <span id="cite-today" class="mono"></span>
+          </p>
+        </article>
+        <article class="info-block">
+          <h2>Referencia corta</h2>
+          <pre class="cite-box" id="cite-short">Benavides, D. A. (2026). DB2S-GEO: Plataforma de conocimiento geoespacial (v0.9 Alpha).</pre>
+        </article>
+        <article class="info-block">
+          <h2>Referencia larga</h2>
+          <pre class="cite-box" id="cite-long">Benavides, D. A. (2026). DB2S-GEO: Plataforma de conocimiento geoespacial (versión 0.9 Alpha) [plataforma de software]. Consultado el [fecha].</pre>
+        </article>
+        <p class="info-nav">
+          <button type="button" class="btn" data-go="about">Acerca de</button>
+          <button type="button" class="btn" data-go="author">Autoría</button>
+        </p>
+      </section>
+
+      <!-- AUTORÍA -->
+      <section id="panel-author" class="panel">
+        <div class="panel-head">
+          <h1>Autoría</h1>
+          <p>Créditos y declaración de asistencia técnica.</p>
+        </div>
+        <article class="info-block">
+          <h2>Proyecto concebido y desarrollado por</h2>
+          <p class="author-name">Dany Arbey Benavides</p>
+        </article>
+        <article class="info-block">
+          <h2>Declaración de asistencia mediante inteligencia artificial</h2>
+          <p>
+            Durante el desarrollo se utilizaron herramientas de IA como
+            <strong>asistentes técnicos</strong>:
+          </p>
+          <ul class="plain-list">
+            <li>Microsoft Copilot</li>
+            <li>Cursor</li>
+            <li>DeepSeek</li>
+          </ul>
+          <p>
+            Las decisiones de diseño, arquitectura, curaduría y dirección del proyecto
+            corresponden al autor.
+          </p>
+        </article>
+        <p class="info-nav">
+          <button type="button" class="btn" data-go="about">Acerca de</button>
+          <button type="button" class="btn" data-go="cite">Cómo citar</button>
+        </p>
+      </section>
+
+      <!-- APOYA EL DESARROLLO -->
+      <section id="panel-support" class="panel">
+        <div class="panel-head">
+          <h1>Apoya el desarrollo de DB2S-GEO</h1>
+          <p>Sostenibilidad operativa del proyecto · aportes voluntarios.</p>
+        </div>
+        <article class="info-block">
+          <h2>¿Por qué aportar?</h2>
+          <p>
+            DB2S-GEO es un proyecto independiente. Los aportes voluntarios contribuyen
+            a su mantenimiento, evolución y disponibilidad para la comunidad.
+          </p>
+        </article>
+        <article class="info-block">
+          <h2>Principios</h2>
+          <ul class="plain-list">
+            <li>Transparencia</li>
+            <li>Independencia técnica y científica</li>
+            <li>Neutralidad de resultados</li>
+            <li>Sin ventajas para contribuyentes</li>
+          </ul>
+          <p>
+            Las contribuciones <strong>no afectan</strong> recomendaciones, rankings,
+            descubrimiento, curaduría ni decisiones técnicas o científicas.
+          </p>
+        </article>
+        <article class="info-block">
+          <h2>Próximos canales</h2>
+          <p>
+            Los enlaces de contribución voluntaria se publicarán aquí cuando estén
+            disponibles. Mientras tanto, puede citar el proyecto y compartir su uso
+            responsable en contextos académicos e institucionales.
+          </p>
+          <p class="support-slot" data-support-slot>
+            <!-- Reserva: enlaces de aporte (Patreon, PayPal, etc.) -->
+          </p>
+        </article>
+        <p class="info-nav">
+          <button type="button" class="btn" data-go="cite">Cómo citar</button>
+          <button type="button" class="btn" data-go="about">Acerca de</button>
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="footer-inner footer-grid">
+        <div class="footer-col footer-col-authorship">
+          <p class="footer-copy">© DB2S-GEO · 2026</p>
+          <p class="footer-credit">
+            Proyecto concebido y desarrollado por<br />
+            <strong>Dany Arbey Benavides</strong>
+          </p>
+        </div>
+        <div class="footer-col footer-col-sustain">
+          <button type="button" class="footer-link-btn" data-go="cite">
+            Cómo citar esta plataforma
+          </button>
+          <button type="button" class="footer-link-btn" data-go="support">
+            Apoya el desarrollo de DB2S-GEO
+          </button>
+        </div>
+        <div class="footer-col footer-col-tech">
+          <a href="/docs" target="_blank" rel="noopener">API</a>
+        </div>
+      </div>
+      <p class="footer-version-line">
+        <span id="app-version">DB2S-GEO v0.9 Alpha</span>
+      </p>
+    </footer>
+  </div>
+  <script src="/workbench/static/workbench.js"></script>
+</body>
+</html>

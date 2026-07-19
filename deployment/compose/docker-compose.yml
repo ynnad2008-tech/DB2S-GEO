@@ -1,0 +1,6 @@
+# DB2S-GEO — compose placeholder (Phase 0)
+# No services are wired for production use.
+#
+# version: "3.9"
+# services: {}
+services: {}

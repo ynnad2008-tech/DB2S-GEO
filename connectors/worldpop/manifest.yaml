@@ -1,0 +1,13 @@
+connector_id: "worldpop"
+source_name: "WorldPop"
+version: "1.0.0"
+status: "mvp"
+mvp: true
+country_or_scope: "Global"
+domains:
+  - poblacion
+  - socioeconomico
+protocols:
+  - rest
+  - portal
+notes: "Fase 1 MVP — metadatos curados, read-only, sin descarga."

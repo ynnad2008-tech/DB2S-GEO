@@ -1,0 +1,14 @@
+connector_id: "ideam"
+source_name: "IDEAM"
+version: "1.0.0"
+status: "mvp"
+mvp: true
+country_or_scope: "Colombia"
+domains:
+  - clima
+  - hidrologia
+protocols:
+  - rest
+  - portal
+  - arcgis_rest
+notes: "Fase 1 MVP — metadatos curados, read-only, sin descarga."

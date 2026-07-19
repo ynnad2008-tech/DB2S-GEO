@@ -1,0 +1,9 @@
+connector_id: "unosat"
+source_name: "UNOSAT"
+version: "0.0.0"
+status: "skeleton"
+mvp: false
+country_or_scope: "Global"
+domains: []
+protocols: []
+notes: "Placeholder — sin implementacion."

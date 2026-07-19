@@ -1,0 +1,10 @@
+# Manifest de conector — plantilla DB2S-GEO
+connector_id: "template"
+source_name: "TEMPLATE"
+version: "0.0.0"
+status: "skeleton"
+mvp: false
+country_or_scope: ""
+domains: []
+protocols: []   # ogc | stac | arcgis_rest | rest | other
+notes: "Reemplazar campos al crear un conector real."
