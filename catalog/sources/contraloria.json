@@ -1,0 +1,75 @@
+{
+  "id": "contraloria",
+  "name": "Contraloría",
+  "description": "Órgano de control fiscal. Geoportal de obras de infraestructura y contratación pública georreferenciada. DB2S-GEO solo documenta acceso.",
+  "url": "https://www.contraloria.gov.co",
+  "category": "instituto",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Contraloría General de la República de Colombia",
+  "domains": [
+    "observacion_tierra",
+    "poblacion"
+  ],
+  "license": "Según términos Contraloría / Geoportal",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "contraloria:obras-infraestructura",
+      "name": "Geoportal Contraloría — obras de infraestructura pública",
+      "description": "Geoportal de la Contraloría General (DIARI): consulta georreferenciada de contratos y obras de infraestructura pública (SECOP, APPUI, megaobras), con avance físico-financiero para control fiscal y veeduría ciudadana. DB2S-GEO solo documenta el acceso; no descarga datos contractuales.",
+      "url": "https://geoportal.contraloria.gov.co/",
+      "category": "catalog",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según contratos y reportes publicados en el Geoportal"
+      },
+      "domains": [
+        "observacion_tierra",
+        "poblacion"
+      ],
+      "keywords": [
+        "obras",
+        "infraestructura",
+        "publica",
+        "control",
+        "fiscal",
+        "contratacion",
+        "estatal",
+        "secop",
+        "seguimiento",
+        "territorial",
+        "geoportal",
+        "transparencia",
+        "contraloria"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://geoportal.contraloria.gov.co/",
+          "label": "Geoportal Contraloría — obras e infraestructura"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.contraloria.gov.co",
+          "label": "Portal institucional Contraloría General"
+        }
+      ],
+      "formats": [
+        "geovisor",
+        "mapas",
+        "filtros contractuales",
+        "portal"
+      ],
+      "documentation_url": "https://www.contraloria.gov.co",
+      "doi": "",
+      "citation_reference": "Contraloría General de la República. Geoportal — obras de infraestructura y contratación pública georreferenciada. https://geoportal.contraloria.gov.co/"
+    }
+  ]
+}

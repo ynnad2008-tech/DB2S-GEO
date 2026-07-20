@@ -1,0 +1,178 @@
+{
+  "id": "sgc",
+  "name": "SGC",
+  "description": "Autoridad nacional en geociencias de Colombia. Fuente oficial de amenaza sísmica, geología, hidrogeología y cartografía temática geocientífica.",
+  "url": "https://www2.sgc.gov.co",
+  "category": "instituto",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Servicio Geológico Colombiano",
+  "domains": [
+    "observacion_tierra",
+    "hidrologia"
+  ],
+  "license": "Términos institucionales SGC / datos abiertos cuando apliquen",
+  "version": "1.2.0",
+  "resources": [
+    {
+      "id": "sgc:amenaza-sismica",
+      "name": "Amenaza sísmica nacional (SGC)",
+      "description": "Servicio geoespacial oficial del SGC con el mapa nacional de amenaza sísmica (PGA y productos asociados). Apoya gestión del riesgo, ordenamiento territorial y análisis de amenaza sísmica en Colombia. DB2S-GEO solo documenta el endpoint; no ejecuta consultas remotas.",
+      "url": "https://geoportal.sgc.gov.co",
+      "category": "geoservice",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación institucional del SGC"
+      },
+      "domains": [
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "amenaza",
+        "sismica",
+        "sismo",
+        "riesgo",
+        "geologico",
+        "geologia",
+        "ordenamiento",
+        "territorial",
+        "gestion",
+        "arcgis",
+        "mapserver",
+        "sgc",
+        "colombia"
+      ],
+      "access_methods": [
+        "arcgis",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.sgc.gov.co/arcgis/rest/services/Amenaza_Sismica/Mapa_Amenaza_Sismica_Nacional_PGA2475/MapServer",
+          "label": "Mapa Amenaza Sísmica Nacional PGA2475 MapServer"
+        },
+        {
+          "method": "portal",
+          "url": "https://geoportal.sgc.gov.co",
+          "label": "Geoportal SGC"
+        }
+      ],
+      "formats": [
+        "ArcGIS REST",
+        "JSON",
+        "imagen de mapa"
+      ],
+      "documentation_url": "https://geoportal.sgc.gov.co/arcgis/rest/services/Amenaza_Sismica/Mapa_Amenaza_Sismica_Nacional_PGA2475/MapServer",
+      "doi": "",
+      "citation_reference": "Servicio Geológico Colombiano. Amenaza sísmica nacional (Mapa Amenaza Sísmica Nacional PGA2475). Servicio ArcGIS REST MapServer. https://geoportal.sgc.gov.co/arcgis/rest/services/Amenaza_Sismica/Mapa_Amenaza_Sismica_Nacional_PGA2475/MapServer"
+    },
+    {
+      "id": "sgc:simma-geologia",
+      "name": "SIMMA — Capas temáticas geológicas (SGC)",
+      "description": "Servicio ArcGIS REST MapServer SIMMA/CapasTematicasXEscalas del SGC: cartografía temática geológica y capas asociadas por escalas. Apoya geociencias, geología nacional y servicios geológicos. DB2S-GEO solo documenta el endpoint; no ejecuta consultas remotas.",
+      "url": "https://geoportal.sgc.gov.co",
+      "category": "geoservice",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación institucional del SGC / SIMMA"
+      },
+      "domains": [
+        "observacion_tierra",
+        "suelos"
+      ],
+      "keywords": [
+        "geologia",
+        "geologia_nacional",
+        "cartografia",
+        "tematica",
+        "servicios",
+        "geologicos",
+        "geociencias",
+        "simma",
+        "arcgis",
+        "mapserver",
+        "sgc",
+        "colombia"
+      ],
+      "access_methods": [
+        "arcgis",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.sgc.gov.co/arcgis/rest/services/SIMMA/CapasTematicasXEscalas/MapServer",
+          "label": "SIMMA CapasTematicasXEscalas MapServer"
+        },
+        {
+          "method": "portal",
+          "url": "https://geoportal.sgc.gov.co",
+          "label": "Geoportal SGC"
+        }
+      ],
+      "formats": [
+        "ArcGIS REST",
+        "JSON",
+        "imagen de mapa"
+      ],
+      "documentation_url": "https://geoportal.sgc.gov.co/arcgis/rest/services/SIMMA/CapasTematicasXEscalas/MapServer",
+      "doi": "",
+      "citation_reference": "Servicio Geológico Colombiano. SIMMA — Capas temáticas por escalas (CapasTematicasXEscalas). Servicio ArcGIS REST MapServer. https://geoportal.sgc.gov.co/arcgis/rest/services/SIMMA/CapasTematicasXEscalas/MapServer"
+    },
+    {
+      "id": "sgc:agua-subterranea",
+      "name": "Inventario de puntos de agua subterránea (SGC)",
+      "description": "Inventario nacional de puntos de agua del SGC (pozos, manantiales y puntos asociados a aguas subterráneas y geotermia). Apoya hidrogeología y gestión de acuíferos. DB2S-GEO solo documenta el acceso; no descarga datos.",
+      "url": "https://www2.sgc.gov.co/sgc/mapas/Paginas/inventario-de-puntos-de-agua-en-Colombia.aspx",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según actualización institucional del inventario"
+      },
+      "domains": [
+        "hidrologia",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "hidrogeologia",
+        "pozos",
+        "manantiales",
+        "acuiferos",
+        "aguas",
+        "termales",
+        "subterranea",
+        "inventario",
+        "sgc",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal",
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www2.sgc.gov.co/sgc/mapas/Paginas/inventario-de-puntos-de-agua-en-Colombia.aspx",
+          "label": "Mapa inventario de puntos de agua (SGC)"
+        },
+        {
+          "method": "portal",
+          "url": "https://geoportal.sgc.gov.co",
+          "label": "Geoportal SGC (hidrogeología)"
+        }
+      ],
+      "formats": [
+        "portal web",
+        "tablero interactivo",
+        "servicios GIS"
+      ],
+      "documentation_url": "https://geoportal.sgc.gov.co",
+      "doi": "",
+      "citation_reference": "Servicio Geológico Colombiano. Inventario de puntos de agua en Colombia. https://www2.sgc.gov.co/sgc/mapas/Paginas/inventario-de-puntos-de-agua-en-Colombia.aspx"
+    }
+  ]
+}

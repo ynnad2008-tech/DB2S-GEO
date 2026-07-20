@@ -1,0 +1,198 @@
+{
+  "id": "invias",
+  "name": "INVIAS",
+  "description": "Instituto Nacional de Vías: HERMES (SIV), datos abiertos viales y mapa de vulnerabilidad faunística. DB2S-GEO solo documenta acceso.",
+  "url": "https://www.invias.gov.co",
+  "category": "instituto",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Instituto Nacional de Vías (INVIAS)",
+  "domains": [
+    "observacion_tierra",
+    "biodiversidad"
+  ],
+  "license": "Según términos INVIAS / HERMES",
+  "version": "1.1.0",
+  "resources": [
+    {
+      "id": "invias:hermes",
+      "name": "HERMES — Sistema de Información Vial (INVIAS)",
+      "description": "Sistema de Información Vial HERMES (SIV) del INVIAS: consulta de red vial nacional (concesionada y no concesionada), puentes, peajes y planificación de rutas. Incluye visor HERMES2 y servicios ArcGIS REST (mapa de carreteras / SIV). DB2S-GEO solo documenta el acceso; no descarga geometrías.",
+      "url": "https://hermes2.invias.gov.co/SIV/",
+      "category": "catalog",
+      "coverage": {
+        "spatial": "Colombia (red vial a cargo / publicada)",
+        "temporal": "Según actualizaciones HERMES / capas publicadas"
+      },
+      "domains": [
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "hermes",
+        "siv",
+        "red",
+        "vial",
+        "nacional",
+        "carreteras",
+        "puentes",
+        "peajes",
+        "viaje",
+        "seguro",
+        "conectividad",
+        "territorial",
+        "invias",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal",
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://hermes2.invias.gov.co/SIV/",
+          "label": "HERMES2 — Sistema de Información Vial"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://hermes.invias.gov.co/arcgis/rest/services/Mapa_Carreteras/Mapa_de_Carreteras/MapServer",
+          "label": "MapServer Mapa de Carreteras INVIAS"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://hermes.invias.gov.co/arcgis/rest/services/Sistema_informacion_vial/SIV_V20/MapServer",
+          "label": "MapServer SIV V20 HERMES"
+        }
+      ],
+      "formats": [
+        "visor web",
+        "MapServer",
+        "portal"
+      ],
+      "documentation_url": "https://hermes2.invias.gov.co/",
+      "doi": "",
+      "citation_reference": "Instituto Nacional de Vías (INVIAS). HERMES — Sistema de Información Vial. https://hermes2.invias.gov.co/SIV/"
+    },
+    {
+      "id": "invias:vulnerabilidad-faunistica",
+      "name": "Mapa de vulnerabilidad faunística al atropellamiento (INVIAS)",
+      "description": "Mapa nacional de vulnerabilidad faunística y riesgo de atropellamiento de fauna silvestre en vías primarias a cargo del INVIAS (ITM / Política de Sostenibilidad). Apoya pasos de fauna y mitigación en proyectos viales. Visor en HERMES. DB2S-GEO solo documenta el acceso; no descarga capas.",
+      "url": "https://hermes.invias.gov.co/VulnerabilidadFaunistica/",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia (red vial primaria INVIAS)",
+        "temporal": "Según versión del mapa publicada por INVIAS"
+      },
+      "domains": [
+        "biodiversidad",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "vulnerabilidad",
+        "faunistica",
+        "atropellamiento",
+        "fauna",
+        "corredores",
+        "ecologicos",
+        "conectividad",
+        "ecologica",
+        "infraestructura",
+        "vial",
+        "biodiversidad",
+        "sukubun",
+        "invias",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://hermes.invias.gov.co/VulnerabilidadFaunistica/",
+          "label": "Visor vulnerabilidad faunística INVIAS"
+        },
+        {
+          "method": "portal",
+          "url": "https://mintransporte.gov.co/publicaciones/10864/gobierno-nacional-lanza-mapa-para-identificar-puntos-de-mayor-vulnerabilidad-faunistica-al-atropellamiento-en-proyectos-viales/",
+          "label": "Lanzamiento oficial — MinTransporte / INVIAS"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.invias.gov.co",
+          "label": "Portal institucional INVIAS"
+        }
+      ],
+      "formats": [
+        "visor web",
+        "mapa",
+        "portal"
+      ],
+      "documentation_url": "https://mintransporte.gov.co/publicaciones/10864/gobierno-nacional-lanza-mapa-para-identificar-puntos-de-mayor-vulnerabilidad-faunistica-al-atropellamiento-en-proyectos-viales/",
+      "doi": "",
+      "citation_reference": "Instituto Nacional de Vías (INVIAS) / ITM. Mapa de vulnerabilidad faunística al atropellamiento en vías. https://hermes.invias.gov.co/VulnerabilidadFaunistica/"
+    },
+    {
+      "id": "invias:datos-abiertos-viales",
+      "name": "Datos abiertos de infraestructura vial (INVIAS)",
+      "description": "Conjuntos de datos abiertos oficiales del INVIAS sobre infraestructura vial: red vial, puentes, pontones, peajes y postes de referencia. Disponibles vía Open Data ArcGIS INVIAS, FeatureServer OpenData/HERMES y datos.gov.co. DB2S-GEO solo documenta el acceso; no descarga tablas.",
+      "url": "https://inviasopendata-invias.opendata.arcgis.com/",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de cada conjunto abierto"
+      },
+      "domains": [
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "datos",
+        "abiertos",
+        "vias",
+        "peajes",
+        "puentes",
+        "postes",
+        "referencia",
+        "infraestructura",
+        "vial",
+        "opendata",
+        "red",
+        "vial",
+        "invias",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal",
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://inviasopendata-invias.opendata.arcgis.com/",
+          "label": "Portal Open Data ArcGIS INVIAS"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://hermes.invias.gov.co/arcgis/rest/services/OpenData/ServiciosOpenData/FeatureServer",
+          "label": "FeatureServer OpenData — red, peajes, puentes"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.datos.gov.co/Transporte/Tr-fico-Peajes-Invias/tcfu-jngt",
+          "label": "Datos.gov.co — Tráfico Peajes INVIAS"
+        }
+      ],
+      "formats": [
+        "FeatureServer",
+        "CSV/tablas",
+        "portal Open Data"
+      ],
+      "documentation_url": "https://www.invias.gov.co/publicaciones/6264/sistema-de-informacion-vial/",
+      "doi": "",
+      "citation_reference": "Instituto Nacional de Vías (INVIAS). Datos abiertos de infraestructura vial. https://inviasopendata-invias.opendata.arcgis.com/"
+    }
+  ]
+}

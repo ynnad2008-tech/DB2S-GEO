@@ -1,0 +1,140 @@
+{
+  "id": "dane",
+  "name": "DANE",
+  "description": "Autoridad estadística nacional de Colombia. Documenta operaciones agropecuarias (ENA) y el acceso a EVA (producción municipal, UPRA/MADR) para seguridad alimentaria y economía rural. DB2S-GEO solo documenta acceso.",
+  "url": "https://www.dane.gov.co",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Departamento Administrativo Nacional de Estadística (DANE)",
+  "domains": [
+    "agricultura",
+    "poblacion"
+  ],
+  "license": "Según términos DANE / microdatos / datos abiertos",
+  "version": "1.1.0",
+  "resources": [
+    {
+      "id": "dane:encuesta-agropecuaria",
+      "name": "Encuesta Nacional Agropecuaria (ENA) — DANE",
+      "description": "Operación estadística del DANE que estima uso del suelo, área, producción y rendimiento de cultivos, inventario pecuario y producción de leche en Colombia. Boletines, anexos y microdatos oficiales. DB2S-GEO solo documenta el acceso; no descarga microdatos ni tablas.",
+      "url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/agropecuario/encuesta-nacional-agropecuaria-ena/",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia (32 departamentos según operación)",
+        "temporal": "Según año de operación ENA publicado"
+      },
+      "domains": [
+        "agricultura",
+        "poblacion"
+      ],
+      "keywords": [
+        "encuesta",
+        "nacional",
+        "agropecuaria",
+        "ena",
+        "produccion",
+        "rendimiento",
+        "cultivos",
+        "inventario",
+        "pecuario",
+        "seguridad",
+        "alimentaria",
+        "estadisticas",
+        "rurales",
+        "dane"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/agropecuario/encuesta-nacional-agropecuaria-ena/",
+          "label": "ENA — página oficial DANE"
+        },
+        {
+          "method": "portal",
+          "url": "https://microdatos.dane.gov.co/",
+          "label": "Archivo de microdatos DANE"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.dane.gov.co",
+          "label": "Portal institucional DANE"
+        }
+      ],
+      "formats": [
+        "boletines",
+        "anexos",
+        "microdatos",
+        "portal"
+      ],
+      "documentation_url": "https://www.dane.gov.co/index.php/estadisticas-por-tema/agropecuario/encuesta-nacional-agropecuaria-ena/",
+      "doi": "",
+      "citation_reference": "Departamento Administrativo Nacional de Estadística (DANE). Encuesta Nacional Agropecuaria (ENA). https://www.dane.gov.co/index.php/estadisticas-por-tema/agropecuario/encuesta-nacional-agropecuaria-ena/"
+    },
+    {
+      "id": "dane:eva-agricola",
+      "name": "Evaluaciones Agropecuarias Municipales (EVA)",
+      "description": "Evaluaciones Agropecuarias Municipales (EVA): estadísticas de área, producción y rendimiento de cultivos a escala municipal (operación a cargo de UPRA / MADR; difusión también vía Agronet y datos.gov.co). Complementa la ENA del DANE para análisis de producción agrícola. DB2S-GEO solo documenta el acceso; no descarga bases.",
+      "url": "https://upra.gov.co/es-co/eva",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia (municipios con reporte EVA)",
+        "temporal": "Según serie publicada (p. ej. 2019–2024)"
+      },
+      "domains": [
+        "agricultura"
+      ],
+      "keywords": [
+        "eva",
+        "evaluaciones",
+        "agropecuarias",
+        "municipales",
+        "agricultura",
+        "produccion",
+        "rendimiento",
+        "cultivos",
+        "area",
+        "cosechada",
+        "estadisticas",
+        "oficiales",
+        "upra",
+        "dane"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://upra.gov.co/es-co/eva",
+          "label": "EVA — portal UPRA"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Evaluaciones-Agropecuarias-Municipales-EVA/2pnw-mmge",
+          "label": "EVA — Datos Abiertos Colombia"
+        },
+        {
+          "method": "portal",
+          "url": "https://agronet.gov.co/plataformas/evaluaciones-agropecuarias-municipales-eva",
+          "label": "EVA — Agronet"
+        }
+      ],
+      "formats": [
+        "CSV/tablas",
+        "portal",
+        "SIPRA",
+        "datos abiertos"
+      ],
+      "documentation_url": "https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Evaluaciones-Agropecuarias-Municipales-EVA/2pnw-mmge",
+      "doi": "",
+      "citation_reference": "Unidad de Planificación Rural Agropecuaria (UPRA) / MADR. Evaluaciones Agropecuarias Municipales (EVA). https://upra.gov.co/es-co/eva"
+    }
+  ]
+}

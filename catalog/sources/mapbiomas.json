@@ -1,0 +1,202 @@
+{
+  "id": "mapbiomas",
+  "name": "MapBiomas",
+  "description": "Iniciativa de mapeo de cobertura, uso del suelo y dinámica de agua superficial (MapBiomas Colombia). DB2S-GEO solo documenta acceso; no descarga productos.",
+  "url": "https://colombia.mapbiomas.org",
+  "category": "iniciativa",
+  "coverage": {
+    "spatial": "Colombia / Panamazonía",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "MapBiomas Colombia / Red Amazónica de Información Socioambiental",
+  "domains": [
+    "observacion_tierra",
+    "hidrologia",
+    "agricultura"
+  ],
+  "license": "Según términos MapBiomas Colombia / colección específica",
+  "version": "1.2.0",
+  "resources": [
+    {
+      "id": "mapbiomas:agua-colombia",
+      "name": "MapBiomas Agua Colombia — agua superficial",
+      "description": "Colección MapBiomas Agua Colombia: dinámica de agua superficial (mensual/anual), transiciones y tendencias. Apoya análisis de pérdida/ganancia hídrica y monitoreo de cuerpos de agua. DB2S-GEO solo documenta el acceso; no descarga rasters.",
+      "url": "https://plataforma.agua.mapbiomas.org/",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "1998–2024 (según colección publicada)"
+      },
+      "domains": [
+        "hidrologia",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "agua",
+        "superficial",
+        "glaciares",
+        "dinamica",
+        "hidrica",
+        "perdida",
+        "ganancia",
+        "mapbiomas",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal",
+        "platform"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://plataforma.agua.mapbiomas.org/",
+          "label": "Plataforma MapBiomas Agua"
+        },
+        {
+          "method": "portal",
+          "url": "https://colombia.mapbiomas.org/metodologia-mapbiomas-agua/",
+          "label": "Metodología MapBiomas Agua Colombia"
+        },
+        {
+          "method": "portal",
+          "url": "https://colombia.mapbiomas.org",
+          "label": "MapBiomas Colombia"
+        }
+      ],
+      "formats": [
+        "GeoTIFF",
+        "plataforma web",
+        "estadísticas"
+      ],
+      "documentation_url": "https://colombia.mapbiomas.org/metodologia-mapbiomas-agua/",
+      "doi": "",
+      "citation_reference": "MapBiomas Colombia. Colección MapBiomas Agua Colombia — dinámica de agua superficial. https://plataforma.agua.mapbiomas.org/"
+    },
+    {
+      "id": "mapbiomas:cobertura-colombia",
+      "name": "MapBiomas Colombia — cobertura y uso del suelo",
+      "description": "Colección anual de mapas de cobertura y uso del suelo de MapBiomas Colombia (Colección 3.0, serie histórica desde 1985). Disponible vía portal, descargas GeoTIFF y assets en Google Earth Engine. Apoya monitoreo territorial, cambio de cobertura y análisis de paisaje. DB2S-GEO solo documenta el acceso; no descarga rasters.",
+      "url": "https://colombia.mapbiomas.org",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia (superficie continental)",
+        "temporal": "1985–2024 (según colección publicada)"
+      },
+      "domains": [
+        "observacion_tierra",
+        "agricultura"
+      ],
+      "keywords": [
+        "cobertura",
+        "uso",
+        "suelo",
+        "lulc",
+        "paisaje",
+        "monitoreo",
+        "territorial",
+        "cambio",
+        "transicion",
+        "clasificacion",
+        "mapbiomas",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal",
+        "platform",
+        "gee"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://colombia.mapbiomas.org",
+          "label": "MapBiomas Colombia"
+        },
+        {
+          "method": "portal",
+          "url": "https://colombia.mapbiomas.org/segunda-coleccion-de-mapbiomas-colombia/",
+          "label": "Colecciones — descarga cobertura y uso"
+        },
+        {
+          "method": "portal",
+          "url": "https://colombia.mapbiomas.org/herramientas/",
+          "label": "Herramientas y assets GEE MapBiomas Colombia"
+        },
+        {
+          "method": "gee",
+          "url": "https://code.earthengine.google.com/?asset=projects/mapbiomas-colombia/assets/LULC/COLECCION3/INTEGRACION/COLOMBIA-1",
+          "label": "GEE asset Colección 3.0 — projects/mapbiomas-colombia/assets/LULC/COLECCION3/INTEGRACION/COLOMBIA-1"
+        }
+      ],
+      "formats": [
+        "GeoTIFF",
+        "GEE asset",
+        "plataforma web",
+        "estadísticas"
+      ],
+      "documentation_url": "https://colombia.mapbiomas.org/herramientas/",
+      "doi": "",
+      "citation_reference": "MapBiomas Colombia. Colección de mapas anuales de cobertura y uso del suelo (Colección 3.0). https://colombia.mapbiomas.org/"
+    },
+    {
+      "id": "mapbiomas:transiciones-cobertura",
+      "name": "MapBiomas Colombia — transiciones de cobertura y uso",
+      "description": "Mapas de transición entre años seleccionados de la Colección 3.0 de MapBiomas Colombia: dinámica de cambio de cobertura y uso del suelo, transformación del paisaje y estadísticas multitemporales. Acceso vía portal, herramientas y asset GEE. DB2S-GEO solo documenta el acceso; no descarga rasters.",
+      "url": "https://colombia.mapbiomas.org",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia (superficie continental)",
+        "temporal": "Pares de años según colección publicada (desde 1985)"
+      },
+      "domains": [
+        "observacion_tierra",
+        "agricultura"
+      ],
+      "keywords": [
+        "transiciones",
+        "dinamica",
+        "territorial",
+        "cambio",
+        "uso",
+        "cobertura",
+        "transformacion",
+        "paisaje",
+        "multitemporal",
+        "estadisticas",
+        "mapbiomas",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal",
+        "platform",
+        "gee"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://colombia.mapbiomas.org/herramientas/",
+          "label": "Herramientas — transiciones MapBiomas Colombia"
+        },
+        {
+          "method": "portal",
+          "url": "https://colombia.mapbiomas.org",
+          "label": "MapBiomas Colombia"
+        },
+        {
+          "method": "gee",
+          "url": "https://code.earthengine.google.com/?asset=projects/mapbiomas-colombia/assets/LULC/COLECCION3/INTEGRACION/mapbiomas_colombia_collection3_transitions_v1",
+          "label": "GEE asset transiciones Col. 3.0 — projects/mapbiomas-colombia/assets/LULC/COLECCION3/INTEGRACION/mapbiomas_colombia_collection3_transitions_v1"
+        }
+      ],
+      "formats": [
+        "GeoTIFF",
+        "GEE asset",
+        "plataforma web",
+        "estadísticas"
+      ],
+      "documentation_url": "https://colombia.mapbiomas.org/herramientas/",
+      "doi": "",
+      "citation_reference": "MapBiomas Colombia. Mapas de transición de cobertura y uso del suelo (Colección 3.0). https://colombia.mapbiomas.org/herramientas/"
+    }
+  ]
+}

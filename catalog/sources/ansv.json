@@ -1,0 +1,79 @@
+{
+  "id": "ansv",
+  "name": "ANSV",
+  "description": "Agencia Nacional de Seguridad Vial: Observatorio y geoportal de siniestralidad vial. DB2S-GEO solo documenta acceso.",
+  "url": "https://ansv.gov.co",
+  "category": "instituto",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Agencia Nacional de Seguridad Vial (ANSV)",
+  "domains": [
+    "observacion_tierra",
+    "poblacion"
+  ],
+  "license": "Según términos ANSV / Observatorio Nacional de Seguridad Vial",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "ansv:siniestralidad-vial",
+      "name": "Geoportal de siniestralidad vial (ANSV / Observatorio)",
+      "description": "Geoportal del Observatorio Nacional de Seguridad Vial (ANSV): mapas interactivos de distribución geográfica de siniestros, muertes y lesionados, cámaras salva-vidas y variables de seguridad vial. Incluye Hub ArcGIS y servicios REST. DB2S-GEO solo documenta el acceso; no descarga datos.",
+      "url": "https://geoportal-ansv-ansv.hub.arcgis.com/",
+      "category": "catalog",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según series del Observatorio / anuarios"
+      },
+      "domains": [
+        "observacion_tierra",
+        "poblacion"
+      ],
+      "keywords": [
+        "siniestralidad",
+        "vial",
+        "seguridad",
+        "siniestros",
+        "transito",
+        "accidentalidad",
+        "transporte",
+        "movilidad",
+        "observatorio",
+        "geoportal",
+        "ansv"
+      ],
+      "access_methods": [
+        "portal",
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://geoportal-ansv-ansv.hub.arcgis.com/",
+          "label": "Hub Geoportal ANSV"
+        },
+        {
+          "method": "portal",
+          "url": "https://ansv.gov.co/observatorio/estad%C3%ADsticas",
+          "label": "Observatorio ANSV — estadísticas / geoportal"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://srvansvargweb.ansv.gov.co/server/rest/services",
+          "label": "Directorio REST servicios ANSV"
+        }
+      ],
+      "formats": [
+        "geovisor",
+        "Hub ArcGIS",
+        "MapServer",
+        "estadísticas"
+      ],
+      "documentation_url": "https://ansv.gov.co/observatorio/estad%C3%ADsticas",
+      "doi": "",
+      "citation_reference": "Agencia Nacional de Seguridad Vial (ANSV). Geoportal / Observatorio Nacional de Seguridad Vial — siniestralidad. https://geoportal-ansv-ansv.hub.arcgis.com/"
+    }
+  ]
+}

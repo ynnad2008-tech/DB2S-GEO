@@ -1,0 +1,185 @@
+{
+  "id": "worldpop",
+  "name": "WorldPop",
+  "description": "Proyecto de demografía espacial de alta resolución: densidad, conteos y estructuras poblacionales.",
+  "url": "https://www.worldpop.org",
+  "category": "academia",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "WorldPop (University of Southampton / WorldPop Project)",
+  "domains": [
+    "poblacion"
+  ],
+  "license": "CC BY 4.0 (verificar producto específico en WorldPop)",
+  "version": "1.1.0",
+  "resources": [
+    {
+      "id": "worldpop:population-density",
+      "name": "WorldPop Population Density",
+      "description": "Rasters de densidad poblacional a alta resolución espacial producidos por WorldPop.",
+      "url": "https://hub.worldpop.org",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global / por país",
+        "temporal": "Años de referencia según producto"
+      },
+      "domains": [
+        "poblacion"
+      ],
+      "keywords": [
+        "densidad poblacional",
+        "poblacion",
+        "raster",
+        "worldpop"
+      ],
+      "access_methods": [
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://hub.worldpop.org",
+          "label": "WorldPop Data Hub"
+        },
+        {
+          "method": "api",
+          "url": "https://www.worldpop.org/rest/data",
+          "label": "WorldPop REST (metadatos / listados)"
+        }
+      ],
+      "formats": [
+        "GeoTIFF",
+        "metadata"
+      ],
+      "documentation_url": "https://www.worldpop.org/methods/",
+      "doi": "10.5258/SOTON/WP00647",
+      "citation_reference": "WorldPop. Open Spatial Demographic Data and Research. University of Southampton."
+    },
+    {
+      "id": "worldpop:population-counts",
+      "name": "WorldPop Population Counts",
+      "description": "Estimaciones de conteo poblacional en grilla, desagregadas espacialmente.",
+      "url": "https://hub.worldpop.org",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global / por país",
+        "temporal": "Años de referencia según producto"
+      },
+      "domains": [
+        "poblacion"
+      ],
+      "keywords": [
+        "conteo poblacional",
+        "poblacion",
+        "grilla",
+        "worldpop"
+      ],
+      "access_methods": [
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://hub.worldpop.org",
+          "label": "WorldPop Data Hub"
+        }
+      ],
+      "formats": [
+        "GeoTIFF"
+      ],
+      "documentation_url": "https://www.worldpop.org/methods/",
+      "doi": "",
+      "citation_reference": "WorldPop. Population counts datasets. University of Southampton."
+    },
+    {
+      "id": "worldpop:age-sex",
+      "name": "WorldPop Age and Sex Structures",
+      "description": "Estructuras de edad y sexo desagregadas espacialmente (productos WorldPop).",
+      "url": "https://hub.worldpop.org",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global / por país",
+        "temporal": "Años de referencia según producto"
+      },
+      "domains": [
+        "poblacion"
+      ],
+      "keywords": [
+        "edad",
+        "sexo",
+        "estructura poblacional",
+        "poblacion",
+        "worldpop"
+      ],
+      "access_methods": [
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://hub.worldpop.org",
+          "label": "WorldPop Data Hub"
+        }
+      ],
+      "formats": [
+        "GeoTIFF"
+      ],
+      "documentation_url": "https://www.worldpop.org/methods/",
+      "doi": "",
+      "citation_reference": "WorldPop. Age and sex structures. University of Southampton."
+    },
+    {
+      "id": "worldpop:colombia",
+      "name": "Población de Colombia (WorldPop)",
+      "description": "Productos demográficos espaciales de WorldPop filtrados a Colombia (ISO3=COL): densidad y conteos poblacionales de alta resolución. Apoya exposición, riesgo y planeación territorial. DB2S-GEO solo documenta el endpoint; no descarga rasters.",
+      "url": "https://hub.worldpop.org",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Años de referencia según producto WorldPop"
+      },
+      "domains": [
+        "poblacion"
+      ],
+      "keywords": [
+        "poblacion",
+        "colombia",
+        "exposicion",
+        "riesgo",
+        "planeacion",
+        "territorial",
+        "densidad",
+        "worldpop"
+      ],
+      "access_methods": [
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "api",
+          "url": "https://www.worldpop.org/rest/data/pop/wpgp?iso3=COL",
+          "label": "WorldPop REST población Colombia (iso3=COL)"
+        },
+        {
+          "method": "portal",
+          "url": "https://hub.worldpop.org",
+          "label": "WorldPop Data Hub"
+        }
+      ],
+      "formats": [
+        "GeoTIFF",
+        "JSON (metadatos REST)"
+      ],
+      "documentation_url": "https://www.worldpop.org/methods/",
+      "doi": "10.5258/SOTON/WP00647",
+      "citation_reference": "WorldPop. Population datasets — Colombia (ISO3=COL). University of Southampton. https://www.worldpop.org/rest/data/pop/wpgp?iso3=COL"
+    }
+  ]
+}

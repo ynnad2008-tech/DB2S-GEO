@@ -1,0 +1,77 @@
+# Validación de catálogo + tests + deploy Cloud Run (DB2S-GEO 0.2)
+
+name: catalog-and-deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install -r backend/requirements.txt
+      - name: Validate catalog
+        run: python scripts/validate_catalog.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: catalog-report
+          path: catalog/reports/latest_validation.json
+
+  unit-tests:
+    needs: validate-catalog
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r backend/requirements.txt
+      - run: python -m pytest tests/unit -q
+
+  # Activar con variable de repo DEPLOY_CLOUD_RUN=true + secrets GCP_*
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push' && vars.DEPLOY_CLOUD_RUN == 'true'
+    needs: [validate-catalog, unit-tests]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+      - uses: google-github-actions/setup-gcloud@v2
+      - name: Build and deploy Cloud Run
+        run: |
+          set -euo pipefail
+          PROJECT_ID="${{ secrets.GCP_PROJECT_ID }}"
+          REGION="us-central1"
+          SERVICE="db2s-geo"
+          TAG="gcr.io/${PROJECT_ID}/${SERVICE}:${GITHUB_SHA}"
+          gcloud config set project "${PROJECT_ID}"
+          gcloud builds submit --tag "${TAG}"
+          gcloud run deploy "${SERVICE}" \
+            --image "${TAG}" \
+            --region "${REGION}" \
+            --platform managed \
+            --allow-unauthenticated \
+            --memory 512Mi \
+            --cpu 1 \
+            --port 8080 \
+            --set-env-vars "ENVIRONMENT=preview,TELEMETRY_DB_PATH=/tmp/telemetry/queries.db"
+          URL=$(gcloud run services describe "${SERVICE}" --region "${REGION}" --format='value(status.url)')
+          curl -fsS "${URL}/healthz"
+          curl -fsS "${URL}/version"
+          curl -fsS "${URL}/graph/stats"

@@ -1,0 +1,200 @@
+{
+  "id": "upra",
+  "name": "UPRA",
+  "description": "Unidad de Planificación Rural Agropecuaria: aptitud de tierras, frontera agrícola, zonificación productiva y planificación rural vía SIPRA y geoservicios. DB2S-GEO solo documenta acceso.",
+  "url": "https://upra.gov.co",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Unidad de Planificación Rural Agropecuaria (UPRA) — Ministerio de Agricultura y Desarrollo Rural",
+  "domains": [
+    "agricultura",
+    "suelos"
+  ],
+  "license": "Uso libre según términos UPRA / SIPRA",
+  "version": "1.1.0",
+  "resources": [
+    {
+      "id": "upra:aptitud-agropecuaria",
+      "name": "Aptitud agropecuaria y evaluación de tierras (UPRA / SIPRA)",
+      "description": "Mapas y consultas de aptitud de la tierra por cadena productiva y evaluación de tierras de la UPRA, expuestos en el Sistema de Información para la Planificación Rural Agropecuaria (SIPRA). Soporta planificación rural, sistemas productivos y uso eficiente del suelo. DB2S-GEO solo documenta el acceso; no descarga capas.",
+      "url": "https://sipra.upra.gov.co/",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia (nacional y departamental según capa)",
+        "temporal": "Según publicación de capas SIPRA / UPRA"
+      },
+      "domains": [
+        "agricultura",
+        "suelos"
+      ],
+      "keywords": [
+        "aptitud",
+        "agropecuaria",
+        "evaluacion",
+        "tierras",
+        "zonificacion",
+        "cadenas",
+        "productivas",
+        "planificacion",
+        "rural",
+        "sipra",
+        "upra",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal",
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://sipra.upra.gov.co/",
+          "label": "SIPRA — Sistema de Información UPRA"
+        },
+        {
+          "method": "portal",
+          "url": "https://sipra.upra.gov.co/nacional",
+          "label": "SIPRA nacional (aptitud y temáticas)"
+        },
+        {
+          "method": "portal",
+          "url": "https://upra.gov.co",
+          "label": "Portal institucional UPRA"
+        }
+      ],
+      "formats": [
+        "mapas",
+        "servicios web",
+        "portal",
+        "consulta espacial"
+      ],
+      "documentation_url": "https://upra.gov.co/es-co/planificacion-del-ordenamiento-agropecuario/sistemas-de-informacion",
+      "doi": "",
+      "citation_reference": "Unidad de Planificación Rural Agropecuaria (UPRA). Aptitud agropecuaria y evaluación de tierras — SIPRA. https://sipra.upra.gov.co/"
+    },
+    {
+      "id": "upra:frontera-agricola",
+      "name": "Frontera agrícola nacional (UPRA)",
+      "description": "Delimitación oficial de la frontera agrícola nacional de Colombia (UPRA), disponible en SIPRA y como servicio ArcGIS REST de ordenamiento productivo. Apoya análisis de expansión productiva, uso del suelo y planificación territorial sostenible. DB2S-GEO solo documenta el acceso; no descarga geometrías.",
+      "url": "https://sipra.upra.gov.co/",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según versión oficial publicada por UPRA"
+      },
+      "domains": [
+        "agricultura",
+        "suelos"
+      ],
+      "keywords": [
+        "frontera",
+        "agricola",
+        "expansion",
+        "productiva",
+        "uso",
+        "suelo",
+        "sostenibilidad",
+        "planificacion",
+        "territorial",
+        "ordenamiento",
+        "sipra",
+        "upra",
+        "colombia"
+      ],
+      "access_methods": [
+        "arcgis",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://geoservicios.upra.gov.co/arcgis/rest/services/ordenamiento_productivo/frontera_agricola/MapServer",
+          "label": "MapServer frontera agrícola UPRA"
+        },
+        {
+          "method": "portal",
+          "url": "https://sipra.upra.gov.co/",
+          "label": "SIPRA — consulta frontera agrícola"
+        },
+        {
+          "method": "portal",
+          "url": "https://upra.gov.co",
+          "label": "Portal institucional UPRA"
+        }
+      ],
+      "formats": [
+        "MapServer",
+        "mapas",
+        "portal"
+      ],
+      "documentation_url": "https://geoservicios.upra.gov.co/arcgis/rest/services/ordenamiento_productivo/frontera_agricola/MapServer",
+      "doi": "",
+      "citation_reference": "Unidad de Planificación Rural Agropecuaria (UPRA). Frontera agrícola nacional. https://geoservicios.upra.gov.co/arcgis/rest/services/ordenamiento_productivo/frontera_agricola/MapServer"
+    },
+    {
+      "id": "upra:zonificacion-productiva",
+      "name": "Zonificación productiva y cadenas agropecuarias (UPRA / SIPRA)",
+      "description": "Capas de zonificación de aptitud y evaluación de tierras por cadena productiva de la UPRA, consultables en SIPRA (nacional y departamental). Apoya planificación agropecuaria, modelos productivos y ordenamiento rural. DB2S-GEO solo documenta el acceso; no descarga capas.",
+      "url": "https://sipra.upra.gov.co/",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia (nacional y departamental según capa)",
+        "temporal": "Según publicación de capas SIPRA / UPRA"
+      },
+      "domains": [
+        "agricultura",
+        "suelos"
+      ],
+      "keywords": [
+        "zonificacion",
+        "productiva",
+        "cadenas",
+        "productivas",
+        "cultivos",
+        "planificacion",
+        "agropecuaria",
+        "modelos",
+        "productivos",
+        "ordenamiento",
+        "rural",
+        "sipra",
+        "upra",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal",
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://sipra.upra.gov.co/nacional",
+          "label": "SIPRA nacional — zonificación y aptitud"
+        },
+        {
+          "method": "portal",
+          "url": "https://sipra.upra.gov.co/",
+          "label": "SIPRA — Sistema de Información UPRA"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoservicios.upra.gov.co/arcgis/rest/services/ordenamiento_productivo",
+          "label": "Geoservicios ordenamiento productivo UPRA"
+        }
+      ],
+      "formats": [
+        "mapas",
+        "servicios web",
+        "portal",
+        "consulta espacial"
+      ],
+      "documentation_url": "https://upra.gov.co/es-co/planificacion-del-ordenamiento-agropecuario/sistemas-de-informacion",
+      "doi": "",
+      "citation_reference": "Unidad de Planificación Rural Agropecuaria (UPRA). Zonificación productiva y evaluación de tierras por cadena — SIPRA. https://sipra.upra.gov.co/"
+    }
+  ]
+}

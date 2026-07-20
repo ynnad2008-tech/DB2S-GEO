@@ -1,0 +1,79 @@
+{
+  "id": "upit",
+  "name": "UPIT",
+  "description": "Unidad de Planeación de Infraestructura de Transporte: Hub de Mapas y servicios GIS para planeación multimodal. DB2S-GEO solo documenta acceso.",
+  "url": "https://upit.gov.co",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Unidad de Planeación de Infraestructura de Transporte (UPIT) — Ministerio de Transporte",
+  "domains": [
+    "observacion_tierra"
+  ],
+  "license": "Según términos UPIT / Hub de Mapas",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "upit:hub-transporte",
+      "name": "Hub de Mapas UPIT — infraestructura y transporte",
+      "description": "Hub institucional de mapas de la UPIT: datos, indicadores, tableros y geovisores sobre infraestructura de transporte (carretero, férreo, fluvial, aéreo) y planeación sectorial. Incluye servicios REST GIS UPIT. DB2S-GEO solo documenta el acceso; no descarga capas.",
+      "url": "https://upithub-upit.hub.arcgis.com/",
+      "category": "catalog",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según capas y tableros publicados en el Hub"
+      },
+      "domains": [
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "hub",
+        "mapas",
+        "transporte",
+        "planeacion",
+        "infraestructura",
+        "webmaps",
+        "movilidad",
+        "analisis",
+        "territorial",
+        "tableros",
+        "geovisores",
+        "upit",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal",
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://upithub-upit.hub.arcgis.com/",
+          "label": "Hub de Mapas UPIT"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://gis.upit.gov.co/wa_server/rest/services",
+          "label": "Directorio REST GIS UPIT"
+        },
+        {
+          "method": "portal",
+          "url": "https://upit.gov.co",
+          "label": "Portal institucional UPIT"
+        }
+      ],
+      "formats": [
+        "Hub ArcGIS",
+        "geovisores",
+        "FeatureServer",
+        "tableros"
+      ],
+      "documentation_url": "https://upit.gov.co/",
+      "doi": "",
+      "citation_reference": "Unidad de Planeación de Infraestructura de Transporte (UPIT). Hub de Mapas — infraestructura de transporte. https://upithub-upit.hub.arcgis.com/"
+    }
+  ]
+}

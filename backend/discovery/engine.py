@@ -164,6 +164,7 @@ class DiscoveryEngine:
             "opensearch": False,
             "curation": "human",
             "security": "read_only",
+            "catalog": "json_active_only",
         }
 
     def _resolve(self, source_id: str) -> BaseConnector | None:

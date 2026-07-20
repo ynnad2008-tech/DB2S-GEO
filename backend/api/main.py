@@ -29,8 +29,8 @@ from backend.watcher.engine import WatcherEngine
 
 APP_NAME = "DB2S-GEO"
 APP_PHASE = "preview"
-APP_VERSION = "0.1.0-preview"
-APP_RELEASE_LABEL = "DB2S-GEO v0.1.0 Preview"
+APP_VERSION = "0.2.0-preview"
+APP_RELEASE_LABEL = "DB2S-GEO v0.2.0 Preview"
 APP_AUTHOR = "Dany Arbey Benavides"
 
 ROOT_DIR = Path(__file__).resolve().parents[2]

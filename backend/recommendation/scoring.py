@@ -20,6 +20,36 @@ WEIGHT_OFFICIAL_NATIONAL = 10
 # Fuentes oficiales nacionales Colombia (curaduría humana / country profile).
 OFFICIAL_NATIONAL_SOURCES = frozenset({"ideam", "invemar"})
 
+# Términos institucionales / genéricos: no puntúan ni se indexan en KG.
+# Evitan falsos positivos (p. ej. query "transporte" + keyword "colombia").
+GENERIC_KEYWORDS = frozenset(
+    {
+        "colombia",
+        "colombiano",
+        "colombiana",
+        "colombianos",
+        "colombianas",
+        "nacional",
+        "nacionales",
+        "territorio",
+        "territorial",
+        "sistema",
+        "informacion",
+        "informacion_geografica",
+        "datos",
+        "dato",
+        "geografico",
+        "geograficos",
+        "portal",
+        "mapa",
+        "mapas",
+        "servicio",
+        "servicios",
+        "oficial",
+        "institucional",
+    }
+)
+
 # Alias curados (no embeddings): expanden la consulta a términos del grafo.
 CURATED_ALIASES: dict[str, list[str]] = {
     "lluvia": ["precipitacion"],
@@ -49,16 +79,25 @@ def normalize_token(text: str) -> str:
     return value.replace(" ", "_").replace("-", "_")
 
 
+def is_generic_keyword(token: str) -> bool:
+    return normalize_token(token) in GENERIC_KEYWORDS
+
+
 def expand_query_tokens(query: str) -> list[str]:
-    """Tokens de búsqueda incluyendo alias curados."""
+    """Tokens de búsqueda incluyendo alias curados (sin genéricos)."""
     base = normalize_token(query)
-    tokens = {base}
+    raw: set[str] = {base}
     if "_" in base:
-        tokens.update(p for p in base.split("_") if p)
+        raw.update(p for p in base.split("_") if p)
     for alias_key, alias_vals in CURATED_ALIASES.items():
-        if base == alias_key or base in alias_vals:
-            tokens.add(alias_key)
-            tokens.update(normalize_token(v) for v in alias_vals)
+        if base == alias_key or base in alias_vals or any(
+            normalize_token(v) in raw for v in alias_vals
+        ):
+            raw.add(alias_key)
+            raw.update(normalize_token(v) for v in alias_vals)
+    # Quitar stopwords genéricas; si la query era solo genérica, dejar vacío
+    # (el motor aún puede matchear por source_id / dominio explícito).
+    tokens = {t for t in raw if t and not is_generic_keyword(t)}
     return sorted(tokens)
 
 

@@ -52,6 +52,7 @@ data/observatory/queries.json
 !data/observatory/.gitkeep
 data/telemetry/*.db
 !data/telemetry/.gitkeep
+catalog/reports/latest_validation.json
 
 # IDE / OS / agentes locales
 .idea/

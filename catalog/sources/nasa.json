@@ -1,0 +1,136 @@
+{
+  "id": "nasa",
+  "name": "NASA",
+  "description": "Agencia espacial de EE. UU. Productos de observación de la Tierra, precipitación (GPM/IMERG) y almacenamiento hídrico (GRACE). DB2S-GEO solo documenta acceso; no autentica ni descarga.",
+  "url": "https://www.nasa.gov",
+  "category": "internacional",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "National Aeronautics and Space Administration (NASA)",
+  "domains": [
+    "clima",
+    "observacion_tierra",
+    "hidrologia"
+  ],
+  "license": "Datos NASA Earth Science / GPM según términos Earthdata y productor; verificar DOI y licencia del producto",
+  "version": "1.1.0",
+  "resources": [
+    {
+      "id": "nasa:imerg-colombia",
+      "name": "GPM IMERG precipitación para Colombia (NASA)",
+      "description": "Producto GPM IMERG (Integrated Multi-satellitE Retrievals for GPM) de NASA para precipitación satelital, documentado para uso en Colombia vía Earth Engine (NASA/GPM_L3/IMERG_V07) y portales GPM/Giovanni. Apoya meteorología, clima y monitoreo multitemporal. DB2S-GEO no descarga ni autentica Earthdata.",
+      "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GPM_L3_IMERG_V07",
+      "category": "collection",
+      "coverage": {
+        "spatial": "Colombia (vía filtro espacial / región en portales)",
+        "temporal": "2000–presente (según producto IMERG)"
+      },
+      "domains": [
+        "clima",
+        "hidrologia"
+      ],
+      "keywords": [
+        "precipitacion",
+        "satelital",
+        "meteorologia",
+        "clima",
+        "lluvia",
+        "monitoreo",
+        "multitemporal",
+        "imerg",
+        "gpm",
+        "nasa",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal",
+        "platform",
+        "api"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GPM_L3_IMERG_V07",
+          "label": "NASA/GPM_L3/IMERG_V07 (GEE Catalog)"
+        },
+        {
+          "method": "portal",
+          "url": "https://giovanni.gsfc.nasa.gov/",
+          "label": "NASA Giovanni (análisis / región)"
+        },
+        {
+          "method": "portal",
+          "url": "https://gpm.nasa.gov/data",
+          "label": "GPM Data (NASA)"
+        }
+      ],
+      "formats": [
+        "Earth Engine ImageCollection",
+        "NetCDF (GES DISC)"
+      ],
+      "documentation_url": "https://gpm.nasa.gov/data",
+      "doi": "10.5067/GPM/IMERG/3B-HH/07",
+      "citation_reference": "Huffman, G. J., et al. GPM IMERG Final Precipitation L3. NASA GES DISC. DOI: 10.5067/GPM/IMERG/3B-HH/07. Accessed via Google Earth Engine: NASA/GPM_L3/IMERG_V07."
+    },
+    {
+      "id": "nasa:grace-groundwater-colombia",
+      "name": "GRACE — almacenamiento de agua subterránea (Colombia)",
+      "description": "Monitoreo de cambios de almacenamiento de agua subterránea con datos GRACE/GRACE-FO (NASA), orientado a Colombia vía subsetting regional (GGST) y productos GRACE. Apoya hidrología satelital y análisis de acuíferos. DB2S-GEO no autentica ni descarga productos.",
+      "url": "https://ggst.readthedocs.io/",
+      "category": "collection",
+      "coverage": {
+        "spatial": "Colombia (vía región / shapefile en GGST u AOI)",
+        "temporal": "2002–presente (GRACE / GRACE-FO, según producto)"
+      },
+      "domains": [
+        "hidrologia",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "agua",
+        "subterranea",
+        "almacenamiento",
+        "hidrico",
+        "grace",
+        "acuiferos",
+        "hidrologia",
+        "satelital",
+        "nasa",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal",
+        "platform",
+        "api"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://ggst.readthedocs.io/",
+          "label": "GRACE Groundwater Subsetting Tool (docs)"
+        },
+        {
+          "method": "portal",
+          "url": "https://grace.jpl.nasa.gov/",
+          "label": "NASA JPL GRACE"
+        },
+        {
+          "method": "portal",
+          "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GRACE_MASS_GRIDS_MASCON_CRI",
+          "label": "GRACE Mascons (GEE Catalog)"
+        }
+      ],
+      "formats": [
+        "series temporales",
+        "NetCDF",
+        "mapas"
+      ],
+      "documentation_url": "https://ggst.readthedocs.io/en/latest/overview/",
+      "doi": "",
+      "citation_reference": "NASA Jet Propulsion Laboratory. GRACE / GRACE-FO mission data. Groundwater analysis vía GRACE Groundwater Subsetting Tool (GGST). https://grace.jpl.nasa.gov/"
+    }
+  ]
+}

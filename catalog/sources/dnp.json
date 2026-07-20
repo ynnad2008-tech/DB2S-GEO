@@ -1,0 +1,140 @@
+{
+  "id": "dnp",
+  "name": "DNP",
+  "description": "Departamento Nacional de Planeación: política de Catastro Multipropósito / SAT y plataforma MapaInversiones de inversión pública georreferenciada. DB2S-GEO solo documenta acceso.",
+  "url": "https://www.dnp.gov.co",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Departamento Nacional de Planeación (DNP)",
+  "domains": [
+    "observacion_tierra",
+    "poblacion"
+  ],
+  "license": "Según términos DNP / plataformas oficiales",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "dnp:catastro-multiproposito",
+      "name": "Política de Catastro Multipropósito y SAT (DNP)",
+      "description": "Rol del DNP como articulador de la política de Catastro Multipropósito y del Sistema de Administración del Territorio (SAT): seguimiento de avance, planificación nacional y cooperación territorial. Complementa la operación catastral del IGAC. DB2S-GEO solo documenta el acceso; no descarga datos.",
+      "url": "https://www.catastromultiproposito.gov.co/",
+      "category": "catalog",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según documentos de política y avance publicados"
+      },
+      "domains": [
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "catastro",
+        "multiproposito",
+        "sat",
+        "administracion",
+        "territorio",
+        "seguimiento",
+        "politica",
+        "avance",
+        "cooperacion",
+        "territorial",
+        "planificacion",
+        "nacional",
+        "conpes",
+        "dnp",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.catastromultiproposito.gov.co/",
+          "label": "Portal Catastro Multipropósito"
+        },
+        {
+          "method": "portal",
+          "url": "https://dnp.gov.co/publicaciones/Planeacion/Paginas/politica-catastro-multiproposito-colombia-transitando-catastro-tradicional-multiproposito-parte1.aspx",
+          "label": "Política Catastro Multipropósito — DNP"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.icde.gov.co/marcos/catastro-multiproposito",
+          "label": "ICDE — marco Catastro Multipropósito"
+        }
+      ],
+      "formats": [
+        "portal",
+        "documentación",
+        "noticias / indicadores"
+      ],
+      "documentation_url": "https://dnp.gov.co/publicaciones/Planeacion/Paginas/politica-catastro-multiproposito-colombia-transitando-catastro-tradicional-multiproposito-parte1.aspx",
+      "doi": "",
+      "citation_reference": "Departamento Nacional de Planeación (DNP). Política de Catastro Multipropósito y Sistema de Administración del Territorio (SAT). https://www.catastromultiproposito.gov.co/"
+    },
+    {
+      "id": "dnp:mapa-inversiones",
+      "name": "MapaInversiones — inversión pública georreferenciada (DNP)",
+      "description": "Plataforma MapaInversiones del DNP: georreferencia proyectos de inversión pública, recursos presupuestados/ejecutados y seguimiento físico-financiero a escala nacional y territorial. Incluye tableros, reportes y datos abiertos. DB2S-GEO solo documenta el acceso; no descarga bases ni reportes.",
+      "url": "https://mapainversiones.dnp.gov.co/",
+      "category": "catalog",
+      "coverage": {
+        "spatial": "Colombia (nacional y territorial)",
+        "temporal": "Según proyectos y periodos publicados en PIIP"
+      },
+      "domains": [
+        "observacion_tierra",
+        "poblacion"
+      ],
+      "keywords": [
+        "mapa",
+        "inversiones",
+        "inversion",
+        "publica",
+        "proyectos",
+        "presupuesto",
+        "seguimiento",
+        "planificacion",
+        "territorial",
+        "piip",
+        "transparencia",
+        "geovisor",
+        "dnp",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://mapainversiones.dnp.gov.co/",
+          "label": "MapaInversiones — plataforma DNP"
+        },
+        {
+          "method": "portal",
+          "url": "https://mapainversiones.dnp.gov.co/Home/AcercaDeMapaInversiones",
+          "label": "Acerca de MapaInversiones"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.dnp.gov.co/LaEntidad_/subdireccion-general-inversiones-seguimiento-evaluacion/direccion-proyectos-informacion-para-inversion-publica/Paginas/mapa-de-inversion.aspx",
+          "label": "Mapa Inversiones — página institucional DNP"
+        }
+      ],
+      "formats": [
+        "geovisor",
+        "tableros",
+        "reportes",
+        "datos abiertos"
+      ],
+      "documentation_url": "https://mapainversiones.dnp.gov.co/Home/AcercaDeMapaInversiones",
+      "doi": "",
+      "citation_reference": "Departamento Nacional de Planeación (DNP). MapaInversiones — plataforma de inversión pública georreferenciada. https://mapainversiones.dnp.gov.co/"
+    }
+  ]
+}

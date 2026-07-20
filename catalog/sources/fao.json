@@ -1,0 +1,142 @@
+{
+  "id": "fao",
+  "name": "FAOSTAT",
+  "description": "Base estadística de la FAO sobre agricultura, alimentación, uso de la tierra y variables socioeconómicas relacionadas.",
+  "url": "https://www.fao.org/faostat",
+  "category": "internacional",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Food and Agriculture Organization of the United Nations (FAO)",
+  "domains": [
+    "agricultura"
+  ],
+  "license": "Términos de uso FAO / FAOSTAT (datos estadísticos abiertos con atribución)",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "fao:faostat-production",
+      "name": "FAOSTAT — Production",
+      "description": "Estadísticas de producción agrícola y pecuaria a nivel de país en FAOSTAT.",
+      "url": "https://www.fao.org/faostat/en/#data",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global (países)",
+        "temporal": "Series anuales históricas"
+      },
+      "domains": [
+        "agricultura"
+      ],
+      "keywords": [
+        "produccion",
+        "agricultura",
+        "pecuaria",
+        "faostat"
+      ],
+      "access_methods": [
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.fao.org/faostat/en/#data",
+          "label": "FAOSTAT data portal"
+        },
+        {
+          "method": "api",
+          "url": "https://fenixservices.fao.org/faostat/api/",
+          "label": "FAOSTAT API (documentación oficial)"
+        }
+      ],
+      "formats": [
+        "CSV",
+        "API JSON"
+      ],
+      "documentation_url": "https://www.fao.org/faostat/en/#data",
+      "doi": "",
+      "citation_reference": "FAO. FAOSTAT — Production. Food and Agriculture Organization of the United Nations."
+    },
+    {
+      "id": "fao:faostat-land",
+      "name": "FAOSTAT — Land Use / Land Cover indicators",
+      "description": "Indicadores de uso de la tierra y coberturas relacionados con agricultura en FAOSTAT.",
+      "url": "https://www.fao.org/faostat/en/#data",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global (países)",
+        "temporal": "Series anuales"
+      },
+      "domains": [
+        "agricultura"
+      ],
+      "keywords": [
+        "uso de la tierra",
+        "cobertura",
+        "land use",
+        "agricultura",
+        "faostat"
+      ],
+      "access_methods": [
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.fao.org/faostat/en/#data",
+          "label": "FAOSTAT data portal"
+        }
+      ],
+      "formats": [
+        "CSV",
+        "API JSON"
+      ],
+      "documentation_url": "https://www.fao.org/faostat/en/#data",
+      "doi": "",
+      "citation_reference": "FAO. FAOSTAT — Land. Food and Agriculture Organization of the United Nations."
+    },
+    {
+      "id": "fao:faostat-emissions",
+      "name": "FAOSTAT — Emissions / Climate related agriculture",
+      "description": "Estadísticas de emisiones y variables climáticas asociadas al sector agropecuario en FAOSTAT.",
+      "url": "https://www.fao.org/faostat/en/#data",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global (países)",
+        "temporal": "Series anuales"
+      },
+      "domains": [
+        "agricultura",
+        "clima"
+      ],
+      "keywords": [
+        "emisiones",
+        "clima",
+        "agricultura",
+        "agropecuario",
+        "faostat"
+      ],
+      "access_methods": [
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.fao.org/faostat/en/#data",
+          "label": "FAOSTAT data portal"
+        }
+      ],
+      "formats": [
+        "CSV",
+        "API JSON"
+      ],
+      "documentation_url": "https://www.fao.org/faostat/en/#data",
+      "doi": "",
+      "citation_reference": "FAO. FAOSTAT — Emissions. Food and Agriculture Organization of the United Nations."
+    }
+  ]
+}

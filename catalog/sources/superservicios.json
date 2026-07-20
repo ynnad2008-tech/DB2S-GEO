@@ -1,0 +1,141 @@
+{
+  "id": "superservicios",
+  "name": "Superservicios",
+  "description": "Autoridad de vigilancia de servicios públicos domiciliarios. Geoportal y SUI con coberturas e infraestructura de acueducto (incl. captación/abastecimiento), alcantarillado y aseo. DB2S-GEO solo documenta acceso.",
+  "url": "https://www.superservicios.gov.co",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Superintendencia de Servicios Públicos Domiciliarios (Superservicios)",
+  "domains": [
+    "hidrologia",
+    "observacion_tierra"
+  ],
+  "license": "Según términos Superservicios / SUI / geoportal",
+  "version": "1.1.0",
+  "resources": [
+    {
+      "id": "superservicios:cobertura-servicios-publicos",
+      "name": "Cobertura de servicios públicos domiciliarios (SUI / Geoportal)",
+      "description": "Información espacial de cobertura de servicios públicos domiciliarios (acueducto, alcantarillado, aseo y relacionados) vía Geoportal Superservicios y el Sistema Único de Información (SUI). Incluye capas FeatureServer de cobertura por año/servicio. DB2S-GEO solo documenta el acceso; no descarga capas.",
+      "url": "https://geoportal.superservicios.gov.co/",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según capas anuales publicadas en el geoportal"
+      },
+      "domains": [
+        "hidrologia",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "servicios",
+        "publicos",
+        "cobertura",
+        "territorial",
+        "acueducto",
+        "alcantarillado",
+        "aseo",
+        "energia",
+        "prestadoras",
+        "sui",
+        "geoportal",
+        "superservicios",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal",
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://geoportal.superservicios.gov.co/",
+          "label": "Geoportal Superservicios"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.superservicios.gov.co/server/rest/services/Hosted",
+          "label": "REST Hosted — coberturas SSPD"
+        },
+        {
+          "method": "portal",
+          "url": "http://sui.superservicios.gov.co/",
+          "label": "Sistema Único de Información (SUI)"
+        }
+      ],
+      "formats": [
+        "FeatureServer",
+        "geovisor",
+        "portal SUI"
+      ],
+      "documentation_url": "http://sui.superservicios.gov.co/Que-es-el-SUI",
+      "doi": "",
+      "citation_reference": "Superintendencia de Servicios Públicos Domiciliarios. Cobertura de servicios públicos — Geoportal / SUI. https://geoportal.superservicios.gov.co/"
+    },
+    {
+      "id": "superservicios:captacion-servicios-publicos",
+      "name": "Captación e infraestructura hídrica de acueducto (Superservicios)",
+      "description": "Recursos geográficos del Geoportal Superservicios asociados a la cadena de acueducto (actividad complementaria de captación, abastecimiento e infraestructura hídrica de prestadores), incluyendo capas Hosted de acueducto urbano/rural y SUI. DB2S-GEO solo documenta el acceso; no descarga capas.",
+      "url": "https://geoportal.superservicios.gov.co/",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según capas anuales publicadas en el geoportal"
+      },
+      "domains": [
+        "hidrologia",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "captacion",
+        "agua",
+        "acueducto",
+        "infraestructura",
+        "hidrica",
+        "abastecimiento",
+        "prestadores",
+        "tratamiento",
+        "conduccion",
+        "servicios",
+        "publicos",
+        "sui",
+        "superservicios",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal",
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.superservicios.gov.co/server/rest/services/Hosted",
+          "label": "REST Hosted — capas acueducto / captación"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.superservicios.gov.co/server/rest/services/Hosted/Acueducto_Urbano_2024/FeatureServer",
+          "label": "FeatureServer Acueducto Urbano 2024"
+        },
+        {
+          "method": "portal",
+          "url": "http://sui.superservicios.gov.co/",
+          "label": "SUI — información de prestadores"
+        }
+      ],
+      "formats": [
+        "FeatureServer",
+        "VectorTile",
+        "geovisor",
+        "portal SUI"
+      ],
+      "documentation_url": "http://sui.superservicios.gov.co/Que-es-el-SUI",
+      "doi": "",
+      "citation_reference": "Superintendencia de Servicios Públicos Domiciliarios. Infraestructura y captación asociadas al servicio de acueducto — Geoportal / SUI. https://geoportal.superservicios.gov.co/"
+    }
+  ]
+}

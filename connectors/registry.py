@@ -60,8 +60,8 @@ MVP_CONNECTOR_IDS: tuple[str, ...] = (
 )
 
 
-def build_mvp_connectors() -> dict[str, BaseConnector]:
-    """Instancia los conectores MVP registrados."""
+def build_python_mvp_connectors() -> dict[str, BaseConnector]:
+    """Instancia conectores Python legacy (fallback / exportación)."""
     instances: list[BaseConnector] = [
         IdeamConnector(),
         InvemarConnector(),
@@ -88,3 +88,19 @@ def build_mvp_connectors() -> dict[str, BaseConnector]:
         SupertransporteConnector(),
     ]
     return {c.connector_id: c for c in instances}
+
+
+def build_mvp_connectors() -> dict[str, BaseConnector]:
+    """
+    Runtime preferente: catálogo JSON (solo status=active).
+
+    Fallback: conectores Python si catalog/sources está vacío.
+    """
+    from connectors.catalog_loader import (
+        build_connectors_from_catalog,
+        catalog_available,
+    )
+
+    if catalog_available():
+        return build_connectors_from_catalog()
+    return build_python_mvp_connectors()

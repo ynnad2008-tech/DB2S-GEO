@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://db2s-geo.local/schemas/source.schema.json",
+  "title": "DB2S-GEO Catalog Source",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "description",
+    "url",
+    "category",
+    "coverage",
+    "resources",
+    "status"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]{1,63}$"
+    },
+    "name": { "type": "string", "minLength": 2 },
+    "description": { "type": "string", "minLength": 1 },
+    "url": {
+      "type": "string",
+      "pattern": "^https?://.+"
+    },
+    "category": { "type": "string", "minLength": 2 },
+    "coverage": {
+      "type": "object",
+      "required": ["spatial"],
+      "properties": {
+        "spatial": { "type": "string", "minLength": 1 },
+        "temporal": { "type": "string" }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "validated", "active"]
+    },
+    "institution": { "type": "string" },
+    "domains": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "license": { "type": "string" },
+    "version": { "type": "string" },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "description", "url", "category", "coverage"],
+        "properties": {
+          "id": { "type": "string", "minLength": 3 },
+          "name": { "type": "string", "minLength": 2 },
+          "description": { "type": "string", "minLength": 1 },
+          "url": {
+            "type": "string",
+            "pattern": "^https?://.+"
+          },
+          "category": { "type": "string" },
+          "coverage": {
+            "type": "object",
+            "required": ["spatial"],
+            "properties": {
+              "spatial": { "type": "string" },
+              "temporal": { "type": "string" }
+            }
+          },
+          "domains": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "keywords": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "endpoints": { "type": "array" },
+          "access_methods": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

@@ -22,6 +22,7 @@ from backend.recommendation.scoring import (
     empty_accumulator,
     expand_query_tokens,
     finalize,
+    is_generic_keyword,
     normalize_token,
     official_national_bonus,
 )
@@ -307,6 +308,8 @@ class RecommendationEngine:
         )
         for kw in keywords:
             kw_key = self._node_key(kw["id"])
+            if is_generic_keyword(kw_key):
+                continue
             related_resources = self._kg.graph.neighbors(
                 kw["id"], direction="in", rel_type="associated_with"
             )
@@ -380,6 +383,8 @@ class RecommendationEngine:
     ) -> None:
         assert self._kg is not None
         for token in tokens:
+            if is_generic_keyword(token):
+                continue
             kw_nid = node_id("Keyword", token)
             kw_node = self._kg.graph.get_node(kw_nid)
             if kw_node is None:

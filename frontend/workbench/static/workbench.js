@@ -54,10 +54,69 @@ function pills(items) {
 
 /* ---------- UX Sprint 1: etiquetas humanas (Q1–Q3) ---------- */
 const resourceTitleCache = new Map();
+/** @type {Map<string, string>} resource_id → URL de acceso externa */
+const resourceUrlCache = new Map();
+/** @type {Map<string, string>} source_id → homepage / portal */
+const sourceUrlCache = new Map();
 
 const REASON_EXACT = {
   "fuente oficial nacional": "Es una fuente oficial nacional de Colombia.",
 };
+
+function isHttpUrl(value) {
+  return typeof value === "string" && /^https?:\/\//i.test(value.trim());
+}
+
+function rememberSourceUrl(sourceId, url) {
+  if (!sourceId || !isHttpUrl(url)) return;
+  sourceUrlCache.set(String(sourceId).toLowerCase(), url.trim());
+}
+
+function lookupSourceUrl(sourceId) {
+  if (!sourceId) return "";
+  return sourceUrlCache.get(String(sourceId).toLowerCase()) || "";
+}
+
+/** Enlace externo unificado (nombre → URL). */
+function formatExtLink(label, url, attrs = {}) {
+  const text = label || url || "—";
+  if (!isHttpUrl(url)) {
+    return `<span>${esc(text)}</span>`;
+  }
+  const extra = Object.entries(attrs)
+    .filter(([, v]) => v != null && v !== "")
+    .map(([k, v]) => `${k}="${esc(v)}"`)
+    .join(" ");
+  return `<a href="${esc(url.trim())}" class="res-link res-link-ext" target="_blank" rel="noopener noreferrer" title="${esc(url.trim())}" ${extra}>${esc(text)}</a>`;
+}
+
+function formatSourceLink(sourceId, label) {
+  const url = lookupSourceUrl(sourceId);
+  return formatExtLink(label || sourceId, url, {
+    "data-source-id": sourceId || "",
+  });
+}
+
+function parseResourceNodeId(nodeId) {
+  const raw = String(nodeId || "");
+  // Resource:source_id:resource_leaf  OR  bare source:resource
+  if (raw.startsWith("Resource:")) {
+    const rest = raw.slice("Resource:".length);
+    const idx = rest.indexOf(":");
+    if (idx <= 0) return null;
+    return { sourceId: rest.slice(0, idx), resourceId: rest };
+  }
+  if (raw.includes(":") && !raw.startsWith("Source:") && !raw.startsWith("Domain:")) {
+    return { sourceId: raw.split(":")[0], resourceId: raw };
+  }
+  return null;
+}
+
+function parseSourceNodeId(nodeId) {
+  const raw = String(nodeId || "");
+  if (raw.startsWith("Source:")) return raw.slice("Source:".length);
+  return null;
+}
 
 function titleFromResourceId(resourceId) {
   const id = String(resourceId || "");
@@ -93,6 +152,118 @@ function lookupResourceTitle(resourceId, titleMap) {
     if (map[resourceId]) return map[resourceId];
   }
   return titleFromResourceId(resourceId);
+}
+
+function pickAccessUrl(payload) {
+  if (!payload || typeof payload !== "object") return "";
+  const direct = payload.portal_url || payload.documentation_url || payload.url || "";
+  if (typeof direct === "string" && /^https?:\/\//i.test(direct.trim())) {
+    return direct.trim();
+  }
+  const endpoints = payload.endpoints || [];
+  for (const ep of endpoints) {
+    const u = typeof ep === "string" ? ep : ep && ep.url;
+    if (typeof u === "string" && /^https?:\/\//i.test(u.trim())) return u.trim();
+  }
+  return "";
+}
+
+async function ensureResourceUrls(pairs) {
+  const jobs = [];
+  for (const pair of pairs || []) {
+    const rid = pair.resourceId || pair.resource_id;
+    const sid = pair.sourceId || pair.source_id;
+    if (!rid || resourceUrlCache.has(rid)) continue;
+    if (!sid) continue;
+    jobs.push(
+      api(
+        `/sources/${encodeURIComponent(sid)}/access?resource_id=${encodeURIComponent(rid)}`
+      )
+        .then((data) => {
+          const url = pickAccessUrl(data);
+          if (url) resourceUrlCache.set(rid, url);
+          if (!lookupSourceUrl(sid)) {
+            const portal = pickAccessUrl(data);
+            if (portal) rememberSourceUrl(sid, portal);
+          }
+        })
+        .catch(() => {})
+    );
+  }
+  await Promise.all(jobs);
+}
+
+function lookupResourceUrl(resourceId) {
+  if (!resourceId) return "";
+  return resourceUrlCache.get(resourceId) || "";
+}
+
+async function ensureSourceUrls(sourceIds) {
+  const jobs = [];
+  for (const sid of sourceIds || []) {
+    if (!sid || lookupSourceUrl(sid)) continue;
+    jobs.push(
+      api(`/sources/${encodeURIComponent(sid)}/access`)
+        .then((data) => {
+          const url = pickAccessUrl(data);
+          if (url) rememberSourceUrl(sid, url);
+        })
+        .catch(() => {})
+    );
+  }
+  await Promise.all(jobs);
+}
+
+function ingestSourcesHomepages(sources) {
+  for (const s of sources || []) {
+    if (s.source_id && s.homepage) rememberSourceUrl(s.source_id, s.homepage);
+  }
+}
+
+function formatGraphNodeLabel(node) {
+  const type = node.type || "";
+  const id = node.id || "";
+  const label = node.label || id;
+  if (type === "Resource" || id.startsWith("Resource:")) {
+    const parsed = parseResourceNodeId(id);
+    if (parsed) {
+      const url = lookupResourceUrl(parsed.resourceId);
+      if (url) {
+        return formatExtLink(label, url, {
+          "data-resource-id": parsed.resourceId,
+          "data-source-id": parsed.sourceId,
+        });
+      }
+    }
+  }
+  if (type === "Source" || id.startsWith("Source:")) {
+    const sid = parseSourceNodeId(id) || (type === "Source" ? id : "");
+    if (sid && lookupSourceUrl(sid)) return formatSourceLink(sid, label);
+  }
+  return esc(label);
+}
+
+function formatGraphEndpoint(nodeId) {
+  const raw = String(nodeId || "");
+  if (raw.startsWith("Source:")) {
+    const sid = parseSourceNodeId(raw);
+    if (sid && lookupSourceUrl(sid)) return formatSourceLink(sid, sid);
+    return `<span class="mono">${esc(raw)}</span>`;
+  }
+  const parsed = parseResourceNodeId(
+    raw.startsWith("Resource:") ? raw : raw.includes(":") ? `Resource:${raw}` : ""
+  );
+  if (parsed) {
+    const url = lookupResourceUrl(parsed.resourceId);
+    const title = lookupResourceTitle(parsed.resourceId);
+    if (url) {
+      return formatExtLink(title, url, {
+        "data-resource-id": parsed.resourceId,
+        "data-source-id": parsed.sourceId,
+      });
+    }
+  }
+  return `<span class="mono">${esc(raw)}</span>`;
 }
 
 function humanReason(raw, titleMap) {
@@ -141,6 +312,10 @@ function formatResourceLabels(resourceIds, titleMap, sourceId, limit = 3) {
   return ids
     .map((id) => {
       const title = lookupResourceTitle(id, titleMap);
+      const url = lookupResourceUrl(id);
+      if (url) {
+        return `<a href="${esc(url)}" class="res-link res-link-ext" target="_blank" rel="noopener noreferrer" data-resource-id="${esc(id)}" data-source-id="${esc(sourceId || "")}" title="${esc(url)}">${esc(title)}</a>`;
+      }
       return `<a href="#recommend" class="res-link" data-resource-id="${esc(id)}" data-source-id="${esc(sourceId || "")}" title="${esc(id)}">${esc(title)}</a>`;
     })
     .join("");
@@ -191,7 +366,7 @@ function renderRecommendRows(items, titleMapsBySource) {
         <tr>
           <td><strong>${esc(r.score)}</strong></td>
           <td>
-            <strong>${esc(r.source)}</strong>
+            ${formatSourceLink(r.source_id, r.source)}
             <div class="id-secondary">${esc(r.source_id)}</div>
           </td>
           <td>${reasonsHtml(r.reason, titleMap)}</td>
@@ -210,7 +385,7 @@ function renderRecommendCards(items, titleMapsBySource) {
           <div class="rec-card-head">
             <span class="rec-score">${esc(r.score)}</span>
             <div>
-              <strong>${esc(r.source)}</strong>
+              ${formatSourceLink(r.source_id, r.source)}
               <div class="id-secondary">${esc(r.source_id)}</div>
             </div>
           </div>
@@ -485,6 +660,7 @@ async function loadHome() {
       api("/watcher/info"),
       api("/source-discovery/info"),
     ]);
+    ingestSourcesHomepages(sources.sources || []);
     $("#m-sources").textContent = sources.count ?? "—";
     $("#m-resources").textContent = graph.resources ?? "—";
     $("#m-domains").textContent = domains.count ?? "—";
@@ -524,20 +700,45 @@ async function loadSources() {
 
     const body = $("#sources-body");
     const rows = data.sources || [];
+    ingestSourcesHomepages(rows);
+    await ensureSourceUrls(rows.map((s) => s.source_id).filter(Boolean));
+
+    const titleMapsBySource = {};
+    await Promise.all(
+      rows.map(async (s) => {
+        titleMapsBySource[s.source_id] = await ensureResourceTitles(s.source_id);
+      })
+    );
+    const urlPairs = [];
+    for (const s of rows) {
+      for (const rid of Object.keys(titleMapsBySource[s.source_id] || {})) {
+        urlPairs.push({ sourceId: s.source_id, resourceId: rid });
+      }
+    }
+    await ensureResourceUrls(urlPairs);
+
     body.innerHTML = rows.length
       ? rows
-          .map(
-            (s) => `
+          .map((s) => {
+            const titleMap = titleMapsBySource[s.source_id] || {};
+            const rids = Object.keys(titleMap);
+            const portal = lookupSourceUrl(s.source_id);
+            return `
         <tr>
-          <td><strong>${esc(s.source)}</strong><div class="mono">${esc(s.source_id)}</div></td>
+          <td>
+            ${formatSourceLink(s.source_id, s.source)}
+            <div class="mono">${esc(s.source_id)}</div>
+            ${portal ? `<div class="url-secondary">${formatExtLink("Abrir portal", portal)}</div>` : ""}
+          </td>
           <td>${esc(s.institution)}</td>
           <td>${pills(s.domains)}</td>
+          <td class="res-cell">${formatResourceLabels(rids, titleMap, s.source_id, 6)}</td>
           <td>${pills(s.access_methods)}</td>
           <td><span class="pill">${esc(s.status || "mvp")}</span></td>
-        </tr>`
-          )
+        </tr>`;
+          })
           .join("")
-      : `<tr><td colspan="5" class="empty">Sin fuentes</td></tr>`;
+      : `<tr><td colspan="6" class="empty">Sin fuentes</td></tr>`;
     setStatus(`${data.count} fuentes registradas`, "ok");
   } catch (err) {
     setStatus(err.message, "error");
@@ -570,6 +771,15 @@ async function runRecommend() {
         titleMapsBySource[sid] = await ensureResourceTitles(sid);
       })
     );
+
+    const urlPairs = [];
+    for (const r of items) {
+      for (const rid of r.resources || []) {
+        urlPairs.push({ sourceId: r.source_id, resourceId: rid });
+      }
+    }
+    await ensureResourceUrls(urlPairs);
+    await ensureSourceUrls(items.map((r) => r.source_id).filter(Boolean));
 
     const body = $("#rec-body");
     const cards = $("#rec-cards");
@@ -606,18 +816,45 @@ async function loadWatcher() {
       events = events.filter((e) => e.source === source.toLowerCase());
     }
 
+    const sourceIds = [...new Set(events.map((e) => e.source).filter(Boolean))];
+    await ensureSourceUrls(sourceIds);
+    const urlPairs = [];
+    for (const e of events) {
+      const rid = e.resource;
+      if (rid && String(rid).includes(":")) {
+        urlPairs.push({
+          sourceId: e.source || String(rid).split(":")[0],
+          resourceId: rid,
+        });
+      }
+    }
+    await ensureResourceUrls(urlPairs);
+
     $("#watcher-body").innerHTML = events.length
       ? events
-          .map(
-            (e) => `
+          .map((e) => {
+            const rid = e.resource;
+            let resHtml = "—";
+            if (rid) {
+              const sid = e.source || (String(rid).includes(":") ? String(rid).split(":")[0] : "");
+              const url = lookupResourceUrl(rid);
+              const title = lookupResourceTitle(rid);
+              resHtml = url
+                ? formatExtLink(title, url, {
+                    "data-resource-id": rid,
+                    "data-source-id": sid,
+                  })
+                : `<span class="mono">${esc(rid)}</span>`;
+            }
+            return `
         <tr>
           <td class="mono">${esc(e.event_type)}</td>
-          <td>${esc(e.source)}</td>
-          <td class="mono">${esc(e.resource || "—")}</td>
+          <td>${formatSourceLink(e.source, e.source)}</td>
+          <td>${resHtml}</td>
           <td><span class="pill sev-${esc(e.severity)}">${esc(e.severity)}</span></td>
           <td class="mono">${esc((e.timestamp || "").replace("T", " ").slice(0, 19))}</td>
-        </tr>`
-          )
+        </tr>`;
+          })
           .join("")
       : `<tr><td colspan="5" class="empty">Sin eventos todavía</td></tr>`;
     setStatus(`${events.length} eventos · sin auto-aplicación`, "ok");
@@ -652,8 +889,14 @@ async function loadCandidates() {
             (c) => `
         <tr data-id="${esc(c.id)}">
           <td>
-            <strong>${esc(c.name)}</strong>
-            <div class="url-secondary">${esc(c.url)}</div>
+            ${
+              isHttpUrl(c.url)
+                ? formatExtLink(c.name || c.url, c.url)
+                : `<strong>${esc(c.name)}</strong>`
+            }
+            <div class="url-secondary">${
+              isHttpUrl(c.url) ? formatExtLink(c.url, c.url) : esc(c.url || "—")
+            }</div>
             <a href="#cand-detail-wrap" class="text-link cand-detail-link" data-id="${esc(c.id)}">Ver detalle</a>
           </td>
           <td>${esc(c.source_type)}</td>
@@ -740,6 +983,24 @@ async function loadNodes() {
   const qs = type ? `?type=${encodeURIComponent(type)}` : "";
   const data = await api(`/graph/nodes${qs}`);
   const rows = (data.nodes || []).slice(0, 150);
+
+  const sourceIds = new Set();
+  const urlPairs = [];
+  for (const n of rows) {
+    if (n.type === "Source" || String(n.id || "").startsWith("Source:")) {
+      const sid = parseSourceNodeId(n.id) || (n.type === "Source" ? n.id : null);
+      if (sid) sourceIds.add(sid);
+    }
+    const parsed = parseResourceNodeId(n.id);
+    if (parsed) {
+      sourceIds.add(parsed.sourceId);
+      urlPairs.push(parsed);
+    }
+  }
+  await ensureSourceUrls([...sourceIds]);
+  await ensureResourceUrls(urlPairs);
+  await Promise.all([...sourceIds].map((sid) => ensureResourceTitles(sid)));
+
   $("#nodes-body").innerHTML = rows.length
     ? rows
         .map(
@@ -747,7 +1008,7 @@ async function loadNodes() {
       <tr>
         <td class="mono">${esc(n.id)}</td>
         <td>${esc(n.type)}</td>
-        <td>${esc(n.label)}</td>
+        <td>${formatGraphNodeLabel(n)}</td>
       </tr>`
         )
         .join("")
@@ -759,14 +1020,40 @@ async function loadRelations() {
   const qs = type ? `?type=${encodeURIComponent(type)}` : "";
   const data = await api(`/graph/relations${qs}`);
   const rows = (data.relations || []).slice(0, 150);
+
+  const sourceIds = new Set();
+  const urlPairs = [];
+  for (const r of rows) {
+    for (const endpoint of [r.from_id, r.to_id]) {
+      if (String(endpoint || "").startsWith("Source:")) {
+        const sid = parseSourceNodeId(endpoint);
+        if (sid) sourceIds.add(sid);
+      }
+      const parsed = parseResourceNodeId(
+        String(endpoint || "").startsWith("Resource:")
+          ? endpoint
+          : String(endpoint || "").includes(":")
+            ? `Resource:${endpoint}`
+            : ""
+      );
+      if (parsed) {
+        sourceIds.add(parsed.sourceId);
+        urlPairs.push(parsed);
+      }
+    }
+  }
+  await ensureSourceUrls([...sourceIds]);
+  await ensureResourceUrls(urlPairs);
+  await Promise.all([...sourceIds].map((sid) => ensureResourceTitles(sid)));
+
   $("#rels-body").innerHTML = rows.length
     ? rows
         .map(
           (r) => `
       <tr>
         <td class="mono">${esc(r.type)}</td>
-        <td class="mono">${esc(r.from_id)}</td>
-        <td class="mono">${esc(r.to_id)}</td>
+        <td>${formatGraphEndpoint(r.from_id)}</td>
+        <td>${formatGraphEndpoint(r.to_id)}</td>
       </tr>`
         )
         .join("")
@@ -804,9 +1091,22 @@ async function loadObservatory() {
           const size = (0.85 + weight * 1.55).toFixed(2);
           const [x, y] = slots[i];
           const tone = i % 4;
-          return `<span class="wc-tag tone-${tone}" style="left:${x}%;top:${y}%;font-size:${size}rem" title="${esc(w.count)} apariciones">${esc(w.term)}</span>`;
+          const term = w.term || "";
+          const srcUrl = lookupSourceUrl(term);
+          if (srcUrl) {
+            return `<a href="${esc(srcUrl)}" class="wc-tag tone-${tone} res-link-ext" style="left:${x}%;top:${y}%;font-size:${size}rem" target="_blank" rel="noopener noreferrer" title="${esc(srcUrl)}">${esc(term)}</a>`;
+          }
+          return `<button type="button" class="wc-tag tone-${tone} wc-tag-btn" style="left:${x}%;top:${y}%;font-size:${size}rem" data-q="${esc(term)}" title="${esc(w.count)} apariciones · abrir recomendaciones">${esc(term)}</button>`;
         })
         .join("");
+      $$("#obs-cloud .wc-tag-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          go("recommend");
+          $("#rec-mode").value = "q";
+          $("#rec-input").value = btn.dataset.q || "";
+          runRecommend();
+        });
+      });
     }
     const timeline = data.timeline || [];
     const maxC = Math.max(1, ...timeline.map((d) => d.count || 0));
@@ -821,14 +1121,34 @@ async function loadObservatory() {
           .join("")
       : `<p class="empty">Sin serie temporal</p>`;
 
+    // Prefetch portales por si algún término coincide con source_id
+    try {
+      const srcList = await api("/sources");
+      ingestSourcesHomepages(srcList.sources || []);
+    } catch (_) {}
+
     const top = data.top_queries || [];
     $("#obs-top").innerHTML = top.length
-      ? top.map((r) => `<tr><td>${esc(r.query)}</td><td class="mono">${esc(r.count)}</td></tr>`).join("")
+      ? top
+          .map((r) => {
+            const q = r.query || "";
+            const srcUrl = lookupSourceUrl(q);
+            const cell = srcUrl
+              ? formatExtLink(q, srcUrl)
+              : `<button type="button" class="text-link obs-q-link" data-q="${esc(q)}">${esc(q)}</button>`;
+            return `<tr><td>${cell}</td><td class="mono">${esc(r.count)}</td></tr>`;
+          })
+          .join("")
       : `<tr><td colspan="2" class="empty">Sin datos</td></tr>`;
 
     const empty = data.empty_queries || [];
     $("#obs-empty").innerHTML = empty.length
-      ? empty.map((r) => `<tr><td>${esc(r.query)}</td><td class="mono">${esc(r.count)}</td></tr>`).join("")
+      ? empty
+          .map(
+            (r) =>
+              `<tr><td><button type="button" class="text-link obs-q-link" data-q="${esc(r.query)}">${esc(r.query)}</button></td><td class="mono">${esc(r.count)}</td></tr>`
+          )
+          .join("")
       : `<tr><td colspan="2" class="empty">Sin vacíos registrados</td></tr>`;
 
     const domains = data.domains || [];
@@ -837,15 +1157,29 @@ async function loadObservatory() {
       ? domains
           .map((d) => {
             const pct = Math.round(((d.count || 0) / maxD) * 100);
-            return `<div class="rank-row"><span class="name">${esc(d.domain)}</span><div class="track"><div class="fill" style="width:${pct}%"></div></div><span class="n">${esc(d.count)}</span></div>`;
+            return `<div class="rank-row"><button type="button" class="name text-link obs-q-link" data-q="${esc(d.domain)}">${esc(d.domain)}</button><div class="track"><div class="fill" style="width:${pct}%"></div></div><span class="n">${esc(d.count)}</span></div>`;
           })
           .join("")
       : `<p class="empty">Sin dominios aún</p>`;
 
     const emerging = data.emerging || [];
     $("#obs-emerging").innerHTML = emerging.length
-      ? emerging.map((r) => `<tr><td>${esc(r.term)}</td><td class="mono">${esc(r.count)}</td></tr>`).join("")
+      ? emerging
+          .map(
+            (r) =>
+              `<tr><td><button type="button" class="text-link obs-q-link" data-q="${esc(r.term)}">${esc(r.term)}</button></td><td class="mono">${esc(r.count)}</td></tr>`
+          )
+          .join("")
       : `<tr><td colspan="2" class="empty">Sin señales emergentes</td></tr>`;
+
+    $$(".obs-q-link").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        go("recommend");
+        $("#rec-mode").value = "q";
+        $("#rec-input").value = btn.dataset.q || "";
+        runRecommend();
+      });
+    });
 
     setStatus("Observatorio listo · registro anónimo activo", "ok");
   } catch (err) {
@@ -915,6 +1249,25 @@ function boot() {
   document.addEventListener("click", (e) => {
     const resLink = e.target.closest?.(".res-link");
     if (!resLink) return;
+    const href = resLink.getAttribute("href") || "";
+    const external = /^https?:\/\//i.test(href);
+    if (external) {
+      // Deja que el navegador abra href (target=_blank); telemetría de clic.
+      const payload = {
+        resource_id: resLink.dataset.resourceId,
+        source_id:
+          resLink.dataset.sourceId ||
+          (String(resLink.dataset.resourceId || "").includes(":")
+            ? String(resLink.dataset.resourceId).split(":")[0]
+            : null),
+      };
+      fetch("/telemetry/click", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      }).catch(() => {});
+      return;
+    }
     e.preventDefault();
     navigateToResource(resLink.dataset.resourceId, resLink.dataset.sourceId);
   });
@@ -945,6 +1298,23 @@ async function runHomeAdvice(q) {
     setStatus("Sin rutas de orientación", "error");
     return;
   }
+  const urlPairs = [];
+  for (const r of routes) {
+    for (const x of r.resources || []) {
+      const rid = typeof x === "string" ? x : x.resource_id;
+      if (rid) urlPairs.push({ sourceId: r.source_id, resourceId: rid });
+    }
+  }
+  await ensureResourceUrls(urlPairs);
+  await ensureSourceUrls(routes.map((r) => r.source_id).filter(Boolean));
+
+  const titleMapsBySource = {};
+  await Promise.all(
+    [...new Set(routes.map((r) => r.source_id).filter(Boolean))].map(async (sid) => {
+      titleMapsBySource[sid] = await ensureResourceTitles(sid);
+    })
+  );
+
   box.innerHTML = `
     <div class="home-advice-head">
       <h2>Orientación</h2>
@@ -952,17 +1322,21 @@ async function runHomeAdvice(q) {
     </div>
     <div class="home-advice-list">
       ${routes
-        .map(
-          (r) => `
+        .map((r) => {
+          const ids = (r.resources || [])
+            .map((x) => (typeof x === "string" ? x : x.resource_id))
+            .filter(Boolean);
+          const sourceLabel = r.title || r.source || r.source_id;
+          return `
         <article class="advice-card">
           <p class="advice-rank">#${esc(r.rank)} · ${esc(r.score ?? "—")}</p>
-          <h3>${esc(r.title || r.source || r.source_id)}</h3>
+          <h3>${formatSourceLink(r.source_id, sourceLabel)}</h3>
           <p class="advice-what"><strong>Qué hacer:</strong> ${esc(r.what_to_do || "—")}</p>
-          <p class="advice-source"><strong>Fuente:</strong> ${esc(r.source || r.source_id)} · ${esc(r.institution || "")}</p>
+          <p class="advice-source"><strong>Fuente:</strong> ${formatSourceLink(r.source_id, r.source || r.source_id)} · ${esc(r.institution || "")}</p>
           <p class="advice-why"><strong>Por qué:</strong> ${esc((r.why || []).slice(0, 2).join(" · ") || "—")}</p>
-          <p class="advice-res">${pills((r.resources || []).map((x) => x.resource_id || x.title).filter(Boolean).slice(0, 4))}</p>
-        </article>`
-        )
+          <p class="advice-res res-cell">${formatResourceLabels(ids, titleMapsBySource[r.source_id] || {}, r.source_id, 4)}</p>
+        </article>`;
+        })
         .join("")}
     </div>
     <div class="home-advice-actions">

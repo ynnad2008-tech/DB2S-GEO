@@ -11,7 +11,7 @@ import os
 
 ENVIRONMENT = os.environ.get("ENVIRONMENT", "preview")
 APP_PHASE = "preview"
-APP_VERSION = "0.1.0-preview"
+APP_VERSION = "0.2.0-preview"
 READ_ONLY = True
 DOWNLOADS_ENABLED = False
 GRAPH_BACKEND = "python_memory"

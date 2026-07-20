@@ -1,0 +1,71 @@
+{
+  "id": "unosat",
+  "name": "UNOSAT",
+  "description": "Centro satelital de las Naciones Unidas (UNITAR): análisis de imágenes para respuesta humanitaria y gestión del riesgo. DB2S-GEO solo documenta acceso.",
+  "url": "https://www.unosat.org",
+  "category": "internacional",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "United Nations Satellite Centre (UNOSAT / UNITAR)",
+  "domains": [
+    "observacion_tierra"
+  ],
+  "license": "Según términos UNOSAT / UNITAR de cada producto",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "unosat:disaster-mapping",
+      "name": "UNOSAT — cartografía satelital de desastres",
+      "description": "Productos UNOSAT de mapeo satelital operacional para evaluación post-desastre, inundaciones, movimientos en masa y eventos extremos. Catálogo de activaciones y mapas en vivo. DB2S-GEO solo documenta el acceso; no descarga productos.",
+      "url": "https://www.unosat.org/products/",
+      "category": "catalog",
+      "coverage": {
+        "spatial": "Global (incluye activaciones sobre Colombia cuando existan)",
+        "temporal": "Según activaciones operacionales UNOSAT"
+      },
+      "domains": [
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "desastre",
+        "emergencia",
+        "inundaciones",
+        "movimientos",
+        "masa",
+        "monitoreo",
+        "eventos",
+        "extremos",
+        "cartografia",
+        "satelital",
+        "unosat",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.unosat.org/products/",
+          "label": "Catálogo de productos UNOSAT"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.unosat.org",
+          "label": "Portal UNOSAT"
+        }
+      ],
+      "formats": [
+        "mapas PDF",
+        "GIS data",
+        "live web maps"
+      ],
+      "documentation_url": "https://unosat.org/about-us/",
+      "doi": "",
+      "citation_reference": "UNITAR-UNOSAT. Operational satellite mapping products. United Nations Satellite Centre. https://www.unosat.org/products/"
+    }
+  ]
+}

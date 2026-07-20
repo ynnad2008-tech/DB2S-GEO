@@ -1,0 +1,240 @@
+{
+  "id": "gee",
+  "name": "Google Earth Engine",
+  "description": "Plataforma de análisis geoespacial a escala planetaria con catálogo de datasets satelitales y ambientales. DB2S-GEO no ejecuta scripts ni autentica cuentas GEE.",
+  "url": "https://earthengine.google.com",
+  "category": "plataforma",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Google Earth Engine (Google LLC / partners)",
+  "domains": [
+    "observacion_tierra"
+  ],
+  "license": "Según dataset en el catálogo GEE; términos de Google Earth Engine y licencia del productor original",
+  "version": "1.2.0",
+  "resources": [
+    {
+      "id": "gee:catalog",
+      "name": "Earth Engine Data Catalog",
+      "description": "Catálogo público de datasets accesibles vía Google Earth Engine (óptico, radar, clima, demografía, coberturas, etc.).",
+      "url": "https://developers.google.com/earth-engine/datasets",
+      "category": "catalog",
+      "coverage": {
+        "spatial": "Global / según dataset",
+        "temporal": "Según colección"
+      },
+      "domains": [
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "catalogo",
+        "earth engine",
+        "datasets",
+        "observacion de la tierra",
+        "gee"
+      ],
+      "access_methods": [
+        "platform",
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://developers.google.com/earth-engine/datasets",
+          "label": "Earth Engine Data Catalog"
+        },
+        {
+          "method": "platform",
+          "url": "https://code.earthengine.google.com",
+          "label": "Earth Engine Code Editor"
+        }
+      ],
+      "formats": [
+        "Earth Engine Image/ImageCollection",
+        "metadatos"
+      ],
+      "documentation_url": "https://developers.google.com/earth-engine",
+      "doi": "10.1016/j.rse.2017.06.031",
+      "citation_reference": "Gorelick, N., et al. (2017). Google Earth Engine: Planetary-scale geospatial analysis for everyone. Remote Sensing of Environment."
+    },
+    {
+      "id": "gee:sentinel2",
+      "name": "Sentinel-2 (vía Earth Engine)",
+      "description": "Colecciones Sentinel-2 disponibles en el catálogo Earth Engine (acceso sujeto a cuenta GEE y términos ESA/Copernicus).",
+      "url": "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED",
+      "category": "collection",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "2015–presente (según colección)"
+      },
+      "domains": [
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "sentinel-2",
+        "optico",
+        "copernicus",
+        "earth engine",
+        "cobertura"
+      ],
+      "access_methods": [
+        "platform",
+        "api"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED",
+          "label": "COPERNICUS/S2_SR_HARMONIZED"
+        }
+      ],
+      "formats": [
+        "Earth Engine ImageCollection"
+      ],
+      "documentation_url": "https://developers.google.com/earth-engine/datasets",
+      "doi": "",
+      "citation_reference": "European Union / ESA / Copernicus; accessed via Google Earth Engine. Sentinel-2 MSI."
+    },
+    {
+      "id": "gee:landsat",
+      "name": "Landsat (vía Earth Engine)",
+      "description": "Colecciones Landsat en Earth Engine (USGS/NASA), accesibles bajo cuenta autorizada.",
+      "url": "https://developers.google.com/earth-engine/datasets/catalog/landsat",
+      "category": "collection",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "Histórico Landsat"
+      },
+      "domains": [
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "landsat",
+        "usgs",
+        "nasa",
+        "earth engine",
+        "satelite"
+      ],
+      "access_methods": [
+        "platform",
+        "api"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://developers.google.com/earth-engine/datasets/catalog/landsat",
+          "label": "Landsat catalog (GEE)"
+        }
+      ],
+      "formats": [
+        "Earth Engine ImageCollection"
+      ],
+      "documentation_url": "https://developers.google.com/earth-engine/datasets",
+      "doi": "",
+      "citation_reference": "U.S. Geological Survey / NASA; accessed via Google Earth Engine. Landsat collections."
+    },
+    {
+      "id": "gee:chirps",
+      "name": "CHIRPS precipitación (vía Earth Engine)",
+      "description": "Colección CHIRPS (Climate Hazards Group InfraRed Precipitation with Station data) en Google Earth Engine: precipitación cuasi-global para series temporales, sequía y variabilidad climática. DB2S-GEO no ejecuta código GEE ni descarga datos.",
+      "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+      "category": "collection",
+      "coverage": {
+        "spatial": "Cuasi-global (latitudes tropicales / subtropicales)",
+        "temporal": "1981–presente (según colección)"
+      },
+      "domains": [
+        "clima",
+        "hidrologia"
+      ],
+      "keywords": [
+        "precipitacion",
+        "series",
+        "temporales",
+        "sequia",
+        "variabilidad",
+        "climatica",
+        "chirps",
+        "gee",
+        "clima"
+      ],
+      "access_methods": [
+        "platform",
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+          "label": "UCSB-CHG/CHIRPS/DAILY (GEE Catalog)"
+        },
+        {
+          "method": "platform",
+          "url": "https://code.earthengine.google.com",
+          "label": "Earth Engine Code Editor"
+        }
+      ],
+      "formats": [
+        "Earth Engine ImageCollection"
+      ],
+      "documentation_url": "https://www.chc.ucsb.edu/data/chirps",
+      "doi": "10.1038/sdata.2015.66",
+      "citation_reference": "Funk, C., et al. (2015). The climate hazards infrared precipitation with stations—a new environmental record for monitoring extremes. Scientific Data. Accessed via Google Earth Engine: UCSB-CHG/CHIRPS/DAILY."
+    },
+    {
+      "id": "gee:chirps-colombia",
+      "name": "CHIRPS precipitación para Colombia (vía Earth Engine)",
+      "description": "Uso de la colección CHIRPS (UCSB-CHG/CHIRPS/DAILY) en Google Earth Engine acotada a Colombia: precipitación histórica, climatología, análisis de cuencas, series temporales y sequías. DB2S-GEO no ejecuta código GEE ni descarga datos; el recorte espacial a Colombia se realiza en la plataforma GEE.",
+      "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+      "category": "collection",
+      "coverage": {
+        "spatial": "Colombia (vía filtro espacial en GEE)",
+        "temporal": "1981–presente (según colección CHIRPS)"
+      },
+      "domains": [
+        "clima",
+        "hidrologia"
+      ],
+      "keywords": [
+        "precipitacion",
+        "historica",
+        "climatologia",
+        "cuencas",
+        "series",
+        "temporales",
+        "sequias",
+        "chirps",
+        "colombia",
+        "gee"
+      ],
+      "access_methods": [
+        "platform",
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_DAILY",
+          "label": "UCSB-CHG/CHIRPS/DAILY (GEE Catalog)"
+        },
+        {
+          "method": "platform",
+          "url": "https://code.earthengine.google.com",
+          "label": "Earth Engine Code Editor (filtrar AOI Colombia)"
+        }
+      ],
+      "formats": [
+        "Earth Engine ImageCollection"
+      ],
+      "documentation_url": "https://www.chc.ucsb.edu/data/chirps",
+      "doi": "10.1038/sdata.2015.66",
+      "citation_reference": "Funk, C., et al. (2015). CHIRPS — Climate Hazards Group. Scientific Data. Uso orientado a Colombia vía Google Earth Engine: UCSB-CHG/CHIRPS/DAILY."
+    }
+  ]
+}

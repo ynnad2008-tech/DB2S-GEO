@@ -1,0 +1,195 @@
+{
+  "id": "ani",
+  "name": "ANI",
+  "description": "Agencia Nacional de Infraestructura: ANIscopio, atlas/capas SIG de concesiones y fichas portuarias. DB2S-GEO solo documenta acceso.",
+  "url": "https://www.ani.gov.co",
+  "category": "instituto",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Agencia Nacional de Infraestructura (ANI)",
+  "domains": [
+    "observacion_tierra",
+    "oceanos_costas"
+  ],
+  "license": "Según términos ANI / ANIscopio",
+  "version": "1.1.0",
+  "resources": [
+    {
+      "id": "ani:aniscopio",
+      "name": "ANIscopio — concesiones e infraestructura estratégica",
+      "description": "Plataforma ANIscopio de la ANI: visor geográfico de proyectos de infraestructura concesionada (vial, férrea, aeroportuaria y portuaria), avances de obra y capas descargables del SIG ANI. DB2S-GEO solo documenta el acceso; no descarga shapefiles.",
+      "url": "https://aniscopio.ani.gov.co/",
+      "category": "catalog",
+      "coverage": {
+        "spatial": "Colombia (proyectos concesionados ANI)",
+        "temporal": "Según estado de proyectos publicados"
+      },
+      "domains": [
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "aniscopio",
+        "concesiones",
+        "viales",
+        "ferreas",
+        "aeroportuarias",
+        "portuarias",
+        "infraestructura",
+        "nacional",
+        "logistica",
+        "ppp",
+        "geovisor",
+        "ani"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://aniscopio.ani.gov.co/",
+          "label": "ANIscopio — visor de concesiones"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.ani.gov.co",
+          "label": "Portal institucional ANI"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.ani.gov.co/plataforma-aniscopio-un-caso-de-exito-en-latinoamerica",
+          "label": "Descripción plataforma ANIscopio"
+        }
+      ],
+      "formats": [
+        "geovisor",
+        "shapefile (descarga SIG)",
+        "portal"
+      ],
+      "documentation_url": "https://www.ani.gov.co/plataforma-aniscopio-un-caso-de-exito-en-latinoamerica",
+      "doi": "",
+      "citation_reference": "Agencia Nacional de Infraestructura (ANI). ANIscopio — proyectos de infraestructura concesionada. https://aniscopio.ani.gov.co/"
+    },
+    {
+      "id": "ani:atlas-concesiones",
+      "name": "Atlas / capas de concesiones y corredores (ANI SIG)",
+      "description": "Suite geográfica ANI de concesiones por modos, peajes, áreas de influencia y corredores logísticos: capas MapServer/FeatureServer del SIG ANI (Concesiones_Modos, Carreteras, etc.) complementarias al visor ANIscopio. DB2S-GEO solo documenta el acceso; no descarga capas.",
+      "url": "https://aniscopio.ani.gov.co/",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia (concesiones ANI)",
+        "temporal": "Según actualización SIG ANI"
+      },
+      "domains": [
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "atlas",
+        "concesiones",
+        "corredores",
+        "logisticos",
+        "peajes",
+        "areas",
+        "influencia",
+        "movilidad",
+        "carreteras",
+        "modos",
+        "sig",
+        "ani"
+      ],
+      "access_methods": [
+        "portal",
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://sig.ani.gov.co/arcgis/rest/services/SigAni/Concesiones_Modos/MapServer",
+          "label": "MapServer Concesiones_Modos (atlas multimodal)"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://sig.ani.gov.co/arcgis/rest/services/SigAni/ConcesionesCarreteras/MapServer",
+          "label": "MapServer Concesiones Carreteras / peajes"
+        },
+        {
+          "method": "portal",
+          "url": "https://aniscopio.ani.gov.co/",
+          "label": "ANIscopio — suite de geovisores"
+        }
+      ],
+      "formats": [
+        "MapServer",
+        "FeatureServer",
+        "shapefile",
+        "geovisor"
+      ],
+      "documentation_url": "https://sig.ani.gov.co/descargas/shpsiganidescargar/Descripci%C3%B3n%20descargas%20SIG%20ANI.pdf",
+      "doi": "",
+      "citation_reference": "Agencia Nacional de Infraestructura (ANI). Atlas / capas SIG de concesiones y corredores. https://sig.ani.gov.co/arcgis/rest/services/SigAni/Concesiones_Modos/MapServer"
+    },
+    {
+      "id": "ani:fichas-portuarias",
+      "name": "Fichas y concesiones de zonas portuarias (ANI)",
+      "description": "Fichas cualitativas, cuantitativas y espaciales de las principales zonas portuarias de Colombia (Buenaventura, Guajira, Santa Marta/Ciénaga, Urabá, Cartagena, Tumaco, Golfo de Morrosquillo, San Andrés) y capas de concesiones portuarias del SIG ANI. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.ani.gov.co/zonas-portuarias/",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia (zonas portuarias / concesiones marítimas)",
+        "temporal": "Según fichas y capas publicadas por la ANI"
+      },
+      "domains": [
+        "oceanos_costas",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "fichas",
+        "portuarias",
+        "puertos",
+        "zonas",
+        "portuarias",
+        "concesiones",
+        "maritimas",
+        "buenaventura",
+        "cartagena",
+        "santa",
+        "marta",
+        "logistica",
+        "ani"
+      ],
+      "access_methods": [
+        "portal",
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.ani.gov.co/zonas-portuarias/",
+          "label": "Zonas portuarias ANI — fichas"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://sig.ani.gov.co/arcgis/rest/services/SigAni/ConcesionesPuertos/MapServer",
+          "label": "MapServer Concesiones Puertos"
+        },
+        {
+          "method": "portal",
+          "url": "https://aniscopio.ani.gov.co/",
+          "label": "ANIscopio — modo portuario"
+        }
+      ],
+      "formats": [
+        "fichas web",
+        "MapServer",
+        "FeatureServer",
+        "portal"
+      ],
+      "documentation_url": "https://www.ani.gov.co/zonas-portuarias/zona-portuaria-de-buenaventura",
+      "doi": "",
+      "citation_reference": "Agencia Nacional de Infraestructura (ANI). Fichas y concesiones de zonas portuarias. https://www.ani.gov.co/zonas-portuarias/"
+    }
+  ]
+}

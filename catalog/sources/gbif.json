@@ -1,0 +1,232 @@
+{
+  "id": "gbif",
+  "name": "GBIF",
+  "description": "Infraestructura global de datos de biodiversidad. Agrega ocurrencias, taxonomía y datasets con DOI.",
+  "url": "https://www.gbif.org",
+  "category": "internacional",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Global Biodiversity Information Facility",
+  "domains": [
+    "biodiversidad"
+  ],
+  "license": "Según dataset (frecuente CC0 / CC BY); ver licencia del recurso en GBIF",
+  "version": "1.2.0",
+  "resources": [
+    {
+      "id": "gbif:occurrence",
+      "name": "GBIF Occurrence API",
+      "description": "API de ocurrencias de biodiversidad (especímenes y observaciones) publicadas a través de la red GBIF.",
+      "url": "https://www.gbif.org",
+      "category": "api",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "Histórico a presente"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "ocurrencias",
+        "biodiversidad",
+        "especimenes",
+        "observaciones",
+        "gbif"
+      ],
+      "access_methods": [
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "api",
+          "url": "https://api.gbif.org/v1/occurrence/search",
+          "label": "Occurrence search"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.gbif.org",
+          "label": "Portal GBIF"
+        }
+      ],
+      "formats": [
+        "JSON",
+        "DwC-A"
+      ],
+      "documentation_url": "https://www.gbif.org/developer/summary",
+      "doi": "10.15468/dl.gbif",
+      "citation_reference": "GBIF.org. GBIF Occurrence data. Global Biodiversity Information Facility."
+    },
+    {
+      "id": "gbif:species",
+      "name": "GBIF Species / Backbone Taxonomy",
+      "description": "Servicios de taxonomía y especies (Backbone Taxonomy) de GBIF.",
+      "url": "https://www.gbif.org",
+      "category": "api",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "Actualizaciones continuas"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "especies",
+        "taxonomia",
+        "backbone",
+        "gbif"
+      ],
+      "access_methods": [
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "api",
+          "url": "https://api.gbif.org/v1/species",
+          "label": "Species API"
+        }
+      ],
+      "formats": [
+        "JSON"
+      ],
+      "documentation_url": "https://www.gbif.org/developer/species",
+      "doi": "10.15468/39omei",
+      "citation_reference": "GBIF Secretariat. GBIF Backbone Taxonomy. Global Biodiversity Information Facility."
+    },
+    {
+      "id": "gbif:datasets",
+      "name": "GBIF Dataset Registry",
+      "description": "Registro de datasets publicados en GBIF, con metadatos y DOI por conjunto de datos.",
+      "url": "https://www.gbif.org/dataset/search",
+      "category": "catalog",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "Actualizaciones continuas"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "datasets",
+        "registro",
+        "metadatos",
+        "doi",
+        "gbif"
+      ],
+      "access_methods": [
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "api",
+          "url": "https://api.gbif.org/v1/dataset",
+          "label": "Dataset registry API"
+        }
+      ],
+      "formats": [
+        "JSON"
+      ],
+      "documentation_url": "https://www.gbif.org/developer/registry",
+      "doi": "",
+      "citation_reference": "GBIF.org. Dataset registry. Global Biodiversity Information Facility."
+    },
+    {
+      "id": "gbif:occurrence-colombia",
+      "name": "Ocurrencias de biodiversidad en Colombia (GBIF)",
+      "description": "Acceso a ocurrencias y registros biológicos de biodiversidad en Colombia publicados en GBIF (filtro country=CO). Apoya conservación, inventarios de especies y análisis de distribución. DB2S-GEO solo documenta el endpoint; no descarga ocurrencias.",
+      "url": "https://www.gbif.org/occurrence/search?country=CO",
+      "category": "api",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Histórico a presente (según datasets publicados)"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "biodiversidad",
+        "especies",
+        "ocurrencias",
+        "registros",
+        "biologicos",
+        "conservacion",
+        "colombia",
+        "gbif"
+      ],
+      "access_methods": [
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "api",
+          "url": "https://api.gbif.org/v1/occurrence/search?country=CO",
+          "label": "Occurrence search (Colombia)"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.gbif.org/occurrence/search?country=CO",
+          "label": "Portal GBIF ocurrencias Colombia"
+        }
+      ],
+      "formats": [
+        "JSON",
+        "DwC-A"
+      ],
+      "documentation_url": "https://techdocs.gbif.org/en/openapi/v1/occurrence",
+      "doi": "10.15468/dl.gbif",
+      "citation_reference": "GBIF.org. Occurrence search — Colombia (country=CO). Global Biodiversity Information Facility. https://api.gbif.org/v1/occurrence/search?country=CO"
+    },
+    {
+      "id": "gbif:species-colombia",
+      "name": "Especies y taxonomía en Colombia (GBIF)",
+      "description": "Acceso a información de especies y taxonomía asociada a biodiversidad en Colombia a través de GBIF (portal país CO y Species API). Apoya conservación, inventarios y observaciones biológicas. DB2S-GEO solo documenta el endpoint; no descarga datos.",
+      "url": "https://www.gbif.org/country/CO/search",
+      "category": "api",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Actualizaciones continuas (según publicación GBIF)"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "biodiversidad",
+        "taxonomia",
+        "especies",
+        "conservacion",
+        "observaciones",
+        "biologicas",
+        "colombia",
+        "gbif"
+      ],
+      "access_methods": [
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "api",
+          "url": "https://api.gbif.org/v1/species/search",
+          "label": "Species search API"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.gbif.org/country/CO/search",
+          "label": "Portal GBIF especies Colombia"
+        }
+      ],
+      "formats": [
+        "JSON"
+      ],
+      "documentation_url": "https://www.gbif.org/developer/species",
+      "doi": "10.15468/39omei",
+      "citation_reference": "GBIF.org. Species / taxonomy — Colombia. Global Biodiversity Information Facility. https://www.gbif.org/country/CO/search"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "id": "supertransporte",
+  "name": "Supertransporte",
+  "description": "Superintendencia de Transporte: visor marítimo-fluvial y Observatorio de vigilancia, inspección y control. DB2S-GEO solo documenta acceso.",
+  "url": "https://www.supertransporte.gov.co",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Superintendencia de Transporte",
+  "domains": [
+    "oceanos_costas",
+    "hidrologia",
+    "observacion_tierra"
+  ],
+  "license": "Según términos Supertransporte / SuperTransporte Digital",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "supertransporte:visor-maritimo-fluvial",
+      "name": "Visor geográfico marítimo y fluvial (Supertransporte)",
+      "description": "Visor geográfico de la Superintendencia de Transporte / Delegatura de Puertos: infraestructura marítima y fluvial concesionada y no concesionada (muelles, embarcaderos e instalaciones portuarias). Complementa ANIscopio con el enfoque de vigilancia. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.supertransporte.gov.co/index.php/superintendencia-delegada-de-puertos/visor-del-mapa-de-infraestructura-no-concesionada/",
+      "category": "catalog",
+      "coverage": {
+        "spatial": "Colombia (infraestructura portuaria marítima/fluvial)",
+        "temporal": "Según capas publicadas en el visor"
+      },
+      "domains": [
+        "oceanos_costas",
+        "hidrologia"
+      ],
+      "keywords": [
+        "visor",
+        "maritimo",
+        "fluvial",
+        "infraestructura",
+        "portuaria",
+        "muelles",
+        "embarcaderos",
+        "concesiones",
+        "logistica",
+        "puertos",
+        "geovisor",
+        "supertransporte",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.supertransporte.gov.co/index.php/superintendencia-delegada-de-puertos/visor-del-mapa-de-infraestructura-no-concesionada/",
+          "label": "Visor infraestructura no concesionada / marítimo-fluvial"
+        },
+        {
+          "method": "portal",
+          "url": "https://transformaciondigital.supertransporte.gov.co/index.php/aplicaciones/",
+          "label": "Aplicaciones SuperTransporte Digital"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.supertransporte.gov.co",
+          "label": "Portal institucional Supertransporte"
+        }
+      ],
+      "formats": [
+        "geovisor",
+        "ArcGIS",
+        "portal"
+      ],
+      "documentation_url": "https://transformaciondigital.supertransporte.gov.co/index.php/aplicaciones/",
+      "doi": "",
+      "citation_reference": "Superintendencia de Transporte. Visor geográfico de infraestructura marítima y fluvial (concesionada y no concesionada). https://www.supertransporte.gov.co/index.php/superintendencia-delegada-de-puertos/visor-del-mapa-de-infraestructura-no-concesionada/"
+    },
+    {
+      "id": "supertransporte:observatorio-vigilancia",
+      "name": "Observatorio de vigilancia, inspección y control",
+      "description": "Observatorio de vigilancia, inspección y control de la Superintendencia de Transporte: plataforma integral con visor geográfico, tableros, boletines, tráfico portuario e indicadores sectoriales, más datos abiertos. DB2S-GEO solo documenta el acceso; no descarga datasets.",
+      "url": "https://transformaciondigital.supertransporte.gov.co/index.php/observatorio/",
+      "category": "catalog",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicaciones y tableros del Observatorio"
+      },
+      "domains": [
+        "oceanos_costas",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "observatorio",
+        "vigilancia",
+        "inspeccion",
+        "control",
+        "transporte",
+        "indicadores",
+        "sectoriales",
+        "trafico",
+        "portuario",
+        "boletines",
+        "datos",
+        "abiertos",
+        "supertransporte",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://transformaciondigital.supertransporte.gov.co/index.php/observatorio/",
+          "label": "Observatorio SuperTransporte Digital"
+        },
+        {
+          "method": "portal",
+          "url": "https://transformaciondigital.supertransporte.gov.co/index.php/aplicaciones/",
+          "label": "Catálogo de aplicaciones digitales"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.supertransporte.gov.co/index.php/vigia/",
+          "label": "VIGIA — sistema misional de vigilancia"
+        }
+      ],
+      "formats": [
+        "geovisor",
+        "tableros",
+        "boletines",
+        "datos abiertos"
+      ],
+      "documentation_url": "https://transformaciondigital.supertransporte.gov.co/index.php/observatorio/",
+      "doi": "",
+      "citation_reference": "Superintendencia de Transporte. Observatorio de vigilancia, inspección y control. https://transformaciondigital.supertransporte.gov.co/index.php/observatorio/"
+    }
+  ]
+}

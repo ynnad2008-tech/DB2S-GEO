@@ -136,7 +136,7 @@ def test_api_observatory_and_autolog(tmp_path: Path) -> None:
         assert info.json()["stores_ip"] is False
 
         root = client.get("/")
-        assert root.json()["version"].startswith("0.1")
+        assert root.json()["version"].startswith("0.2")
         assert "Preview" in root.json().get("release", "")
         assert root.json().get("author") == "Dany Arbey Benavides"
         assert "GET /observatory/dashboard" in root.json()["endpoints"]

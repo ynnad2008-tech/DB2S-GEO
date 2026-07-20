@@ -55,7 +55,7 @@ def test_telemetry_api_and_autolog(tmp_path: Path, monkeypatch: pytest.MonkeyPat
 
         ver = client.get("/version")
         assert ver.status_code == 200
-        assert ver.json()["version"] == "0.1.0-preview"
+        assert ver.json()["version"] == "0.2.0-preview"
 
         health = client.get("/health")
         assert health.status_code == 200

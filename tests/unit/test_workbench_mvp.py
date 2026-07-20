@@ -118,4 +118,4 @@ def test_root_lists_workbench(client: TestClient) -> None:
     body = response.json()
     assert body.get("workbench") == "/workbench/"
     assert "GET /workbench/" in body["endpoints"]
-    assert body.get("version", "").startswith("0.1")
+    assert body.get("version", "").startswith("0.2")

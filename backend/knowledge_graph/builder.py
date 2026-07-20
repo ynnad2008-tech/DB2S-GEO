@@ -12,6 +12,7 @@ from typing import TYPE_CHECKING
 from backend.knowledge_graph.graph import KnowledgeGraph
 from backend.knowledge_graph.models import slug_institution
 from backend.metadata.domains import INITIAL_DOMAINS
+from backend.recommendation.scoring import is_generic_keyword
 
 if TYPE_CHECKING:
     from backend.discovery.engine import DiscoveryEngine
@@ -85,6 +86,8 @@ def build_knowledge_graph(
                     if not kw or not str(kw).strip():
                         continue
                     kw_key = str(kw).strip().lower().replace(" ", "_")
+                    if is_generic_keyword(kw_key):
+                        continue
                     kw_label = str(kw).strip()
                     kw_node = graph.add_node("Keyword", kw_key, kw_label)
                     graph.add_relation("associated_with", resource_node, kw_node)

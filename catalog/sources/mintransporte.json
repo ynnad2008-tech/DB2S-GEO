@@ -1,0 +1,80 @@
+{
+  "id": "mintransporte",
+  "name": "MinTransporte",
+  "description": "Ministerio de Transporte: administra el SINC (inventario nacional de carreteras e infraestructura vial asociada). DB2S-GEO solo documenta acceso.",
+  "url": "https://www.mintransporte.gov.co",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Ministerio de Transporte de Colombia",
+  "domains": [
+    "observacion_tierra"
+  ],
+  "license": "Según términos MinTransporte / SINC",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "mintransporte:sinc",
+      "name": "SINC — Sistema Integral Nacional de Información de Carreteras",
+      "description": "Sistema Integral Nacional de Información de Carreteras (SINC), administrado por el Ministerio de Transporte: inventario geográfico de la red vial (nación, departamentos, municipios), ejes, puentes, túneles, PR y sitios críticos. Disponible vía Hub ArcGIS MinTransporte y MapServer publicado en HERMES/INVIAS. DB2S-GEO solo documenta el acceso; no descarga geometrías.",
+      "url": "https://sitio-sinc-mintransporte-1-1-mintransporte.hub.arcgis.com/",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según actualizaciones reportadas al SINC"
+      },
+      "domains": [
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "sinc",
+        "red",
+        "vial",
+        "nacional",
+        "carreteras",
+        "puertos",
+        "aeropuertos",
+        "vias",
+        "ferreas",
+        "infraestructura",
+        "transporte",
+        "puentes",
+        "inventario",
+        "mintransporte",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal",
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://sitio-sinc-mintransporte-1-1-mintransporte.hub.arcgis.com/",
+          "label": "Hub ArcGIS SINC — MinTransporte"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://hermes2.invias.gov.co/server/rest/services/MapaCarreteras/SINC_Ministerio_de_transporte/MapServer",
+          "label": "MapServer SINC Ministerio de Transporte"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.mintransporte.gov.co",
+          "label": "Portal institucional MinTransporte"
+        }
+      ],
+      "formats": [
+        "MapServer",
+        "Hub ArcGIS",
+        "portal"
+      ],
+      "documentation_url": "https://mintransporte.gov.co/publicaciones/11967/ministerio-de-transporte-expidio-nuevas-resoluciones-para-el-reporte-de-informacion-del-sistema-integral-nacional-de-informacion-de-carreteras-y-la-modificacion-de-aspectos-en-la-categorizacion-de-vias/",
+      "doi": "",
+      "citation_reference": "Ministerio de Transporte. Sistema Integral Nacional de Información de Carreteras (SINC). https://sitio-sinc-mintransporte-1-1-mintransporte.hub.arcgis.com/"
+    }
+  ]
+}
