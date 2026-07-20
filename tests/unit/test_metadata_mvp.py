@@ -36,7 +36,7 @@ def test_mvp_sources(discovery: DiscoveryEngine) -> None:
         "worldpop",
         "gee",
         "sgc",
-        "dynamicworld",
+        "gee-copernicus-sentinel2",
         "nasa",
         "mapbiomas",
         "unosat",
@@ -59,14 +59,14 @@ def test_list_ideam_resources(metadata: MetadataEngine) -> None:
     items = metadata.list_resources("ideam")
     assert items is not None
     assert len(items) >= 1
-    precip = next(i for i in items if i["resource_id"] == "ideam:precipitacion")
-    assert precip["title"] == "Precipitación"
+    precip = next(i for i in items if i["resource_id"] == "ideam:consulta-meteorologica")
+    assert precip["title"] == "Consulta de datos meteorológicos e hidrológicos"
     assert precip["domain"] == "clima"
     assert "precipitacion" in precip["keywords"]
 
 
 def test_normalized_resource_fields(metadata: MetadataEngine) -> None:
-    item = metadata.get_resource("ideam", "ideam:precipitacion")
+    item = metadata.get_resource("ideam", "ideam:consulta-meteorologica")
     assert item is not None
     for field in NORMALIZED_FIELDS:
         assert field in item

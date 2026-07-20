@@ -27,8 +27,9 @@
         "spatial": "Colombia",
         "temporal": "Según publicación institucional del SGC"
       },
-      "domains": [
-        "observacion_tierra"
+            "domains": [
+        "observacion_tierra",
+        "riesgo"
       ],
       "keywords": [
         "amenaza",

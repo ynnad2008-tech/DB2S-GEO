@@ -11,7 +11,8 @@
   "status": "active",
   "institution": "Unidad de Planeación de Infraestructura de Transporte (UPIT) — Ministerio de Transporte",
   "domains": [
-    "observacion_tierra"
+    "infraestructura",
+    "ordenamiento"
   ],
   "license": "Según términos UPIT / Hub de Mapas",
   "version": "1.0.0",

@@ -26,16 +26,16 @@ def test_list_resources_ideam(client: TestClient) -> None:
     assert response.status_code == 200
     body = response.json()
     assert body["count"] >= 1
-    precip = next(r for r in body["resources"] if r["resource_id"] == "ideam:precipitacion")
+    precip = next(r for r in body["resources"] if r["resource_id"] == "ideam:consulta-meteorologica")
     assert precip["domain"] == "clima"
     assert "precipitacion" in precip["keywords"]
 
 
 def test_get_resource_normalized(client: TestClient) -> None:
-    response = client.get("/sources/ideam/resources/ideam:precipitacion")
+    response = client.get("/sources/ideam/resources/ideam:consulta-meteorologica")
     assert response.status_code == 200
     body = response.json()
-    assert body["resource_id"] == "ideam:precipitacion"
+    assert body["resource_id"] == "ideam:consulta-meteorologica"
     assert body["source"] == "IDEAM"
     assert body["institution"]
     assert body["citation_available"] is True
@@ -46,7 +46,7 @@ def test_list_domains(client: TestClient) -> None:
     response = client.get("/domains")
     assert response.status_code == 200
     body = response.json()
-    assert body["count"] == 8
+    assert body["count"] == 15
     ids = {d["domain_id"] for d in body["domains"]}
     assert "oceanos_costas" in ids
 

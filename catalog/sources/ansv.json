@@ -11,7 +11,7 @@
   "status": "active",
   "institution": "Agencia Nacional de Seguridad Vial (ANSV)",
   "domains": [
-    "observacion_tierra",
+    "infraestructura",
     "poblacion"
   ],
   "license": "Según términos ANSV / Observatorio Nacional de Seguridad Vial",
@@ -28,7 +28,7 @@
         "temporal": "Según series del Observatorio / anuarios"
       },
       "domains": [
-        "observacion_tierra",
+        "infraestructura",
         "poblacion"
       ],
       "keywords": [

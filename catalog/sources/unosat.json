@@ -11,7 +11,8 @@
   "status": "active",
   "institution": "United Nations Satellite Centre (UNOSAT / UNITAR)",
   "domains": [
-    "observacion_tierra"
+    "observacion_tierra",
+    "riesgo"
   ],
   "license": "Según términos UNOSAT / UNITAR de cada producto",
   "version": "1.0.0",
@@ -27,7 +28,8 @@
         "temporal": "Según activaciones operacionales UNOSAT"
       },
       "domains": [
-        "observacion_tierra"
+        "observacion_tierra",
+        "riesgo"
       ],
       "keywords": [
         "desastre",

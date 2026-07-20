@@ -135,6 +135,62 @@
       "documentation_url": "https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Evaluaciones-Agropecuarias-Municipales-EVA/2pnw-mmge",
       "doi": "",
       "citation_reference": "Unidad de Planificación Rural Agropecuaria (UPRA) / MADR. Evaluaciones Agropecuarias Municipales (EVA). https://upra.gov.co/es-co/eva"
+        },
+    {
+      "id": "dane:geoportal",
+      "name": "Geoportal DANE — datos geoestadísticos",
+      "description": "Geoportal de datos geoestadísticos del DANE: capas de Divipola (municipios, departamentos), manzanas censales, cabeceras, centros poblados y cartografía censal. Servicios REST de descarga y visualización. DB2S-GEO solo documenta el acceso; no descarga capas.",
+      "url": "https://geoportal.dane.gov.co/",
+      "category": "catalog",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de capas geoestadísticas"
+      },
+      "domains": [
+        "observacion_tierra",
+        "poblacion"
+      ],
+      "keywords": [
+        "geoportal",
+        "dane",
+        "geoestadistica",
+        "divipola",
+        "manzanas",
+        "censales",
+        "cabeceras",
+        "municipios",
+        "departamentos",
+        "cartografia",
+        "censal",
+        "descarga",
+        "servicios",
+        "rest"
+      ],
+      "access_methods": [
+        "portal",
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://geoportal.dane.gov.co/",
+          "label": "Geoportal DANE"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.dane.gov.co/servicios/descarga-y-metadatos/datos-geoestadisticos/",
+          "label": "Descarga de datos geoestadísticos"
+        }
+      ],
+      "formats": [
+        "Shapefile",
+        "GeoJSON",
+        "Geopackage",
+        "servicios REST"
+      ],
+      "documentation_url": "https://geoportal.dane.gov.co/servicios/descarga-y-metadatos/datos-geoestadisticos/",
+      "doi": "",
+      "citation_reference": "Departamento Administrativo Nacional de Estadística (DANE). Geoportal DANE — datos geoestadísticos. https://geoportal.dane.gov.co/"
     }
   ]
 }

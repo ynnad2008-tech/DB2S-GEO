@@ -1,0 +1,176 @@
+{
+  "id": "gee-copernicus-sentinel2",
+  "name": "Copernicus Sentinel-2 (Google Earth Engine)",
+  "description": "Catalogo oficial de imagenes Sentinel-2 (MSI, nivel 2A Surface Reflectance y Harmonized) en Google Earth Engine. Acceso a colecciones COPERNICUS/S2_SR y COPERNICUS/S2_SR_HARMONIZED. DB2S-GEO no ejecuta scripts ni autentica cuentas GEE.",
+  "url": "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR",
+  "category": "plataforma",
+  "coverage": {
+    "spatial": "Global (cobertura Sentinel-2)",
+    "temporal": "2017-presente (segun disponibilidad S2 MSI)"
+  },
+  "status": "active",
+  "institution": "European Space Agency (ESA) / Google Earth Engine",
+  "domains": [
+    "observacion_tierra"
+  ],
+  "license": "Segun terminos ESA Copernicus / Google Earth Engine; verificar en catalogo oficial",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "gee:sentinel2-sr",
+      "name": "Sentinel-2 MSI Surface Reflectance (COPERNICUS/S2_SR)",
+      "description": "Coleccion de imagenes Sentinel-2 nivel 2A (Surface Reflectance) corregidas atmosfericamente, accesible via Google Earth Engine (COPERNICUS/S2_SR). Bandas espectrales de 10/20/60 m, mascara de nubes SCL, escenas globales desde 2017. DB2S-GEO no ejecuta codigo GEE ni descarga colecciones.",
+      "url": "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR",
+      "category": "collection",
+      "coverage": {
+        "spatial": "Global (cobertura Sentinel-2)",
+        "temporal": "2017-presente"
+      },
+      "domains": [
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "sentinel2",
+        "copernicus",
+        "sr",
+        "surface",
+        "reflectance",
+        "msi",
+        "gee",
+        "satelital",
+        "imagenes",
+        "espectral",
+        "nube",
+        "scl"
+      ],
+      "access_methods": [
+        "platform",
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR",
+          "label": "COPERNICUS/S2_SR (GEE Catalog)"
+        },
+        {
+          "method": "platform",
+          "url": "https://code.earthengine.google.com",
+          "label": "Earth Engine Code Editor"
+        }
+      ],
+      "formats": [
+        "Earth Engine ImageCollection"
+      ],
+      "documentation_url": "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR",
+      "doi": "",
+      "citation_reference": "European Space Agency (ESA). Copernicus Sentinel-2 MSI Surface Reflectance. Google Earth Engine Dataset: COPERNICUS/S2_SR. https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR"
+    },
+    {
+      "id": "gee:sentinel2-sr-harmonized",
+      "name": "Sentinel-2 MSI Surface Reflectance Harmonized (COPERNICUS/S2_SR_HARMONIZED)",
+      "description": "Coleccion de imagenes Sentinel-2 nivel 2A con bandas armonizadas (valores entre 0 y 1) para compatibilidad con modelos pre-entrenados en GEE. Acceso via COPERNICUS/S2_SR_HARMONIZED. Incluye SCL y bandas espectrales de 10/20/60 m. DB2S-GEO no ejecuta codigo GEE ni descarga colecciones.",
+      "url": "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED",
+      "category": "collection",
+      "coverage": {
+        "spatial": "Global (cobertura Sentinel-2)",
+        "temporal": "2017-presente"
+      },
+      "domains": [
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "sentinel2",
+        "copernicus",
+        "sr",
+        "harmonized",
+        "msi",
+        "gee",
+        "satelital",
+        "imagenes",
+        "espectral",
+        "modelos",
+        "ml"
+      ],
+      "access_methods": [
+        "platform",
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED",
+          "label": "COPERNICUS/S2_SR_HARMONIZED (GEE Catalog)"
+        },
+        {
+          "method": "platform",
+          "url": "https://code.earthengine.google.com",
+          "label": "Earth Engine Code Editor"
+        }
+      ],
+      "formats": [
+        "Earth Engine ImageCollection"
+      ],
+      "documentation_url": "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED",
+      "doi": "",
+      "citation_reference": "European Space Agency (ESA). Copernicus Sentinel-2 MSI Surface Reflectance Harmonized. Google Earth Engine Dataset: COPERNICUS/S2_SR_HARMONIZED. https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED"
+    },
+    {
+      "id": "gee:dynamicworld",
+      "name": "Dynamic World â€” cobertura del suelo (GOOGLE/DYNAMICWORLD/V1)",
+      "description": "Producto Dynamic World de cobertura del suelo casi en tiempo real (10 clases), accesible via Google Earth Engine (GOOGLE/DYNAMICWORLD/V1). Apoya monitoreo territorial, cambio de uso y clasificacion dinamica. DB2S-GEO no ejecuta codigo GEE ni descarga colecciones.",
+      "url": "https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_DYNAMICWORLD_V1",
+      "category": "collection",
+      "coverage": {
+        "spatial": "Global (cobertura Sentinel-2)",
+        "temporal": "2015-presente"
+      },
+      "domains": [
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "cobertura",
+        "suelo",
+        "landcover",
+        "cambio",
+        "uso",
+        "monitoreo",
+        "territorial",
+        "clasificacion",
+        "dinamica",
+        "dynamicworld",
+        "gee"
+      ],
+      "access_methods": [
+        "platform",
+        "api",
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_DYNAMICWORLD_V1",
+          "label": "GOOGLE/DYNAMICWORLD/V1 (GEE Catalog)"
+        },
+        {
+          "method": "portal",
+          "url": "https://dynamicworld.app",
+          "label": "Dynamic World (sitio oficial)"
+        },
+        {
+          "method": "platform",
+          "url": "https://code.earthengine.google.com",
+          "label": "Earth Engine Code Editor"
+        }
+      ],
+      "formats": [
+        "Earth Engine ImageCollection"
+      ],
+      "documentation_url": "https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_DYNAMICWORLD_V1",
+      "doi": "10.1038/s41597-022-01307-4",
+      "citation_reference": "Brown, C. F., et al. (2022). Dynamic World, Near real-time global 10 m land use land cover mapping. Scientific Data. Accessed via Google Earth Engine: GOOGLE/DYNAMICWORLD/V1."
+    }
+  ]
+}

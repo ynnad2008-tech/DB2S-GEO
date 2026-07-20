@@ -1,136 +1,243 @@
 {
   "id": "nasa",
   "name": "NASA",
-  "description": "Agencia espacial de EE. UU. Productos de observación de la Tierra, precipitación (GPM/IMERG) y almacenamiento hídrico (GRACE). DB2S-GEO solo documenta acceso; no autentica ni descarga.",
+  "description": "National Aeronautics and Space Administration: datos de observación de la Tierra, clima, recursos energéticos, precipitación, almacenamiento hídrico, incendios, y catálogo de datos Earthdata. DB2S-GEO solo documenta acceso; no autentica ni descarga.",
   "url": "https://www.nasa.gov",
   "category": "internacional",
-  "coverage": {
-    "spatial": "Global",
-    "temporal": "Según publicación de la fuente"
-  },
+  "coverage": { "spatial": "Global", "temporal": "Según publicación de la fuente" },
   "status": "active",
   "institution": "National Aeronautics and Space Administration (NASA)",
-  "domains": [
-    "clima",
-    "observacion_tierra",
-    "hidrologia"
-  ],
-  "license": "Datos NASA Earth Science / GPM según términos Earthdata y productor; verificar DOI y licencia del producto",
-  "version": "1.1.0",
+  "domains": ["clima", "observacion_tierra", "hidrologia", "ecosistemas"],
+  "license": "Datos NASA Earth Science / según términos Earthdata y productor; verificar DOI y licencia del producto",
+  "version": "1.2.0",
   "resources": [
+    {
+      "id": "nasa:power",
+      "name": "NASA POWER — Prediction Of Worldwide Energy Resources",
+      "description": "Portal POWER con datos climáticos y de recursos energéticos: radiación solar, temperatura, precipitación, humedad, velocidad del viento para aplicaciones agroclimáticas, energéticas e hidrológicas.",
+      "url": "https://power.larc.nasa.gov",
+      "category": "portal",
+      "coverage": { "spatial": "Global", "temporal": "1981–presente (según parámetro)" },
+      "domains": ["clima", "energia"],
+      "keywords": ["power", "energia", "radiacion", "solar", "temperatura", "precipitacion", "viento", "agroclimatico", "nasa"],
+      "access_methods": ["portal", "api"],
+      "endpoints": [
+        { "method": "portal", "url": "https://power.larc.nasa.gov", "label": "NASA POWER Portal" },
+        { "method": "api", "url": "https://power.larc.nasa.gov/api/pages/", "label": "POWER API" }
+      ],
+      "formats": ["portal", "json", "csv", "netcdf"],
+      "documentation_url": "https://power.larc.nasa.gov/docs/",
+      "doi": "",
+      "citation_reference": "NASA Langley Research Center. POWER — Prediction Of Worldwide Energy Resources. https://power.larc.nasa.gov"
+    },
+    {
+      "id": "nasa:power-api",
+      "name": "NASA POWER API",
+      "description": "API REST de NASA POWER para acceso programático a datos climáticos y de recursos energéticos históricos y diarios.",
+      "url": "https://power.larc.nasa.gov/api/pages/",
+      "category": "api",
+      "coverage": { "spatial": "Global", "temporal": "1981–presente" },
+      "domains": ["clima", "energia"],
+      "keywords": ["power", "api", "rest", "clima", "energia", "radiacion", "nasa"],
+      "access_methods": ["api"],
+      "endpoints": [
+        { "method": "api", "url": "https://power.larc.nasa.gov/api/pages/", "label": "POWER API Documentation" },
+        { "method": "api", "url": "https://power.larc.nasa.gov/api/temporal/daily/point", "label": "POWER Daily Point API" }
+      ],
+      "formats": ["json", "csv", "netcdf"],
+      "documentation_url": "https://power.larc.nasa.gov/docs/",
+      "doi": "",
+      "citation_reference": "NASA Langley Research Center. POWER API. https://power.larc.nasa.gov/api/pages/"
+    },
+    {
+      "id": "nasa:power-data-access",
+      "name": "NASA POWER Data Access Viewer",
+      "description": "Visualizador y descarga de datos POWER: selección por coordenadas, parámetros climáticos y rangos temporales con salida CSV/JSON/NetCDF.",
+      "url": "https://power.larc.nasa.gov/data-access-viewer/",
+      "category": "service",
+      "coverage": { "spatial": "Global", "temporal": "1981–presente" },
+      "domains": ["clima", "energia"],
+      "keywords": ["power", "data", "access", "viewer", "descarga", "csv", "nasa"],
+      "access_methods": ["portal", "download"],
+      "endpoints": [
+        { "method": "portal", "url": "https://power.larc.nasa.gov/data-access-viewer/", "label": "POWER Data Access Viewer" }
+      ],
+      "formats": ["csv", "json", "netcdf", "portal"],
+      "documentation_url": "https://power.larc.nasa.gov/docs/",
+      "doi": "",
+      "citation_reference": "NASA Langley Research Center. POWER Data Access Viewer. https://power.larc.nasa.gov/data-access-viewer/"
+    },
+    {
+      "id": "nasa:imerg",
+      "name": "GPM IMERG — precipitación satelital",
+      "description": "Producto GPM IMERG (Integrated Multi-satellitE Retrievals for GPM) de NASA para precipitación satelital cuasi-global, con resolución temporal subdiaria. Clave para meteorología, clima y monitoreo multitemporal.",
+      "url": "https://gpm.nasa.gov/data/imerg",
+      "category": "collection",
+      "coverage": { "spatial": "Global (60°S–60°N)", "temporal": "2000–presente" },
+      "domains": ["clima", "hidrologia"],
+      "keywords": ["precipitacion", "satelital", "imerg", "gpm", "meteorologia", "clima", "nasa"],
+      "access_methods": ["portal", "platform", "api"],
+      "endpoints": [
+        { "method": "portal", "url": "https://gpm.nasa.gov/data/imerg", "label": "GPM IMERG Data" },
+        { "method": "portal", "url": "https://giovanni.gsfc.nasa.gov/", "label": "NASA Giovanni" },
+        { "method": "platform", "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GPM_L3_IMERG_V07", "label": "NASA/GPM_L3/IMERG_V07 (GEE)" }
+      ],
+      "formats": ["NetCDF", "Earth Engine ImageCollection"],
+      "documentation_url": "https://gpm.nasa.gov/data/imerg",
+      "doi": "10.5067/GPM/IMERG/3B-HH/07",
+      "citation_reference": "Huffman, G.J., et al. GPM IMERG Final Precipitation L3. NASA GES DISC. DOI: 10.5067/GPM/IMERG/3B-HH/07."
+    },
     {
       "id": "nasa:imerg-colombia",
       "name": "GPM IMERG precipitación para Colombia (NASA)",
-      "description": "Producto GPM IMERG (Integrated Multi-satellitE Retrievals for GPM) de NASA para precipitación satelital, documentado para uso en Colombia vía Earth Engine (NASA/GPM_L3/IMERG_V07) y portales GPM/Giovanni. Apoya meteorología, clima y monitoreo multitemporal. DB2S-GEO no descarga ni autentica Earthdata.",
+      "description": "Producto GPM IMERG documentado para uso en Colombia vía Earth Engine (NASA/GPM_L3/IMERG_V07) y portales GPM/Giovanni. Apoya meteorología, clima y monitoreo multitemporal.",
       "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GPM_L3_IMERG_V07",
       "category": "collection",
-      "coverage": {
-        "spatial": "Colombia (vía filtro espacial / región en portales)",
-        "temporal": "2000–presente (según producto IMERG)"
-      },
-      "domains": [
-        "clima",
-        "hidrologia"
-      ],
-      "keywords": [
-        "precipitacion",
-        "satelital",
-        "meteorologia",
-        "clima",
-        "lluvia",
-        "monitoreo",
-        "multitemporal",
-        "imerg",
-        "gpm",
-        "nasa",
-        "colombia"
-      ],
-      "access_methods": [
-        "portal",
-        "platform",
-        "api"
-      ],
+      "coverage": { "spatial": "Colombia (vía filtro espacial)", "temporal": "2000–presente" },
+      "domains": ["clima", "hidrologia"],
+      "keywords": ["precipitacion", "satelital", "imerg", "gpm", "colombia", "gee", "nasa"],
+      "access_methods": ["portal", "platform", "api"],
       "endpoints": [
-        {
-          "method": "portal",
-          "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GPM_L3_IMERG_V07",
-          "label": "NASA/GPM_L3/IMERG_V07 (GEE Catalog)"
-        },
-        {
-          "method": "portal",
-          "url": "https://giovanni.gsfc.nasa.gov/",
-          "label": "NASA Giovanni (análisis / región)"
-        },
-        {
-          "method": "portal",
-          "url": "https://gpm.nasa.gov/data",
-          "label": "GPM Data (NASA)"
-        }
+        { "method": "portal", "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GPM_L3_IMERG_V07", "label": "NASA/GPM_L3/IMERG_V07 (GEE)" },
+        { "method": "portal", "url": "https://giovanni.gsfc.nasa.gov/", "label": "NASA Giovanni" },
+        { "method": "portal", "url": "https://gpm.nasa.gov/data", "label": "GPM Data (NASA)" }
       ],
-      "formats": [
-        "Earth Engine ImageCollection",
-        "NetCDF (GES DISC)"
-      ],
+      "formats": ["Earth Engine ImageCollection", "NetCDF"],
       "documentation_url": "https://gpm.nasa.gov/data",
       "doi": "10.5067/GPM/IMERG/3B-HH/07",
-      "citation_reference": "Huffman, G. J., et al. GPM IMERG Final Precipitation L3. NASA GES DISC. DOI: 10.5067/GPM/IMERG/3B-HH/07. Accessed via Google Earth Engine: NASA/GPM_L3/IMERG_V07."
+      "citation_reference": "Huffman, G.J., et al. GPM IMERG Final Precipitation L3. NASA GES DISC. DOI: 10.5067/GPM/IMERG/3B-HH/07. Acceso Colombia vía GEE."
     },
     {
-      "id": "nasa:grace-groundwater-colombia",
-      "name": "GRACE — almacenamiento de agua subterránea (Colombia)",
-      "description": "Monitoreo de cambios de almacenamiento de agua subterránea con datos GRACE/GRACE-FO (NASA), orientado a Colombia vía subsetting regional (GGST) y productos GRACE. Apoya hidrología satelital y análisis de acuíferos. DB2S-GEO no autentica ni descarga productos.",
-      "url": "https://ggst.readthedocs.io/",
-      "category": "collection",
-      "coverage": {
-        "spatial": "Colombia (vía región / shapefile en GGST u AOI)",
-        "temporal": "2002–presente (GRACE / GRACE-FO, según producto)"
-      },
-      "domains": [
-        "hidrologia",
-        "observacion_tierra"
-      ],
-      "keywords": [
-        "agua",
-        "subterranea",
-        "almacenamiento",
-        "hidrico",
-        "grace",
-        "acuiferos",
-        "hidrologia",
-        "satelital",
-        "nasa",
-        "colombia"
-      ],
-      "access_methods": [
-        "portal",
-        "platform",
-        "api"
-      ],
+      "id": "nasa:earthdata",
+      "name": "Earthdata — Portal de datos científicos de NASA",
+      "description": "Portal principal de datos Earth Science de NASA: descubrimiento, acceso y visualización de datos de observación de la Tierra, clima, atmósfera, océanos, criósfera y superficie terrestre.",
+      "url": "https://earthdata.nasa.gov",
+      "category": "catalog",
+      "coverage": { "spatial": "Global", "temporal": "Según misión/producto" },
+      "domains": ["observacion_tierra", "clima", "hidrologia", "ecosistemas"],
+      "keywords": ["earthdata", "nasa", "datos", "ciencia", "tierra", "observacion", "satelite", "catalogo"],
+      "access_methods": ["portal"],
       "endpoints": [
-        {
-          "method": "portal",
-          "url": "https://ggst.readthedocs.io/",
-          "label": "GRACE Groundwater Subsetting Tool (docs)"
-        },
-        {
-          "method": "portal",
-          "url": "https://grace.jpl.nasa.gov/",
-          "label": "NASA JPL GRACE"
-        },
-        {
-          "method": "portal",
-          "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GRACE_MASS_GRIDS_MASCON_CRI",
-          "label": "GRACE Mascons (GEE Catalog)"
-        }
+        { "method": "portal", "url": "https://earthdata.nasa.gov", "label": "Earthdata Portal" },
+        { "method": "portal", "url": "https://search.earthdata.nasa.gov", "label": "Earthdata Search" }
       ],
-      "formats": [
-        "series temporales",
-        "NetCDF",
-        "mapas"
-      ],
-      "documentation_url": "https://ggst.readthedocs.io/en/latest/overview/",
+      "formats": ["portal"],
+      "documentation_url": "https://earthdata.nasa.gov",
       "doi": "",
-      "citation_reference": "NASA Jet Propulsion Laboratory. GRACE / GRACE-FO mission data. Groundwater analysis vía GRACE Groundwater Subsetting Tool (GGST). https://grace.jpl.nasa.gov/"
+      "citation_reference": "NASA Earth Science Data Systems. Earthdata. https://earthdata.nasa.gov"
+    },
+    {
+      "id": "nasa:earthdata-search",
+      "name": "Earthdata Search",
+      "description": "Herramienta de búsqueda y descubrimiento de datasets Earth Science de NASA con filtros espaciales, temporales y por palabra clave.",
+      "url": "https://search.earthdata.nasa.gov",
+      "category": "catalog",
+      "coverage": { "spatial": "Global", "temporal": "Según producto" },
+      "domains": ["observacion_tierra", "clima", "hidrologia", "ecosistemas"],
+      "keywords": ["earthdata", "search", "busqueda", "catalogo", "datasets", "nasa"],
+      "access_methods": ["portal"],
+      "endpoints": [
+        { "method": "portal", "url": "https://search.earthdata.nasa.gov", "label": "Earthdata Search" }
+      ],
+      "formats": ["portal"],
+      "documentation_url": "https://search.earthdata.nasa.gov",
+      "doi": "",
+      "citation_reference": "NASA. Earthdata Search. https://search.earthdata.nasa.gov"
+    },
+    {
+      "id": "nasa:cmr",
+      "name": "CMR — Common Metadata Repository",
+      "description": "Repositorio central de metadatos de NASA Earth Science: API REST para búsqueda programática de colecciones y granules de datos satelitales y de modelos.",
+      "url": "https://cmr.earthdata.nasa.gov",
+      "category": "api",
+      "coverage": { "spatial": "Global", "temporal": "Según colección" },
+      "domains": ["observacion_tierra"],
+      "keywords": ["cmr", "metadata", "repositorio", "api", "rest", "granules", "colecciones", "nasa"],
+      "access_methods": ["api"],
+      "endpoints": [
+        { "method": "api", "url": "https://cmr.earthdata.nasa.gov/search", "label": "CMR Search API" },
+        { "method": "portal", "url": "https://cmr.earthdata.nasa.gov", "label": "CMR Portal" }
+      ],
+      "formats": ["json", "xml", "atom"],
+      "documentation_url": "https://cmr.earthdata.nasa.gov/docs",
+      "doi": "",
+      "citation_reference": "NASA. Common Metadata Repository (CMR). https://cmr.earthdata.nasa.gov"
+    },
+    {
+      "id": "nasa:firms",
+      "name": "FIRMS — Fire Information for Resource Management System",
+      "description": "Sistema de información de incendios activos de NASA con datos MODIS y VIIRS: puntos de calor, área quemada, emisiones y alertas en tiempo real y histórico.",
+      "url": "https://firms.modaps.eosdis.nasa.gov",
+      "category": "service",
+      "coverage": { "spatial": "Global", "temporal": "Tiempo real e histórico (2000–presente)" },
+      "domains": ["ecosistemas", "observacion_tierra"],
+      "keywords": ["firms", "incendios", "fuego", "modis", "viirs", "puntos", "calor", "area", "quemada", "alertas", "nasa"],
+      "access_methods": ["portal", "api", "download"],
+      "endpoints": [
+        { "method": "portal", "url": "https://firms.modaps.eosdis.nasa.gov", "label": "NASA FIRMS" },
+        { "method": "api", "url": "https://firms.modaps.eosdis.nasa.gov/api/", "label": "FIRMS API" }
+      ],
+      "formats": ["csv", "kml", "shp", "json", "portal"],
+      "documentation_url": "https://firms.modaps.eosdis.nasa.gov",
+      "doi": "",
+      "citation_reference": "NASA FIRMS. Fire Information for Resource Management System. https://firms.modaps.eosdis.nasa.gov"
+    },
+    {
+      "id": "nasa:lpdaac",
+      "name": "LP DAAC — Land Processes Distributed Active Archive Center",
+      "description": "Centro de datos de procesos terrestres de NASA/USGS: productos MODIS, VIIRS, ASTER, SRTM, NAIP para coberturas, topografía, vegetación, incendios y temperatura superficial.",
+      "url": "https://lpdaac.usgs.gov/products/",
+      "category": "catalog",
+      "coverage": { "spatial": "Global", "temporal": "Según producto" },
+      "domains": ["observacion_tierra", "ecosistemas"],
+      "keywords": ["lpdaac", "modis", "viirs", "aster", "srtm", "coberturas", "vegetacion", "topografia", "usgs", "nasa"],
+      "access_methods": ["portal", "download"],
+      "endpoints": [
+        { "method": "portal", "url": "https://lpdaac.usgs.gov/products/", "label": "LP DAAC Products" },
+        { "method": "api", "url": "https://lpdaac.usgs.gov/", "label": "LP DAAC Portal" }
+      ],
+      "formats": ["HDF", "GeoTIFF", "NetCDF"],
+      "documentation_url": "https://lpdaac.usgs.gov",
+      "doi": "",
+      "citation_reference": "NASA/USGS. LP DAAC — Land Processes DAAC. https://lpdaac.usgs.gov"
+    },
+    {
+      "id": "nasa:grace",
+      "name": "GRACE / GRACE-FO — almacenamiento de agua",
+      "description": "Misiones GRACE y GRACE-FO de NASA/DLR: monitoreo de cambios en almacenamiento de agua terrestre, masa de hielo, aguas subterráneas y sequías. Datos globales en mascons y series temporales.",
+      "url": "https://grace.jpl.nasa.gov",
+      "category": "collection",
+      "coverage": { "spatial": "Global", "temporal": "2002–presente (GRACE / GRACE-FO)" },
+      "domains": ["hidrologia", "observacion_tierra", "clima"],
+      "keywords": ["grace", "grace-fo", "agua", "almacenamiento", "masa", "hielo", "subterranea", "sequia", "nasa", "jpl"],
+      "access_methods": ["portal", "download"],
+      "endpoints": [
+        { "method": "portal", "url": "https://grace.jpl.nasa.gov", "label": "NASA JPL GRACE" },
+        { "method": "portal", "url": "https://developers.google.com/earth-engine/datasets/catalog/NASA_GRACE_MASS_GRIDS_MASCON_CRI", "label": "GRACE Mascons (GEE)" }
+      ],
+      "formats": ["NetCDF", "GeoTIFF", "series temporales"],
+      "documentation_url": "https://grace.jpl.nasa.gov",
+      "doi": "",
+      "citation_reference": "NASA Jet Propulsion Laboratory. GRACE / GRACE-FO mission data. https://grace.jpl.nasa.gov"
+    },
+    {
+      "id": "nasa:gibs",
+      "name": "LANCE GIBS — Global Imagery Browse Services (Near Real-Time)",
+      "description": "Servicio de imágenes en tiempo casi real de NASA LANCE: visualización de productos MODIS, VIIRS y otros en formato image/ tile, accesible vía Web Map Tile Service (WMTS) y Worldview.",
+      "url": "https://gibs.earthdata.nasa.gov",
+      "category": "service",
+      "coverage": { "spatial": "Global", "temporal": "Tiempo casi real e histórico" },
+      "domains": ["observacion_tierra"],
+      "keywords": ["gibs", "lance", "tiempo", "real", "modis", "viirs", "imagenes", "wmts", "worldview", "nasa"],
+      "access_methods": ["portal", "api"],
+      "endpoints": [
+        { "method": "portal", "url": "https://gibs.earthdata.nasa.gov", "label": "NASA GIBS" },
+        { "method": "portal", "url": "https://worldview.earthdata.nasa.gov", "label": "NASA Worldview" }
+      ],
+      "formats": ["WMTS", "imagen"],
+      "documentation_url": "https://gibs.earthdata.nasa.gov",
+      "doi": "",
+      "citation_reference": "NASA LANCE. GIBS — Global Imagery Browse Services. https://gibs.earthdata.nasa.gov"
     }
   ]
 }

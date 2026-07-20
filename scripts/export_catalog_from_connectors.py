@@ -31,7 +31,7 @@ def _category(identity: dict) -> str:
     sid = identity.get("source_id") or ""
     if sid in {"gbif", "fao", "nasa", "unosat"}:
         return "internacional"
-    if sid in {"gee", "dynamicworld"}:
+    if sid in {"gee", "gee-copernicus-sentinel2"}:
         return "plataforma"
     if sid in {"worldpop", "mapbiomas"}:
         return "academia" if sid == "worldpop" else "iniciativa"

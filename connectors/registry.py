@@ -13,7 +13,7 @@ from connectors.base import BaseConnector
 from connectors.contraloria.connector import ContraloriaConnector
 from connectors.dane.connector import DaneConnector
 from connectors.dnp.connector import DnpConnector
-from connectors.dynamicworld.connector import DynamicworldConnector
+from connectors.gee_copernicus_sentinel2.connector import DynamicworldConnector as GeeCopernicusSentinel2Connector
 from connectors.fao.connector import FaoConnector
 from connectors.gbif.connector import GbifConnector
 from connectors.gee.connector import GeeConnector
@@ -41,7 +41,7 @@ MVP_CONNECTOR_IDS: tuple[str, ...] = (
     "worldpop",
     "gee",
     "sgc",
-    "dynamicworld",
+    "gee-copernicus-sentinel2",
     "nasa",
     "mapbiomas",
     "unosat",
@@ -70,7 +70,7 @@ def build_python_mvp_connectors() -> dict[str, BaseConnector]:
         WorldpopConnector(),
         GeeConnector(),
         SgcConnector(),
-        DynamicworldConnector(),
+        GeeCopernicusSentinel2Connector(),
         NasaConnector(),
         MapbiomasConnector(),
         UnosatConnector(),

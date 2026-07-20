@@ -20,7 +20,7 @@ from connectors.models import normalize_source
 
 SOURCE_ID = "gee"
 INSTITUTION = "Google Earth Engine (Google LLC / partners)"
-HOMEPAGE = "https://earthengine.google.com"
+HOMEPAGE = "https://developers.google.com/earth-engine/datasets"
 LICENSE = (
     "Según dataset en el catálogo GEE; términos de Google Earth Engine "
     "y licencia del productor original"
@@ -267,6 +267,121 @@ _RESOURCES: dict[str, dict[str, Any]] = {
             "Scientific Data. Uso orientado a Colombia vía Google Earth "
             "Engine: UCSB-CHG/CHIRPS/DAILY."
         ),
+                "doi": "10.1038/sdata.2015.66",
+    },
+    "gee:chirps-pentad": {
+        "resource_id": "gee:chirps-pentad",
+        "title": "CHIRPS Pentad (vía Earth Engine)",
+        "type": "collection",
+        "domains": ["clima", "hidrologia"],
+        "primary_domain": "clima",
+        "keywords": [
+            "precipitacion",
+            "pentad",
+            "5-dias",
+            "sequia",
+            "ciclos",
+            "estacionales",
+            "chirps",
+            "gee",
+            "clima",
+        ],
+        "description": (
+            "Colección CHIRPS Pentad (UCSB-CHG/CHIRPS/PENTAD) en Google "
+            "Earth Engine: precipitación cuasi-global con resolución "
+            "temporal de 5 días para monitoreo de sequía y ciclos "
+            "estacionales. DB2S-GEO no ejecuta código GEE ni descarga datos."
+        ),
+        "spatial_coverage": "Cuasi-global (50°S–50°N)",
+        "temporal_coverage": "1981–presente",
+        "formats": ["Earth Engine ImageCollection"],
+        "homepage": (
+            "https://developers.google.com/earth-engine/datasets/catalog/"
+            "UCSB-CHG_CHIRPS_PENTAD"
+        ),
+        "portal_url": (
+            "https://developers.google.com/earth-engine/datasets/catalog/"
+            "UCSB-CHG_CHIRPS_PENTAD"
+        ),
+        "documentation_url": "https://www.chc.ucsb.edu/data/chirps",
+        "endpoints": [
+            {
+                "method": "portal",
+                "url": (
+                    "https://developers.google.com/earth-engine/datasets/"
+                    "catalog/UCSB-CHG_CHIRPS_PENTAD"
+                ),
+                "label": "UCSB-CHG/CHIRPS/PENTAD (GEE Catalog)",
+            },
+            {
+                "method": "platform",
+                "url": "https://code.earthengine.google.com",
+                "label": "Earth Engine Code Editor",
+            },
+        ],
+        "access_methods": ["platform", "api", "portal"],
+        "citation_reference": (
+            "Funk, C., et al. (2015). CHIRPS Pentad. Climate Hazards Group. "
+            "Accessed via Google Earth Engine: UCSB-CHG/CHIRPS/PENTAD."
+        ),
+        "doi": "10.1038/sdata.2015.66",
+    },
+    "gee:chirps-monthly": {
+        "resource_id": "gee:chirps-monthly",
+        "title": "CHIRPS Mensual (vía Earth Engine)",
+        "type": "collection",
+        "domains": ["clima", "hidrologia"],
+        "primary_domain": "clima",
+        "keywords": [
+            "precipitacion",
+            "mensual",
+            "climatologia",
+            "balance",
+            "hidrico",
+            "sequia",
+            "tendencias",
+            "chirps",
+            "gee",
+            "clima",
+        ],
+        "description": (
+            "Colección CHIRPS Mensual (UCSB-CHG/CHIRPS/MONTHLY) en Google "
+            "Earth Engine: precipitación mensual cuasi-global para "
+            "climatología, balance hídrico, sequías y tendencias de largo "
+            "plazo. DB2S-GEO no ejecuta código GEE ni descarga datos."
+        ),
+        "spatial_coverage": "Cuasi-global (50°S–50°N)",
+        "temporal_coverage": "1981–presente",
+        "formats": ["Earth Engine ImageCollection"],
+        "homepage": (
+            "https://developers.google.com/earth-engine/datasets/catalog/"
+            "UCSB-CHG_CHIRPS_MONTHLY"
+        ),
+        "portal_url": (
+            "https://developers.google.com/earth-engine/datasets/catalog/"
+            "UCSB-CHG_CHIRPS_MONTHLY"
+        ),
+        "documentation_url": "https://www.chc.ucsb.edu/data/chirps",
+        "endpoints": [
+            {
+                "method": "portal",
+                "url": (
+                    "https://developers.google.com/earth-engine/datasets/"
+                    "catalog/UCSB-CHG_CHIRPS_MONTHLY"
+                ),
+                "label": "UCSB-CHG/CHIRPS/MONTHLY (GEE Catalog)",
+            },
+            {
+                "method": "platform",
+                "url": "https://code.earthengine.google.com",
+                "label": "Earth Engine Code Editor",
+            },
+        ],
+        "access_methods": ["platform", "api", "portal"],
+        "citation_reference": (
+            "Funk, C., et al. (2015). CHIRPS Monthly. Climate Hazards Group. "
+            "Accessed via Google Earth Engine: UCSB-CHG/CHIRPS/MONTHLY."
+        ),
         "doi": "10.1038/sdata.2015.66",
     },
 }
@@ -280,8 +395,6 @@ class GeeConnector(BaseConnector):
     def identify(self) -> dict[str, Any]:
         return normalize_source(
             source_id=SOURCE_ID,
-            source="Google Earth Engine",
-            institution=INSTITUTION,
             country_or_scope="Global",
             domains=["observacion_tierra", "cobertura"],
             access_methods=["platform", "api", "portal"],

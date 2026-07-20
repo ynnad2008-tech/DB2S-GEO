@@ -11,7 +11,7 @@
   "status": "active",
   "institution": "Contraloría General de la República de Colombia",
   "domains": [
-    "observacion_tierra",
+    "infraestructura",
     "poblacion"
   ],
   "license": "Según términos Contraloría / Geoportal",
@@ -28,7 +28,7 @@
         "temporal": "Según contratos y reportes publicados en el Geoportal"
       },
       "domains": [
-        "observacion_tierra",
+        "infraestructura",
         "poblacion"
       ],
       "keywords": [

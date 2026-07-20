@@ -256,8 +256,8 @@ _RESOURCES: dict[str, dict[str, Any]] = {
         "resource_id": "igac:servicios-geograficos",
         "title": "Servicios geográficos IGAC (ArcGIS REST / interoperabilidad)",
         "type": "catalog",
-        "domains": ["observacion_tierra"],
-        "primary_domain": "observacion_tierra",
+                "domains": ["observacion_tierra", "catastro"],
+        "primary_domain": "catastro",
         "keywords": [
             "servicios",
             "ogc",
@@ -317,19 +317,18 @@ _RESOURCES: dict[str, dict[str, Any]] = {
         ),
         "doi": "",
     },
-    "igac:catastro-multiproposito": {
+        "igac:catastro-multiproposito": {
         "resource_id": "igac:catastro-multiproposito",
         "title": "Catastro Multipropósito y modelo LADM_COL (IGAC)",
         "type": "catalog",
-        "domains": ["observacion_tierra"],
-        "primary_domain": "observacion_tierra",
+        "domains": ["observacion_tierra", "catastro"],
+        "primary_domain": "catastro",
         "keywords": [
             "catastro",
             "multiproposito",
             "ladm",
             "ladm_col",
             "predial",
-            "administracion",
             "territorio",
             "modernizacion",
             "catastral",
@@ -385,8 +384,8 @@ _RESOURCES: dict[str, dict[str, Any]] = {
         "resource_id": "igac:datos-abiertos-catastro",
         "title": "Datos abiertos catastrales IGAC (Dirección de Gestión Catastral)",
         "type": "dataset",
-        "domains": ["observacion_tierra"],
-        "primary_domain": "observacion_tierra",
+                "domains": ["observacion_tierra", "catastro"],
+        "primary_domain": "catastro",
         "keywords": [
             "datos",
             "abiertos",
@@ -450,8 +449,8 @@ _RESOURCES: dict[str, dict[str, Any]] = {
         "resource_id": "igac:colombia-en-mapas-catastro",
         "title": "Colombia en Mapas — categoría Catastro",
         "type": "catalog",
-        "domains": ["observacion_tierra"],
-        "primary_domain": "observacion_tierra",
+                "domains": ["observacion_tierra", "catastro"],
+        "primary_domain": "catastro",
         "keywords": [
             "colombia",
             "en",
@@ -512,8 +511,8 @@ _RESOURCES: dict[str, dict[str, Any]] = {
         "resource_id": "igac:consulta-catastral",
         "title": "Consulta Catastral (Colombia en Mapas / IGAC)",
         "type": "service",
-        "domains": ["observacion_tierra"],
-        "primary_domain": "observacion_tierra",
+                "domains": ["observacion_tierra", "catastro"],
+        "primary_domain": "catastro",
         "keywords": [
             "consulta",
             "catastral",
@@ -579,8 +578,8 @@ _RESOURCES: dict[str, dict[str, Any]] = {
         "resource_id": "igac:gestores-catastrales",
         "title": "Jurisdicción de gestores catastrales (IGAC)",
         "type": "dataset",
-        "domains": ["observacion_tierra"],
-        "primary_domain": "observacion_tierra",
+                "domains": ["observacion_tierra", "catastro"],
+        "primary_domain": "catastro",
         "keywords": [
             "gestores",
             "catastrales",
@@ -662,7 +661,7 @@ class IgacConnector(BaseConnector):
             source="IGAC",
             institution=INSTITUTION,
             country_or_scope="Colombia",
-            domains=["observacion_tierra", "suelos", "agricultura"],
+            domains=["observacion_tierra", "suelos", "agricultura", "catastro", "cartografia_base"],
             access_methods=["portal", "arcgis", "ogc"],
             description=(
                 "Autoridad cartográfica y catastral nacional de Colombia. "

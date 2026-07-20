@@ -10,16 +10,17 @@
   },
   "status": "active",
   "institution": "Instituto Geográfico Agustín Codazzi",
-  "domains": [
-    "observacion_tierra",
+        "domains": [
     "suelos",
-    "agricultura"
+    "agricultura",
+    "cartografia_base",
+    "catastro"
   ],
   "license": "Datos abiertos / términos IGAC según producto",
   "version": "1.6.0",
   "resources": [
     {
-      "id": "igac:modelo-terreno-colombia",
+            "id": "igac:modelo-terreno-colombia",
       "name": "Modelo digital de terreno de Colombia (IGAC)",
       "description": "Modelos digitales de terreno (MDT) y productos altimétricos oficiales del IGAC, disponibles vía Colombia en Mapas y datos abiertos geoespaciales. Apoya topografía, análisis de cuencas, modelación de amenazas y geomorfología. DB2S-GEO solo documenta el acceso; no descarga rasters.",
       "url": "https://www.colombiaenmapas.gov.co/",
@@ -30,7 +31,8 @@
       },
       "domains": [
         "observacion_tierra",
-        "suelos"
+        "suelos",
+        "ordenamiento"
       ],
       "keywords": [
         "topografia",
@@ -71,7 +73,7 @@
       "citation_reference": "Instituto Geográfico Agustín Codazzi (IGAC). Modelos digitales de terreno / cartografía básica oficial. https://www.colombiaenmapas.gov.co/"
     },
     {
-      "id": "igac:estudio-general-suelos",
+            "id": "igac:estudio-general-suelos",
       "name": "Estudios generales de suelos y capacidad de uso (IGAC)",
       "description": "Estudios Generales de Suelos y Capacidad de Uso del IGAC (escala 1:100.000): caracterización y clasificación de suelos a nivel departamental, aptitud y limitaciones de uso. DB2S-GEO solo documenta el acceso; no descarga productos.",
       "url": "https://www.colombiaenmapas.gov.co/",
@@ -82,7 +84,8 @@
       },
       "domains": [
         "suelos",
-        "agricultura"
+        "agricultura",
+        "ordenamiento"
       ],
       "keywords": [
         "suelos",
@@ -123,7 +126,7 @@
       "citation_reference": "Instituto Geográfico Agustín Codazzi (IGAC). Estudios Generales de Suelos y Capacidad de Uso (escala 1:100.000). https://www.igac.gov.co/datos-abiertos/datos-abiertos-geoespaciales"
     },
     {
-      "id": "igac:agrologia-colombia",
+            "id": "igac:agrologia-colombia",
       "name": "Agrología y clases agrológicas de Colombia (IGAC)",
       "description": "Información agrológica oficial del IGAC (Subdirección de Agrología): clases agrológicas, capacidad de uso y productos asociados para ordenamiento productivo y desarrollo rural. Consulta vía Colombia en Mapas. DB2S-GEO solo documenta el acceso; no descarga productos.",
       "url": "https://www.colombiaenmapas.gov.co/",
@@ -134,7 +137,8 @@
       },
       "domains": [
         "suelos",
-        "agricultura"
+        "agricultura",
+        "ordenamiento"
       ],
       "keywords": [
         "agrologia",
@@ -298,7 +302,7 @@
       "citation_reference": "Instituto Geográfico Agustín Codazzi (IGAC). Servicios geográficos ArcGIS REST / geoservicios ICDE. https://mapas.igac.gov.co/server/rest/services"
     },
     {
-      "id": "igac:catastro-multiproposito",
+            "id": "igac:catastro-multiproposito",
       "name": "Catastro Multipropósito y modelo LADM_COL (IGAC)",
       "description": "Marco nacional de Catastro Multipropósito del IGAC: modelo extendido Catastro-Registro LADM_COL, administración del territorio e información predial interoperable. Incluye documentación normativa y acceso a datos/catálogos oficiales. DB2S-GEO solo documenta el acceso; no descarga bases prediales.",
       "url": "https://www.igac.gov.co/catastro-multiproposito/ladmcol",
@@ -308,7 +312,8 @@
         "temporal": "Según versión del modelo y avance catastral"
       },
       "domains": [
-        "observacion_tierra"
+        "observacion_tierra",
+        "catastro"
       ],
       "keywords": [
         "catastro",
@@ -356,7 +361,7 @@
       "citation_reference": "Instituto Geográfico Agustín Codazzi (IGAC). Catastro Multipropósito — Modelo Extendido Catastro-Registro LADM_COL. https://www.igac.gov.co/catastro-multiproposito/ladmcol"
     },
     {
-      "id": "igac:datos-abiertos-catastro",
+            "id": "igac:datos-abiertos-catastro",
       "name": "Datos abiertos catastrales IGAC (Dirección de Gestión Catastral)",
       "description": "Conjuntos de datos abiertos de la Dirección de Gestión Catastral del IGAC: bases geográficas y alfanuméricas prediales, catálogo de objetos, estructura del código predial y diccionarios de registros secuenciales. Apoya gestión catastral y reutilización pública. DB2S-GEO solo documenta el acceso; no descarga bases.",
       "url": "https://www.igac.gov.co/datos-abiertos/",
@@ -366,7 +371,8 @@
         "temporal": "Actualización periódica según publicación DGC"
       },
       "domains": [
-        "observacion_tierra"
+        "observacion_tierra",
+        "catastro"
       ],
       "keywords": [
         "datos",
@@ -416,7 +422,7 @@
       "citation_reference": "Instituto Geográfico Agustín Codazzi (IGAC). Datos abiertos catastrales — Dirección de Gestión Catastral. https://www.igac.gov.co/datos-abiertos/"
     },
     {
-      "id": "igac:colombia-en-mapas-catastro",
+            "id": "igac:colombia-en-mapas-catastro",
       "name": "Colombia en Mapas — categoría Catastro",
       "description": "Capas y productos de la categoría Catastro en Colombia en Mapas (IGAC/ICDE): cartografía catastral, base catastral nacional, visualización y descarga de servicios asociados. Complementa el geoportal general con enfoque predial. DB2S-GEO solo documenta el acceso; no descarga capas.",
       "url": "https://www.colombiaenmapas.gov.co/",
@@ -426,7 +432,8 @@
         "temporal": "Según capas publicadas en Colombia en Mapas"
       },
       "domains": [
-        "observacion_tierra"
+        "observacion_tierra",
+        "catastro"
       ],
       "keywords": [
         "colombia",
@@ -477,7 +484,7 @@
       "citation_reference": "Instituto Geográfico Agustín Codazzi (IGAC) / ICDE. Colombia en Mapas — categoría Catastro. https://www.colombiaenmapas.gov.co/"
     },
     {
-      "id": "igac:consulta-catastral",
+            "id": "igac:consulta-catastral",
       "name": "Consulta Catastral (Colombia en Mapas / IGAC)",
       "description": "Herramienta de consulta catastral de Colombia en Mapas: búsqueda de predios urbanos y rurales por número predial, dirección o coordenadas, con información básica del terreno y construcciones. DB2S-GEO solo documenta el acceso; no ejecuta consultas remotas.",
       "url": "https://www.colombiaenmapas.gov.co/",
@@ -487,7 +494,8 @@
         "temporal": "Según actualización de la base catastral publicada"
       },
       "domains": [
-        "observacion_tierra"
+        "observacion_tierra",
+        "catastro"
       ],
       "keywords": [
         "consulta",
@@ -535,7 +543,7 @@
       "citation_reference": "Instituto Geográfico Agustín Codazzi (IGAC). Consulta Catastral — Colombia en Mapas. https://www.colombiaenmapas.gov.co/"
     },
     {
-      "id": "igac:gestores-catastrales",
+            "id": "igac:gestores-catastrales",
       "name": "Jurisdicción de gestores catastrales (IGAC)",
       "description": "Información sobre gestores catastrales habilitados por el IGAC y su jurisdicción municipal: cobertura institucional del servicio público catastral (IGAC y gestores territoriales). Disponible en Colombia en Mapas y páginas de regulación/habilitación. DB2S-GEO solo documenta el acceso; no descarga geometrías.",
       "url": "https://www.igac.gov.co/el-igac/areas-estrategicas/direccion-de-regulacion-y-habilitacion",
@@ -545,7 +553,8 @@
         "temporal": "Según habilitación y mapa vigente IGAC"
       },
       "domains": [
-        "observacion_tierra"
+        "observacion_tierra",
+        "catastro"
       ],
       "keywords": [
         "gestores",

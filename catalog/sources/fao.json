@@ -11,7 +11,8 @@
   "status": "active",
   "institution": "Food and Agriculture Organization of the United Nations (FAO)",
   "domains": [
-    "agricultura"
+    "agricultura",
+    "observacion_tierra"
   ],
   "license": "Términos de uso FAO / FAOSTAT (datos estadísticos abiertos con atribución)",
   "version": "1.0.0",

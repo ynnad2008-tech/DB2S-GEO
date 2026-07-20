@@ -27,8 +27,8 @@ _RESOURCES: dict[str, dict[str, Any]] = {
         "resource_id": "unosat:disaster-mapping",
         "title": "UNOSAT — cartografía satelital de desastres",
         "type": "catalog",
-        "domains": ["observacion_tierra"],
-        "primary_domain": "observacion_tierra",
+                "domains": ["riesgo", "observacion_tierra"],
+        "primary_domain": "riesgo",
         "keywords": [
             "desastre",
             "emergencia",
@@ -89,7 +89,7 @@ class UnosatConnector(BaseConnector):
             source="UNOSAT",
             institution=INSTITUTION,
             country_or_scope="Global",
-            domains=["observacion_tierra"],
+            domains=["riesgo", "observacion_tierra"],
             access_methods=["portal"],
             description=(
                 "Centro satelital de las Naciones Unidas (UNITAR): análisis "

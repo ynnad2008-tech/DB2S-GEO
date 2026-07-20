@@ -11,9 +11,10 @@
   "status": "active",
   "institution": "MapBiomas Colombia / Red Amazónica de Información Socioambiental",
   "domains": [
-    "observacion_tierra",
+    "agricultura",
     "hidrologia",
-    "agricultura"
+    "observacion_tierra",
+    "biodiversidad"
   ],
   "license": "Según términos MapBiomas Colombia / colección específica",
   "version": "1.2.0",

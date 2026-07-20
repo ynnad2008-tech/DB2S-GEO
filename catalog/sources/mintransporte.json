@@ -11,7 +11,7 @@
   "status": "active",
   "institution": "Ministerio de Transporte de Colombia",
   "domains": [
-    "observacion_tierra"
+    "infraestructura"
   ],
   "license": "Según términos MinTransporte / SINC",
   "version": "1.0.0",
@@ -27,7 +27,7 @@
         "temporal": "Según actualizaciones reportadas al SINC"
       },
       "domains": [
-        "observacion_tierra"
+        "infraestructura"
       ],
       "keywords": [
         "sinc",

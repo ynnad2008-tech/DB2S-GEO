@@ -11,9 +11,7 @@
   "status": "active",
   "institution": "Superintendencia de Transporte",
   "domains": [
-    "oceanos_costas",
-    "hidrologia",
-    "observacion_tierra"
+    "infraestructura"
   ],
   "license": "Según términos Supertransporte / SuperTransporte Digital",
   "version": "1.0.0",

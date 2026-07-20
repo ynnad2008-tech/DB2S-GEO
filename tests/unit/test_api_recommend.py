@@ -50,7 +50,7 @@ def test_recommend_source(client: TestClient) -> None:
 
 
 def test_recommend_resource(client: TestClient) -> None:
-    response = client.get("/recommend/resource/ideam:precipitacion")
+    response = client.get("/recommend/resource/ideam:consulta-meteorologica")
     assert response.status_code == 200
     body = response.json()
     assert body["count"] >= 1

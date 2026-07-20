@@ -1,342 +1,159 @@
 {
   "id": "ideam",
   "name": "IDEAM",
-  "description": "Autoridad nacional colombiana en hidrología, meteorología y estudios ambientales. Fuente oficial de clima e hidrología.",
+  "description": "Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia: datos climáticos, hidrológicos, ambientales y geográficos oficiales.",
   "url": "https://www.ideam.gov.co",
   "category": "instituto",
-  "coverage": {
-    "spatial": "Colombia",
-    "temporal": "Según publicación de la fuente"
-  },
+  "coverage": { "spatial": "Colombia", "temporal": "Según publicación de la fuente" },
   "status": "active",
-  "institution": "Instituto de Hidrología, Meteorología y Estudios Ambientales",
-  "domains": [
-    "clima",
-    "hidrologia"
-  ],
-  "license": "Datos abiertos institucionales / términos IDEAM y datos.gov.co",
-  "version": "1.4.0",
+  "institution": "Instituto de Hidrología, Meteorología y Estudios Ambientales (IDEAM)",
+  "domains": ["clima", "hidrologia", "ecosistemas", "observacion_tierra"],
+  "license": "Datos abiertos / según términos IDEAM",
+  "version": "1.1.0",
   "resources": [
     {
-      "id": "ideam:estaciones-meteorologicas",
-      "name": "Red de estaciones meteorológicas",
-      "description": "Información de estaciones meteorológicas y variables climáticas administradas por el IDEAM.",
-      "url": "https://www.ideam.gov.co",
-      "category": "dataset",
-      "coverage": {
-        "spatial": "Colombia",
-        "temporal": "Histórico / actualizaciones institucionales"
-      },
-      "domains": [
-        "clima"
-      ],
-      "keywords": [
-        "estaciones",
-        "meteorologia",
-        "clima",
-        "temperatura",
-        "ideam"
-      ],
-      "access_methods": [
-        "portal",
-        "api",
-        "arcgis"
-      ],
-      "endpoints": [
-        {
-          "method": "portal",
-          "url": "https://www.ideam.gov.co",
-          "label": "Portal institucional IDEAM"
-        },
-        {
-          "method": "portal",
-          "url": "https://www.datos.gov.co",
-          "label": "Datos abiertos Colombia (conjuntos IDEAM)"
-        }
-      ],
-      "formats": [
-        "CSV",
-        "GeoJSON",
-        "servicios web"
-      ],
-      "documentation_url": "https://www.ideam.gov.co",
+      "id": "ideam:tematicas",
+      "name": "Temáticas IDEAM",
+      "description": "Portal de servicios del IDEAM con acceso a capas temáticas ambientales, climatología, hidrología y geología.",
+      "url": "https://www.ideam.gov.co/servicios/tematicas-ideam",
+      "category": "catalog",
+      "coverage": { "spatial": "Colombia", "temporal": "Según publicación" },
+      "domains": ["clima", "hidrologia", "ecosistemas", "observacion_tierra"],
+      "keywords": ["ideam", "tematicas", "capas", "clima", "hidrologia", "ambiente", "colombia"],
+      "access_methods": ["portal"],
+      "endpoints": [{ "method": "portal", "url": "https://www.ideam.gov.co/servicios/tematicas-ideam", "label": "Temáticas IDEAM" }],
+      "formats": ["portal"],
+      "documentation_url": "https://www.ideam.gov.co/servicios/tematicas-ideam",
       "doi": "",
-      "citation_reference": "IDEAM. Red de estaciones meteorológicas. Instituto de Hidrología, Meteorología y Estudios Ambientales."
+      "citation_reference": "IDEAM. Temáticas IDEAM. https://www.ideam.gov.co/servicios/tematicas-ideam"
     },
     {
-      "id": "ideam:precipitacion",
-      "name": "Precipitación",
-      "description": "Productos e información de precipitación para análisis hidrológicos y climáticos en Colombia.",
-      "url": "https://www.ideam.gov.co",
-      "category": "dataset",
-      "coverage": {
-        "spatial": "Colombia",
-        "temporal": "Series históricas institucionales"
-      },
-      "domains": [
-        "clima",
-        "hidrologia"
-      ],
-      "keywords": [
-        "precipitacion",
-        "lluvia",
-        "meteorologia"
-      ],
-      "access_methods": [
-        "portal",
-        "api"
-      ],
-      "endpoints": [
-        {
-          "method": "portal",
-          "url": "https://www.ideam.gov.co",
-          "label": "Portal institucional IDEAM"
-        }
-      ],
-      "formats": [
-        "CSV",
-        "raster",
-        "tablas"
-      ],
-      "documentation_url": "https://www.ideam.gov.co",
+      "id": "ideam:sivirtual",
+      "name": "SIVIRTUAL — Aguas subterráneas",
+      "description": "Sistema de Información del Recurso Hídrico (SIVIRTUAL): consulta, monitoreo y gestión de aguas subterráneas en Colombia.",
+      "url": "https://www.ideam.gov.co/web/agua/sivirtual",
+      "category": "service",
+      "coverage": { "spatial": "Colombia", "temporal": "Según publicación" },
+      "domains": ["hidrologia"],
+      "keywords": ["sivirtual", "aguas", "subterraneas", "recurso", "hidrico", "monitoreo", "ideam", "colombia"],
+      "access_methods": ["portal"],
+      "endpoints": [{ "method": "portal", "url": "https://www.ideam.gov.co/web/agua/sivirtual", "label": "SIVIRTUAL — IDEAM" }],
+      "formats": ["portal"],
+      "documentation_url": "https://www.ideam.gov.co/web/agua/sivirtual",
       "doi": "",
-      "citation_reference": "IDEAM. Información de precipitación. Instituto de Hidrología, Meteorología y Estudios Ambientales."
+      "citation_reference": "IDEAM. SIVIRTUAL. https://www.ideam.gov.co/web/agua/sivirtual"
     },
     {
-      "id": "ideam:hidrologia",
-      "name": "Información hidrológica",
-      "description": "Datos e información hidrológica (caudales, niveles y productos relacionados) bajo responsabilidad del IDEAM.",
-      "url": "https://www.ideam.gov.co",
-      "category": "dataset",
-      "coverage": {
-        "spatial": "Colombia",
-        "temporal": "Series institucionales"
-      },
-      "domains": [
-        "hidrologia"
-      ],
-      "keywords": [
-        "hidrologia",
-        "caudales",
-        "niveles",
-        "cuencas",
-        "ideam"
-      ],
-      "access_methods": [
-        "portal",
-        "api",
-        "arcgis"
-      ],
-      "endpoints": [
-        {
-          "method": "portal",
-          "url": "https://www.ideam.gov.co",
-          "label": "Portal institucional IDEAM"
-        }
-      ],
-      "formats": [
-        "CSV",
-        "tablas",
-        "servicios"
-      ],
-      "documentation_url": "https://www.ideam.gov.co",
-      "doi": "",
-      "citation_reference": "IDEAM. Información hidrológica. Instituto de Hidrología, Meteorología y Estudios Ambientales."
-    },
-    {
-      "id": "ideam:capas-ideam-rest",
-      "name": "Capas IDEAM (ArcGIS REST FeatureServer)",
-      "description": "Servicio ArcGIS REST FeatureServer Capas_Ideam del visualizador IDEAM: acceso programático a capas geoespaciales institucionales. DB2S-GEO solo documenta el endpoint; no ejecuta consultas remotas.",
-      "url": "https://visualizador.ideam.gov.co/gisserver/rest/services",
-      "category": "geoservice",
-      "coverage": {
-        "spatial": "Colombia",
-        "temporal": "Según publicación institucional del servicio"
-      },
-      "domains": [
-        "clima",
-        "hidrologia"
-      ],
-      "keywords": [
-        "arcgis",
-        "rest",
-        "featureserver",
-        "capas",
-        "geoservicio",
-        "ideam"
-      ],
-      "access_methods": [
-        "arcgis",
-        "portal"
-      ],
-      "endpoints": [
-        {
-          "method": "arcgis",
-          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Capas_Ideam/FeatureServer",
-          "label": "Capas_Ideam FeatureServer"
-        },
-        {
-          "method": "arcgis",
-          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services",
-          "label": "Directorio ArcGIS REST IDEAM"
-        }
-      ],
-      "formats": [
-        "ArcGIS REST",
-        "JSON",
-        "GeoJSON (vía query del servicio)"
-      ],
-      "documentation_url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Capas_Ideam/FeatureServer",
-      "doi": "",
-      "citation_reference": "IDEAM. Capas_Ideam (ArcGIS REST FeatureServer). Instituto de Hidrología, Meteorología y Estudios Ambientales. https://visualizador.ideam.gov.co/gisserver/rest/services/Capas_Ideam/FeatureServer"
-    },
-    {
-      "id": "ideam:amenaza-inundacion",
-      "name": "Amenaza por inundación (ArcGIS REST MapServer)",
-      "description": "Servicio ArcGIS REST MapServer Amenaza_Ambiental del visualizador IDEAM, con capas de amenaza e inundación para centros poblados y productos relacionados. DB2S-GEO solo documenta el endpoint; no ejecuta consultas remotas.",
-      "url": "https://visualizador.ideam.gov.co/gisserver/rest/services",
-      "category": "geoservice",
-      "coverage": {
-        "spatial": "Colombia",
-        "temporal": "Según publicación institucional del servicio"
-      },
-      "domains": [
-        "hidrologia",
-        "clima"
-      ],
-      "keywords": [
-        "inundacion",
-        "amenaza",
-        "riesgo",
-        "hidrologia",
-        "arcgis",
-        "mapserver",
-        "ideam"
-      ],
-      "access_methods": [
-        "arcgis",
-        "portal"
-      ],
-      "endpoints": [
-        {
-          "method": "arcgis",
-          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Amenaza_Ambiental/MapServer",
-          "label": "Amenaza_Ambiental MapServer"
-        },
-        {
-          "method": "arcgis",
-          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Amenaza_Ambiental/MapServer/layers",
-          "label": "Capas Amenaza_Ambiental (listado)"
-        }
-      ],
-      "formats": [
-        "ArcGIS REST",
-        "JSON",
-        "GeoJSON (vía query del servicio)"
-      ],
-      "documentation_url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Amenaza_Ambiental/MapServer",
-      "doi": "",
-      "citation_reference": "IDEAM. Amenaza_Ambiental (ArcGIS REST MapServer). Instituto de Hidrología, Meteorología y Estudios Ambientales. https://visualizador.ideam.gov.co/gisserver/rest/services/Amenaza_Ambiental/MapServer"
-    },
-    {
-      "id": "ideam:estado-ecosistemas",
-      "name": "Estado de los ecosistemas (IDEAM)",
-      "description": "Servicio ArcGIS REST Estado_Ecosistemas del IDEAM: capas de ecosistemas continentales, marinos y costeros. Apoya conservación, restauración y monitoreo ambiental. DB2S-GEO solo documenta el endpoint; no ejecuta consultas remotas.",
-      "url": "https://ideam.gov.co/geoportal-ambiental-institucional",
-      "category": "geoservice",
-      "coverage": {
-        "spatial": "Colombia",
-        "temporal": "Según publicación institucional (p. ej. 100K 2024)"
-      },
-      "domains": [
-        "biodiversidad",
-        "oceanos_costas"
-      ],
-      "keywords": [
-        "ecosistemas",
-        "conservacion",
-        "restauracion",
-        "monitoreo",
-        "ambiental",
-        "estado",
-        "cobertura",
-        "arcgis",
-        "mapserver",
-        "ideam"
-      ],
-      "access_methods": [
-        "arcgis",
-        "portal"
-      ],
-      "endpoints": [
-        {
-          "method": "arcgis",
-          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Estado_Ecosistemas/MapServer",
-          "label": "Estado_Ecosistemas MapServer"
-        },
-        {
-          "method": "arcgis",
-          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Estado_Ecosistemas/FeatureServer",
-          "label": "Estado_Ecosistemas FeatureServer"
-        }
-      ],
-      "formats": [
-        "ArcGIS REST",
-        "JSON",
-        "GeoJSON (vía query del servicio)"
-      ],
-      "documentation_url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Estado_Ecosistemas/MapServer",
-      "doi": "",
-      "citation_reference": "IDEAM. Estado de los ecosistemas (Estado_Ecosistemas MapServer). Instituto de Hidrología, Meteorología y Estudios Ambientales. https://visualizador.ideam.gov.co/gisserver/rest/services/Estado_Ecosistemas/MapServer"
-    },
-    {
-      "id": "ideam:fews-colombia",
-      "name": "FEWS Colombia — alertas y pronóstico hidrológico (IDEAM)",
-      "description": "Plataforma FEWS-Colombia del IDEAM (sistema operacional de pronóstico hidrológico): monitoreo de estaciones, niveles y alertas tempranas por inundación. Apoya gestión del riesgo hidrológico. DB2S-GEO solo documenta el acceso; no opera FEWS.",
-      "url": "https://fews.ideam.gov.co/colombia/MapaEstacionesColombiaEstado.html",
+      "id": "ideam:siac",
+      "name": "SIAC — Sistema de Información Ambiental de Colombia",
+      "description": "SIAC: plataforma de información ambiental integrada con datos de ecosistemas, clima, agua, biodiversidad y territorio para Colombia.",
+      "url": "https://www.ideam.gov.co/web/siac/siac",
       "category": "portal",
-      "coverage": {
-        "spatial": "Colombia",
-        "temporal": "Operativo / actualizaciones institucionales"
-      },
-      "domains": [
-        "hidrologia",
-        "clima"
-      ],
-      "keywords": [
-        "alertas",
-        "tempranas",
-        "pronostico",
-        "hidrologico",
-        "niveles",
-        "rio",
-        "inundaciones",
-        "monitoreo",
-        "fews",
-        "ideam"
-      ],
-      "access_methods": [
-        "portal"
-      ],
-      "endpoints": [
-        {
-          "method": "portal",
-          "url": "https://fews.ideam.gov.co/colombia/MapaEstacionesColombiaEstado.html",
-          "label": "Visor FEWS-Colombia (estaciones)"
-        },
-        {
-          "method": "portal",
-          "url": "https://www.ideam.gov.co/web/agua/fews",
-          "label": "Información institucional FEWS IDEAM"
-        }
-      ],
-      "formats": [
-        "portal web",
-        "series de tiempo (visor)"
-      ],
-      "documentation_url": "https://www.ideam.gov.co/web/agua/fews",
+      "coverage": { "spatial": "Colombia", "temporal": "Según publicación" },
+      "domains": ["ecosistemas", "clima", "hidrologia", "observacion_tierra"],
+      "keywords": ["siac", "informacion", "ambiental", "ecosistemas", "clima", "agua", "biodiversidad", "ideam", "colombia"],
+      "access_methods": ["portal"],
+      "endpoints": [{ "method": "portal", "url": "https://www.ideam.gov.co/web/siac/siac", "label": "SIAC — IDEAM" }],
+      "formats": ["portal"],
+      "documentation_url": "https://www.ideam.gov.co/web/siac/siac",
       "doi": "",
-      "citation_reference": "IDEAM. FEWS-Colombia — Sistema operacional de pronóstico hidrológico. Instituto de Hidrología, Meteorología y Estudios Ambientales. https://fews.ideam.gov.co/colombia/MapaEstacionesColombiaEstado.html"
+      "citation_reference": "IDEAM. SIAC. https://www.ideam.gov.co/web/siac/siac"
+    },
+    {
+      "id": "ideam:redes-hidrologicas",
+      "name": "Redes Hidrológicas",
+      "description": "Red de monitoreo hidrológico del IDEAM: caudales, niveles, calidad de agua y sedimentos en las principales cuencas de Colombia.",
+      "url": "https://www.ideam.gov.co/web/agua/redes-hidrologicas",
+      "category": "service",
+      "coverage": { "spatial": "Colombia", "temporal": "Histórico y tiempo real" },
+      "domains": ["hidrologia"],
+      "keywords": ["redes", "hidrologicas", "caudales", "niveles", "calidad", "agua", "sedimentos", "cuencas", "ideam", "colombia"],
+      "access_methods": ["portal"],
+      "endpoints": [{ "method": "portal", "url": "https://www.ideam.gov.co/web/agua/redes-hidrologicas", "label": "Redes Hidrológicas — IDEAM" }],
+      "formats": ["portal"],
+      "documentation_url": "https://www.ideam.gov.co/web/agua/redes-hidrologicas",
+      "doi": "",
+      "citation_reference": "IDEAM. Redes Hidrológicas. https://www.ideam.gov.co/web/agua/redes-hidrologicas"
+    },
+    {
+      "id": "ideam:servicio-alerta",
+      "name": "Servicio de Información y Alerta",
+      "description": "Servicio de alerta temprana del IDEAM: monitoreo de amenazas hidrometeorológicas, estado de cuencas y pronósticos para gestión del riesgo.",
+      "url": "https://www.ideam.gov.co/web/riesgos-gestion-cambio-climatico/servicio-informacion-alerta-ideam",
+      "category": "portal",
+      "coverage": { "spatial": "Colombia", "temporal": "Tiempo real / pronóstico" },
+      "domains": ["clima", "hidrologia", "riesgos"],
+      "keywords": ["alerta", "temprana", "amenazas", "hidrometeorologicas", "pronosticos", "riesgo", "ideam", "colombia"],
+      "access_methods": ["portal"],
+      "endpoints": [{ "method": "portal", "url": "https://www.ideam.gov.co/web/riesgos-gestion-cambio-climatico/servicio-informacion-alerta-ideam", "label": "Servicio de Alerta — IDEAM" }],
+      "formats": ["portal"],
+      "documentation_url": "https://www.ideam.gov.co/web/riesgos-gestion-cambio-climatico/servicio-informacion-alerta-ideam",
+      "doi": "",
+      "citation_reference": "IDEAM. Servicio de Alerta. https://www.ideam.gov.co/web/riesgos-gestion-cambio-climatico/servicio-informacion-alerta-ideam"
+    },
+    {
+      "id": "ideam:consulta-meteorologica",
+      "name": "Consulta de datos meteorológicos e hidrológicos",
+      "description": "Consulta y descarga de datos históricos de estaciones meteorológicas e hidrológicas del IDEAM: precipitación, temperatura, caudales, niveles.",
+      "url": "https://www.ideam.gov.co/web/atencion-participacion-ciudadana/consulta-y-servicio-de-datos-meteorologicos-e-hidrologicos",
+      "category": "service",
+      "coverage": { "spatial": "Colombia", "temporal": "Histórico" },
+      "domains": ["clima", "hidrologia"],
+      "keywords": ["consulta", "datos", "meteorologicos", "hidrologicos", "estaciones", "precipitacion", "temperatura", "caudales", "ideam", "colombia"],
+      "access_methods": ["portal", "download"],
+      "endpoints": [{ "method": "portal", "url": "https://www.ideam.gov.co/web/atencion-participacion-ciudadana/consulta-y-servicio-de-datos-meteorologicos-e-hidrologicos", "label": "Consulta datos — IDEAM" }],
+      "formats": ["portal", "csv", "xls"],
+      "documentation_url": "https://www.ideam.gov.co/web/atencion-participacion-ciudadana/consulta-y-servicio-de-datos-meteorologicos-e-hidrologicos",
+      "doi": "",
+      "citation_reference": "IDEAM. Consulta de datos meteorológicos e hidrológicos. https://www.ideam.gov.co/web/atencion-participacion-ciudadana/consulta-y-servicio-de-datos-meteorologicos-e-hidrologicos"
+    },
+    {
+      "id": "ideam:capasgeo",
+      "name": "CAPASGEO — Capas geográficas IDEAM",
+      "description": "Repositorio de capas geográficas en formato Shapefile/GeoTIFF producidas por el IDEAM: coberturas, GEI, aguas subterráneas, precipitación, zonificación climática y más. Acceso tipo servidor HTTP con índice de archivos.",
+      "url": "https://bart.ideam.gov.co/cneideam/Capasgeo/",
+      "category": "service",
+      "coverage": { "spatial": "Colombia", "temporal": "Según publicación" },
+      "domains": ["clima", "hidrologia", "ecosistemas", "observacion_tierra"],
+      "keywords": ["capasgeo", "capas", "geograficas", "shapefile", "geotiff", "ideam", "descarga", "gei", "aguas", "subterraneas", "precipitacion", "clima", "colombia"],
+      "access_methods": ["download"],
+      "endpoints": [{ "method": "download", "url": "https://bart.ideam.gov.co/cneideam/Capasgeo/", "label": "CAPASGEO — índice IDEAM" }],
+      "formats": ["ZIP (shapefile/geotiff)"],
+      "documentation_url": "https://bart.ideam.gov.co/cneideam/Capasgeo/",
+      "doi": "",
+      "citation_reference": "IDEAM. CAPASGEO. https://bart.ideam.gov.co/cneideam/Capasgeo/"
+    },
+    {
+      "id": "ideam:geoportal",
+      "name": "Geoportal Ambiental Institucional",
+      "description": "Geoportal institucional del IDEAM para búsqueda, consulta, visualización y descarga de información geográfica ambiental oficial de Colombia.",
+      "url": "https://www.ideam.gov.co/geoportal-ambiental-institucional",
+      "category": "portal",
+      "coverage": { "spatial": "Colombia", "temporal": "Según publicación" },
+      "domains": ["observacion_tierra", "ecosistemas", "clima", "hidrologia"],
+      "keywords": ["geoportal", "ideam", "informacion", "geografica", "ambiental", "colombia", "visualizacion", "descarga"],
+      "access_methods": ["portal"],
+      "endpoints": [{ "method": "portal", "url": "https://www.ideam.gov.co/geoportal-ambiental-institucional", "label": "Geoportal Ambiental — IDEAM" }],
+      "formats": ["portal"],
+      "documentation_url": "https://www.ideam.gov.co/geoportal-ambiental-institucional",
+      "doi": "",
+            "citation_reference": "IDEAM. Geoportal Ambiental Institucional. https://www.ideam.gov.co/geoportal-ambiental-institucional"
+    },
+    {
+      "id": "ideam:sirh",
+      "name": "SIRH — Sistema de Información del Recurso Hídrico",
+      "description": "SIRH: gestión y estructuración de datos del recurso hídrico en Colombia. Fuentes hídricas, usuarios del agua, captaciones, vertimientos, puntos de monitoreo, aguas subterráneas, parámetros de calidad y contaminación.",
+      "url": "https://sirh.ideam.gov.co/Sirh/pages/inicio.html",
+      "category": "service",
+      "coverage": { "spatial": "Colombia", "temporal": "Según publicación" },
+      "domains": ["hidrologia"],
+      "keywords": ["sirh", "recurso", "hidrico", "aguas", "subterraneas", "captaciones", "vertimientos", "calidad", "monitoreo", "ideam", "colombia"],
+      "access_methods": ["portal"],
+      "endpoints": [{ "method": "portal", "url": "https://sirh.ideam.gov.co/Sirh/pages/inicio.html", "label": "SIRH — IDEAM" }],
+      "formats": ["portal"],
+      "documentation_url": "https://sirh.ideam.gov.co/Sirh/pages/inicio.html",
+      "doi": "",
+      "citation_reference": "IDEAM. SIRH — Sistema de Información del Recurso Hídrico. https://sirh.ideam.gov.co/Sirh/pages/inicio.html"
     }
   ]
 }

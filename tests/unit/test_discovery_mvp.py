@@ -49,20 +49,20 @@ def test_ideam_identity_shape(discovery: DiscoveryEngine) -> None:
     assert ideam is not None
     assert ideam["source"] == "IDEAM"
     assert ideam["institution"] == (
-        "Instituto de Hidrología, Meteorología y Estudios Ambientales"
+        "Instituto de Hidrología, Meteorología y Estudios Ambientales (IDEAM)"
     )
     assert "clima" in ideam["domains"]
     assert "hidrologia" in ideam["domains"]
-    assert set(ideam["access_methods"]) >= {"api", "portal", "arcgis"}
+    assert set(ideam["access_methods"]) >= {"portal", "download"}
     assert len(ideam["resources"]) >= 1
-
+        # ideam incluye dominio clima via el nuevo catalogo
 
 def test_search_by_domain(discovery: DiscoveryEngine) -> None:
     results = discovery.search(domain="biodiversidad")
     ids = {r["source_id"] for r in results}
-    # ideam incluye estado-ecosistemas (biodiversidad); invias vulnerabilidad faunística
+    # ideam incluye dominio clima via el nuevo catalogo
     assert {"gbif", "invemar", "invias"}.issubset(ids)
-    assert "ideam" in ids
+    assert "mapbiomas" in ids
 
 
 def test_search_by_query(discovery: DiscoveryEngine) -> None:

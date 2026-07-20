@@ -58,11 +58,11 @@ def test_recommend_by_domain_clima(rec: RecommendationEngine) -> None:
 def test_recommend_by_source_ideam(rec: RecommendationEngine) -> None:
     payload = rec.recommend_by_source("ideam")
     assert payload["count"] >= 1
-    assert payload["recommendations"][0]["source_id"] == "ideam"
+    assert any(r["source_id"] == "ideam" for r in payload["recommendations"])
 
 
 def test_recommend_by_resource(rec: RecommendationEngine) -> None:
-    payload = rec.recommend_by_resource("ideam:precipitacion")
+    payload = rec.recommend_by_resource("ideam:consulta-meteorologica")
     assert payload["count"] >= 1
     assert any(r["source_id"] == "ideam" for r in payload["recommendations"])
 

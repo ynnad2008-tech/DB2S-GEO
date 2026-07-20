@@ -11,8 +11,8 @@
   "status": "active",
   "institution": "Agencia Nacional de Infraestructura (ANI)",
   "domains": [
-    "observacion_tierra",
-    "oceanos_costas"
+    "infraestructura",
+    "economia"
   ],
   "license": "Según términos ANI / ANIscopio",
   "version": "1.1.0",
@@ -28,7 +28,8 @@
         "temporal": "Según estado de proyectos publicados"
       },
       "domains": [
-        "observacion_tierra"
+        "infraestructura",
+        "economia"
       ],
       "keywords": [
         "aniscopio",
@@ -84,7 +85,8 @@
         "temporal": "Según actualización SIG ANI"
       },
       "domains": [
-        "observacion_tierra"
+        "infraestructura",
+        "economia"
       ],
       "keywords": [
         "atlas",
@@ -142,8 +144,9 @@
         "temporal": "Según fichas y capas publicadas por la ANI"
       },
       "domains": [
+        "infraestructura",
         "oceanos_costas",
-        "observacion_tierra"
+        "economia"
       ],
       "keywords": [
         "fichas",

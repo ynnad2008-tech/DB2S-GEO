@@ -11,7 +11,8 @@
   "status": "active",
   "institution": "Global Biodiversity Information Facility",
   "domains": [
-    "biodiversidad"
+    "biodiversidad",
+    "observacion_tierra"
   ],
   "license": "Según dataset (frecuente CC0 / CC BY); ver licencia del recurso en GBIF",
   "version": "1.2.0",
@@ -27,7 +28,8 @@
         "temporal": "Histórico a presente"
       },
       "domains": [
-        "biodiversidad"
+        "biodiversidad",
+        "observacion_tierra"
       ],
       "keywords": [
         "ocurrencias",

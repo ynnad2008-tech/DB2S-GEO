@@ -23,6 +23,124 @@ HOMEPAGE = "https://www.invemar.org.co"
 LICENSE = "Términos institucionales INVEMAR / datos abiertos cuando apliquen"
 
 _RESOURCES: dict[str, dict[str, Any]] = {
+    "invemar:siamexplorer": {
+        "resource_id": "invemar:siamexplorer",
+        "title": "SiamExplorer — visor oceanográfico (INVEMAR)",
+        "type": "portal",
+        "domains": ["oceanos_costas"],
+        "primary_domain": "oceanos_costas",
+        "keywords": [
+            "oceanografia",
+            "boyas",
+            "oleaje",
+            "tsm",
+            "temperatura",
+            "superficial",
+            "mar",
+            "viento",
+            "mareas",
+            "nivel",
+            "del",
+            "mar",
+            "corrientes",
+            "meteorologia",
+            "marina",
+            "monitoreo",
+            "oceanico",
+            "siamexplorer",
+            "invemar",
+            "colombia",
+        ],
+        "description": (
+            "SiamExplorer: visor operativo de datos oceanográficos y "
+            "meteorológicos marinos de INVEMAR. Visualiza boyas, estaciones "
+            "meteorológicas marinas, oleaje (altura, dirección, período), "
+            "temperatura superficial del mar, viento, nivel del mar, "
+            "corrientes y mareas en tiempo real e histórico. "
+            "DB2S-GEO solo documenta el acceso; no ejecuta consultas remotas."
+        ),
+        "spatial_coverage": "Colombia (marino-costero Caribe, Pacífico e insular)",
+        "temporal_coverage": "Tiempo real e histórico (según disponibilidad)",
+        "formats": ["visor web", "series de tiempo", "descarga CSV"],
+        "homepage": "https://www.invemar.org.co",
+        "portal_url": "https://siamexplorer.invemar.org.co/",
+        "documentation_url": "https://siamexplorer.invemar.org.co/",
+        "endpoints": [
+            {
+                "method": "portal",
+                "url": "https://siamexplorer.invemar.org.co/",
+                "label": "SiamExplorer — visor oceanográfico INVEMAR",
+            },
+            {
+                "method": "portal",
+                "url": "https://www.invemar.org.co/web/invemar/siamexplorer",
+                "label": "SiamExplorer (portal institucional)",
+            },
+        ],
+        "access_methods": ["portal"],
+        "citation_reference": (
+            "INVEMAR. SiamExplorer — visor oceanográfico. "
+            "Instituto de Investigaciones Marinas y Costeras "
+            "José Benito Vives de Andréis. "
+            "https://siamexplorer.invemar.org.co/"
+        ),
+        "doi": "",
+    },
+    "invemar:data-hub": {
+        "resource_id": "invemar:data-hub",
+        "title": "DataHub INVEMAR — catálogo de datos marinos y costeros",
+        "type": "portal",
+        "domains": ["oceanos_costas", "biodiversidad"],
+        "primary_domain": "oceanos_costas",
+        "keywords": [
+            "datos",
+            "hub",
+            "catálogo",
+            "descarga",
+            "oceanografia",
+            "marino",
+            "costero",
+            "biodiversidad",
+            "marina",
+            "abiertos",
+            "invemar",
+            "colombia",
+        ],
+        "description": (
+            "DataHub INVEMAR: catálogo centralizado de datos marinos y "
+            "costeros de Colombia. Permite búsqueda, visualización y "
+            "descarga de conjuntos de datos oceanográficos, pesqueros, "
+            "de biodiversidad marina, calidad de agua, ecosistemas "
+            "costeros y más. DB2S-GEO solo documenta el acceso; "
+            "no descarga conjuntos."
+        ),
+        "spatial_coverage": "Colombia (marino-costero)",
+        "temporal_coverage": "Según conjuntos publicados en el DataHub",
+        "formats": ["portal web", "descarga", "API"],
+        "homepage": "https://www.invemar.org.co",
+        "portal_url": "https://datahub.invemar.org.co/",
+        "documentation_url": "https://datahub.invemar.org.co/",
+        "endpoints": [
+            {
+                "method": "portal",
+                "url": "https://datahub.invemar.org.co/",
+                "label": "DataHub INVEMAR — catálogo de datos",
+            },
+            {
+                "method": "portal",
+                "url": "https://www.invemar.org.co/web/invemar/datos",
+                "label": "Datos INVEMAR (portal institucional)",
+            },
+        ],
+        "access_methods": ["portal", "api"],
+        "citation_reference": (
+            "INVEMAR. DataHub — catálogo de datos marinos y costeros. "
+            "Instituto de Investigaciones Marinas y Costeras "
+            "José Benito Vives de Andréis. "
+            "https://datahub.invemar.org.co/"
+        ),
+        "doi": "",
+    },
     "invemar:geovisor": {
         "resource_id": "invemar:geovisor",
         "title": "Geovisor INVEMAR",

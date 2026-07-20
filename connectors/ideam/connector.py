@@ -377,7 +377,7 @@ class IdeamConnector(BaseConnector):
             source="IDEAM",
             institution=INSTITUTION,
             country_or_scope="Colombia",
-            domains=["clima", "hidrologia"],
+            domains=["clima", "hidrologia", "biodiversidad", "oceanos_costas"],
             access_methods=["api", "portal", "arcgis"],
             description=(
                 "Autoridad nacional colombiana en hidrología, meteorología "

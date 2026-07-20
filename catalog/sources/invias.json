@@ -11,8 +11,7 @@
   "status": "active",
   "institution": "Instituto Nacional de Vías (INVIAS)",
   "domains": [
-    "observacion_tierra",
-    "biodiversidad"
+    "infraestructura"
   ],
   "license": "Según términos INVIAS / HERMES",
   "version": "1.1.0",
@@ -28,7 +27,7 @@
         "temporal": "Según actualizaciones HERMES / capas publicadas"
       },
       "domains": [
-        "observacion_tierra"
+        "infraestructura"
       ],
       "keywords": [
         "hermes",

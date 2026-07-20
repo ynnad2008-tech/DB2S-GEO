@@ -81,7 +81,7 @@ Conector
 ## COMPLETADO
 
 - [x] gee:chirps
-- [x] dynamicworld:landcover
+- [x] gee-copernicus-sentinel2:dynamicworld
 
 ---
 

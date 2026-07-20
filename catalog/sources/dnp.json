@@ -11,7 +11,9 @@
   "status": "active",
   "institution": "Departamento Nacional de Planeación (DNP)",
   "domains": [
-    "observacion_tierra",
+    "catastro",
+    "economia",
+    "ordenamiento",
     "poblacion"
   ],
   "license": "Según términos DNP / plataformas oficiales",
@@ -28,7 +30,9 @@
         "temporal": "Según documentos de política y avance publicados"
       },
       "domains": [
-        "observacion_tierra"
+        "catastro",
+        "ordenamiento",
+        "poblacion"
       ],
       "keywords": [
         "catastro",
@@ -87,7 +91,8 @@
         "temporal": "Según proyectos y periodos publicados en PIIP"
       },
       "domains": [
-        "observacion_tierra",
+        "economia",
+        "ordenamiento",
         "poblacion"
       ],
       "keywords": [

@@ -1,15 +1,7 @@
-"""
-Dominios temáticos iniciales — Metadata Engine (Fase 2).
-
-Taxonomía curada y ampliable. No inventar dominios fuera de este registro
-sin curaduría humana.
-"""
-
 from __future__ import annotations
 
 from typing import Any
 
-# Dominios iniciales (FASE 2) — ampliables en fases posteriores.
 INITIAL_DOMAINS: dict[str, dict[str, Any]] = {
     "clima": {
         "domain_id": "clima",
@@ -21,11 +13,6 @@ INITIAL_DOMAINS: dict[str, dict[str, Any]] = {
         "label": "Hidrología",
         "description": "Cuencas, caudales, niveles e información hidrológica.",
     },
-    "biodiversidad": {
-        "domain_id": "biodiversidad",
-        "label": "Biodiversidad",
-        "description": "Especies, ocurrencias, taxonomía y hábitats.",
-    },
     "oceanos_costas": {
         "domain_id": "oceanos_costas",
         "label": "Océanos y costas",
@@ -36,15 +23,55 @@ INITIAL_DOMAINS: dict[str, dict[str, Any]] = {
         "label": "Suelos",
         "description": "Propiedades edáficas y cartografía de suelos.",
     },
+    "geologia": {
+        "domain_id": "geologia",
+        "label": "Geología",
+        "description": "Geología, geomorfología, geodesia, vulcanología y riesgos geológicos.",
+    },
+    "biodiversidad": {
+        "domain_id": "biodiversidad",
+        "label": "Biodiversidad",
+        "description": "Especies, ocurrencias, taxonomía, hábitats y conservación.",
+    },
     "agricultura": {
         "domain_id": "agricultura",
         "label": "Agricultura",
         "description": "Producción agropecuaria, uso de la tierra y seguridad alimentaria.",
     },
+    "riesgo": {
+        "domain_id": "riesgo",
+        "label": "Riesgo",
+        "description": "Gestión del riesgo, amenazas, desastres y vulnerabilidad social.",
+    },
+    "cartografia_base": {
+        "domain_id": "cartografia_base",
+        "label": "Cartografía base",
+        "description": "Cartografía base, referencias geodésicas y marcos de referencia.",
+    },
+    "catastro": {
+        "domain_id": "catastro",
+        "label": "Catastro",
+        "description": "Catastro multipropósito, predios y avalúos catastrales.",
+    },
+    "ordenamiento": {
+        "domain_id": "ordenamiento",
+        "label": "Ordenamiento territorial",
+        "description": "Ordenamiento territorial, planes de ordenamiento y zonificación ambiental.",
+    },
+    "infraestructura": {
+        "domain_id": "infraestructura",
+        "label": "Infraestructura",
+        "description": "Infraestructura de transporte, energía, minería, hidrocarburos, servicios públicos y licenciamiento ambiental.",
+    },
     "poblacion": {
         "domain_id": "poblacion",
         "label": "Población",
         "description": "Demografía espacial, densidad y estructuras poblacionales.",
+    },
+    "economia": {
+        "domain_id": "economia",
+        "label": "Economía",
+        "description": "Indicadores económicos, finanzas, presupuestos y desarrollo regional.",
     },
     "observacion_tierra": {
         "domain_id": "observacion_tierra",

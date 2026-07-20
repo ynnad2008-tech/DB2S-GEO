@@ -91,8 +91,8 @@ _RESOURCES: dict[str, dict[str, Any]] = {
         "resource_id": "sgc:simma-geologia",
         "title": "SIMMA — Capas temáticas geológicas (SGC)",
         "type": "geoservice",
-        "domains": ["observacion_tierra", "suelos"],
-        "primary_domain": "observacion_tierra",
+                "domains": ["geologia", "riesgo"],
+        "primary_domain": "geologia",
         "keywords": [
             "geologia",
             "geologia_nacional",
@@ -222,7 +222,7 @@ class SgcConnector(BaseConnector):
             source="SGC",
             institution=INSTITUTION,
             country_or_scope="Colombia",
-            domains=["observacion_tierra", "hidrologia"],
+            domains=["riesgo", "geologia", "hidrologia"],
             access_methods=["portal", "arcgis"],
             description=(
                 "Autoridad nacional en geociencias de Colombia. "

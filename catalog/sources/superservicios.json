@@ -11,8 +11,8 @@
   "status": "active",
   "institution": "Superintendencia de Servicios Públicos Domiciliarios (Superservicios)",
   "domains": [
-    "hidrologia",
-    "observacion_tierra"
+    "infraestructura",
+    "poblacion"
   ],
   "license": "Según términos Superservicios / SUI / geoportal",
   "version": "1.1.0",

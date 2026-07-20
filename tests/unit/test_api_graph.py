@@ -49,7 +49,7 @@ def test_graph_domain_clima(client: TestClient) -> None:
     body = response.json()
     assert body["domain"] == "clima"
     assert "IDEAM" in body["sources"]
-    assert "ideam:precipitacion" in body["resources"]
+    assert "ideam:consulta-meteorologica" in body["resources"]
 
 
 def test_graph_source_ideam(client: TestClient) -> None:

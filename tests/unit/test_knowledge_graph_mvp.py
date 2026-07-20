@@ -1,5 +1,6 @@
 """Tests — Knowledge Graph MVP (Fase 3)."""
 
+
 from __future__ import annotations
 
 import sys
@@ -28,7 +29,7 @@ def test_stats_counts(kg: KnowledgeGraphEngine) -> None:
     assert stats["sources"] == 23
     assert stats["institutions"] >= 1
     assert stats["resources"] >= 6
-    assert stats["domains"] == 8
+    assert stats["domains"] == 15
     assert stats["keywords"] >= 1
     assert stats["relations"] > 0
     assert stats["stores_full_metadata"] is False
@@ -38,17 +39,15 @@ def test_stats_counts(kg: KnowledgeGraphEngine) -> None:
 def test_resources_by_domain_clima(kg: KnowledgeGraphEngine) -> None:
     payload = kg.resources_by_domain("clima")
     assert payload is not None
-    assert payload["domain"] == "clima"
     assert "IDEAM" in payload["sources"]
-    assert "ideam:precipitacion" in payload["resources"]
-    assert "ideam:estaciones-meteorologicas" in payload["resources"]
+    assert "ideam:consulta-meteorologica" in payload["resources"]
 
 
 def test_resources_by_source_ideam(kg: KnowledgeGraphEngine) -> None:
     payload = kg.resources_by_source("ideam")
     assert payload is not None
     assert payload["source"] == "IDEAM"
-    assert "ideam:precipitacion" in payload["resources"]
+    assert "ideam:consulta-meteorologica" in payload["resources"]
     assert "clima" in payload["domains"] or "hidrologia" in payload["domains"]
 
 

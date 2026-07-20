@@ -26,7 +26,7 @@ Ver `base.py`, `models.py` y `docs/07_connectors_framework.md`.
 | worldpop | WorldPop | MVP |
 | gee | Google Earth Engine | MVP |
 | sgc | SGC | MVP (enriquecimiento) |
-| dynamicworld | Dynamic World | MVP (enriquecimiento) |
+| gee-copernicus-sentinel2 | Copernicus Sentinel-2 (GEE) | MVP (enriquecimiento) |
 | nasa | NASA | MVP (enriquecimiento) |
 | mapbiomas | MapBiomas | MVP (enriquecimiento) |
 | unosat | UNOSAT | MVP (enriquecimiento) |
