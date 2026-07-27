@@ -93,7 +93,7 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.dimar.mil.co",
+          "url": "https://cecoldo.dimar.mil.co/geonetwork/srv/eng/catalog.search#/home",
           "label": "DIMAR - Cartografia Nautica"
         }
       ]
@@ -161,7 +161,7 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.dimar.mil.co",
+          "url": "https://services6.arcgis.com/RB7c27NVd25mjSSc/ArcGIS/rest/services",
           "label": "DIMAR - Datos Batimetricos"
         }
       ]
@@ -280,7 +280,7 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.dimar.mil.co",
+          "url": "https://cecoldo.dimar.mil.co/datosDimar/pages/inicio/inicio.xhtml",
           "label": "DIMAR - Cecoldo"
         }
       ]
