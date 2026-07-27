@@ -133,7 +133,15 @@ def expand_query_tokens(query: str) -> list[str]:
 
 
 def cap_score(raw: int) -> int:
-    return max(0, min(100, raw))
+    """Escala logarítmica para diferenciar scores. Máximo teórico ~200."""
+    if raw <= 0:
+        return 0
+    # Escala: 0-50 lineal, 50-150 se comprime, >150 asintótico a 100
+    if raw <= 50:
+        return raw
+    if raw <= 150:
+        return 50 + int((raw - 50) * 0.5)
+    return min(100, 100)
 
 
 def official_national_bonus(source_id: str) -> tuple[int, str | None]:

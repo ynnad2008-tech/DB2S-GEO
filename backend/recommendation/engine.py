@@ -382,6 +382,8 @@ class RecommendationEngine:
         accumulators: dict[str, dict[str, Any]],
     ) -> None:
         assert self._kg is not None
+        # Contador de keywords por fuente para aplicar pesos decrecientes
+        kw_count: dict[str, int] = {}
         for token in tokens:
             if is_generic_keyword(token):
                 continue
@@ -401,7 +403,18 @@ class RecommendationEngine:
                     acc = accumulators.get(sid)
                     if acc is None:
                         continue
-                    acc["score_raw"] += WEIGHT_KEYWORD_EXACT
+                    # Pesos decrecientes: 1er kw=25, 2do=15, 3ro=10, 4to+=5
+                    k = kw_count.get(sid, 0) + 1
+                    kw_count[sid] = k
+                    if k == 1:
+                        weight = 25
+                    elif k == 2:
+                        weight = 15
+                    elif k == 3:
+                        weight = 10
+                    else:
+                        weight = 5
+                    acc["score_raw"] += weight
                     add_reason(acc, f"keyword {token}")
                     add_relation(acc, "associated_with", res["id"], kw_nid)
                     add_relation(acc, "contains", src["id"], res["id"])
