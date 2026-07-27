@@ -106,7 +106,7 @@
       "id": "sib_colombia:api",
       "name": "API REST (GBIF Colombia)",
       "description": "API REST compatible con GBIF para consulta programática de registros biológicos. Filtros por taxonomía, geografía y fecha. Formatos: JSON, Darwin Core, CSV.",
-      "url": "https://api.sibcolombia.net",
+      "url": "https://sibcolombia.net",
       "category": "api",
       "coverage": {
         "spatial": "Colombia",
@@ -128,9 +128,9 @@
       ],
       "endpoints": [
         {
-          "method": "rest",
-          "url": "https://api.sibcolombia.net",
-          "label": "API SiB Colombia"
+          "method": "portal",
+          "url": "https://sibcolombia.net",
+          "label": "SiB Colombia - API"
         }
       ]
     },

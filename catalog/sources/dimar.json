@@ -67,7 +67,7 @@
       "id": "dimar:cartas-nauticas",
       "name": "Cartas Náuticas Electrónicas (ENC)",
       "description": "63 Cartas Náuticas Electrónicas (ENC) con cobertura 100% en cartas de paso y puerto, 76% en costeras. Servicio Hidrográfico Nacional. Estándar IHO S-57.",
-      "url": "https://www.dimar.mil.co/cartografia-nautica",
+      "url": "https://www.dimar.mil.co",
       "category": "dataset",
       "coverage": {
         "spatial": "Colombia (Caribe y Pacífico)",
@@ -93,8 +93,8 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.dimar.mil.co/cartografia-nautica",
-          "label": "Cartografía Náutica DIMAR"
+          "url": "https://www.dimar.mil.co",
+          "label": "DIMAR - Cartografia Nautica"
         }
       ]
     },
@@ -102,7 +102,7 @@
       "id": "dimar:batimetria",
       "name": "Superficies Batimétricas",
       "description": "494 superficies batimétricas en formato .csar del Caribe y Pacífico colombiano. Levantamientos hidrográficos del SHN. Usadas en cartografía náutica y modelación oceanográfica.",
-      "url": "https://www.dimar.mil.co/datos-batimetricos",
+      "url": "https://www.dimar.mil.co",
       "category": "dataset",
       "coverage": {
         "spatial": "Colombia (Caribe y Pacífico)",
@@ -160,9 +160,9 @@
       ],
       "endpoints": [
         {
-          "method": "wcs",
-          "url": "https://www.dimar.mil.co/datos-batimetricos",
-          "label": "Datos Batimétricos DIMAR"
+          "method": "portal",
+          "url": "https://www.dimar.mil.co",
+          "label": "DIMAR - Datos Batimetricos"
         }
       ]
     },
@@ -170,7 +170,7 @@
       "id": "dimar:senalizacion-maritima",
       "name": "Señalización Marítima y Fluvial",
       "description": "Catálogo geoespacial de ayudas a la navegación: faros, boyas, balizas, enfilaciones. Aplicativo web con visualización de todas las ayudas activas en Colombia.",
-      "url": "https://www.dimar.mil.co/senalizacion-maritima",
+      "url": "https://www.dimar.mil.co",
       "category": "dataset",
       "coverage": {
         "spatial": "Colombia (Caribe y Pacífico)",
@@ -215,8 +215,8 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.dimar.mil.co/senalizacion-maritima",
-          "label": "Señalización Marítima"
+          "url": "https://www.dimar.mil.co",
+          "label": "DIMAR - Senalizacion Maritima"
         }
       ]
     },
@@ -224,7 +224,7 @@
       "id": "dimar:cecoldodigital",
       "name": "Cecoldo — Repositorio Digital",
       "description": "Centro Colombiano de Datos Oceanográficos. Repositorio con datos primarios de investigación marina, atlas oceanográficos, climatología y series históricas.",
-      "url": "https://cecoldodigital.dimar.mil.co",
+      "url": "https://www.dimar.mil.co",
       "category": "repository",
       "coverage": {
         "spatial": "Colombia (Caribe y Pacífico)",
@@ -279,9 +279,9 @@
       ],
       "endpoints": [
         {
-          "method": "download",
-          "url": "https://cecoldodigital.dimar.mil.co",
-          "label": "Cecoldo Digital"
+          "method": "portal",
+          "url": "https://www.dimar.mil.co",
+          "label": "DIMAR - Cecoldo"
         }
       ]
     },

@@ -21,7 +21,7 @@
       "id": "ebird:observations",
       "name": "Registros de Observación — eBird Colombia",
       "description": "Millones de registros de aves para Colombia (~1,966 spp). Ciencia ciudadana validada por revisores expertos. API pública y descargas por especie/región.",
-      "url": "https://api.ebird.org/v2/data/obs",
+      "url": "https://ebird.org/explore",
       "category": "dataset",
       "coverage": {
         "spatial": "Colombia",
@@ -47,9 +47,9 @@
       ],
       "endpoints": [
         {
-          "method": "rest",
-          "url": "https://api.ebird.org/v2/data/obs",
-          "label": "eBird API v2 Observations"
+          "method": "portal",
+          "url": "https://ebird.org/explore",
+          "label": "eBird Explore"
         },
         {
           "method": "download",
@@ -62,7 +62,7 @@
       "id": "ebird:hotspots",
       "name": "Hotspots de Observación de Aves",
       "description": "Directorio geoespacial de sitios de observación de aves en Colombia. Cientos de hotspots desde La Guajira hasta Amazonas con listados de especies.",
-      "url": "https://api.ebird.org/v2/ref/hotspot",
+      "url": "https://ebird.org/hotspots",
       "category": "dataset",
       "coverage": {
         "spatial": "Colombia",
@@ -86,9 +86,9 @@
       ],
       "endpoints": [
         {
-          "method": "rest",
-          "url": "https://api.ebird.org/v2/ref/hotspot",
-          "label": "eBird Hotspots API"
+          "method": "portal",
+          "url": "https://ebird.org/hotspots",
+          "label": "eBird Hotspots"
         }
       ]
     },
@@ -122,7 +122,7 @@
       ],
       "endpoints": [
         {
-          "method": "download",
+          "method": "portal",
           "url": "https://science.ebird.org/en/status-and-trends",
           "label": "eBird Status & Trends"
         }

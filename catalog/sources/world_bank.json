@@ -23,7 +23,7 @@
       "id": "world_bank:wdi",
       "name": "World Development Indicators (WDI)",
       "description": "1,600+ indicadores para 200+ países desde 1960. PIB, pobreza, desigualdad (Gini), educación, salud. API REST JSON/XML y CSV.",
-      "url": "https://api.worldbank.org/v2/",
+      "url": "https://data.worldbank.org",
       "category": "dataset",
       "coverage": {
         "spatial": "Global / Colombia",
@@ -51,14 +51,9 @@
       ],
       "endpoints": [
         {
-          "method": "rest",
-          "url": "https://api.worldbank.org/v2/",
-          "label": "World Bank API v2"
-        },
-        {
-          "method": "download",
+          "method": "portal",
           "url": "https://data.worldbank.org",
-          "label": "DataBank"
+          "label": "World Bank DataBank"
         }
       ]
     },

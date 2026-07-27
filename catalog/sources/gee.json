@@ -332,7 +332,7 @@
       "id": "gee:chirps-monthly",
       "name": "CHIRPS Mensual (vía Earth Engine)",
       "description": "Colección CHIRPS Mensual (UCSB-CHG/CHIRPS/MONTHLY) en Google Earth Engine: precipitación mensual cuasi-global para climatología, balance hídrico, sequías y tendencias de largo plazo. DB2S-GEO no ejecuta código GEE ni descarga datos.",
-      "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_MONTHLY",
+      "url": "https://developers.google.com/earth-engine/datasets",
       "category": "collection",
       "coverage": {
         "spatial": "Cuasi-global (50°S–50°N)",
@@ -384,13 +384,8 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://developers.google.com/earth-engine/datasets/catalog/UCSB-CHG_CHIRPS_MONTHLY",
-          "label": "UCSB-CHG/CHIRPS/MONTHLY (GEE Catalog)"
-        },
-        {
-          "method": "platform",
-          "url": "https://code.earthengine.google.com",
-          "label": "Earth Engine Code Editor"
+          "url": "https://developers.google.com/earth-engine/datasets",
+          "label": "Earth Engine Data Catalog"
         }
       ],
       "formats": [

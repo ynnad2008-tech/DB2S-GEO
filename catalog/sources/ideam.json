@@ -24,7 +24,7 @@
       "id": "ideam:tematicas",
       "name": "Temáticas IDEAM",
       "description": "Portal de servicios del IDEAM con acceso a capas temáticas ambientales, climatología, hidrología y geología.",
-      "url": "https://www.ideam.gov.co/servicios/tematicas-ideam",
+      "url": "http://www.ideam.gov.co",
       "category": "catalog",
       "coverage": {
         "spatial": "Colombia",
@@ -76,8 +76,8 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.ideam.gov.co/servicios/tematicas-ideam",
-          "label": "Temáticas IDEAM"
+          "url": "http://www.ideam.gov.co",
+          "label": "IDEAM - Tematicas"
         }
       ],
       "formats": [
@@ -91,7 +91,7 @@
       "id": "ideam:sivirtual",
       "name": "SIVIRTUAL — Aguas subterráneas",
       "description": "Sistema de Información del Recurso Hídrico (SIVIRTUAL): consulta, monitoreo y gestión de aguas subterráneas en Colombia.",
-      "url": "https://www.ideam.gov.co/web/agua/sivirtual",
+      "url": "http://www.ideam.gov.co",
       "category": "service",
       "coverage": {
         "spatial": "Colombia",
@@ -124,8 +124,8 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.ideam.gov.co/web/agua/sivirtual",
-          "label": "SIVIRTUAL — IDEAM"
+          "url": "http://www.ideam.gov.co",
+          "label": "IDEAM - SIVIRTUAL"
         }
       ],
       "formats": [
@@ -139,7 +139,7 @@
       "id": "ideam:siac",
       "name": "SIAC — Sistema de Información Ambiental de Colombia",
       "description": "SIAC: plataforma de información ambiental integrada con datos de ecosistemas, clima, agua, biodiversidad y territorio para Colombia.",
-      "url": "https://www.ideam.gov.co/web/siac/siac",
+      "url": "http://www.siac.gov.co",
       "category": "portal",
       "coverage": {
         "spatial": "Colombia",
@@ -201,8 +201,8 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.ideam.gov.co/web/siac/siac",
-          "label": "SIAC — IDEAM"
+          "url": "http://www.siac.gov.co",
+          "label": "SIAC"
         }
       ],
       "formats": [
@@ -216,7 +216,7 @@
       "id": "ideam:redes-hidrologicas",
       "name": "Redes Hidrológicas",
       "description": "Red de monitoreo hidrológico del IDEAM: caudales, niveles, calidad de agua y sedimentos en las principales cuencas de Colombia.",
-      "url": "https://www.ideam.gov.co/web/agua/redes-hidrologicas",
+      "url": "http://www.ideam.gov.co",
       "category": "service",
       "coverage": {
         "spatial": "Colombia",
@@ -253,8 +253,8 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.ideam.gov.co/web/agua/redes-hidrologicas",
-          "label": "Redes Hidrológicas — IDEAM"
+          "url": "http://www.ideam.gov.co",
+          "label": "IDEAM - Redes Hidrologicas"
         }
       ],
       "formats": [
@@ -268,7 +268,7 @@
       "id": "ideam:servicio-alerta",
       "name": "Servicio de Información y Alerta",
       "description": "Servicio de alerta temprana del IDEAM: monitoreo de amenazas hidrometeorológicas, estado de cuencas y pronósticos para gestión del riesgo.",
-      "url": "https://www.ideam.gov.co/web/riesgos-gestion-cambio-climatico/servicio-informacion-alerta-ideam",
+      "url": "http://www.ideam.gov.co",
       "category": "portal",
       "coverage": {
         "spatial": "Colombia",
@@ -303,8 +303,8 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.ideam.gov.co/web/riesgos-gestion-cambio-climatico/servicio-informacion-alerta-ideam",
-          "label": "Servicio de Alerta — IDEAM"
+          "url": "http://www.ideam.gov.co",
+          "label": "IDEAM - Servicio de Alerta"
         }
       ],
       "formats": [
@@ -318,7 +318,7 @@
       "id": "ideam:consulta-meteorologica",
       "name": "Consulta de datos meteorológicos e hidrológicos",
       "description": "Consulta y descarga de datos históricos de estaciones meteorológicas e hidrológicas del IDEAM: precipitación, temperatura, caudales, niveles.",
-      "url": "https://www.ideam.gov.co/web/atencion-participacion-ciudadana/consulta-y-servicio-de-datos-meteorologicos-e-hidrologicos",
+      "url": "http://www.ideam.gov.co",
       "category": "service",
       "coverage": {
         "spatial": "Colombia",
@@ -357,8 +357,8 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.ideam.gov.co/web/atencion-participacion-ciudadana/consulta-y-servicio-de-datos-meteorologicos-e-hidrologicos",
-          "label": "Consulta datos — IDEAM"
+          "url": "http://www.ideam.gov.co",
+          "label": "IDEAM - Consulta Meteorologica"
         }
       ],
       "formats": [

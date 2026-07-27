@@ -146,7 +146,7 @@
       "id": "ani:fichas-portuarias",
       "name": "Fichas y concesiones de zonas portuarias (ANI)",
       "description": "Fichas cualitativas, cuantitativas y espaciales de las principales zonas portuarias de Colombia (Buenaventura, Guajira, Santa Marta/Ciénaga, Urabá, Cartagena, Tumaco, Golfo de Morrosquillo, San Andrés) y capas de concesiones portuarias del SIG ANI. DB2S-GEO solo documenta el acceso.",
-      "url": "https://www.ani.gov.co/zonas-portuarias/",
+      "url": "https://www.ani.gov.co",
       "category": "dataset",
       "coverage": {
         "spatial": "Colombia (zonas portuarias / concesiones marítimas)",
@@ -192,18 +192,8 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.ani.gov.co/zonas-portuarias/",
-          "label": "Zonas portuarias ANI — fichas"
-        },
-        {
-          "method": "arcgis",
-          "url": "https://sig.ani.gov.co/arcgis/rest/services/SigAni/ConcesionesPuertos/MapServer",
-          "label": "MapServer Concesiones Puertos"
-        },
-        {
-          "method": "portal",
-          "url": "https://aniscopio.ani.gov.co/",
-          "label": "ANIscopio — modo portuario"
+          "url": "https://www.ani.gov.co",
+          "label": "ANI - Fichas Portuarias"
         }
       ],
       "formats": [

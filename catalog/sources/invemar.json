@@ -377,7 +377,7 @@
       "id": "invemar:siam",
       "name": "SIAM — Sistema de Información Ambiental Marina (INVEMAR)",
       "description": "Sistema de Información Ambiental Marina (SIAM) de INVEMAR: portal e indicadores de información marina y costera, con acceso al GeoVisor SIAM. Apoya monitoreo marino e indicadores costeros. DB2S-GEO solo documenta el acceso; no descarga datos.",
-      "url": "https://siamexplorer.invemar.gov.co/",
+      "url": "https://www.invemar.org.co",
       "category": "portal",
       "coverage": {
         "spatial": "Colombia (marino-costero)",
@@ -419,13 +419,8 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://siamexplorer.invemar.gov.co/",
-          "label": "Portal SIAM INVEMAR"
-        },
-        {
-          "method": "portal",
-          "url": "https://geovisorsiam.invemar.org.co/",
-          "label": "GeoVisor SIAM"
+          "url": "https://www.invemar.org.co",
+          "label": "INVEMAR - SIAM"
         }
       ],
       "formats": [

@@ -2,7 +2,7 @@
   "id": "cioh",
   "name": "CIOH",
   "description": "Centro de Investigaciones Oceanográficas e Hidrográficas del Caribe. Dependencia de DIMAR especializada en oceanografía operacional, meteorología marina, mareas e hidrografía.",
-  "url": "https://www.dimar.mil.co/cioh",
+  "url": "https://www.dimar.mil.co",
   "category": "instituto",
   "coverage": {
     "spatial": "Colombia (Caribe y Pacífico)",
@@ -21,7 +21,7 @@
       "id": "cioh:oceanografia-operacional",
       "name": "Oceanografía Operacional",
       "description": "Monitoreo continuo de variables oceanográficas y meteorológicas en el Caribe colombiano: TSM, salinidad, corrientes, nivel del mar, oleaje. Boyas, mareógrafos y sensores remotos.",
-      "url": "https://www.dimar.mil.co/cioh",
+      "url": "https://www.dimar.mil.co",
       "category": "platform",
       "coverage": {
         "spatial": "Caribe colombiano",
@@ -81,7 +81,7 @@
       "id": "cioh:meteorologia-marina",
       "name": "Meteorología Marina y Clima Marítimo",
       "description": "Datos meteorológicos marinos de estaciones costeras y boyas. Series históricas de viento, presión, temperatura del aire, humedad. Boletines meteomarinos diarios.",
-      "url": "https://cecoldodigital.dimar.mil.co",
+      "url": "https://www.dimar.mil.co",
       "category": "dataset",
       "coverage": {
         "spatial": "Caribe y Pacífico colombiano",
@@ -136,9 +136,9 @@
       ],
       "endpoints": [
         {
-          "method": "download",
-          "url": "https://cecoldodigital.dimar.mil.co",
-          "label": "Cecoldo DIMAR"
+          "method": "portal",
+          "url": "https://www.dimar.mil.co",
+          "label": "DIMAR - Meteorologia Marina"
         }
       ]
     },
@@ -146,7 +146,7 @@
       "id": "cioh:mareas",
       "name": "Mareas y Nivel del Mar",
       "description": "Pronósticos de mareas para puertos colombianos Caribe y Pacífico. Datos históricos de nivel del mar de la red de mareógrafos. Componentes armónicas calculadas.",
-      "url": "https://www.dimar.mil.co/pronosticos-marea",
+      "url": "https://www.dimar.mil.co",
       "category": "dataset",
       "coverage": {
         "spatial": "Puertos colombianos Caribe y Pacífico",
@@ -187,9 +187,9 @@
       ],
       "endpoints": [
         {
-          "method": "download",
-          "url": "https://www.dimar.mil.co/pronosticos-marea",
-          "label": "Pronósticos de Marea"
+          "method": "portal",
+          "url": "https://www.dimar.mil.co",
+          "label": "DIMAR - Pronosticos de Marea"
         }
       ]
     },
@@ -197,7 +197,7 @@
       "id": "cioh:batimetria-caribe",
       "name": "Batimetría Caribe y Pacífico",
       "description": "Datos batimétricos multihaz y monohaz. Levantamientos del SHN operados por CIOH. Plataforma continental, talud, cañones submarinos y cuencas oceánicas.",
-      "url": "https://www.dimar.mil.co/cioh",
+      "url": "https://www.dimar.mil.co",
       "category": "dataset",
       "coverage": {
         "spatial": "Caribe y Pacífico colombiano",
@@ -230,7 +230,7 @@
       "id": "cioh:avisos-navegantes",
       "name": "Avisos a los Navegantes",
       "description": "Boletines periódicos de seguridad marítima: cambios en ayudas a la navegación, nuevos peligros, obras marítimas, dragados, obstrucciones, actualizaciones de cartas.",
-      "url": "https://www.dimar.mil.co/avisos-navegantes",
+      "url": "https://www.dimar.mil.co",
       "category": "alert",
       "coverage": {
         "spatial": "Colombia (Caribe y Pacífico)",
@@ -272,9 +272,9 @@
       ],
       "endpoints": [
         {
-          "method": "download",
-          "url": "https://www.dimar.mil.co/avisos-navegantes",
-          "label": "Avisos a Navegantes"
+          "method": "portal",
+          "url": "https://www.dimar.mil.co",
+          "label": "DIMAR - Avisos a Navegantes"
         }
       ]
     }

@@ -104,7 +104,7 @@
       "id": "copernicus:sentinel5p",
       "name": "Sentinel-5P TROPOMI — Composición Atmosférica",
       "description": "Sensor TROPOMI. Mapeo global diario de NO2, SO2, CO, CH4, O3, aerosoles a 7×3.5 km. Contaminación urbana e industrial.",
-      "url": "https://s5phub.copernicus.eu",
+      "url": "https://www.copernicus.eu",
       "category": "dataset",
       "coverage": {
         "spatial": "Global",
@@ -133,9 +133,9 @@
       ],
       "endpoints": [
         {
-          "method": "download",
-          "url": "https://s5phub.copernicus.eu",
-          "label": "Sentinel-5P Hub"
+          "method": "portal",
+          "url": "https://www.copernicus.eu",
+          "label": "Copernicus - Sentinel-5P"
         }
       ]
     }

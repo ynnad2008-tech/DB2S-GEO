@@ -87,7 +87,7 @@
       "id": "invias:vulnerabilidad-faunistica",
       "name": "Mapa de vulnerabilidad faunística al atropellamiento (INVIAS)",
       "description": "Mapa nacional de vulnerabilidad faunística y riesgo de atropellamiento de fauna silvestre en vías primarias a cargo del INVIAS (ITM / Política de Sostenibilidad). Apoya pasos de fauna y mitigación en proyectos viales. Visor en HERMES. DB2S-GEO solo documenta el acceso; no descarga capas.",
-      "url": "https://hermes.invias.gov.co/VulnerabilidadFaunistica/",
+      "url": "https://www.invias.gov.co",
       "category": "dataset",
       "coverage": {
         "spatial": "Colombia (red vial primaria INVIAS)",
@@ -146,18 +146,8 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://hermes.invias.gov.co/VulnerabilidadFaunistica/",
-          "label": "Visor vulnerabilidad faunística INVIAS"
-        },
-        {
-          "method": "portal",
-          "url": "https://mintransporte.gov.co/publicaciones/10864/gobierno-nacional-lanza-mapa-para-identificar-puntos-de-mayor-vulnerabilidad-faunistica-al-atropellamiento-en-proyectos-viales/",
-          "label": "Lanzamiento oficial — MinTransporte / INVIAS"
-        },
-        {
-          "method": "portal",
           "url": "https://www.invias.gov.co",
-          "label": "Portal institucional INVIAS"
+          "label": "INVIAS - Vulnerabilidad Faunistica"
         }
       ],
       "formats": [

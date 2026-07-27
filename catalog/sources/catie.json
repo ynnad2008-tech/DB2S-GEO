@@ -92,7 +92,7 @@
       "id": "catie:cuencas",
       "name": "Manejo de Cuencas",
       "description": "Manejo integrado de cuencas tropicales. Modelación SWAT, morfometría, servicios ecosistémicos hídricos, PSA.",
-      "url": "https://www.catie.ac.cr/cuencas",
+      "url": "https://www.catie.ac.cr",
       "category": "dataset",
       "coverage": {
         "spatial": "Centroamérica / Colombia",
@@ -118,8 +118,8 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.catie.ac.cr/cuencas",
-          "label": "Manejo de Cuencas CATIE"
+          "url": "https://www.catie.ac.cr",
+          "label": "CATIE - Cuencas"
         }
       ]
     },
@@ -127,7 +127,7 @@
       "id": "catie:clima",
       "name": "Cambio Climático y Agricultura Tropical",
       "description": "Modelación de impactos del cambio climático en agricultura. Escenarios para café, cacao, ganadería. NDC agrícolas.",
-      "url": "https://www.catie.ac.cr/clima",
+      "url": "https://www.catie.ac.cr",
       "category": "dataset",
       "coverage": {
         "spatial": "Centroamérica / Colombia",
@@ -155,9 +155,9 @@
       ],
       "endpoints": [
         {
-          "method": "download",
-          "url": "https://www.catie.ac.cr/clima",
-          "label": "Cambio Climático CATIE"
+          "method": "portal",
+          "url": "https://www.catie.ac.cr",
+          "label": "CATIE - Cambio Climatico"
         }
       ]
     }
