@@ -9,13 +9,13 @@ from __future__ import annotations
 from typing import Any
 
 # Pesos máximos (suman > 100; el score se capea a 100).
-WEIGHT_KEYWORD_EXACT = 40
-WEIGHT_DOMAIN_MATCH = 30
-WEIGHT_RESOURCE_MATCH = 25
-WEIGHT_SOURCE_MATCH = 35
-WEIGHT_RELATED_DOMAIN = 15
-WEIGHT_RELATED_KEYWORD = 10
-WEIGHT_OFFICIAL_NATIONAL = 10
+WEIGHT_KEYWORD_EXACT = 25
+WEIGHT_DOMAIN_MATCH = 45
+WEIGHT_RESOURCE_MATCH = 20
+WEIGHT_SOURCE_MATCH = 20
+WEIGHT_RELATED_DOMAIN = 10
+WEIGHT_RELATED_KEYWORD = 5
+WEIGHT_OFFICIAL_NATIONAL = 15
 
 # Fuentes oficiales nacionales Colombia (curaduría humana / country profile).
 OFFICIAL_NATIONAL_SOURCES = frozenset({"ideam", "invemar"})
@@ -84,14 +84,14 @@ CURATED_ALIASES: dict[str, list[str]] = {
     "imagenes": ["imagenes", "satelitales", "ortofotos", "observacion_tierra", "sentinel", "landsat"],
     # Riesgo
     "riesgo": ["riesgo", "amenaza", "vulnerabilidad", "desastre", "inundacion", "deslizamiento"],
-    # Regiones geográficas
-    "buenaventura": ["buenaventura", "pacifico", "pacifico_colombiano", "tumaco", "valle"],
+    # Regiones geográficas (solo lugares de la misma región)
+    "buenaventura": ["buenaventura", "pacifico", "pacifico_colombiano", "tumaco"],
     "pacifico": ["pacifico", "pacifico_colombiano", "buenaventura", "tumaco", "choco_biogeografico"],
     "caribe": ["caribe", "caribe_colombiano", "cartagena", "santa_marta", "barranquilla"],
     "amazonia": ["amazonia", "amazonas", "leticia", "caqueta", "putumayo", "guaviare"],
-    # Infraestructura
-    "transporte": ["transporte", "infraestructura", "vias", "carreteras", "puertos", "aeropuertos"],
-    "puertos": ["puertos", "portuario", "portuaria", "buenaventura", "cartagena", "santa_marta"],
+    # Infraestructura (sin expandir a ciudades específicas)
+    "transporte": ["transporte", "infraestructura", "vias", "carreteras", "aeropuertos"],
+    "puertos": ["puertos", "portuario", "portuaria"],
 }
 
 

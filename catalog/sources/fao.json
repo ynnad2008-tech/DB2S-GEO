@@ -125,22 +125,12 @@
       "keywords": [
         "agricultura",
         "agropecuario",
-        "clima",
-        "climatica",
-        "climatico",
         "emisiones",
-        "evapotranspiracion",
         "faostat",
-        "fenomeno_nina",
-        "fenomeno_nino",
-        "humedad",
-        "lluvia",
-        "meteorologia",
-        "meteorologico",
-        "precipitacion",
-        "sequia",
-        "temperatura",
-        "viento"
+        "metano",
+        "oxido_nitroso",
+        "balance_carbono",
+        "climatico"
       ],
       "access_methods": [
         "api",
