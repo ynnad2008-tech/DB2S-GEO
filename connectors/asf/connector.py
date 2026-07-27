@@ -64,7 +64,8 @@ _RESOURCES: dict[str, dict[str, Any]] = {
         "domains": ["observacion_tierra", "riesgo", "suelos"],
         "primary_domain": "observacion_tierra",
         "keywords": ["topografia", "dem", "lidar", "srtm", "alos", "worlddem",
-                     "elevacion", "pendiente", "geomorfologia", "nasa"],
+                     "elevacion", "pendiente", "geomorfologia", "nasa",
+                     "morfometria", "morfologia", "relieve", "alos_palsar"],
         "description": (
             "Portal de datos topográficos globales: SRTM, ALOS World 3D, "
             "Copernicus DEM y LiDAR. API y descarga. Copatrocinado ASF/NASA."

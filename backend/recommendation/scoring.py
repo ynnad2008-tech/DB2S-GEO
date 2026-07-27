@@ -82,6 +82,9 @@ CURATED_ALIASES: dict[str, list[str]] = {
     # Observación de la Tierra
     "satelite": ["observacion_tierra", "sentinel", "landsat", "modis", "nasa", "gee"],
     "imagenes": ["imagenes", "satelitales", "ortofotos", "observacion_tierra", "sentinel", "landsat"],
+    # Morfometría / relieve / DEM
+    "morfometria": ["morfometria", "morfologia", "relieve", "dem", "elevacion", "pendiente",
+                    "alos_palsar", "srtm", "topografia", "cuenca", "hidrologia"],
     # Riesgo
     "riesgo": ["riesgo", "amenaza", "vulnerabilidad", "desastre", "inundacion", "deslizamiento"],
     # Regiones geográficas (solo lugares de la misma región)

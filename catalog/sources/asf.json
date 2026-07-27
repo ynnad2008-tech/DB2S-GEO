@@ -111,10 +111,14 @@
         "lidar",
         "srtm",
         "alos",
+        "alos_palsar",
         "worlddem",
         "elevacion",
         "pendiente",
-        "geomorfologia"
+        "geomorfologia",
+        "morfometria",
+        "morfologia",
+        "relieve"
       ],
       "access_methods": [
         "portal"
