@@ -32,18 +32,24 @@
         "riesgo"
       ],
       "keywords": [
+        "amenaza",
+        "cartografia",
         "desastre",
+        "deslizamiento",
         "emergencia",
-        "inundaciones",
-        "movimientos",
-        "masa",
-        "monitoreo",
         "eventos",
         "extremos",
-        "cartografia",
+        "incendio",
+        "inundacion",
+        "inundaciones",
+        "masa",
+        "movimientos",
+        "peligro",
+        "resiliencia",
+        "riesgo",
         "satelital",
         "unosat",
-        "colombia"
+        "vulnerabilidad"
       ],
       "access_methods": [
         "portal"

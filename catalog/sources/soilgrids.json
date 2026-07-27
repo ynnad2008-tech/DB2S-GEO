@@ -1,0 +1,213 @@
+{
+  "id": "soilgrids",
+  "name": "SoilGrids",
+  "description": "Sistema global de mapeo digital de suelos del ISRIC a 250m. Propiedades físicas y químicas: carbono orgánico, pH, textura, densidad aparente, CEC, nitrógeno. 6 profundidades estándar.",
+  "url": "https://soilgrids.org",
+  "category": "iniciativa",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "v2.0 (2020)"
+  },
+  "status": "active",
+  "institution": "ISRIC — World Soil Information",
+  "domains": [
+    "suelos",
+    "agricultura",
+    "hidrologia",
+    "clima"
+  ],
+  "license": "CC BY 4.0",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "soilgrids:properties",
+      "name": "Propiedades del Suelo — SoilGrids 250m v2.0",
+      "description": "Mapas digitales de propiedades del suelo: carbono orgánico (SOC), pH, textura (arena/limo/arcilla), densidad aparente, nitrógeno, CEC. 6 profundidades (0-200cm). Basado en >200,000 perfiles WoSIS.",
+      "url": "https://maps.isric.org",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "v2.0"
+      },
+      "domains": [
+        "suelos",
+        "agricultura",
+        "clima"
+      ],
+      "keywords": [
+        "suelos",
+        "propiedades",
+        "carbono_organico",
+        "ph",
+        "textura",
+        "densidad_aparente",
+        "nitrogeno",
+        "cec",
+        "isric",
+        "soilgrids",
+        "250m",
+        "wosis"
+      ],
+      "access_methods": [
+        "ogc",
+        "download"
+      ],
+      "endpoints": [
+        {
+          "method": "ogc",
+          "url": "https://maps.isric.org",
+          "label": "SoilGrids WCS"
+        },
+        {
+          "method": "download",
+          "url": "https://files.isric.org/soilgrids/latest/data/",
+          "label": "Descarga directa GeoTIFF"
+        }
+      ]
+    },
+    {
+      "id": "soilgrids:wcs",
+      "name": "Servicio WCS — SoilGrids",
+      "description": "Web Coverage Service OGC para descarga programática de capas SoilGrids por bounding box, profundidad y variable. Formatos: GeoTIFF, NetCDF.",
+      "url": "https://maps.isric.org",
+      "category": "api",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "v2.0"
+      },
+      "domains": [
+        "suelos"
+      ],
+      "keywords": [
+        "wcs",
+        "geoservicio",
+        "cobertura",
+        "raster",
+        "geotiff",
+        "soilgrids",
+        "suelos",
+        "ogc",
+        "netcdf"
+      ],
+      "access_methods": [
+        "ogc"
+      ],
+      "endpoints": [
+        {
+          "method": "ogc",
+          "url": "https://maps.isric.org",
+          "label": "SoilGrids OGC WCS"
+        }
+      ]
+    },
+    {
+      "id": "soilgrids:rest",
+      "name": "API REST — SoilGrids",
+      "description": "API REST para consulta de propiedades del suelo por coordenadas o polígonos. Retorna JSON con valores para cualquier ubicación. Ideal para integración con scripts.",
+      "url": "https://rest.isric.org/soilgrids/v2.0/docs",
+      "category": "api",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "v2.0"
+      },
+      "domains": [
+        "suelos"
+      ],
+      "keywords": [
+        "api",
+        "rest",
+        "json",
+        "consulta",
+        "puntual",
+        "latitud",
+        "longitud",
+        "poligono",
+        "geojson",
+        "soilgrids",
+        "isric"
+      ],
+      "access_methods": [
+        "rest"
+      ],
+      "endpoints": [
+        {
+          "method": "rest",
+          "url": "https://rest.isric.org/soilgrids/v2.0/docs",
+          "label": "SoilGrids REST API"
+        }
+      ]
+    },
+    {
+      "id": "soilgrids:hydrology",
+      "name": "Parámetros Hidrológicos del Suelo",
+      "description": "Conductividad hidráulica saturada (Ksat), agua disponible (AWC), capacidad de campo, punto de marchitez. Base para grupos hidrológicos (HSG) y Curve Number.",
+      "url": "https://maps.isric.org",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "v2.0"
+      },
+      "domains": [
+        "suelos",
+        "hidrologia",
+        "clima"
+      ],
+      "keywords": [
+        "hidrologia",
+        "infiltracion",
+        "conductividad_hidraulica",
+        "ksat",
+        "awc",
+        "curve_number",
+        "cn",
+        "escorrentia",
+        "grupo_hidrologico",
+        "hsg"
+      ],
+      "access_methods": [
+        "ogc"
+      ],
+      "endpoints": [
+        {
+          "method": "ogc",
+          "url": "https://maps.isric.org",
+          "label": "SoilGrids WCS Hydrology"
+        }
+      ]
+    },
+    {
+      "id": "soilgrids:uncertainty",
+      "name": "Mapas de Incertidumbre — SoilGrids",
+      "description": "Intervalos de confianza (5%, 50%, 95%), error estándar y cuantiles. Permite evaluar confiabilidad. Mayor incertidumbre en regiones tropicales con pocos perfiles (Amazonia, Orinoquia).",
+      "url": "https://maps.isric.org",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "v2.0"
+      },
+      "domains": [
+        "suelos"
+      ],
+      "keywords": [
+        "incertidumbre",
+        "error",
+        "cuantiles",
+        "intervalos",
+        "confianza",
+        "prediccion",
+        "validacion",
+        "soilgrids"
+      ],
+      "access_methods": [
+        "ogc"
+      ],
+      "endpoints": [
+        {
+          "method": "ogc",
+          "url": "https://maps.isric.org",
+          "label": "SoilGrids Uncertainty"
+        }
+      ]
+    }
+  ]
+}

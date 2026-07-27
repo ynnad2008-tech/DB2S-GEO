@@ -1,0 +1,165 @@
+{
+  "id": "catie",
+  "name": "CATIE",
+  "description": "Centro Agronómico Tropical de Investigación y Enseñanza. Investigación en café, cacao, sistemas silvopastoriles, manejo de cuencas y cambio climático en el trópico americano.",
+  "url": "https://www.catie.ac.cr",
+  "category": "instituto",
+  "coverage": {
+    "spatial": "Centroamérica / Colombia / Trópico",
+    "temporal": "Según publicación"
+  },
+  "status": "active",
+  "institution": "Centro Agronómico Tropical de Investigación y Enseñanza (CATIE)",
+  "domains": [
+    "agricultura",
+    "clima",
+    "hidrologia",
+    "biodiversidad"
+  ],
+  "license": "Acceso abierto con atribución",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "catie:cafe",
+      "name": "Investigación en Café",
+      "description": "Sistemas agroforestales de café: variedades resistentes a roya, sombra, adaptación climática. Colección internacional de germoplasma.",
+      "url": "https://www.catie.ac.cr/cafe",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Centroamérica / Colombia",
+        "temporal": "Histórico"
+      },
+      "domains": [
+        "agricultura",
+        "clima"
+      ],
+      "keywords": [
+        "cafe",
+        "cafetales",
+        "agroforesteria",
+        "sombra",
+        "variedades",
+        "roya",
+        "cambio_climatico",
+        "catie"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.catie.ac.cr/cafe",
+          "label": "Programa de Café CATIE"
+        }
+      ]
+    },
+    {
+      "id": "catie:cacao",
+      "name": "Investigación en Cacao",
+      "description": "Colección internacional de germoplasma de cacao. Sistemas agroforestales, resistencia a moniliasis. Banco de clones élite.",
+      "url": "https://www.catie.ac.cr/cacao",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Centroamérica / Colombia",
+        "temporal": "Histórico"
+      },
+      "domains": [
+        "agricultura",
+        "biodiversidad"
+      ],
+      "keywords": [
+        "cacao",
+        "cacaotales",
+        "agroforesteria",
+        "clones",
+        "genetica",
+        "moniliasis",
+        "fitomejoramiento"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.catie.ac.cr/cacao",
+          "label": "Programa de Cacao CATIE"
+        }
+      ]
+    },
+    {
+      "id": "catie:cuencas",
+      "name": "Manejo de Cuencas",
+      "description": "Manejo integrado de cuencas tropicales. Modelación SWAT, morfometría, servicios ecosistémicos hídricos, PSA.",
+      "url": "https://www.catie.ac.cr/cuencas",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Centroamérica / Colombia",
+        "temporal": "Histórico"
+      },
+      "domains": [
+        "hidrologia",
+        "agricultura",
+        "clima"
+      ],
+      "keywords": [
+        "cuencas",
+        "hidrologia",
+        "morfometria",
+        "swat",
+        "balance_hidrico",
+        "pago_servicios_ambientales",
+        "servicios_ecosistemicos"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.catie.ac.cr/cuencas",
+          "label": "Manejo de Cuencas CATIE"
+        }
+      ]
+    },
+    {
+      "id": "catie:clima",
+      "name": "Cambio Climático y Agricultura Tropical",
+      "description": "Modelación de impactos del cambio climático en agricultura. Escenarios para café, cacao, ganadería. NDC agrícolas.",
+      "url": "https://www.catie.ac.cr/clima",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Centroamérica / Colombia",
+        "temporal": "Escenarios futuros"
+      },
+      "domains": [
+        "clima",
+        "agricultura"
+      ],
+      "keywords": [
+        "cambio_climatico",
+        "adaptacion",
+        "mitigacion",
+        "agricultura",
+        "tropical",
+        "modelos",
+        "escenarios",
+        "vulnerabilidad",
+        "ndc",
+        "ganaderia",
+        "silvopastoril"
+      ],
+      "access_methods": [
+        "download"
+      ],
+      "endpoints": [
+        {
+          "method": "download",
+          "url": "https://www.catie.ac.cr/clima",
+          "label": "Cambio Climático CATIE"
+        }
+      ]
+    }
+  ]
+}

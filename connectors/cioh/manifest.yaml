@@ -1,0 +1,15 @@
+connector_id: "cioh"
+source_name: "CIOH"
+version: "1.0.0"
+status: "mvp"
+mvp: true
+country_or_scope: "Colombia"
+domains:
+  - oceanos_costas
+  - clima
+  - hidrologia
+protocols:
+  - portal
+  - ogc
+  - rest
+notes: "Fase MVP — metadatos curados, read-only, sin descarga. Centro de Investigaciones Oceanográficas e Hidrográficas."

@@ -26,7 +26,7 @@ def kg() -> KnowledgeGraphEngine:
 
 def test_stats_counts(kg: KnowledgeGraphEngine) -> None:
     stats = kg.stats()
-    assert stats["sources"] == 23
+    assert stats["sources"] == 33  # + DIMAR, CIOH, GFW, SiB Colombia
     assert stats["institutions"] >= 1
     assert stats["resources"] >= 6
     assert stats["domains"] == 15

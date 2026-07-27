@@ -1,0 +1,15 @@
+connector_id: "global-forest-watch"
+source_name: "Global Forest Watch"
+version: "1.0.0"
+status: "mvp"
+mvp: true
+country_or_scope: "Global"
+domains:
+  - biodiversidad
+  - observacion_tierra
+  - riesgo
+protocols:
+  - rest
+  - portal
+  - ogc
+notes: "Fase MVP — metadatos curados, read-only. GFW/WRI. Monitoreo global de bosques y deforestación."

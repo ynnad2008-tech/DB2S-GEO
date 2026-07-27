@@ -1,0 +1,170 @@
+{
+  "id": "sib_colombia",
+  "name": "SiB Colombia",
+  "description": "Sistema de Información sobre Biodiversidad de Colombia. Nodo nacional de GBIF que agrega datos de biodiversidad de cientos de instituciones: colecciones biológicas, museos, herbarios, observaciones de ciencia ciudadana y monitoreo institucional.",
+  "url": "https://sibcolombia.net",
+  "category": "instituto",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Sistema de Información sobre Biodiversidad de Colombia (SiB Colombia)",
+  "domains": [
+    "biodiversidad"
+  ],
+  "license": "Variables según publicador / datos abiertos con atribución",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "sib_colombia:explorador",
+      "name": "Explorador de Datos",
+      "description": "Portal principal de consulta de registros biológicos de Colombia. Agrega cientos de conjuntos de datos de instituciones colombianas. Nodo oficial GBIF Colombia.",
+      "url": "https://sibcolombia.net",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Histórico"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "area_protegida",
+        "biodiversidad",
+        "bioma",
+        "colecciones",
+        "conservacion",
+        "diversidad",
+        "ecosistema",
+        "ecosistemas",
+        "especie",
+        "especies",
+        "fauna",
+        "flora",
+        "gbif",
+        "habitat",
+        "nodo",
+        "ocurrencias",
+        "protegida",
+        "registros"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://sibcolombia.net",
+          "label": "Explorador SiB Colombia"
+        }
+      ]
+    },
+    {
+      "id": "sib_colombia:catalogo",
+      "name": "Catálogo de Metadatos",
+      "description": "Catálogo nacional de metadatos de biodiversidad con todos los conjuntos de datos publicados por instituciones colombianas. Estándar Darwin Core.",
+      "url": "https://sibcolombia.net/datos/",
+      "category": "catalog",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Actualizaciones continuas"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "area_protegida",
+        "biodiversidad",
+        "bioma",
+        "conservacion",
+        "core",
+        "darwin",
+        "diversidad",
+        "ecosistema",
+        "ecosistemas",
+        "especie",
+        "especies",
+        "fauna",
+        "flora",
+        "habitat",
+        "protegida",
+        "publicadores"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://sibcolombia.net/datos/",
+          "label": "Catálogo SiB Colombia"
+        }
+      ]
+    },
+    {
+      "id": "sib_colombia:api",
+      "name": "API REST (GBIF Colombia)",
+      "description": "API REST compatible con GBIF para consulta programática de registros biológicos. Filtros por taxonomía, geografía y fecha. Formatos: JSON, Darwin Core, CSV.",
+      "url": "https://api.sibcolombia.net",
+      "category": "api",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Histórico"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "api",
+        "rest",
+        "gbif",
+        "json",
+        "ocurrencias",
+        "programatica"
+      ],
+      "access_methods": [
+        "rest"
+      ],
+      "endpoints": [
+        {
+          "method": "rest",
+          "url": "https://api.sibcolombia.net",
+          "label": "API SiB Colombia"
+        }
+      ]
+    },
+    {
+      "id": "sib_colombia:colecciones",
+      "name": "Registro Nacional de Colecciones Biológicas",
+      "description": "Directorio autorizado de todas las colecciones biológicas del país: herbarios, museos zoológicos, colecciones entomológicas, bancos de tejidos y microbiológicas.",
+      "url": "https://sibcolombia.net/colecciones/",
+      "category": "registry",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Actualizaciones continuas"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "colecciones",
+        "biologicas",
+        "museos",
+        "herbarios",
+        "registro",
+        "curaduria"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://sibcolombia.net/colecciones/",
+          "label": "Colecciones Biológicas"
+        }
+      ]
+    }
+  ]
+}

@@ -4,10 +4,19 @@
   "description": "Instituto de Hidrología, Meteorología y Estudios Ambientales de Colombia: datos climáticos, hidrológicos, ambientales y geográficos oficiales.",
   "url": "https://www.ideam.gov.co",
   "category": "instituto",
-  "coverage": { "spatial": "Colombia", "temporal": "Según publicación de la fuente" },
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
   "status": "active",
   "institution": "Instituto de Hidrología, Meteorología y Estudios Ambientales (IDEAM)",
-  "domains": ["clima", "hidrologia", "ecosistemas", "observacion_tierra"],
+  "domains": [
+    "biodiversidad",
+    "clima",
+    "hidrologia",
+    "observacion_tierra",
+    "riesgo"
+  ],
   "license": "Datos abiertos / según términos IDEAM",
   "version": "1.1.0",
   "resources": [
@@ -17,12 +26,63 @@
       "description": "Portal de servicios del IDEAM con acceso a capas temáticas ambientales, climatología, hidrología y geología.",
       "url": "https://www.ideam.gov.co/servicios/tematicas-ideam",
       "category": "catalog",
-      "coverage": { "spatial": "Colombia", "temporal": "Según publicación" },
-      "domains": ["clima", "hidrologia", "ecosistemas", "observacion_tierra"],
-      "keywords": ["ideam", "tematicas", "capas", "clima", "hidrologia", "ambiente", "colombia"],
-      "access_methods": ["portal"],
-      "endpoints": [{ "method": "portal", "url": "https://www.ideam.gov.co/servicios/tematicas-ideam", "label": "Temáticas IDEAM" }],
-      "formats": ["portal"],
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación"
+      },
+      "domains": [
+        "clima",
+        "hidrologia",
+        "biodiversidad",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "ambiente",
+        "area_protegida",
+        "biodiversidad",
+        "bioma",
+        "capas",
+        "clima",
+        "climatica",
+        "climatico",
+        "conservacion",
+        "diversidad",
+        "ecosistema",
+        "ecosistemas",
+        "especie",
+        "especies",
+        "evapotranspiracion",
+        "fauna",
+        "fenomeno_nina",
+        "fenomeno_nino",
+        "flora",
+        "habitat",
+        "hidrologia",
+        "humedad",
+        "ideam",
+        "lluvia",
+        "meteorologia",
+        "meteorologico",
+        "precipitacion",
+        "protegida",
+        "sequia",
+        "tematicas",
+        "temperatura",
+        "viento"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.ideam.gov.co/servicios/tematicas-ideam",
+          "label": "Temáticas IDEAM"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
       "documentation_url": "https://www.ideam.gov.co/servicios/tematicas-ideam",
       "doi": "",
       "citation_reference": "IDEAM. Temáticas IDEAM. https://www.ideam.gov.co/servicios/tematicas-ideam"
@@ -33,12 +93,44 @@
       "description": "Sistema de Información del Recurso Hídrico (SIVIRTUAL): consulta, monitoreo y gestión de aguas subterráneas en Colombia.",
       "url": "https://www.ideam.gov.co/web/agua/sivirtual",
       "category": "service",
-      "coverage": { "spatial": "Colombia", "temporal": "Según publicación" },
-      "domains": ["hidrologia"],
-      "keywords": ["sivirtual", "aguas", "subterraneas", "recurso", "hidrico", "monitoreo", "ideam", "colombia"],
-      "access_methods": ["portal"],
-      "endpoints": [{ "method": "portal", "url": "https://www.ideam.gov.co/web/agua/sivirtual", "label": "SIVIRTUAL — IDEAM" }],
-      "formats": ["portal"],
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación"
+      },
+      "domains": [
+        "hidrologia"
+      ],
+      "keywords": [
+        "agua",
+        "aguas",
+        "cienaga",
+        "cuenca",
+        "estuario",
+        "hidrica",
+        "hidrico",
+        "hidrologica",
+        "hidrologico",
+        "humedal",
+        "ideam",
+        "quebrada",
+        "recurso",
+        "rio",
+        "sivirtual",
+        "subterraneas"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.ideam.gov.co/web/agua/sivirtual",
+          "label": "SIVIRTUAL — IDEAM"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
       "documentation_url": "https://www.ideam.gov.co/web/agua/sivirtual",
       "doi": "",
       "citation_reference": "IDEAM. SIVIRTUAL. https://www.ideam.gov.co/web/agua/sivirtual"
@@ -49,12 +141,73 @@
       "description": "SIAC: plataforma de información ambiental integrada con datos de ecosistemas, clima, agua, biodiversidad y territorio para Colombia.",
       "url": "https://www.ideam.gov.co/web/siac/siac",
       "category": "portal",
-      "coverage": { "spatial": "Colombia", "temporal": "Según publicación" },
-      "domains": ["ecosistemas", "clima", "hidrologia", "observacion_tierra"],
-      "keywords": ["siac", "informacion", "ambiental", "ecosistemas", "clima", "agua", "biodiversidad", "ideam", "colombia"],
-      "access_methods": ["portal"],
-      "endpoints": [{ "method": "portal", "url": "https://www.ideam.gov.co/web/siac/siac", "label": "SIAC — IDEAM" }],
-      "formats": ["portal"],
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación"
+      },
+      "domains": [
+        "biodiversidad",
+        "clima",
+        "hidrologia",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "agua",
+        "aguas",
+        "ambiental",
+        "area_protegida",
+        "biodiversidad",
+        "bioma",
+        "cienaga",
+        "clima",
+        "climatica",
+        "climatico",
+        "conservacion",
+        "cuenca",
+        "diversidad",
+        "ecosistema",
+        "ecosistemas",
+        "especie",
+        "especies",
+        "estuario",
+        "evapotranspiracion",
+        "fauna",
+        "fenomeno_nina",
+        "fenomeno_nino",
+        "flora",
+        "habitat",
+        "hidrica",
+        "hidrico",
+        "hidrologica",
+        "hidrologico",
+        "humedad",
+        "humedal",
+        "ideam",
+        "lluvia",
+        "meteorologia",
+        "meteorologico",
+        "precipitacion",
+        "protegida",
+        "quebrada",
+        "rio",
+        "sequia",
+        "siac",
+        "temperatura",
+        "viento"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.ideam.gov.co/web/siac/siac",
+          "label": "SIAC — IDEAM"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
       "documentation_url": "https://www.ideam.gov.co/web/siac/siac",
       "doi": "",
       "citation_reference": "IDEAM. SIAC. https://www.ideam.gov.co/web/siac/siac"
@@ -65,12 +218,48 @@
       "description": "Red de monitoreo hidrológico del IDEAM: caudales, niveles, calidad de agua y sedimentos en las principales cuencas de Colombia.",
       "url": "https://www.ideam.gov.co/web/agua/redes-hidrologicas",
       "category": "service",
-      "coverage": { "spatial": "Colombia", "temporal": "Histórico y tiempo real" },
-      "domains": ["hidrologia"],
-      "keywords": ["redes", "hidrologicas", "caudales", "niveles", "calidad", "agua", "sedimentos", "cuencas", "ideam", "colombia"],
-      "access_methods": ["portal"],
-      "endpoints": [{ "method": "portal", "url": "https://www.ideam.gov.co/web/agua/redes-hidrologicas", "label": "Redes Hidrológicas — IDEAM" }],
-      "formats": ["portal"],
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Histórico y tiempo real"
+      },
+      "domains": [
+        "hidrologia"
+      ],
+      "keywords": [
+        "agua",
+        "aguas",
+        "calidad",
+        "caudales",
+        "cienaga",
+        "cuenca",
+        "cuencas",
+        "estuario",
+        "hidrica",
+        "hidrico",
+        "hidrologica",
+        "hidrologicas",
+        "hidrologico",
+        "humedal",
+        "ideam",
+        "niveles",
+        "quebrada",
+        "redes",
+        "rio",
+        "sedimentos"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.ideam.gov.co/web/agua/redes-hidrologicas",
+          "label": "Redes Hidrológicas — IDEAM"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
       "documentation_url": "https://www.ideam.gov.co/web/agua/redes-hidrologicas",
       "doi": "",
       "citation_reference": "IDEAM. Redes Hidrológicas. https://www.ideam.gov.co/web/agua/redes-hidrologicas"
@@ -81,12 +270,46 @@
       "description": "Servicio de alerta temprana del IDEAM: monitoreo de amenazas hidrometeorológicas, estado de cuencas y pronósticos para gestión del riesgo.",
       "url": "https://www.ideam.gov.co/web/riesgos-gestion-cambio-climatico/servicio-informacion-alerta-ideam",
       "category": "portal",
-      "coverage": { "spatial": "Colombia", "temporal": "Tiempo real / pronóstico" },
-      "domains": ["clima", "hidrologia", "riesgos"],
-      "keywords": ["alerta", "temprana", "amenazas", "hidrometeorologicas", "pronosticos", "riesgo", "ideam", "colombia"],
-      "access_methods": ["portal"],
-      "endpoints": [{ "method": "portal", "url": "https://www.ideam.gov.co/web/riesgos-gestion-cambio-climatico/servicio-informacion-alerta-ideam", "label": "Servicio de Alerta — IDEAM" }],
-      "formats": ["portal"],
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Tiempo real / pronóstico"
+      },
+      "domains": [
+        "clima",
+        "hidrologia",
+        "riesgo"
+      ],
+      "keywords": [
+        "alerta",
+        "amenaza",
+        "amenazas",
+        "desastre",
+        "deslizamiento",
+        "emergencia",
+        "hidrometeorologicas",
+        "ideam",
+        "incendio",
+        "inundacion",
+        "peligro",
+        "pronosticos",
+        "resiliencia",
+        "riesgo",
+        "temprana",
+        "vulnerabilidad"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.ideam.gov.co/web/riesgos-gestion-cambio-climatico/servicio-informacion-alerta-ideam",
+          "label": "Servicio de Alerta — IDEAM"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
       "documentation_url": "https://www.ideam.gov.co/web/riesgos-gestion-cambio-climatico/servicio-informacion-alerta-ideam",
       "doi": "",
       "citation_reference": "IDEAM. Servicio de Alerta. https://www.ideam.gov.co/web/riesgos-gestion-cambio-climatico/servicio-informacion-alerta-ideam"
@@ -97,12 +320,52 @@
       "description": "Consulta y descarga de datos históricos de estaciones meteorológicas e hidrológicas del IDEAM: precipitación, temperatura, caudales, niveles.",
       "url": "https://www.ideam.gov.co/web/atencion-participacion-ciudadana/consulta-y-servicio-de-datos-meteorologicos-e-hidrologicos",
       "category": "service",
-      "coverage": { "spatial": "Colombia", "temporal": "Histórico" },
-      "domains": ["clima", "hidrologia"],
-      "keywords": ["consulta", "datos", "meteorologicos", "hidrologicos", "estaciones", "precipitacion", "temperatura", "caudales", "ideam", "colombia"],
-      "access_methods": ["portal", "download"],
-      "endpoints": [{ "method": "portal", "url": "https://www.ideam.gov.co/web/atencion-participacion-ciudadana/consulta-y-servicio-de-datos-meteorologicos-e-hidrologicos", "label": "Consulta datos — IDEAM" }],
-      "formats": ["portal", "csv", "xls"],
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Histórico"
+      },
+      "domains": [
+        "clima",
+        "hidrologia"
+      ],
+      "keywords": [
+        "caudales",
+        "clima",
+        "climatica",
+        "climatico",
+        "estaciones",
+        "evapotranspiracion",
+        "fenomeno_nina",
+        "fenomeno_nino",
+        "hidrologicos",
+        "humedad",
+        "ideam",
+        "lluvia",
+        "meteorologia",
+        "meteorologico",
+        "meteorologicos",
+        "precipitacion",
+        "sequia",
+        "serie_tiempo",
+        "temperatura",
+        "viento"
+      ],
+      "access_methods": [
+        "portal",
+        "download"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.ideam.gov.co/web/atencion-participacion-ciudadana/consulta-y-servicio-de-datos-meteorologicos-e-hidrologicos",
+          "label": "Consulta datos — IDEAM"
+        }
+      ],
+      "formats": [
+        "portal",
+        "csv",
+        "xls"
+      ],
       "documentation_url": "https://www.ideam.gov.co/web/atencion-participacion-ciudadana/consulta-y-servicio-de-datos-meteorologicos-e-hidrologicos",
       "doi": "",
       "citation_reference": "IDEAM. Consulta de datos meteorológicos e hidrológicos. https://www.ideam.gov.co/web/atencion-participacion-ciudadana/consulta-y-servicio-de-datos-meteorologicos-e-hidrologicos"
@@ -113,12 +376,78 @@
       "description": "Repositorio de capas geográficas en formato Shapefile/GeoTIFF producidas por el IDEAM: coberturas, GEI, aguas subterráneas, precipitación, zonificación climática y más. Acceso tipo servidor HTTP con índice de archivos.",
       "url": "https://bart.ideam.gov.co/cneideam/Capasgeo/",
       "category": "service",
-      "coverage": { "spatial": "Colombia", "temporal": "Según publicación" },
-      "domains": ["clima", "hidrologia", "ecosistemas", "observacion_tierra"],
-      "keywords": ["capasgeo", "capas", "geograficas", "shapefile", "geotiff", "ideam", "descarga", "gei", "aguas", "subterraneas", "precipitacion", "clima", "colombia"],
-      "access_methods": ["download"],
-      "endpoints": [{ "method": "download", "url": "https://bart.ideam.gov.co/cneideam/Capasgeo/", "label": "CAPASGEO — índice IDEAM" }],
-      "formats": ["ZIP (shapefile/geotiff)"],
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación"
+      },
+      "domains": [
+        "clima",
+        "hidrologia",
+        "biodiversidad",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "agua",
+        "aguas",
+        "area_protegida",
+        "biodiversidad",
+        "bioma",
+        "capas",
+        "capasgeo",
+        "cienaga",
+        "clima",
+        "climatica",
+        "climatico",
+        "conservacion",
+        "cuenca",
+        "diversidad",
+        "ecosistema",
+        "ecosistemas",
+        "especie",
+        "especies",
+        "estuario",
+        "evapotranspiracion",
+        "fauna",
+        "fenomeno_nina",
+        "fenomeno_nino",
+        "flora",
+        "gei",
+        "geograficas",
+        "geotiff",
+        "habitat",
+        "hidrica",
+        "hidrico",
+        "hidrologica",
+        "hidrologico",
+        "humedad",
+        "humedal",
+        "ideam",
+        "lluvia",
+        "meteorologia",
+        "meteorologico",
+        "precipitacion",
+        "protegida",
+        "quebrada",
+        "rio",
+        "sequia",
+        "shapefile",
+        "subterraneas",
+        "temperatura",
+        "viento"
+      ],
+      "access_methods": [
+        "download"
+      ],
+      "endpoints": [
+        {
+          "method": "download",
+          "url": "https://bart.ideam.gov.co/cneideam/Capasgeo/",
+          "label": "CAPASGEO — índice IDEAM"
+        }
+      ],
+      "formats": [
+        "ZIP (shapefile/geotiff)"
+      ],
       "documentation_url": "https://bart.ideam.gov.co/cneideam/Capasgeo/",
       "doi": "",
       "citation_reference": "IDEAM. CAPASGEO. https://bart.ideam.gov.co/cneideam/Capasgeo/"
@@ -129,15 +458,51 @@
       "description": "Geoportal institucional del IDEAM para búsqueda, consulta, visualización y descarga de información geográfica ambiental oficial de Colombia.",
       "url": "https://www.ideam.gov.co/geoportal-ambiental-institucional",
       "category": "portal",
-      "coverage": { "spatial": "Colombia", "temporal": "Según publicación" },
-      "domains": ["observacion_tierra", "ecosistemas", "clima", "hidrologia"],
-      "keywords": ["geoportal", "ideam", "informacion", "geografica", "ambiental", "colombia", "visualizacion", "descarga"],
-      "access_methods": ["portal"],
-      "endpoints": [{ "method": "portal", "url": "https://www.ideam.gov.co/geoportal-ambiental-institucional", "label": "Geoportal Ambiental — IDEAM" }],
-      "formats": ["portal"],
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación"
+      },
+      "domains": [
+        "observacion_tierra",
+        "biodiversidad",
+        "clima",
+        "hidrologia"
+      ],
+      "keywords": [
+        "ambiental",
+        "area_protegida",
+        "biodiversidad",
+        "bioma",
+        "conservacion",
+        "diversidad",
+        "ecosistema",
+        "ecosistemas",
+        "especie",
+        "especies",
+        "fauna",
+        "flora",
+        "geografica",
+        "geoportal",
+        "habitat",
+        "ideam",
+        "protegida"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.ideam.gov.co/geoportal-ambiental-institucional",
+          "label": "Geoportal Ambiental — IDEAM"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
       "documentation_url": "https://www.ideam.gov.co/geoportal-ambiental-institucional",
       "doi": "",
-            "citation_reference": "IDEAM. Geoportal Ambiental Institucional. https://www.ideam.gov.co/geoportal-ambiental-institucional"
+      "citation_reference": "IDEAM. Geoportal Ambiental Institucional. https://www.ideam.gov.co/geoportal-ambiental-institucional"
     },
     {
       "id": "ideam:sirh",
@@ -145,12 +510,47 @@
       "description": "SIRH: gestión y estructuración de datos del recurso hídrico en Colombia. Fuentes hídricas, usuarios del agua, captaciones, vertimientos, puntos de monitoreo, aguas subterráneas, parámetros de calidad y contaminación.",
       "url": "https://sirh.ideam.gov.co/Sirh/pages/inicio.html",
       "category": "service",
-      "coverage": { "spatial": "Colombia", "temporal": "Según publicación" },
-      "domains": ["hidrologia"],
-      "keywords": ["sirh", "recurso", "hidrico", "aguas", "subterraneas", "captaciones", "vertimientos", "calidad", "monitoreo", "ideam", "colombia"],
-      "access_methods": ["portal"],
-      "endpoints": [{ "method": "portal", "url": "https://sirh.ideam.gov.co/Sirh/pages/inicio.html", "label": "SIRH — IDEAM" }],
-      "formats": ["portal"],
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación"
+      },
+      "domains": [
+        "hidrologia"
+      ],
+      "keywords": [
+        "agua",
+        "aguas",
+        "calidad",
+        "captaciones",
+        "cienaga",
+        "cuenca",
+        "estuario",
+        "hidrica",
+        "hidrico",
+        "hidrologica",
+        "hidrologico",
+        "humedal",
+        "ideam",
+        "quebrada",
+        "recurso",
+        "rio",
+        "sirh",
+        "subterraneas",
+        "vertimientos"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://sirh.ideam.gov.co/Sirh/pages/inicio.html",
+          "label": "SIRH — IDEAM"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
       "documentation_url": "https://sirh.ideam.gov.co/Sirh/pages/inicio.html",
       "doi": "",
       "citation_reference": "IDEAM. SIRH — Sistema de Información del Recurso Hídrico. https://sirh.ideam.gov.co/Sirh/pages/inicio.html"

@@ -1,0 +1,143 @@
+{
+  "id": "copernicus",
+  "name": "Copernicus",
+  "description": "Programa Europeo de Observación de la Tierra. Climate Data Store (ERA5), Atmosphere Monitoring (CAMS) y Sentinel-5P (TROPOMI). Datos climáticos y atmosféricos globales.",
+  "url": "https://www.copernicus.eu",
+  "category": "iniciativa",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "1940-presente (ERA5)"
+  },
+  "status": "active",
+  "institution": "European Union / Copernicus Programme (ECMWF / ESA / EEA)",
+  "domains": [
+    "clima",
+    "hidrologia",
+    "observacion_tierra",
+    "riesgo"
+  ],
+  "license": "Copernicus open data",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "copernicus:era5",
+      "name": "ERA5 — Reanálisis climático global",
+      "description": "Reanálisis ERA5 del ECMWF. Datos horarios desde 1940 a 0.25°. Variables atmosféricas, oceánicas y terrestres. API CDS (cdsapi).",
+      "url": "https://cds.climate.copernicus.eu",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "1940-presente"
+      },
+      "domains": [
+        "clima",
+        "hidrologia",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "era5",
+        "reanalisis",
+        "ecmwf",
+        "cds",
+        "temperatura",
+        "precipitacion",
+        "viento",
+        "evapotranspiracion",
+        "netcdf",
+        "grib"
+      ],
+      "access_methods": [
+        "api"
+      ],
+      "endpoints": [
+        {
+          "method": "api",
+          "url": "https://cds.climate.copernicus.eu",
+          "label": "Climate Data Store (CDS)"
+        },
+        {
+          "method": "api",
+          "url": "https://cds.climate.copernicus.eu/api/v2",
+          "label": "CDS API (cdsapi)"
+        }
+      ]
+    },
+    {
+      "id": "copernicus:cams",
+      "name": "CAMS — Calidad del Aire",
+      "description": "Monitoreo global de calidad del aire: PM2.5, PM10, O3, NO2, SO2, CO, aerosoles. Pronósticos a 5 días. Monitoreo de incendios.",
+      "url": "https://atmosphere.copernicus.eu",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "2003-presente"
+      },
+      "domains": [
+        "clima",
+        "riesgo"
+      ],
+      "keywords": [
+        "cams",
+        "calidad",
+        "aire",
+        "pm2.5",
+        "pm10",
+        "ozono",
+        "no2",
+        "so2",
+        "aerosoles",
+        "incendios",
+        "copernicus"
+      ],
+      "access_methods": [
+        "api"
+      ],
+      "endpoints": [
+        {
+          "method": "api",
+          "url": "https://atmosphere.copernicus.eu",
+          "label": "CAMS"
+        }
+      ]
+    },
+    {
+      "id": "copernicus:sentinel5p",
+      "name": "Sentinel-5P TROPOMI — Composición Atmosférica",
+      "description": "Sensor TROPOMI. Mapeo global diario de NO2, SO2, CO, CH4, O3, aerosoles a 7×3.5 km. Contaminación urbana e industrial.",
+      "url": "https://s5phub.copernicus.eu",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "2018-presente"
+      },
+      "domains": [
+        "clima",
+        "observacion_tierra",
+        "riesgo"
+      ],
+      "keywords": [
+        "sentinel-5p",
+        "tropomi",
+        "no2",
+        "so2",
+        "co",
+        "ch4",
+        "metano",
+        "ozono",
+        "contaminacion",
+        "copernicus",
+        "esa"
+      ],
+      "access_methods": [
+        "download"
+      ],
+      "endpoints": [
+        {
+          "method": "download",
+          "url": "https://s5phub.copernicus.eu",
+          "label": "Sentinel-5P Hub"
+        }
+      ]
+    }
+  ]
+}

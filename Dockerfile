@@ -1,4 +1,4 @@
-# DB2S-GEO — contenedor 0.1.0-preview (Cloud Run / local)
+# DB2S-GEO — contenedor 0.2.0-preview (Cloud Run / local)
 
 FROM python:3.12-slim
 
@@ -11,9 +11,13 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     ENVIRONMENT=preview \
     TELEMETRY_DB_PATH=/app/data/telemetry/queries.db
 
-COPY backend/requirements.txt /app/backend/requirements.txt
-RUN pip install --no-cache-dir -r backend/requirements.txt
+# Instalar dependencias via pyproject.toml (modo editable)
+COPY pyproject.toml /app/
+COPY backend/ /app/backend/
+COPY connectors/ /app/connectors/
+RUN pip install --no-cache-dir -e .
 
+# Copiar resto de la app
 COPY . /app
 
 RUN mkdir -p /app/data/telemetry /app/data/observatory /app/data/watcher /app/data/source_discovery \

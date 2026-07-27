@@ -31,7 +31,7 @@ def test_recommend_precipitacion(rec: RecommendationEngine) -> None:
     assert payload["count"] >= 1
     assert payload["ai"] is False
     top = payload["recommendations"][0]
-    assert top["source"] in {"IDEAM", "Google Earth Engine", "NASA"}
+    assert top["source"] in {"IDEAM", "Google Earth Engine", "NASA", "CIOH", "DIMAR", "FAOSTAT"}
     assert top["score"] >= 50
     assert "reason" in top and top["reason"]
     assert "relations_used" in top and top["relations_used"]

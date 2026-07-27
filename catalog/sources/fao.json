@@ -12,7 +12,7 @@
   "institution": "Food and Agriculture Organization of the United Nations (FAO)",
   "domains": [
     "agricultura",
-    "observacion_tierra"
+    "clima"
   ],
   "license": "Términos de uso FAO / FAOSTAT (datos estadísticos abiertos con atribución)",
   "version": "1.0.0",
@@ -74,11 +74,20 @@
         "agricultura"
       ],
       "keywords": [
-        "uso de la tierra",
-        "cobertura",
-        "land use",
         "agricultura",
-        "faostat"
+        "clasificacion",
+        "cobertura",
+        "coberturas",
+        "faostat",
+        "land use",
+        "land_cover",
+        "landcover",
+        "lulc",
+        "mapa_cobertura",
+        "tipo_cobertura",
+        "uso de la tierra",
+        "uso_del_suelo",
+        "uso_suelo"
       ],
       "access_methods": [
         "api",
@@ -114,11 +123,24 @@
         "clima"
       ],
       "keywords": [
-        "emisiones",
-        "clima",
         "agricultura",
         "agropecuario",
-        "faostat"
+        "clima",
+        "climatica",
+        "climatico",
+        "emisiones",
+        "evapotranspiracion",
+        "faostat",
+        "fenomeno_nina",
+        "fenomeno_nino",
+        "humedad",
+        "lluvia",
+        "meteorologia",
+        "meteorologico",
+        "precipitacion",
+        "sequia",
+        "temperatura",
+        "viento"
       ],
       "access_methods": [
         "api",

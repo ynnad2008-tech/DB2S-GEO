@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install deps
-        run: pip install -r backend/requirements.txt
+        run: pip install -e .
       - name: Validate catalog
         run: python scripts/validate_catalog.py
       - uses: actions/upload-artifact@v4
@@ -34,7 +34,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -r backend/requirements.txt
+      - run: pip install -e .
       - run: python -m pytest tests/unit -q
 
   # Activar con variable de repo DEPLOY_CLOUD_RUN=true + secrets GCP_*

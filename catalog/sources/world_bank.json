@@ -1,0 +1,141 @@
+{
+  "id": "world_bank",
+  "name": "World Bank",
+  "description": "Banco Mundial DataBank. Indicadores de desarrollo global: PIB, pobreza, población, educación, salud. Climate Change Knowledge Portal. API REST.",
+  "url": "https://data.worldbank.org",
+  "category": "organismo",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "1960-presente"
+  },
+  "status": "active",
+  "institution": "World Bank Group / DataBank",
+  "domains": [
+    "economia",
+    "poblacion",
+    "clima",
+    "riesgo"
+  ],
+  "license": "CC BY 4.0",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "world_bank:wdi",
+      "name": "World Development Indicators (WDI)",
+      "description": "1,600+ indicadores para 200+ países desde 1960. PIB, pobreza, desigualdad (Gini), educación, salud. API REST JSON/XML y CSV.",
+      "url": "https://api.worldbank.org/v2/",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global / Colombia",
+        "temporal": "1960-presente"
+      },
+      "domains": [
+        "economia",
+        "poblacion"
+      ],
+      "keywords": [
+        "wdi",
+        "pib",
+        "pobreza",
+        "desigualdad",
+        "gini",
+        "poblacion",
+        "educacion",
+        "salud",
+        "banco_mundial",
+        "colombia",
+        "serie_tiempo"
+      ],
+      "access_methods": [
+        "rest"
+      ],
+      "endpoints": [
+        {
+          "method": "rest",
+          "url": "https://api.worldbank.org/v2/",
+          "label": "World Bank API v2"
+        },
+        {
+          "method": "download",
+          "url": "https://data.worldbank.org",
+          "label": "DataBank"
+        }
+      ]
+    },
+    {
+      "id": "world_bank:climate",
+      "name": "Climate Change Knowledge Portal (CCKP)",
+      "description": "Proyecciones CMIP6, escenarios de emisiones, vulnerabilidad por país. Impactos en agricultura, agua y salud para Colombia.",
+      "url": "https://climateknowledgeportal.worldbank.org",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global / Colombia",
+        "temporal": "Histórico + proyecciones"
+      },
+      "domains": [
+        "clima",
+        "riesgo",
+        "economia"
+      ],
+      "keywords": [
+        "clima",
+        "cambio_climatico",
+        "proyecciones",
+        "cmip6",
+        "temperatura",
+        "precipitacion",
+        "vulnerabilidad",
+        "impactos",
+        "agricolas",
+        "colombia"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://climateknowledgeportal.worldbank.org",
+          "label": "CCKP"
+        }
+      ]
+    },
+    {
+      "id": "world_bank:gender",
+      "name": "Gender Data Portal",
+      "description": "Indicadores de género: participación laboral, brecha salarial, educación, salud materna, representación política. 1960-presente.",
+      "url": "https://genderdata.worldbank.org",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global / Colombia",
+        "temporal": "1960-presente"
+      },
+      "domains": [
+        "poblacion",
+        "economia"
+      ],
+      "keywords": [
+        "genero",
+        "mujeres",
+        "brecha",
+        "salarial",
+        "participacion",
+        "laboral",
+        "educacion",
+        "salud_materna",
+        "violencia",
+        "empoderamiento"
+      ],
+      "access_methods": [
+        "rest"
+      ],
+      "endpoints": [
+        {
+          "method": "rest",
+          "url": "https://genderdata.worldbank.org",
+          "label": "Gender Data Portal"
+        }
+      ]
+    }
+  ]
+}

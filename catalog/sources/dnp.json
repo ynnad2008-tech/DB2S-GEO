@@ -35,21 +35,18 @@
         "poblacion"
       ],
       "keywords": [
-        "catastro",
-        "multiproposito",
-        "sat",
         "administracion",
-        "territorio",
-        "seguimiento",
-        "politica",
         "avance",
-        "cooperacion",
-        "territorial",
-        "planificacion",
-        "nacional",
+        "catastro",
         "conpes",
+        "cooperacion",
         "dnp",
-        "colombia"
+        "multiproposito",
+        "planificacion",
+        "politica",
+        "sat",
+        "territorial",
+        "territorio"
       ],
       "access_methods": [
         "portal"
@@ -96,20 +93,17 @@
         "poblacion"
       ],
       "keywords": [
-        "mapa",
-        "inversiones",
-        "inversion",
-        "publica",
-        "proyectos",
-        "presupuesto",
-        "seguimiento",
-        "planificacion",
-        "territorial",
-        "piip",
-        "transparencia",
-        "geovisor",
         "dnp",
-        "colombia"
+        "geovisor",
+        "inversion",
+        "inversiones",
+        "piip",
+        "planificacion",
+        "presupuesto",
+        "proyectos",
+        "publica",
+        "territorial",
+        "transparencia"
       ],
       "access_methods": [
         "portal"

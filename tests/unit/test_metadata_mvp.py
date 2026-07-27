@@ -52,6 +52,16 @@ def test_mvp_sources(discovery: DiscoveryEngine) -> None:
         "ansv",
         "ani",
         "supertransporte",
+        "dimar",
+        "cioh",
+        "global-forest-watch",
+        "sib_colombia",
+        "ebird",
+        "soilgrids",
+        "asf",
+        "catie",
+        "copernicus",
+        "world_bank",
     }
 
 

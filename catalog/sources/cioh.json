@@ -1,0 +1,282 @@
+{
+  "id": "cioh",
+  "name": "CIOH",
+  "description": "Centro de Investigaciones Oceanográficas e Hidrográficas del Caribe. Dependencia de DIMAR especializada en oceanografía operacional, meteorología marina, mareas e hidrografía.",
+  "url": "https://www.dimar.mil.co/cioh",
+  "category": "instituto",
+  "coverage": {
+    "spatial": "Colombia (Caribe y Pacífico)",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Centro de Investigaciones Oceanográficas e Hidrográficas del Caribe (CIOH)",
+  "domains": [
+    "clima",
+    "oceanos_costas"
+  ],
+  "license": "Términos institucionales DIMAR/CIOH / datos abiertos según Resolución 1751 de 2021",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "cioh:oceanografia-operacional",
+      "name": "Oceanografía Operacional",
+      "description": "Monitoreo continuo de variables oceanográficas y meteorológicas en el Caribe colombiano: TSM, salinidad, corrientes, nivel del mar, oleaje. Boyas, mareógrafos y sensores remotos.",
+      "url": "https://www.dimar.mil.co/cioh",
+      "category": "platform",
+      "coverage": {
+        "spatial": "Caribe colombiano",
+        "temporal": "Tiempo real e histórico"
+      },
+      "domains": [
+        "oceanos_costas",
+        "clima"
+      ],
+      "keywords": [
+        "bahia",
+        "barranquilla",
+        "caribe",
+        "caribe_colombiano",
+        "cartagena",
+        "corrientes",
+        "costa",
+        "costera",
+        "costero",
+        "ensenada",
+        "estuario",
+        "golfo",
+        "guajira",
+        "litoral",
+        "manglar",
+        "mar",
+        "marina",
+        "marino",
+        "maritima",
+        "maritimo",
+        "nivel",
+        "oceanica",
+        "oceanico",
+        "oceano",
+        "oceanografia",
+        "oleaje",
+        "operacional",
+        "playa",
+        "providencia",
+        "salinidad",
+        "san_andres",
+        "santa_marta",
+        "tsm"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.dimar.mil.co/cioh",
+          "label": "Oceanografía Operacional CIOH"
+        }
+      ]
+    },
+    {
+      "id": "cioh:meteorologia-marina",
+      "name": "Meteorología Marina y Clima Marítimo",
+      "description": "Datos meteorológicos marinos de estaciones costeras y boyas. Series históricas de viento, presión, temperatura del aire, humedad. Boletines meteomarinos diarios.",
+      "url": "https://cecoldodigital.dimar.mil.co",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Caribe y Pacífico colombiano",
+        "temporal": "Series históricas"
+      },
+      "domains": [
+        "clima",
+        "oceanos_costas"
+      ],
+      "keywords": [
+        "bahia",
+        "clima",
+        "climatica",
+        "climatico",
+        "costa",
+        "costera",
+        "costeras",
+        "costero",
+        "ensenada",
+        "estaciones",
+        "estuario",
+        "evapotranspiracion",
+        "fenomeno_nina",
+        "fenomeno_nino",
+        "golfo",
+        "humedad",
+        "huracanes",
+        "litoral",
+        "lluvia",
+        "manglar",
+        "mar",
+        "marina",
+        "marino",
+        "maritima",
+        "maritimo",
+        "meteorologia",
+        "meteorologico",
+        "oceanica",
+        "oceanico",
+        "oceano",
+        "oleaje",
+        "playa",
+        "precipitacion",
+        "presion",
+        "sequia",
+        "temperatura",
+        "tormentas",
+        "viento"
+      ],
+      "access_methods": [
+        "download"
+      ],
+      "endpoints": [
+        {
+          "method": "download",
+          "url": "https://cecoldodigital.dimar.mil.co",
+          "label": "Cecoldo DIMAR"
+        }
+      ]
+    },
+    {
+      "id": "cioh:mareas",
+      "name": "Mareas y Nivel del Mar",
+      "description": "Pronósticos de mareas para puertos colombianos Caribe y Pacífico. Datos históricos de nivel del mar de la red de mareógrafos. Componentes armónicas calculadas.",
+      "url": "https://www.dimar.mil.co/pronosticos-marea",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Puertos colombianos Caribe y Pacífico",
+        "temporal": "Histórico y pronóstico"
+      },
+      "domains": [
+        "oceanos_costas"
+      ],
+      "keywords": [
+        "bahia",
+        "bajamar",
+        "costa",
+        "costera",
+        "costero",
+        "ensenada",
+        "estuario",
+        "golfo",
+        "litoral",
+        "manglar",
+        "mar",
+        "mareas",
+        "mareografos",
+        "marina",
+        "marino",
+        "maritima",
+        "maritimo",
+        "nivel",
+        "oceanica",
+        "oceanico",
+        "oceano",
+        "playa",
+        "pleamar",
+        "pronostico",
+        "puertos"
+      ],
+      "access_methods": [
+        "download"
+      ],
+      "endpoints": [
+        {
+          "method": "download",
+          "url": "https://www.dimar.mil.co/pronosticos-marea",
+          "label": "Pronósticos de Marea"
+        }
+      ]
+    },
+    {
+      "id": "cioh:batimetria-caribe",
+      "name": "Batimetría Caribe y Pacífico",
+      "description": "Datos batimétricos multihaz y monohaz. Levantamientos del SHN operados por CIOH. Plataforma continental, talud, cañones submarinos y cuencas oceánicas.",
+      "url": "https://www.dimar.mil.co/cioh",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Caribe y Pacífico colombiano",
+        "temporal": "Según levantamiento"
+      },
+      "domains": [
+        "oceanos_costas"
+      ],
+      "keywords": [
+        "batimetria",
+        "multihaz",
+        "monohaz",
+        "levantamientos",
+        "hidrograficos",
+        "continental",
+        "talud"
+      ],
+      "access_methods": [
+        "wcs"
+      ],
+      "endpoints": [
+        {
+          "method": "wcs",
+          "url": "https://www.dimar.mil.co/cioh",
+          "label": "Batimetría CIOH"
+        }
+      ]
+    },
+    {
+      "id": "cioh:avisos-navegantes",
+      "name": "Avisos a los Navegantes",
+      "description": "Boletines periódicos de seguridad marítima: cambios en ayudas a la navegación, nuevos peligros, obras marítimas, dragados, obstrucciones, actualizaciones de cartas.",
+      "url": "https://www.dimar.mil.co/avisos-navegantes",
+      "category": "alert",
+      "coverage": {
+        "spatial": "Colombia (Caribe y Pacífico)",
+        "temporal": "Actualizaciones periódicas"
+      },
+      "domains": [
+        "oceanos_costas"
+      ],
+      "keywords": [
+        "avisos",
+        "bahia",
+        "cartas",
+        "costa",
+        "costera",
+        "costero",
+        "ensenada",
+        "estuario",
+        "golfo",
+        "litoral",
+        "manglar",
+        "mar",
+        "marina",
+        "marino",
+        "maritima",
+        "maritimo",
+        "nauticas",
+        "navegacion",
+        "navegantes",
+        "novedades",
+        "oceanica",
+        "oceanico",
+        "oceano",
+        "peligros",
+        "playa",
+        "seguridad"
+      ],
+      "access_methods": [
+        "download"
+      ],
+      "endpoints": [
+        {
+          "method": "download",
+          "url": "https://www.dimar.mil.co/avisos-navegantes",
+          "label": "Avisos a Navegantes"
+        }
+      ]
+    }
+  ]
+}

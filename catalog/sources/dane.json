@@ -12,6 +12,7 @@
   "institution": "Departamento Administrativo Nacional de Estadística (DANE)",
   "domains": [
     "agricultura",
+    "observacion_tierra",
     "poblacion"
   ],
   "license": "Según términos DANE / microdatos / datos abiertos",
@@ -33,7 +34,6 @@
       ],
       "keywords": [
         "encuesta",
-        "nacional",
         "agropecuaria",
         "ena",
         "produccion",
@@ -135,7 +135,7 @@
       "documentation_url": "https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Evaluaciones-Agropecuarias-Municipales-EVA/2pnw-mmge",
       "doi": "",
       "citation_reference": "Unidad de Planificación Rural Agropecuaria (UPRA) / MADR. Evaluaciones Agropecuarias Municipales (EVA). https://upra.gov.co/es-co/eva"
-        },
+    },
     {
       "id": "dane:geoportal",
       "name": "Geoportal DANE — datos geoestadísticos",
@@ -162,8 +162,6 @@
         "departamentos",
         "cartografia",
         "censal",
-        "descarga",
-        "servicios",
         "rest"
       ],
       "access_methods": [

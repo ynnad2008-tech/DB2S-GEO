@@ -29,13 +29,13 @@ def citation(discovery: DiscoveryEngine) -> CitationEngine:
 def test_mvp_connectors_registered(discovery: DiscoveryEngine) -> None:
     info = discovery.info()
     assert info["status"] == "mvp"
-    assert info["connectors_registered"] == 23
+    assert info["connectors_registered"] == 33  # + DIMAR, CIOH, GFW, SiB Colombia
     assert set(info["connector_ids"]) == set(MVP_CONNECTOR_IDS)
 
 
 def test_list_sources_normalized(discovery: DiscoveryEngine) -> None:
     sources = discovery.list_sources()
-    assert len(sources) == 23
+    assert len(sources) == 33  # + DIMAR, CIOH, GFW, SiB Colombia
     for item in sources:
         assert "source" in item
         assert "institution" in item

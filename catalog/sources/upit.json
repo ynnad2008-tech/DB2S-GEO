@@ -11,8 +11,7 @@
   "status": "active",
   "institution": "Unidad de Planeación de Infraestructura de Transporte (UPIT) — Ministerio de Transporte",
   "domains": [
-    "infraestructura",
-    "ordenamiento"
+    "observacion_tierra"
   ],
   "license": "Según términos UPIT / Hub de Mapas",
   "version": "1.0.0",
@@ -31,19 +30,25 @@
         "observacion_tierra"
       ],
       "keywords": [
-        "hub",
-        "mapas",
-        "transporte",
-        "planeacion",
-        "infraestructura",
-        "webmaps",
-        "movilidad",
+        "acueducto",
+        "aeropuerto",
         "analisis",
-        "territorial",
-        "tableros",
+        "carretera",
+        "conexion",
         "geovisores",
+        "hub",
+        "infraestructura",
+        "movilidad",
+        "planeacion",
+        "puerto",
+        "red",
+        "tableros",
+        "territorial",
+        "transporte",
         "upit",
-        "colombia"
+        "via",
+        "vial",
+        "webmaps"
       ],
       "access_methods": [
         "portal",

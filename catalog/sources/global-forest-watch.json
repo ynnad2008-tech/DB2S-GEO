@@ -1,0 +1,243 @@
+{
+  "id": "global-forest-watch",
+  "name": "Global Forest Watch",
+  "description": "Plataforma global de monitoreo de bosques del WRI. Para Colombia: cobertura forestal, pérdida anual (Hansen/UMD), alertas GLAD-S2 (10m), alertas RADD (radar), capa integrada de deforestación y carbono forestal.",
+  "url": "https://www.globalforestwatch.org",
+  "category": "iniciativa",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "2001-presente"
+  },
+  "status": "active",
+  "institution": "World Resources Institute (WRI) / Global Forest Watch",
+  "domains": [
+    "biodiversidad",
+    "clima",
+    "observacion_tierra",
+    "riesgo"
+  ],
+  "license": "CC BY 4.0",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "global-forest-watch:tree-cover-loss",
+      "name": "Pérdida de Cobertura Arbórea Anual (Hansen/UMD, 30m)",
+      "description": "Mapa global de pérdida de cobertura arbórea 2001-presente. Landsat 30m. Variables: treecover2000, lossyear, gain. GFW reporta ~84 Mha de bosques en Colombia.",
+      "url": "https://data.globalforestwatch.org",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "2001-presente"
+      },
+      "domains": [
+        "biodiversidad",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "30m",
+        "anual",
+        "arbol",
+        "arborea",
+        "bosque",
+        "bosques",
+        "buenaventura",
+        "caribe",
+        "cobertura_forestal",
+        "coberturas",
+        "deforestacion",
+        "dosel",
+        "forestal",
+        "hansen",
+        "landsat",
+        "lossyear",
+        "multitemporal",
+        "pacifico",
+        "reforestacion",
+        "silvicultura",
+        "treecover"
+      ],
+      "access_methods": [
+        "download"
+      ],
+      "endpoints": [
+        {
+          "method": "download",
+          "url": "https://data.globalforestwatch.org",
+          "label": "GFW Data Portal"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.globalforestwatch.org/map",
+          "label": "GFW Map"
+        }
+      ]
+    },
+    {
+      "id": "global-forest-watch:glad-alerts",
+      "name": "Alertas GLAD-S2 (Sentinel-2, 10m)",
+      "description": "Alertas de deforestación en tiempo casi real con Sentinel-2 a 10m. Actualización cada 5 días para la cuenca amazónica. Detección temprana semanal.",
+      "url": "https://www.globalforestwatch.org/map",
+      "category": "alert",
+      "coverage": {
+        "spatial": "Cuenca amazónica",
+        "temporal": "Tiempo casi real"
+      },
+      "domains": [
+        "biodiversidad",
+        "observacion_tierra",
+        "riesgo"
+      ],
+      "keywords": [
+        "10m",
+        "alertas",
+        "amazonia",
+        "arbol",
+        "arborea",
+        "bosque",
+        "bosques",
+        "buenaventura",
+        "cobertura_forestal",
+        "deforestacion",
+        "dosel",
+        "forestal",
+        "glad",
+        "pacifico",
+        "real",
+        "reforestacion",
+        "sentinel-2",
+        "silvicultura",
+        "temprana",
+        "tiempo",
+        "tiempo_real"
+      ],
+      "access_methods": [
+        "download"
+      ],
+      "endpoints": [
+        {
+          "method": "download",
+          "url": "https://www.globalforestwatch.org/map",
+          "label": "GFW GLAD Alerts"
+        }
+      ]
+    },
+    {
+      "id": "global-forest-watch:radd-alerts",
+      "name": "Alertas RADD (Sentinel-1 radar, 10m)",
+      "description": "Alertas de deforestación por radar Sentinel-1 a 10m. Penetra nubes — ideal para trópico húmedo (Pacífico colombiano, Amazonia). Actualización semanal.",
+      "url": "https://www.globalforestwatch.org/map",
+      "category": "alert",
+      "coverage": {
+        "spatial": "Trópico global",
+        "temporal": "Tiempo casi real"
+      },
+      "domains": [
+        "biodiversidad",
+        "observacion_tierra",
+        "riesgo"
+      ],
+      "keywords": [
+        "10m",
+        "buenaventura",
+        "nubes",
+        "pacifico",
+        "radar",
+        "radd",
+        "semanal",
+        "sentinel-1",
+        "tiempo_real",
+        "tropico",
+        "tropico_humedo"
+      ],
+      "access_methods": [
+        "download"
+      ],
+      "endpoints": [
+        {
+          "method": "download",
+          "url": "https://www.globalforestwatch.org/map",
+          "label": "GFW RADD Alerts"
+        }
+      ]
+    },
+    {
+      "id": "global-forest-watch:integrated-alerts",
+      "name": "Capa Integrada de Alertas (GLAD + RADD)",
+      "description": "Capa que combina alertas GLAD-S2, GLAD-L y RADD. Mayor rapidez y confianza. Actualización diaria. Para Colombia: ~728.000 ha detectadas 2021-2023.",
+      "url": "https://www.globalforestwatch.org/map",
+      "category": "alert",
+      "coverage": {
+        "spatial": "Trópico global",
+        "temporal": "Diaria"
+      },
+      "domains": [
+        "biodiversidad",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "alertas",
+        "buenaventura",
+        "consolidada",
+        "diaria",
+        "diario",
+        "glad",
+        "integrada",
+        "pacifico",
+        "radd"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.globalforestwatch.org/map",
+          "label": "GFW Integrated Alerts"
+        }
+      ]
+    },
+    {
+      "id": "global-forest-watch:climate",
+      "name": "GFW Climate — Carbono Forestal y Emisiones",
+      "description": "Densidad de carbono en biomasa aérea (Mg/ha), flujos de CO2 por deforestación, altura de dosel. Insumo para REDD+ y NDC de Colombia. 30m.",
+      "url": "https://climate.globalforestwatch.org",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "2001-presente"
+      },
+      "domains": [
+        "biodiversidad",
+        "clima",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "arbol",
+        "arborea",
+        "biomasa",
+        "bosque",
+        "bosques",
+        "carbono",
+        "co2",
+        "cobertura_forestal",
+        "deforestacion",
+        "dosel",
+        "emisiones",
+        "forestal",
+        "redd",
+        "reforestacion",
+        "silvicultura"
+      ],
+      "access_methods": [
+        "download"
+      ],
+      "endpoints": [
+        {
+          "method": "download",
+          "url": "https://climate.globalforestwatch.org",
+          "label": "GFW Climate"
+        }
+      ]
+    }
+  ]
+}

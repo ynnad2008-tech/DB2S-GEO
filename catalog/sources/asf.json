@@ -1,0 +1,131 @@
+{
+  "id": "asf",
+  "name": "ASF",
+  "description": "Alaska Satellite Facility (NASA DAAC). Archivo global de datos SAR: Sentinel-1, ALOS PALSAR, UAVSAR. Procesamiento InSAR on-demand (HyP3). Esencial para monitoreo en zonas nubosas.",
+  "url": "https://asf.alaska.edu",
+  "category": "iniciativa",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "1991-presente"
+  },
+  "status": "active",
+  "institution": "NASA / Alaska Satellite Facility (ASF DAAC)",
+  "domains": [
+    "observacion_tierra",
+    "riesgo",
+    "suelos"
+  ],
+  "license": "NASA open data",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "asf:vertex",
+      "name": "ASF Vertex — Búsqueda y descarga SAR",
+      "description": "Plataforma de búsqueda y descarga SAR: Sentinel-1 A/B, ALOS PALSAR, UAVSAR. Búsqueda por área, fecha y sensor. Ideal para zonas nubosas.",
+      "url": "https://search.asf.alaska.edu",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "1991-presente"
+      },
+      "domains": [
+        "observacion_tierra",
+        "riesgo"
+      ],
+      "keywords": [
+        "sar",
+        "radar",
+        "sentinel-1",
+        "alos",
+        "palsar",
+        "insar",
+        "deformacion",
+        "geotiff",
+        "nasa"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://search.asf.alaska.edu",
+          "label": "ASF Vertex"
+        }
+      ]
+    },
+    {
+      "id": "asf:hyp3",
+      "name": "HyP3 — Procesamiento InSAR on-demand",
+      "description": "Procesamiento SAR on-demand: interferogramas InSAR y RTC de Sentinel-1. Monitoreo de deformación, subsidencia y volcanes.",
+      "url": "https://hyp3-docs.asf.alaska.edu",
+      "category": "api",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "2014-presente"
+      },
+      "domains": [
+        "observacion_tierra",
+        "riesgo"
+      ],
+      "keywords": [
+        "hyp3",
+        "insar",
+        "rtc",
+        "procesamiento",
+        "deformacion",
+        "terremoto",
+        "volcan",
+        "subsidencia",
+        "sentinel-1"
+      ],
+      "access_methods": [
+        "api"
+      ],
+      "endpoints": [
+        {
+          "method": "api",
+          "url": "https://hyp3-docs.asf.alaska.edu",
+          "label": "HyP3 API"
+        }
+      ]
+    },
+    {
+      "id": "asf:opentopography",
+      "name": "OpenTopography — DEM alta resolución",
+      "description": "SRTM, ALOS World 3D, Copernicus DEM y LiDAR. API y descarga de Modelos Digitales de Elevación.",
+      "url": "https://opentopography.org",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "2000-presente"
+      },
+      "domains": [
+        "observacion_tierra",
+        "riesgo",
+        "suelos"
+      ],
+      "keywords": [
+        "topografia",
+        "dem",
+        "lidar",
+        "srtm",
+        "alos",
+        "worlddem",
+        "elevacion",
+        "pendiente",
+        "geomorfologia"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://opentopography.org",
+          "label": "OpenTopography"
+        }
+      ]
+    }
+  ]
+}

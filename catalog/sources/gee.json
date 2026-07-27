@@ -11,6 +11,8 @@
   "status": "active",
   "institution": "Google Earth Engine (Google LLC / partners)",
   "domains": [
+    "clima",
+    "hidrologia",
     "observacion_tierra"
   ],
   "license": "Según dataset en el catálogo GEE; términos de Google Earth Engine y licencia del productor original",
@@ -30,7 +32,6 @@
         "observacion_tierra"
       ],
       "keywords": [
-        "catalogo",
         "earth engine",
         "datasets",
         "observacion de la tierra",
@@ -75,11 +76,20 @@
         "observacion_tierra"
       ],
       "keywords": [
-        "sentinel-2",
-        "optico",
+        "clasificacion",
+        "cobertura",
+        "coberturas",
         "copernicus",
         "earth engine",
-        "cobertura"
+        "land_cover",
+        "landcover",
+        "lulc",
+        "mapa_cobertura",
+        "optico",
+        "sentinel-2",
+        "tipo_cobertura",
+        "uso_del_suelo",
+        "uso_suelo"
       ],
       "access_methods": [
         "platform",
@@ -152,15 +162,25 @@
         "hidrologia"
       ],
       "keywords": [
-        "precipitacion",
-        "series",
-        "temporales",
-        "sequia",
-        "variabilidad",
-        "climatica",
         "chirps",
+        "clima",
+        "climatica",
+        "climatico",
+        "evapotranspiracion",
+        "fenomeno_nina",
+        "fenomeno_nino",
         "gee",
-        "clima"
+        "humedad",
+        "lluvia",
+        "meteorologia",
+        "meteorologico",
+        "precipitacion",
+        "sequia",
+        "series",
+        "temperatura",
+        "temporales",
+        "variabilidad",
+        "viento"
       ],
       "access_methods": [
         "platform",
@@ -201,16 +221,28 @@
         "hidrologia"
       ],
       "keywords": [
-        "precipitacion",
-        "historica",
+        "chirps",
+        "clima",
+        "climatica",
+        "climatico",
         "climatologia",
         "cuencas",
-        "series",
-        "temporales",
+        "evapotranspiracion",
+        "fenomeno_nina",
+        "fenomeno_nino",
+        "gee",
+        "historica",
+        "humedad",
+        "lluvia",
+        "meteorologia",
+        "meteorologico",
+        "precipitacion",
+        "sequia",
         "sequias",
-        "chirps",
-        "colombia",
-        "gee"
+        "series",
+        "temperatura",
+        "temporales",
+        "viento"
       ],
       "access_methods": [
         "platform",
@@ -234,7 +266,7 @@
       ],
       "documentation_url": "https://www.chc.ucsb.edu/data/chirps",
       "doi": "10.1038/sdata.2015.66",
-            "citation_reference": "Funk, C., et al. (2015). CHIRPS — Climate Hazards Group. Scientific Data. Uso orientado a Colombia vía Google Earth Engine: UCSB-CHG/CHIRPS/DAILY."
+      "citation_reference": "Funk, C., et al. (2015). CHIRPS — Climate Hazards Group. Scientific Data. Uso orientado a Colombia vía Google Earth Engine: UCSB-CHG/CHIRPS/DAILY."
     },
     {
       "id": "gee:chirps-pentad",
@@ -251,15 +283,26 @@
         "hidrologia"
       ],
       "keywords": [
-        "precipitacion",
-        "pentad",
         "5-dias",
-        "sequia",
-        "ciclos",
-        "estacionales",
         "chirps",
+        "ciclos",
+        "clima",
+        "climatica",
+        "climatico",
+        "estacionales",
+        "evapotranspiracion",
+        "fenomeno_nina",
+        "fenomeno_nino",
         "gee",
-        "clima"
+        "humedad",
+        "lluvia",
+        "meteorologia",
+        "meteorologico",
+        "pentad",
+        "precipitacion",
+        "sequia",
+        "temperatura",
+        "viento"
       ],
       "access_methods": [
         "platform",
@@ -300,16 +343,38 @@
         "hidrologia"
       ],
       "keywords": [
-        "precipitacion",
-        "mensual",
-        "climatologia",
+        "agua",
+        "aguas",
         "balance",
-        "hidrico",
-        "sequia",
-        "tendencias",
         "chirps",
+        "cienaga",
+        "clima",
+        "climatica",
+        "climatico",
+        "climatologia",
+        "cuenca",
+        "estuario",
+        "evapotranspiracion",
+        "fenomeno_nina",
+        "fenomeno_nino",
         "gee",
-        "clima"
+        "hidrica",
+        "hidrico",
+        "hidrologica",
+        "hidrologico",
+        "humedad",
+        "humedal",
+        "lluvia",
+        "mensual",
+        "meteorologia",
+        "meteorologico",
+        "precipitacion",
+        "quebrada",
+        "rio",
+        "sequia",
+        "temperatura",
+        "tendencias",
+        "viento"
       ],
       "access_methods": [
         "platform",

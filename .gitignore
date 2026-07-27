@@ -37,6 +37,40 @@ logs/
 *.xlsx
 *.xls
 
+# Backups y snapshots locales
+backup/
+
+# Scripts temporales de analisis y fix locales
+fix_*.py
+scripts/diagnostico_*.py
+scripts/import_cvs_to_catalog.py
+scripts/revisar_dominios.py
+scripts/simular_consulta.py
+
+# Tests temporales (no integrados en tests/unit/)
+_test_*.py
+_temp_*.json
+
+# Documentos temporales de analisis
+extructura.txt
+BACKUP_AUDIT.md
+LAUNCH_BACKUP.md
+PREVIEW_0_2_READINESS.md
+
+# Catalog reports (generados localmente)
+catalog/reports/
+
+# Datos tabulares locales
+csv/
+
+# Documentacion local no subida al repo
+docs/ux_sprint1/
+docs/EJEMPLO_COMPLETO.md
+docs/MANUAL_ADMIN.md
+
+# Scripts de deploy personalizados
+deployment/cloudrun/deploy_0_2_preview.sh
+
 # Data runtime (artefactos locales)
 datasets/raw/**
 !datasets/raw/.gitkeep
@@ -70,3 +104,5 @@ deployment/env/.env
 *.tar
 *.tar.gz
 .cache/
+
+

@@ -32,11 +32,23 @@
         "observacion_tierra"
       ],
       "keywords": [
-        "ocurrencias",
+        "area_protegida",
         "biodiversidad",
+        "bioma",
+        "conservacion",
+        "diversidad",
+        "ecosistema",
+        "ecosistemas",
+        "especie",
+        "especies",
         "especimenes",
+        "fauna",
+        "flora",
+        "gbif",
+        "habitat",
         "observaciones",
-        "gbif"
+        "ocurrencias",
+        "protegida"
       ],
       "access_methods": [
         "api",
@@ -76,10 +88,22 @@
         "biodiversidad"
       ],
       "keywords": [
-        "especies",
-        "taxonomia",
+        "area_protegida",
         "backbone",
-        "gbif"
+        "biodiversidad",
+        "bioma",
+        "conservacion",
+        "diversidad",
+        "ecosistema",
+        "ecosistemas",
+        "especie",
+        "especies",
+        "fauna",
+        "flora",
+        "gbif",
+        "habitat",
+        "protegida",
+        "taxonomia"
       ],
       "access_methods": [
         "api",
@@ -115,7 +139,6 @@
       "keywords": [
         "datasets",
         "registro",
-        "metadatos",
         "doi",
         "gbif"
       ],
@@ -151,14 +174,23 @@
         "biodiversidad"
       ],
       "keywords": [
+        "area_protegida",
         "biodiversidad",
-        "especies",
-        "ocurrencias",
-        "registros",
         "biologicos",
+        "bioma",
         "conservacion",
-        "colombia",
-        "gbif"
+        "diversidad",
+        "ecosistema",
+        "ecosistemas",
+        "especie",
+        "especies",
+        "fauna",
+        "flora",
+        "gbif",
+        "habitat",
+        "ocurrencias",
+        "protegida",
+        "registros"
       ],
       "access_methods": [
         "api",
@@ -198,14 +230,23 @@
         "biodiversidad"
       ],
       "keywords": [
+        "area_protegida",
         "biodiversidad",
-        "taxonomia",
-        "especies",
-        "conservacion",
-        "observaciones",
         "biologicas",
-        "colombia",
-        "gbif"
+        "bioma",
+        "conservacion",
+        "diversidad",
+        "ecosistema",
+        "ecosistemas",
+        "especie",
+        "especies",
+        "fauna",
+        "flora",
+        "gbif",
+        "habitat",
+        "observaciones",
+        "protegida",
+        "taxonomia"
       ],
       "access_methods": [
         "api",

@@ -1,0 +1,15 @@
+connector_id: "dimar"
+source_name: "DIMAR"
+version: "1.0.0"
+status: "mvp"
+mvp: true
+country_or_scope: "Colombia"
+domains:
+  - oceanos_costas
+  - hidrologia
+  - observacion_tierra
+protocols:
+  - portal
+  - arcgis_rest
+  - ogc
+notes: "Fase MVP — metadatos curados, read-only, sin descarga. Dirección General Marítima de Colombia."

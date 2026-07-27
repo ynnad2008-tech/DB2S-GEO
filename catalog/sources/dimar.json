@@ -1,0 +1,359 @@
+{
+  "id": "dimar",
+  "name": "DIMAR",
+  "description": "Dirección General Marítima de Colombia. Autoridad marítima nacional que gestiona cartografía náutica, batimetría, señalización marítima, oceanografía operacional e IDE marítima, fluvial y costera.",
+  "url": "https://www.dimar.mil.co",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia (Caribe y Pacífico)",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Dirección General Marítima de Colombia",
+  "domains": [
+    "biodiversidad",
+    "clima",
+    "hidrologia",
+    "observacion_tierra",
+    "oceanos_costas"
+  ],
+  "license": "Términos institucionales DIMAR / datos abiertos según Resolución 1751 de 2021",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "dimar:sigdimar",
+      "name": "SIGDIMAR — Sistema de Información Geográfica",
+      "description": "Plataforma GIS institucional con 70+ aplicaciones: señalización marítima (ASEM), hidrografía (ARHD), manejo costero (AMIZC), oceanografía operacional (AROPE), litorales, Seaflower y Antártida.",
+      "url": "https://litorales-dimar.hub.arcgis.com",
+      "category": "platform",
+      "coverage": {
+        "spatial": "Colombia (Caribe y Pacífico)",
+        "temporal": "Actualizaciones institucionales"
+      },
+      "domains": [
+        "oceanos_costas",
+        "hidrologia",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "arcgis",
+        "batimetria",
+        "buenaventura",
+        "cartagena",
+        "cartografia",
+        "costas",
+        "costero",
+        "litorales",
+        "mares",
+        "multitematico",
+        "nautica",
+        "santa_marta",
+        "senalizacion",
+        "sigdimar"
+      ],
+      "access_methods": [
+        "portal",
+        "ogc"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://litorales-dimar.hub.arcgis.com",
+          "label": "Portal Geográfico Mares y Costas"
+        }
+      ]
+    },
+    {
+      "id": "dimar:cartas-nauticas",
+      "name": "Cartas Náuticas Electrónicas (ENC)",
+      "description": "63 Cartas Náuticas Electrónicas (ENC) con cobertura 100% en cartas de paso y puerto, 76% en costeras. Servicio Hidrográfico Nacional. Estándar IHO S-57.",
+      "url": "https://www.dimar.mil.co/cartografia-nautica",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia (Caribe y Pacífico)",
+        "temporal": "Siglo XIX-presente"
+      },
+      "domains": [
+        "oceanos_costas"
+      ],
+      "keywords": [
+        "cartas",
+        "nauticas",
+        "enc",
+        "navegacion",
+        "batimetria",
+        "puertos",
+        "s57",
+        "iho",
+        "seguridad"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.dimar.mil.co/cartografia-nautica",
+          "label": "Cartografía Náutica DIMAR"
+        }
+      ]
+    },
+    {
+      "id": "dimar:batimetria",
+      "name": "Superficies Batimétricas",
+      "description": "494 superficies batimétricas en formato .csar del Caribe y Pacífico colombiano. Levantamientos hidrográficos del SHN. Usadas en cartografía náutica y modelación oceanográfica.",
+      "url": "https://www.dimar.mil.co/datos-batimetricos",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia (Caribe y Pacífico)",
+        "temporal": "Según levantamiento"
+      },
+      "domains": [
+        "oceanos_costas"
+      ],
+      "keywords": [
+        "bahia",
+        "barranquilla",
+        "batimetria",
+        "buenaventura",
+        "caribe",
+        "caribe_colombiano",
+        "cartagena",
+        "choco",
+        "choco_biogeografico",
+        "costa",
+        "costera",
+        "costero",
+        "csar",
+        "dragado",
+        "ensenada",
+        "estuario",
+        "fondo",
+        "golfo",
+        "guajira",
+        "hidrografia",
+        "litoral",
+        "llanura_pacifica",
+        "manglar",
+        "mar",
+        "marina",
+        "marino",
+        "maritima",
+        "maritimo",
+        "oceanica",
+        "oceanico",
+        "oceano",
+        "pacifico",
+        "pacifico_colombiano",
+        "playa",
+        "profundidad",
+        "providencia",
+        "san_andres",
+        "santa_marta",
+        "sedimentacion",
+        "superficies",
+        "tropico_humedo",
+        "tumaco"
+      ],
+      "access_methods": [
+        "wcs"
+      ],
+      "endpoints": [
+        {
+          "method": "wcs",
+          "url": "https://www.dimar.mil.co/datos-batimetricos",
+          "label": "Datos Batimétricos DIMAR"
+        }
+      ]
+    },
+    {
+      "id": "dimar:senalizacion-maritima",
+      "name": "Señalización Marítima y Fluvial",
+      "description": "Catálogo geoespacial de ayudas a la navegación: faros, boyas, balizas, enfilaciones. Aplicativo web con visualización de todas las ayudas activas en Colombia.",
+      "url": "https://www.dimar.mil.co/senalizacion-maritima",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia (Caribe y Pacífico)",
+        "temporal": "Actualizaciones continuas"
+      },
+      "domains": [
+        "oceanos_costas"
+      ],
+      "keywords": [
+        "ayudas",
+        "bahia",
+        "balizas",
+        "boyas",
+        "buenaventura",
+        "cartagena",
+        "costa",
+        "costera",
+        "costero",
+        "ensenada",
+        "estuario",
+        "faros",
+        "golfo",
+        "litoral",
+        "manglar",
+        "mar",
+        "marina",
+        "marino",
+        "maritima",
+        "maritimo",
+        "navegacion",
+        "oceanica",
+        "oceanico",
+        "oceano",
+        "playa",
+        "puerto",
+        "seguridad",
+        "senalizacion"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.dimar.mil.co/senalizacion-maritima",
+          "label": "Señalización Marítima"
+        }
+      ]
+    },
+    {
+      "id": "dimar:cecoldodigital",
+      "name": "Cecoldo — Repositorio Digital",
+      "description": "Centro Colombiano de Datos Oceanográficos. Repositorio con datos primarios de investigación marina, atlas oceanográficos, climatología y series históricas.",
+      "url": "https://cecoldodigital.dimar.mil.co",
+      "category": "repository",
+      "coverage": {
+        "spatial": "Colombia (Caribe y Pacífico)",
+        "temporal": "Histórico"
+      },
+      "domains": [
+        "oceanos_costas",
+        "clima",
+        "biodiversidad"
+      ],
+      "keywords": [
+        "bahia",
+        "clima",
+        "climatica",
+        "climatico",
+        "costa",
+        "costera",
+        "costero",
+        "ensenada",
+        "estuario",
+        "evapotranspiracion",
+        "fenomeno_nina",
+        "fenomeno_nino",
+        "golfo",
+        "humedad",
+        "investigacion",
+        "litoral",
+        "lluvia",
+        "manglar",
+        "mar",
+        "mareas",
+        "marina",
+        "marino",
+        "maritima",
+        "maritimo",
+        "meteorologia",
+        "meteorologico",
+        "meteorologicos",
+        "oceanica",
+        "oceanico",
+        "oceano",
+        "oceanograficos",
+        "oleaje",
+        "playa",
+        "precipitacion",
+        "sequia",
+        "temperatura",
+        "viento"
+      ],
+      "access_methods": [
+        "download"
+      ],
+      "endpoints": [
+        {
+          "method": "download",
+          "url": "https://cecoldodigital.dimar.mil.co",
+          "label": "Cecoldo Digital"
+        }
+      ]
+    },
+    {
+      "id": "dimar:ide-maritima",
+      "name": "IDE Marítima, Fluvial y Costera",
+      "description": "Infraestructura de Datos Espaciales Marítima con servicios OGC (WMS, WFS, WCS, WMTS). Cartografía náutica, batimetría, litorales y oceanografía. Implementada con SFE/ArcGIS.",
+      "url": "https://litorales-dimar.hub.arcgis.com",
+      "category": "platform",
+      "coverage": {
+        "spatial": "Colombia (Caribe y Pacífico)",
+        "temporal": "Actualizaciones institucionales"
+      },
+      "domains": [
+        "oceanos_costas",
+        "hidrologia"
+      ],
+      "keywords": [
+        "acueducto",
+        "aeropuerto",
+        "bahia",
+        "carretera",
+        "conexion",
+        "costa",
+        "costera",
+        "costero",
+        "ensenada",
+        "espaciales",
+        "estandar",
+        "estuario",
+        "fluvial",
+        "golfo",
+        "ide",
+        "infraestructura",
+        "interoperabilidad",
+        "litoral",
+        "manglar",
+        "mar",
+        "marina",
+        "marino",
+        "maritima",
+        "maritimo",
+        "oceanica",
+        "oceanico",
+        "oceano",
+        "ogc",
+        "playa",
+        "puerto",
+        "red",
+        "transporte",
+        "via",
+        "vial",
+        "wcs",
+        "wfs",
+        "wms",
+        "wmts"
+      ],
+      "access_methods": [
+        "ogc"
+      ],
+      "endpoints": [
+        {
+          "method": "ogc",
+          "url": "https://litorales-dimar.hub.arcgis.com",
+          "label": "IDE Marítima (WMS/WFS)"
+        },
+        {
+          "method": "portal",
+          "url": "https://litorales-dimar.hub.arcgis.com",
+          "label": "Portal IDE Marítima"
+        }
+      ]
+    }
+  ]
+}

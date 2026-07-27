@@ -32,17 +32,25 @@
         "poblacion"
       ],
       "keywords": [
-        "siniestralidad",
-        "vial",
-        "seguridad",
-        "siniestros",
-        "transito",
         "accidentalidad",
-        "transporte",
+        "acueducto",
+        "aeropuerto",
+        "ansv",
+        "carretera",
+        "conexion",
+        "geoportal",
+        "infraestructura",
         "movilidad",
         "observatorio",
-        "geoportal",
-        "ansv"
+        "puerto",
+        "red",
+        "seguridad",
+        "siniestralidad",
+        "siniestros",
+        "transito",
+        "transporte",
+        "via",
+        "vial"
       ],
       "access_methods": [
         "portal",

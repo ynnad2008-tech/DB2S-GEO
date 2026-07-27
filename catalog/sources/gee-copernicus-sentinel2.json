@@ -17,7 +17,7 @@
   "version": "1.0.0",
   "resources": [
     {
-      "id": "gee:sentinel2-sr",
+      "id": "gee-copernicus-sentinel2:sentinel2-sr",
       "name": "Sentinel-2 MSI Surface Reflectance (COPERNICUS/S2_SR)",
       "description": "Coleccion de imagenes Sentinel-2 nivel 2A (Surface Reflectance) corregidas atmosfericamente, accesible via Google Earth Engine (COPERNICUS/S2_SR). Bandas espectrales de 10/20/60 m, mascara de nubes SCL, escenas globales desde 2017. DB2S-GEO no ejecuta codigo GEE ni descarga colecciones.",
       "url": "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR",
@@ -68,7 +68,7 @@
       "citation_reference": "European Space Agency (ESA). Copernicus Sentinel-2 MSI Surface Reflectance. Google Earth Engine Dataset: COPERNICUS/S2_SR. https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR"
     },
     {
-      "id": "gee:sentinel2-sr-harmonized",
+      "id": "gee-copernicus-sentinel2:sentinel2-sr-harmonized",
       "name": "Sentinel-2 MSI Surface Reflectance Harmonized (COPERNICUS/S2_SR_HARMONIZED)",
       "description": "Coleccion de imagenes Sentinel-2 nivel 2A con bandas armonizadas (valores entre 0 y 1) para compatibilidad con modelos pre-entrenados en GEE. Acceso via COPERNICUS/S2_SR_HARMONIZED. Incluye SCL y bandas espectrales de 10/20/60 m. DB2S-GEO no ejecuta codigo GEE ni descarga colecciones.",
       "url": "https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED",
@@ -118,7 +118,7 @@
       "citation_reference": "European Space Agency (ESA). Copernicus Sentinel-2 MSI Surface Reflectance Harmonized. Google Earth Engine Dataset: COPERNICUS/S2_SR_HARMONIZED. https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR_HARMONIZED"
     },
     {
-      "id": "gee:dynamicworld",
+      "id": "gee-copernicus-sentinel2:dynamicworld",
       "name": "Dynamic World â€” cobertura del suelo (GOOGLE/DYNAMICWORLD/V1)",
       "description": "Producto Dynamic World de cobertura del suelo casi en tiempo real (10 clases), accesible via Google Earth Engine (GOOGLE/DYNAMICWORLD/V1). Apoya monitoreo territorial, cambio de uso y clasificacion dinamica. DB2S-GEO no ejecuta codigo GEE ni descarga colecciones.",
       "url": "https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_DYNAMICWORLD_V1",
@@ -131,17 +131,38 @@
         "observacion_tierra"
       ],
       "keywords": [
-        "cobertura",
-        "suelo",
-        "landcover",
-        "cambio",
-        "uso",
-        "monitoreo",
-        "territorial",
+        "buenaventura",
+        "carbono_organico",
         "clasificacion",
-        "dinamica",
+        "cobertura",
+        "coberturas",
+        "degradacion",
+        "deteccion_cambio",
         "dynamicworld",
-        "gee"
+        "edafica",
+        "edafico",
+        "edafologia",
+        "erosion",
+        "fertilidad",
+        "gee",
+        "land_cover",
+        "landcover",
+        "lulc",
+        "mapa_cobertura",
+        "multitemporal",
+        "pacifico",
+        "ph",
+        "propiedades_suelo",
+        "sentinel-2",
+        "serie_tiempo",
+        "suelo",
+        "suelos",
+        "territorial",
+        "textura",
+        "tipo_cobertura",
+        "uso",
+        "uso_del_suelo",
+        "uso_suelo"
       ],
       "access_methods": [
         "platform",

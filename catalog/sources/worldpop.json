@@ -30,9 +30,18 @@
         "poblacion"
       ],
       "keywords": [
+        "asentamiento",
+        "censo",
+        "demografia",
+        "demografico",
+        "densidad",
         "densidad poblacional",
+        "habitantes",
         "poblacion",
+        "poblacional",
         "raster",
+        "rural",
+        "urbano",
         "worldpop"
       ],
       "access_methods": [
@@ -73,9 +82,18 @@
         "poblacion"
       ],
       "keywords": [
+        "asentamiento",
+        "censo",
         "conteo poblacional",
-        "poblacion",
+        "demografia",
+        "demografico",
+        "densidad",
         "grilla",
+        "habitantes",
+        "poblacion",
+        "poblacional",
+        "rural",
+        "urbano",
         "worldpop"
       ],
       "access_methods": [
@@ -110,10 +128,19 @@
         "poblacion"
       ],
       "keywords": [
+        "asentamiento",
+        "censo",
+        "demografia",
+        "demografico",
+        "densidad",
         "edad",
-        "sexo",
         "estructura poblacional",
+        "habitantes",
         "poblacion",
+        "poblacional",
+        "rural",
+        "sexo",
+        "urbano",
         "worldpop"
       ],
       "access_methods": [
@@ -148,13 +175,29 @@
         "poblacion"
       ],
       "keywords": [
-        "poblacion",
-        "colombia",
-        "exposicion",
-        "riesgo",
-        "planeacion",
-        "territorial",
+        "amenaza",
+        "asentamiento",
+        "censo",
+        "demografia",
+        "demografico",
         "densidad",
+        "desastre",
+        "deslizamiento",
+        "emergencia",
+        "exposicion",
+        "habitantes",
+        "incendio",
+        "inundacion",
+        "peligro",
+        "planeacion",
+        "poblacion",
+        "poblacional",
+        "resiliencia",
+        "riesgo",
+        "rural",
+        "territorial",
+        "urbano",
+        "vulnerabilidad",
         "worldpop"
       ],
       "access_methods": [

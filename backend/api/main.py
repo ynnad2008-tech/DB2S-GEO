@@ -7,12 +7,13 @@ Source Discovery · Decision Support · Workbench.
 
 from __future__ import annotations
 
+import logging
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, HTTPException, Query, Request
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
@@ -35,6 +36,14 @@ APP_AUTHOR = "Dany Arbey Benavides"
 
 ROOT_DIR = Path(__file__).resolve().parents[2]
 WORKBENCH_DIR = ROOT_DIR / "frontend" / "workbench"
+
+# ── Logging ──
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s — %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+logger = logging.getLogger("db2s-geo")
 
 
 class AnalyzeRequest(BaseModel):
@@ -232,9 +241,47 @@ def version() -> dict[str, str]:
 
 
 @app.get("/healthz")
-def healthz() -> dict[str, str]:
-    """Health check liviano para Cloud Run / load balancers."""
-    return {"status": "ok"}
+def healthz() -> dict[str, Any]:
+    """Health check para Cloud Run / load balancers. Verifica engines vivos."""
+    try:
+        discovery_ok = app.state.discovery is not None
+        kg_ok = app.state.knowledge_graph is not None
+        recommend_ok = app.state.recommendation is not None
+        all_ok = discovery_ok and kg_ok and recommend_ok
+        return {
+            "status": "ok" if all_ok else "degraded",
+            "engines": {
+                "discovery": discovery_ok,
+                "knowledge_graph": kg_ok,
+                "recommendation": recommend_ok,
+            },
+        }
+    except Exception:
+        return JSONResponse(
+            status_code=503,
+            content={"status": "error", "detail": "Engines not initialized"},
+        )
+
+
+# ── Global exception handlers ──
+@app.exception_handler(HTTPException)
+async def http_exception_handler(request: Request, exc: HTTPException) -> JSONResponse:
+    logger.warning("HTTP %s — %s %s", exc.status_code, request.method, request.url.path)
+    return JSONResponse(status_code=exc.status_code, content={"detail": exc.detail})
+
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception) -> JSONResponse:
+    logger.error("Unhandled error on %s %s: %s", request.method, request.url.path, exc, exc_info=True)
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Error interno del servidor. El equipo de DB2S-GEO ha sido notificado."},
+    )
+
+
+@app.on_event("startup")
+def startup_log() -> None:
+    logger.info("DB2S-GEO %s iniciado — %s", APP_VERSION, APP_PHASE)
 
 
 @app.get("/workbench")

@@ -25,7 +25,7 @@ def test_graph_stats(client: TestClient) -> None:
     response = client.get("/graph/stats")
     assert response.status_code == 200
     body = response.json()
-    assert body["sources"] == 23
+    assert body["sources"] == 33  # + DIMAR, CIOH, GFW, SiB Colombia
     assert body["relations"] > 0
     assert body["stores_full_metadata"] is False
 
@@ -34,7 +34,7 @@ def test_graph_nodes(client: TestClient) -> None:
     response = client.get("/graph/nodes", params={"type": "Source"})
     assert response.status_code == 200
     body = response.json()
-    assert body["count"] == 23
+    assert body["count"] == 33  # + DIMAR, CIOH, GFW, SiB Colombia
 
 
 def test_graph_relations(client: TestClient) -> None:

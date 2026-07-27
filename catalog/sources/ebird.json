@@ -1,0 +1,167 @@
+{
+  "id": "ebird",
+  "name": "eBird",
+  "description": "Plataforma de ciencia ciudadana de aves del Cornell Lab of Ornithology. Para Colombia: millones de registros de observación, hotspots, status & trends y archivo multimedia (Macaulay Library).",
+  "url": "https://ebird.org/colombia",
+  "category": "iniciativa",
+  "coverage": {
+    "spatial": "Global / Colombia",
+    "temporal": "1900-presente"
+  },
+  "status": "active",
+  "institution": "Cornell Lab of Ornithology / eBird",
+  "domains": [
+    "biodiversidad",
+    "observacion_tierra"
+  ],
+  "license": "CC BY 4.0 / Datos abiertos con atribución",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "ebird:observations",
+      "name": "Registros de Observación — eBird Colombia",
+      "description": "Millones de registros de aves para Colombia (~1,966 spp). Ciencia ciudadana validada por revisores expertos. API pública y descargas por especie/región.",
+      "url": "https://api.ebird.org/v2/data/obs",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "1900-presente"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "aves",
+        "pajaros",
+        "ebird",
+        "cornell",
+        "ornitologia",
+        "checklists",
+        "ciencia_ciudadana",
+        "especies",
+        "observaciones"
+      ],
+      "access_methods": [
+        "rest",
+        "download"
+      ],
+      "endpoints": [
+        {
+          "method": "rest",
+          "url": "https://api.ebird.org/v2/data/obs",
+          "label": "eBird API v2 Observations"
+        },
+        {
+          "method": "download",
+          "url": "https://ebird.org/data/download",
+          "label": "eBird Data Download"
+        }
+      ]
+    },
+    {
+      "id": "ebird:hotspots",
+      "name": "Hotspots de Observación de Aves",
+      "description": "Directorio geoespacial de sitios de observación de aves en Colombia. Cientos de hotspots desde La Guajira hasta Amazonas con listados de especies.",
+      "url": "https://api.ebird.org/v2/ref/hotspot",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Actualizaciones continuas"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "hotspots",
+        "sitios",
+        "observacion",
+        "aves",
+        "ebird",
+        "avistamiento",
+        "turismo",
+        "ornitologia"
+      ],
+      "access_methods": [
+        "rest"
+      ],
+      "endpoints": [
+        {
+          "method": "rest",
+          "url": "https://api.ebird.org/v2/ref/hotspot",
+          "label": "eBird Hotspots API"
+        }
+      ]
+    },
+    {
+      "id": "ebird:status-trends",
+      "name": "eBird Status & Trends — Abundancia y Distribución",
+      "description": "Modelos de abundancia relativa a 3km. Mapas semanales, tendencias poblacionales, migración. Cientos de especies. Crítico para planificación de conservación.",
+      "url": "https://science.ebird.org/en/status-and-trends",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Américas",
+        "temporal": "2007-presente"
+      },
+      "domains": [
+        "biodiversidad",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "abundancia",
+        "distribucion",
+        "modelacion",
+        "estacional",
+        "migracion",
+        "habitat",
+        "tendencias",
+        "raster",
+        "conservacion"
+      ],
+      "access_methods": [
+        "download"
+      ],
+      "endpoints": [
+        {
+          "method": "download",
+          "url": "https://science.ebird.org/en/status-and-trends",
+          "label": "eBird Status & Trends"
+        }
+      ]
+    },
+    {
+      "id": "ebird:macauley",
+      "name": "Macaulay Library — Archivo Multimedia de Aves",
+      "description": "Archivo de sonidos, fotos y videos de aves más grande del mundo. Colección de cantos y llamados de aves colombianas para bioacústica.",
+      "url": "https://macaulaylibrary.org",
+      "category": "repository",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "1929-presente"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "macaulay",
+        "multimedia",
+        "fotos",
+        "audio",
+        "cantos",
+        "aves",
+        "archivo",
+        "bioacustica",
+        "especimenes"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://macaulaylibrary.org",
+          "label": "Macaulay Library"
+        }
+      ]
+    }
+  ]
+}

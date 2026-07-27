@@ -24,43 +24,74 @@ OFFICIAL_NATIONAL_SOURCES = frozenset({"ideam", "invemar"})
 # Evitan falsos positivos (p. ej. query "transporte" + keyword "colombia").
 GENERIC_KEYWORDS = frozenset(
     {
-        "colombia",
-        "colombiano",
-        "colombiana",
-        "colombianos",
-        "colombianas",
-        "nacional",
-        "nacionales",
-        "territorio",
-        "territorial",
-        "sistema",
-        "informacion",
-        "informacion_geografica",
-        "datos",
-        "dato",
-        "geografico",
-        "geograficos",
-        "portal",
-        "mapa",
-        "mapas",
-        "servicio",
-        "servicios",
-        "oficial",
-        "institucional",
+        # Nacionales / geográficos genéricos
+        "colombia", "colombiano", "colombiana", "colombianos", "colombianas",
+        "nacional", "nacionales", "territorio", "territorial",
+        "global", "regional", "local", "municipal", "departamental",
+        # Información / sistemas
+        "sistema", "informacion", "informacion_geografica",
+        "datos", "dato", "geografico", "geograficos",
+        "portal", "mapa", "mapas", "servicio", "servicios",
+        "oficial", "institucional", "publico", "abierto",
+        "plataforma", "acceso", "consulta", "visualizacion",
+        "descarga", "metadatos", "catalogo", "repositorio",
+        "documento", "documentacion",
+        # Verbos / conceptos demasiado amplios
+        "cambio", "transicion", "evolucion", "dinamica", "tendencia",
+        "transformacion", "modificacion", "variacion", "trayectoria",
+        "monitoreo", "monitorizacion", "seguimiento", "observacion",
+        "vigilancia", "control", "verificacion", "actualizacion",
+        "historico", "integrado", "consolidado", "unificado",
+        "serie_tiempo", "multitemporal", "tiempo_real",
+        # Descriptores vacíos
+        "estudio", "analisis", "investigacion", "proyecto",
+        "desarrollo", "gestion", "planificacion", "evaluacion",
     }
 )
 
 # Alias curados (no embeddings): expanden la consulta a términos del grafo.
 CURATED_ALIASES: dict[str, list[str]] = {
-    "lluvia": ["precipitacion"],
-    "precipitacion": ["precipitacion", "lluvia", "meteorologia"],
-    "oceanos": ["oceanos", "oceanos_costas", "marino", "costas"],
-    "manglares": ["manglar", "ecosistemas", "costas"],
-    "manglar": ["manglar", "ecosistemas"],
-    "cuencas": ["hidrologia", "caudales", "cuencas"],
-    "biodiversidad": ["biodiversidad", "especies", "occurrence"],
-    "poblacion": ["poblacion", "densidad"],
-    "satelite": ["observacion_tierra", "sentinel", "landsat"],
+    # Clima y meteorología
+    "lluvia": ["precipitacion", "meteorologia", "clima"],
+    "precipitacion": ["precipitacion", "lluvia", "meteorologia", "clima", "chirps", "gpm"],
+    "temperatura": ["temperatura", "clima", "tsm", "era5", "worldclim"],
+    "clima": ["clima", "meteorologia", "precipitacion", "temperatura", "evapotranspiracion"],
+    # Océanos y costas
+    "oceanos": ["oceanos_costas", "marino", "costas", "dimar", "invemar", "cioh"],
+    "manglares": ["manglar", "manglares", "costas", "humedal", "ecosistemas", "inundacion"],
+    "costas": ["costas", "costero", "costera", "litoral", "bahia", "playa", "erosion_costera"],
+    "bahia": ["bahia", "golfo", "ensenada", "estuario", "buenaventura", "cartagena"],
+    # Hidrología
+    "cuencas": ["hidrologia", "cuencas", "caudales", "rios", "cuenca"],
+    "inundaciones": ["inundacion", "inundaciones", "riesgo", "hidrologia", "desbordamiento"],
+    # Coberturas y uso del suelo (clave para el caso Buenaventura)
+    "coberturas": ["coberturas", "cobertura", "uso_suelo", "landcover", "lulc", "mapbiomas"],
+    "deforestacion": ["deforestacion", "bosques", "perdida_bosque", "gfw", "alertas", "cobertura_forestal"],
+    "uso_suelo": ["uso_suelo", "coberturas", "landcover", "lulc", "mapbiomas", "clasificacion"],
+    # Biodiversidad
+    "biodiversidad": ["biodiversidad", "especies", "fauna", "flora", "habitat", "conservacion"],
+    "aves": ["aves", "pajaros", "ebird", "ornitologia", "biodiversidad"],
+    "ecosistemas": ["ecosistemas", "ecosistema", "bioma", "habitat", "biodiversidad", "conservacion"],
+    # Suelos
+    "suelos": ["suelos", "suelo", "edafologia", "soilgrids", "carbono_organico", "ph", "textura"],
+    # Geología
+    "geologia": ["geologia", "geologico", "geomorfologia", "sismico", "volcan", "sgc", "fallas"],
+    "sismos": ["sismos", "sismo", "sismicidad", "terremoto", "amenaza_sismica", "sgc"],
+    # Población
+    "poblacion": ["poblacion", "densidad", "demografia", "censo", "worldpop", "dane"],
+    # Observación de la Tierra
+    "satelite": ["observacion_tierra", "sentinel", "landsat", "modis", "nasa", "gee"],
+    "imagenes": ["imagenes", "satelitales", "ortofotos", "observacion_tierra", "sentinel", "landsat"],
+    # Riesgo
+    "riesgo": ["riesgo", "amenaza", "vulnerabilidad", "desastre", "inundacion", "deslizamiento"],
+    # Regiones geográficas
+    "buenaventura": ["buenaventura", "pacifico", "pacifico_colombiano", "tumaco", "valle"],
+    "pacifico": ["pacifico", "pacifico_colombiano", "buenaventura", "tumaco", "choco_biogeografico"],
+    "caribe": ["caribe", "caribe_colombiano", "cartagena", "santa_marta", "barranquilla"],
+    "amazonia": ["amazonia", "amazonas", "leticia", "caqueta", "putumayo", "guaviare"],
+    # Infraestructura
+    "transporte": ["transporte", "infraestructura", "vias", "carreteras", "puertos", "aeropuertos"],
+    "puertos": ["puertos", "portuario", "portuaria", "buenaventura", "cartagena", "santa_marta"],
 }
 
 

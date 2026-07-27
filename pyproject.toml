@@ -1,0 +1,29 @@
+[project]
+name = "db2s-geo"
+version = "0.2.0"
+description = "DB2S-GEO — Plataforma de conocimiento geoespacial: descubrimiento, evaluación, recomendación e integración de información territorial y ambiental"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.11"
+authors = [
+    {name = "Dany Arbey Benavides", email = "dany@local.dev"},
+]
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["backend*", "connectors*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
