@@ -21,12 +21,12 @@ def client() -> TestClient:
         yield test_client
 
 
-def test_list_sources(client: TestClient) -> None:
+def test_list_sources(client: TestClient, active_catalog_count: int) -> None:
     response = client.get("/sources")
     assert response.status_code == 200
     body = response.json()
-    assert body["count"] == 33  # + DIMAR, CIOH, GFW, SiB Colombia
-    assert len(body["sources"]) == 33  # + DIMAR, CIOH, GFW, SiB Colombia
+    assert body["count"] == active_catalog_count
+    assert len(body["sources"]) == active_catalog_count
 
 
 def test_get_source_ideam(client: TestClient) -> None:

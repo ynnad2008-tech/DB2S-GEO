@@ -70,7 +70,7 @@ def test_unknown_domain(client: TestClient) -> None:
     assert response.status_code == 404
 
 
-def test_sources_count_is_six(client: TestClient) -> None:
+def test_sources_count_matches_catalog(client: TestClient, active_catalog_count: int) -> None:
     response = client.get("/sources")
     assert response.status_code == 200
-    assert response.json()["count"] == 33  # + DIMAR, CIOH, GFW, SiB Colombia
+    assert response.json()["count"] == active_catalog_count

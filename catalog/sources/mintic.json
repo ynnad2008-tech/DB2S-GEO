@@ -1,0 +1,62 @@
+{
+  "id": "mintic",
+  "name": "MinTIC",
+  "description": "Ministerio de Tecnologías de la Información y las Comunicaciones (MinTIC). Publica información sobre conectividad, infraestructura TIC y transformación digital en Colombia. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.mintic.gov.co/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Ministerio de Tecnologías de la Información y las Comunicaciones",
+  "domains": [
+    "infraestructura"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "mintic:portal",
+      "name": "Portal institucional — MinTIC",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.mintic.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "infraestructura"
+      ],
+      "keywords": [
+        "mintic",
+        "colombia",
+        "institucional",
+        "portal",
+        "tic",
+        "conectividad",
+        "infraestructura",
+        "digital",
+        "telecomunicaciones"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.mintic.gov.co/",
+          "label": "MinTIC — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.mintic.gov.co/",
+      "doi": "",
+      "citation_reference": "Ministerio de Tecnologías de la Información y las Comunicaciones. Portal institucional. https://www.mintic.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.015106+00:00"
+}

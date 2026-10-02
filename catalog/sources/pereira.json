@@ -1,0 +1,62 @@
+{
+  "id": "pereira",
+  "name": "Alcaldía de Pereira",
+  "description": "Alcaldía de Pereira. Portal institucional con información territorial y cartografía oficial del municipio de Pereira. DB2S-GEO solo documenta el acceso; no descarga capas.",
+  "url": "https://www.pereira.gov.co/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Pereira",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Alcaldía de Pereira",
+  "domains": [
+    "cartografia_base",
+    "ordenamiento"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "pereira:portal",
+      "name": "Portal institucional — Alcaldía de Pereira",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.pereira.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Pereira",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "cartografia_base",
+        "ordenamiento"
+      ],
+      "keywords": [
+        "pereira",
+        "alcaldia de pereira",
+        "colombia",
+        "institucional",
+        "portal",
+        "alcaldia",
+        "municipal"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.pereira.gov.co/",
+          "label": "Alcaldía de Pereira — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.pereira.gov.co/",
+      "doi": "",
+      "citation_reference": "Alcaldía de Pereira. Portal institucional. https://www.pereira.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.015622+00:00"
+}

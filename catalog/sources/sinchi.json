@@ -1,0 +1,67 @@
+{
+  "id": "sinchi",
+  "name": "Instituto SINCHI",
+  "description": "Instituto Amazónico de Investigaciones Científicas SINCHI. Publica información sobre biodiversidad, suelos y coberturas de la Amazonía colombiana. DB2S-GEO solo documenta el acceso; no descarga capas.",
+  "url": "https://www.sinchi.org.co/",
+  "category": "instituto",
+  "coverage": {
+    "spatial": "Amazonía",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Instituto Amazónico de Investigaciones Científicas",
+  "domains": [
+    "biodiversidad",
+    "suelos",
+    "observacion_tierra"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "sinchi:portal",
+      "name": "Portal institucional — Instituto SINCHI",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.sinchi.org.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Amazonía",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "biodiversidad",
+        "suelos",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "sinchi",
+        "instituto sinchi",
+        "amazonia",
+        "colombia",
+        "institucional",
+        "portal",
+        "biodiversidad",
+        "suelos",
+        "coberturas",
+        "investigacion"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.sinchi.org.co/",
+          "label": "Instituto SINCHI — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.sinchi.org.co/",
+      "doi": "",
+      "citation_reference": "Instituto Amazónico de Investigaciones Científicas. Portal institucional. https://www.sinchi.org.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.016109+00:00"
+}

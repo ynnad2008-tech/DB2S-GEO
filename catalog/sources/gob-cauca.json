@@ -1,0 +1,63 @@
+{
+  "id": "gob-cauca",
+  "name": "Gobernación del Cauca",
+  "description": "Gobernación del Cauca. Portal institucional con información territorial y cartografía oficial del departamento de Cauca. DB2S-GEO solo documenta el acceso; no descarga capas.",
+  "url": "https://www.cauca.gov.co/Paginas/Inicio.aspx",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Cauca",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Gobernación del Cauca",
+  "domains": [
+    "cartografia_base",
+    "ordenamiento"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "gob-cauca:portal",
+      "name": "Portal institucional — Gobernación del Cauca",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.cauca.gov.co/Paginas/Inicio.aspx",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Cauca",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "cartografia_base",
+        "ordenamiento"
+      ],
+      "keywords": [
+        "gob-cauca",
+        "gobernacion del cauca",
+        "cauca",
+        "colombia",
+        "institucional",
+        "portal",
+        "gobernacion",
+        "departamental"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.cauca.gov.co/Paginas/Inicio.aspx",
+          "label": "Gobernación del Cauca — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.cauca.gov.co/Paginas/Inicio.aspx",
+      "doi": "",
+      "citation_reference": "Gobernación del Cauca. Portal institucional. https://www.cauca.gov.co/Paginas/Inicio.aspx"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.008091+00:00"
+}

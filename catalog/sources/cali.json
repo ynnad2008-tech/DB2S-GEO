@@ -1,0 +1,62 @@
+{
+  "id": "cali",
+  "name": "Alcaldía de Cali",
+  "description": "Alcaldía de Cali. Portal institucional con información territorial y cartografía oficial del municipio de Cali. DB2S-GEO solo documenta el acceso; no descarga capas.",
+  "url": "https://www.cali.gov.co/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Cali",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Alcaldía de Cali",
+  "domains": [
+    "cartografia_base",
+    "ordenamiento"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "cali:portal",
+      "name": "Portal institucional — Alcaldía de Cali",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.cali.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Cali",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "cartografia_base",
+        "ordenamiento"
+      ],
+      "keywords": [
+        "cali",
+        "alcaldia de cali",
+        "colombia",
+        "institucional",
+        "portal",
+        "alcaldia",
+        "municipal"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.cali.gov.co/",
+          "label": "Alcaldía de Cali — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.cali.gov.co/",
+      "doi": "",
+      "citation_reference": "Alcaldía de Cali. Portal institucional. https://www.cali.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.003999+00:00"
+}

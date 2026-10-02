@@ -1,0 +1,62 @@
+{
+  "id": "minagricultura",
+  "name": "MinAgricultura",
+  "description": "Ministerio de Agricultura y Desarrollo Rural. Formula la política agropecuaria y publica información del sector agrícola colombiano (Agronet, EVA, SIPRA). DB2S-GEO solo documenta el acceso; no descarga bases.",
+  "url": "https://www.minagricultura.gov.co/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Ministerio de Agricultura y Desarrollo Rural",
+  "domains": [
+    "agricultura"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "minagricultura:portal",
+      "name": "Portal institucional — MinAgricultura",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.minagricultura.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "agricultura"
+      ],
+      "keywords": [
+        "minagricultura",
+        "colombia",
+        "institucional",
+        "portal",
+        "agricultura",
+        "agropecuario",
+        "agronet",
+        "eva",
+        "rural"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.minagricultura.gov.co/",
+          "label": "MinAgricultura — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.minagricultura.gov.co/",
+      "doi": "",
+      "citation_reference": "Ministerio de Agricultura y Desarrollo Rural. Portal institucional. https://www.minagricultura.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.014000+00:00"
+}

@@ -26,43 +26,9 @@ def metadata(discovery: DiscoveryEngine) -> MetadataEngine:
     return MetadataEngine(discovery)
 
 
-def test_mvp_sources(discovery: DiscoveryEngine) -> None:
+def test_mvp_sources(discovery: DiscoveryEngine, active_catalog_ids: set[str]) -> None:
     ids = {s["source_id"] for s in discovery.list_sources()}
-    assert ids == {
-        "ideam",
-        "invemar",
-        "gbif",
-        "fao",
-        "worldpop",
-        "gee",
-        "sgc",
-        "gee-copernicus-sentinel2",
-        "nasa",
-        "mapbiomas",
-        "unosat",
-        "igac",
-        "upra",
-        "dane",
-        "dnp",
-        "contraloria",
-        "superservicios",
-        "mintransporte",
-        "upit",
-        "invias",
-        "ansv",
-        "ani",
-        "supertransporte",
-        "dimar",
-        "cioh",
-        "global-forest-watch",
-        "sib_colombia",
-        "ebird",
-        "soilgrids",
-        "asf",
-        "catie",
-        "copernicus",
-        "world_bank",
-    }
+    assert ids == active_catalog_ids
 
 
 def test_list_ideam_resources(metadata: MetadataEngine) -> None:

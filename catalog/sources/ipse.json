@@ -1,0 +1,64 @@
+{
+  "id": "ipse",
+  "name": "IPSE",
+  "description": "Instituto de Planificación y Promoción de Soluciones Energéticas (IPSE). Publica información de infraestructura energética, con énfasis en zonas no interconectadas de Colombia. DB2S-GEO solo documenta el acceso.",
+  "url": "https://ipse.gov.co/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Instituto de Planificación y Promoción de Soluciones Energéticas",
+  "domains": [
+    "infraestructura"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "ipse:portal",
+      "name": "Portal institucional — IPSE",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://ipse.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "infraestructura"
+      ],
+      "keywords": [
+        "ipse",
+        "colombia",
+        "institucional",
+        "portal",
+        "energia",
+        "soluciones",
+        "energeticas",
+        "infraestructura",
+        "zonas",
+        "no",
+        "interconectadas"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://ipse.gov.co/",
+          "label": "IPSE — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://ipse.gov.co/",
+      "doi": "",
+      "citation_reference": "Instituto de Planificación y Promoción de Soluciones Energéticas. Portal institucional. https://ipse.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.013339+00:00"
+}

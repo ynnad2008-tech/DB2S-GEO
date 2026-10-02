@@ -1,0 +1,65 @@
+{
+  "id": "uniandes",
+  "name": "Universidad de los Andes",
+  "description": "Universidad de los Andes. Publica información académica y datos territoriales de carácter institucional. DB2S-GEO solo documenta el acceso; no descarga datos.",
+  "url": "https://www.uniandes.edu.co/",
+  "category": "academia",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Universidad de los Andes",
+  "domains": [
+    "cartografia_base",
+    "observacion_tierra"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "uniandes:portal",
+      "name": "Portal institucional — Universidad de los Andes",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.uniandes.edu.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "cartografia_base",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "uniandes",
+        "universidad de los andes",
+        "colombia",
+        "institucional",
+        "portal",
+        "universidad",
+        "andes",
+        "cartografia",
+        "academica",
+        "territorial"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.uniandes.edu.co/",
+          "label": "Universidad de los Andes — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.uniandes.edu.co/",
+      "doi": "",
+      "citation_reference": "Universidad de los Andes. Portal institucional. https://www.uniandes.edu.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.016963+00:00"
+}

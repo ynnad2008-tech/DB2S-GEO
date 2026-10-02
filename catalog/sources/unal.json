@@ -1,0 +1,65 @@
+{
+  "id": "unal",
+  "name": "Universidad Nacional de Colombia",
+  "description": "Universidad Nacional de Colombia. Publica cartografía, información académica y datos territoriales de carácter institucional. DB2S-GEO solo documenta el acceso; no descarga datos.",
+  "url": "https://unal.edu.co/",
+  "category": "academia",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Universidad Nacional de Colombia",
+  "domains": [
+    "cartografia_base",
+    "observacion_tierra"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "unal:portal",
+      "name": "Portal institucional — Universidad Nacional de Colombia",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://unal.edu.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "cartografia_base",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "unal",
+        "universidad nacional de colombia",
+        "colombia",
+        "institucional",
+        "portal",
+        "universidad",
+        "nacional",
+        "cartografia",
+        "academica",
+        "territorial"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://unal.edu.co/",
+          "label": "Universidad Nacional de Colombia — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://unal.edu.co/",
+      "doi": "",
+      "citation_reference": "Universidad Nacional de Colombia. Portal institucional. https://unal.edu.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.016674+00:00"
+}

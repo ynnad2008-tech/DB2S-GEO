@@ -1,0 +1,63 @@
+{
+  "id": "gob-narino",
+  "name": "Gobernación de Nariño",
+  "description": "Gobernación de Nariño. Portal institucional con información territorial y cartografía oficial del departamento de Nariño. DB2S-GEO solo documenta el acceso; no descarga capas.",
+  "url": "https://www.narino.gov.co/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Nariño",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Gobernación de Nariño",
+  "domains": [
+    "cartografia_base",
+    "ordenamiento"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "gob-narino:portal",
+      "name": "Portal institucional — Gobernación de Nariño",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.narino.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Nariño",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "cartografia_base",
+        "ordenamiento"
+      ],
+      "keywords": [
+        "gob-narino",
+        "gobernacion de narino",
+        "narino",
+        "colombia",
+        "institucional",
+        "portal",
+        "gobernacion",
+        "departamental"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.narino.gov.co/",
+          "label": "Gobernación de Nariño — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.narino.gov.co/",
+      "doi": "",
+      "citation_reference": "Gobernación de Nariño. Portal institucional. https://www.narino.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.010224+00:00"
+}

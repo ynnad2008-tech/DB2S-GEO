@@ -15,7 +15,6 @@ from backend.discovery.engine import DiscoveryEngine
 from backend.knowledge_graph.engine import KnowledgeGraphEngine
 from backend.metadata.engine import MetadataEngine
 from backend.recommendation.engine import RecommendationEngine
-from connectors.registry import MVP_CONNECTOR_IDS
 
 
 @pytest.fixture
@@ -67,9 +66,11 @@ def test_recommend_by_resource(rec: RecommendationEngine) -> None:
     assert any(r["source_id"] == "ideam" for r in payload["recommendations"])
 
 
-def test_only_mvp_sources(rec: RecommendationEngine) -> None:
+def test_only_mvp_sources(
+    rec: RecommendationEngine, active_catalog_ids: set[str]
+) -> None:
     payload = rec.recommend("biodiversidad")
-    allowed = set(MVP_CONNECTOR_IDS)
+    allowed = active_catalog_ids
     for item in payload["recommendations"]:
         assert item["source_id"] in allowed
         assert item["source"] != "CHIRPS"

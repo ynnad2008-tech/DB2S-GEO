@@ -19,18 +19,21 @@ from connectors.catalog_loader import build_connectors_from_catalog, catalog_ava
 from connectors.registry import build_mvp_connectors
 
 
-def test_catalog_available_and_active_count() -> None:
+def test_catalog_available_and_active_count(
+    active_catalog_ids: set[str], active_catalog_count: int
+) -> None:
     assert catalog_available()
     connectors = build_connectors_from_catalog()
-    assert len(connectors) == 33  # + DIMAR, CIOH, GFW, SiB Colombia
+    assert len(connectors) == active_catalog_count
+    assert set(connectors) == active_catalog_ids
     assert "ideam" in connectors
     assert "dimar" in connectors
     assert "cioh" in connectors
 
 
-def test_registry_uses_json_catalog() -> None:
+def test_registry_uses_json_catalog(active_catalog_count: int) -> None:
     connectors = build_mvp_connectors()
-    assert len(connectors) == 33  # + DIMAR, CIOH, GFW, SiB Colombia
+    assert len(connectors) == active_catalog_count
     assert connectors["ideam"].identify().get("catalog") == "json"
 
 

@@ -1,0 +1,63 @@
+{
+  "id": "humboldt",
+  "name": "IAvH",
+  "description": "Instituto de Investigación de Recursos Biológicos Alexander von Humboldt (IAvH). Instituto científico que publica información sobre biodiversidad y servicios ecosistémicos de Colombia. DB2S-GEO solo documenta el acceso; no descarga capas.",
+  "url": "https://www.humboldt.org.co/",
+  "category": "instituto",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Instituto de Investigación de Recursos Biológicos Alexander von Humboldt",
+  "domains": [
+    "biodiversidad"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "humboldt:portal",
+      "name": "Portal institucional — IAvH",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.humboldt.org.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "humboldt",
+        "iavh",
+        "colombia",
+        "institucional",
+        "portal",
+        "instituto",
+        "biodiversidad",
+        "investigacion",
+        "biologica",
+        "ecosistemas"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.humboldt.org.co/",
+          "label": "IAvH — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.humboldt.org.co/",
+      "doi": "",
+      "citation_reference": "Instituto de Investigación de Recursos Biológicos Alexander von Humboldt. Portal institucional. https://www.humboldt.org.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.012513+00:00"
+}

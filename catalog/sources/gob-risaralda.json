@@ -1,0 +1,63 @@
+{
+  "id": "gob-risaralda",
+  "name": "Gobernación de Risaralda",
+  "description": "Gobernación de Risaralda. Portal institucional con información territorial y cartografía oficial del departamento de Risaralda. DB2S-GEO solo documenta el acceso; no descarga capas.",
+  "url": "https://www.risaralda.gov.co/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Risaralda",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Gobernación de Risaralda",
+  "domains": [
+    "cartografia_base",
+    "ordenamiento"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "gob-risaralda:portal",
+      "name": "Portal institucional — Gobernación de Risaralda",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.risaralda.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Risaralda",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "cartografia_base",
+        "ordenamiento"
+      ],
+      "keywords": [
+        "gob-risaralda",
+        "gobernacion de risaralda",
+        "risaralda",
+        "colombia",
+        "institucional",
+        "portal",
+        "gobernacion",
+        "departamental"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.risaralda.gov.co/",
+          "label": "Gobernación de Risaralda — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.risaralda.gov.co/",
+      "doi": "",
+      "citation_reference": "Gobernación de Risaralda. Portal institucional. https://www.risaralda.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.011136+00:00"
+}

@@ -13,7 +13,7 @@ if str(ROOT) not in sys.path:
 
 from backend.citation.engine import CitationEngine
 from backend.discovery.engine import DiscoveryEngine
-from connectors.registry import MVP_CONNECTOR_IDS, build_mvp_connectors
+from connectors.registry import build_mvp_connectors
 
 
 @pytest.fixture
@@ -26,16 +26,22 @@ def citation(discovery: DiscoveryEngine) -> CitationEngine:
     return CitationEngine(discovery)
 
 
-def test_mvp_connectors_registered(discovery: DiscoveryEngine) -> None:
+def test_mvp_connectors_registered(
+    discovery: DiscoveryEngine,
+    active_catalog_ids: set[str],
+    active_catalog_count: int,
+) -> None:
     info = discovery.info()
     assert info["status"] == "mvp"
-    assert info["connectors_registered"] == 33  # + DIMAR, CIOH, GFW, SiB Colombia
-    assert set(info["connector_ids"]) == set(MVP_CONNECTOR_IDS)
+    assert info["connectors_registered"] == active_catalog_count
+    assert set(info["connector_ids"]) == active_catalog_ids
 
 
-def test_list_sources_normalized(discovery: DiscoveryEngine) -> None:
+def test_list_sources_normalized(
+    discovery: DiscoveryEngine, active_catalog_count: int
+) -> None:
     sources = discovery.list_sources()
-    assert len(sources) == 33  # + DIMAR, CIOH, GFW, SiB Colombia
+    assert len(sources) == active_catalog_count
     for item in sources:
         assert "source" in item
         assert "institution" in item

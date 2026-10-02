@@ -1,0 +1,66 @@
+{
+  "id": "cormagdalena",
+  "name": "Cormagdalena",
+  "description": "Corporación Autónoma Regional del Río Grande de la Magdalena (Cormagdalena). Publica información hidrológica, de navegabilidad e infraestructura fluvial de la cuenca del río Magdalena. DB2S-GEO solo documenta el acceso.",
+  "url": "https://cormagdalena.gov.co/",
+  "category": "organismo",
+  "coverage": {
+    "spatial": "Cuenca del Magdalena",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Corporación Autónoma Regional del Río Grande de la Magdalena",
+  "domains": [
+    "hidrologia",
+    "infraestructura"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "cormagdalena:portal",
+      "name": "Portal institucional — Cormagdalena",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://cormagdalena.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Cuenca del Magdalena",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "hidrologia",
+        "infraestructura"
+      ],
+      "keywords": [
+        "cormagdalena",
+        "cuenca del magdalena",
+        "colombia",
+        "institucional",
+        "portal",
+        "magdalena",
+        "rio",
+        "hidrologia",
+        "navegabilidad",
+        "fluvial",
+        "cuenca"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://cormagdalena.gov.co/",
+          "label": "Cormagdalena — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://cormagdalena.gov.co/",
+      "doi": "",
+      "citation_reference": "Corporación Autónoma Regional del Río Grande de la Magdalena. Portal institucional. https://cormagdalena.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.005021+00:00"
+}

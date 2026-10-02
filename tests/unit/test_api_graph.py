@@ -21,20 +21,20 @@ def client() -> TestClient:
         yield test_client
 
 
-def test_graph_stats(client: TestClient) -> None:
+def test_graph_stats(client: TestClient, active_catalog_count: int) -> None:
     response = client.get("/graph/stats")
     assert response.status_code == 200
     body = response.json()
-    assert body["sources"] == 33  # + DIMAR, CIOH, GFW, SiB Colombia
+    assert body["sources"] == active_catalog_count
     assert body["relations"] > 0
     assert body["stores_full_metadata"] is False
 
 
-def test_graph_nodes(client: TestClient) -> None:
+def test_graph_nodes(client: TestClient, active_catalog_count: int) -> None:
     response = client.get("/graph/nodes", params={"type": "Source"})
     assert response.status_code == 200
     body = response.json()
-    assert body["count"] == 33  # + DIMAR, CIOH, GFW, SiB Colombia
+    assert body["count"] == active_catalog_count
 
 
 def test_graph_relations(client: TestClient) -> None:

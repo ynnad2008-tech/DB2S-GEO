@@ -1,0 +1,109 @@
+{
+  "id": "mineducacion",
+  "name": "MinEducacion",
+  "description": "Ministerio de Educación Nacional. Ente rector de la educación en Colombia; publica información educativa y territorial del sector. Dispone de geoportal institucional (ArcGIS REST) con capas del sector educativo. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.mineducacion.gov.co/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Ministerio de Educación Nacional",
+  "domains": [
+    "poblacion",
+    "cartografia_base"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "mineducacion:geoportal",
+      "name": "Geoportal MinEducacion — ArcGIS REST",
+      "description": "Directorio ArcGIS REST del geoportal institucional, verificado por el curador de DB2S-GEO. DB2S-GEO solo documenta el acceso; no descarga capas.",
+      "url": "https://geoportal.mineducacion.gov.co/arcgis/rest/services",
+      "category": "geoservice",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "poblacion",
+        "cartografia_base"
+      ],
+      "keywords": [
+        "mineducacion",
+        "colombia",
+        "institucional",
+        "portal",
+        "educacion",
+        "cobertura",
+        "educativa",
+        "geoportal",
+        "sector",
+        "arcgis",
+        "rest",
+        "geoservicio"
+      ],
+      "access_methods": [
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.mineducacion.gov.co/arcgis/rest/services",
+          "label": "Directorio ArcGIS REST"
+        }
+      ],
+      "formats": [
+        "servicios REST"
+      ],
+      "documentation_url": "https://geoportal.mineducacion.gov.co/arcgis/rest/services",
+      "doi": "",
+      "citation_reference": "Ministerio de Educación Nacional. Geoportal MinEducacion. https://geoportal.mineducacion.gov.co/arcgis/rest/services"
+    },
+    {
+      "id": "mineducacion:portal",
+      "name": "Portal institucional — MinEducacion",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.mineducacion.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "poblacion",
+        "cartografia_base"
+      ],
+      "keywords": [
+        "mineducacion",
+        "colombia",
+        "institucional",
+        "portal",
+        "educacion",
+        "cobertura",
+        "educativa",
+        "geoportal",
+        "sector"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.mineducacion.gov.co/",
+          "label": "MinEducacion — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.mineducacion.gov.co/",
+      "doi": "",
+      "citation_reference": "Ministerio de Educación Nacional. Portal institucional. https://www.mineducacion.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.014559+00:00"
+}

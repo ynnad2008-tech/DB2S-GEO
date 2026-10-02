@@ -1,0 +1,63 @@
+{
+  "id": "gob-sucre",
+  "name": "Gobernación de Sucre",
+  "description": "Gobernación de Sucre. Portal institucional con información territorial y cartografía oficial del departamento de Sucre. DB2S-GEO solo documenta el acceso; no descarga capas.",
+  "url": "https://www.sucre.gov.co/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Sucre",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Gobernación de Sucre",
+  "domains": [
+    "cartografia_base",
+    "ordenamiento"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "gob-sucre:portal",
+      "name": "Portal institucional — Gobernación de Sucre",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.sucre.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Sucre",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "cartografia_base",
+        "ordenamiento"
+      ],
+      "keywords": [
+        "gob-sucre",
+        "gobernacion de sucre",
+        "sucre",
+        "colombia",
+        "institucional",
+        "portal",
+        "gobernacion",
+        "departamental"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.sucre.gov.co/",
+          "label": "Gobernación de Sucre — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.sucre.gov.co/",
+      "doi": "",
+      "citation_reference": "Gobernación de Sucre. Portal institucional. https://www.sucre.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.011687+00:00"
+}

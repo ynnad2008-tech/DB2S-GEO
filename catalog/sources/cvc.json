@@ -1,0 +1,68 @@
+{
+  "id": "cvc",
+  "name": "CVC",
+  "description": "Corporación Autónoma Regional del Valle del Cauca (CVC). Autoridad ambiental del departamento que publica información hidrológica, de riesgo y de ordenamiento ambiental del Valle del Cauca. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.cvc.gov.co/",
+  "category": "organismo",
+  "coverage": {
+    "spatial": "Valle del Cauca",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Corporación Autónoma Regional del Valle del Cauca",
+  "domains": [
+    "hidrologia",
+    "riesgo"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "cvc:portal",
+      "name": "Portal institucional — CVC",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.cvc.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Valle del Cauca",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "hidrologia",
+        "riesgo"
+      ],
+      "keywords": [
+        "cvc",
+        "valle del cauca",
+        "colombia",
+        "institucional",
+        "portal",
+        "corporacion",
+        "autonoma",
+        "regional",
+        "valle",
+        "cauca",
+        "hidrologia",
+        "riesgo",
+        "ambiental"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.cvc.gov.co/",
+          "label": "CVC — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.cvc.gov.co/",
+      "doi": "",
+      "citation_reference": "Corporación Autónoma Regional del Valle del Cauca. Portal institucional. https://www.cvc.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.005332+00:00"
+}

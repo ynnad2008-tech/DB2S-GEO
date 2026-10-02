@@ -1,0 +1,63 @@
+{
+  "id": "minsalud",
+  "name": "Minsalud",
+  "description": "Ministerio de Salud y Protección Social. Ente rector de la salud pública en Colombia; publica información sanitaria, de aseguramiento y de población. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.minsalud.gov.co/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Ministerio de Salud y Protección Social",
+  "domains": [
+    "poblacion"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "minsalud:portal",
+      "name": "Portal institucional — Minsalud",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.minsalud.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "poblacion"
+      ],
+      "keywords": [
+        "minsalud",
+        "colombia",
+        "institucional",
+        "portal",
+        "salud",
+        "proteccion",
+        "social",
+        "poblacion",
+        "aseguramiento",
+        "sanitaria"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.minsalud.gov.co/",
+          "label": "Minsalud — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.minsalud.gov.co/",
+      "doi": "",
+      "citation_reference": "Ministerio de Salud y Protección Social. Portal institucional. https://www.minsalud.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.014837+00:00"
+}

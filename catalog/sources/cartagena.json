@@ -1,0 +1,62 @@
+{
+  "id": "cartagena",
+  "name": "Alcaldía de Cartagena",
+  "description": "Alcaldía de Cartagena. Portal institucional con información territorial y cartografía oficial del municipio de Cartagena. DB2S-GEO solo documenta el acceso; no descarga capas.",
+  "url": "https://www.cartagena.gov.co/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Cartagena",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Alcaldía de Cartagena",
+  "domains": [
+    "cartografia_base",
+    "ordenamiento"
+  ],
+  "license": "Según términos de la entidad / datos abiertos",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "cartagena:portal",
+      "name": "Portal institucional — Alcaldía de Cartagena",
+      "description": "Portal institucional verificado por el curador de DB2S-GEO; punto de acceso oficial a la información y servicios de la entidad. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.cartagena.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Cartagena",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "cartografia_base",
+        "ordenamiento"
+      ],
+      "keywords": [
+        "cartagena",
+        "alcaldia de cartagena",
+        "colombia",
+        "institucional",
+        "portal",
+        "alcaldia",
+        "municipal"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.cartagena.gov.co/",
+          "label": "Alcaldía de Cartagena — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.cartagena.gov.co/",
+      "doi": "",
+      "citation_reference": "Alcaldía de Cartagena. Portal institucional. https://www.cartagena.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-02T05:24:47.004303+00:00"
+}
