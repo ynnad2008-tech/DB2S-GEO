@@ -6,6 +6,44 @@ El formato se inspira en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1
 
 ---
 
+## [v0.4.0] — 2026-10-02
+
+Catálogo 71 fuentes · Decision Support ampliado · Perfil de inundación marítima.
+
+### Añadido — Fuentes de Colombia verificadas (+38)
+
+- 5 ministerios (MinSalud, MinEducación con geoportal ArcGIS, MinAgricultura,
+  MinComercio, MinTIC), 3 corporaciones/agencias (ANH, CVC, Cormagdalena),
+  3 institutos de investigación (IAvH, SINCHI, IPSE), 20 gobernaciones,
+  5 alcaldías y 2 universidades (UNAL, Uniandes).
+- Verificación HTTP previa de cada fuente (portal y geoservicio); solo URLs
+  verificados documentados en las fichas.
+- Gobernación del Meta excluida: portal sin respuesta desde la red de curaduría.
+
+### Añadido — Decision Support
+
+- `MVP_SOURCES` 6 → 46 fuentes (44 + DIMAR/CIOH para el perfil marítimo).
+- Perfil `inundaciones_maritimas` (INVEMAR, DIMAR, CIOH) con prioridad sobre
+  el perfil de inundaciones fluviales.
+- `SOURCE_WHERE` curado para las 38 nuevas fuentes y DIMAR/CIOH.
+- Ventana de recall de recomendaciones 8 → 15.
+
+### Corregido
+
+- `GENERIC_KEYWORDS` filtra preposiciones y conectores españoles ("de", "en",
+  "del"…) que dispersaban el ranking por coincidencia de subcadena.
+- Tests de conteo alineados al catálogo dinámico (fixtures en `conftest.py`):
+  suite 105/105.
+- `tests/prueba_buenaventura.py` actualizado al contrato API vigente.
+
+### Documentación
+
+- `docs/21_curaduria_fuentes_colombia_2026.md` — metodología de verificación,
+  inventario y limitaciones.
+- Restore point: `backup/restore-points/catalog-expansion-colombia-20261002-005203/`.
+
+---
+
 ## [v0.3.0] — 2026-07-27
 
 Catálogo completo: 33 fuentes, 130 recursos, 15/15 dominios. Hardening de infraestructura.

@@ -67,6 +67,16 @@ def test_advise_inundaciones(dss: DecisionSupportEngine) -> None:
         assert "resources" in route
 
 
+def test_advise_inundacion_maritima(dss: DecisionSupportEngine) -> None:
+    payload = dss.advise("inundacion maritima")
+    assert payload["count"] >= 3
+    assert "marítima" in payload["need"]
+    source_ids = {r["source_id"] for r in payload["routes"]}
+    assert "invemar" in source_ids
+    assert "dimar" in source_ids
+    assert "cioh" in source_ids
+
+
 def test_advise_precipitacion_routes(dss: DecisionSupportEngine) -> None:
     payload = dss.advise("Quiero datos de precipitación")
     assert payload["count"] >= 1

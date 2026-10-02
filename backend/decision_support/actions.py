@@ -38,6 +38,22 @@ SOURCE_WHERE: dict[str, dict[str, Any]] = {
             "descargar_datos",
         ],
     },
+    "dimar": {
+        "where": ["Portal institucional DIMAR", "IDE Marítima, Fluvial y Costera", "Pronósticos meteomarinos"],
+        "access_methods": ["portal", "api"],
+        "default_categories": [
+            "consultar_informacion_institucional",
+            "descargar_datos",
+        ],
+    },
+    "cioh": {
+        "where": ["Portal institucional CIOH", "Productos oceanográficos y de mareas"],
+        "access_methods": ["portal", "api"],
+        "default_categories": [
+            "consultar_informacion_institucional",
+            "descargar_datos",
+        ],
+    },
     "gbif": {
         "where": ["Portal GBIF", "API GBIF"],
         "access_methods": ["portal", "api"],
@@ -261,6 +277,54 @@ SOURCE_WHERE: dict[str, dict[str, Any]] = {
 
 # Perfiles de necesidad: varias rutas complementarias (ej. inundaciones)
 NEED_PROFILES: dict[str, dict[str, Any]] = {
+    "inundaciones_maritimas": {
+        "need": "análisis de inundación marítima y costera",
+        "match_any": (
+            "maritima", "marina", "costera", "costero",
+            "marejada", "oleaje", "marea", "litoral",
+        ),
+        "routes": [
+            {
+                "title": "Información marino-costera",
+                "category": "consultar_informacion_institucional",
+                "what_to_do": (
+                    "Consultar ecosistemas costeros, manglares y erosión "
+                    "costera con la autoridad ambiental marina de Colombia."
+                ),
+                "source_id": "invemar",
+                "resource_ids": [
+                    "invemar:ecosistemas-costeros",
+                    "invemar:manglares-colombia",
+                ],
+                "why_default": "Autoridad ambiental marina de Colombia.",
+            },
+            {
+                "title": "Niveles del mar y alertas",
+                "category": "consultar_informacion_institucional",
+                "what_to_do": (
+                    "Consultar la IDE marítima, fluvial y costera y los "
+                    "pronósticos meteomarinos de la autoridad marítima nacional."
+                ),
+                "source_id": "dimar",
+                "resource_ids": ["dimar:ide-maritima"],
+                "why_default": "Autoridad marítima nacional de Colombia.",
+            },
+            {
+                "title": "Mareas y oceanografía",
+                "category": "consultar_informacion_institucional",
+                "what_to_do": (
+                    "Consultar mareas, nivel del mar y oceanografía "
+                    "operacional del Caribe y Pacífico colombiano."
+                ),
+                "source_id": "cioh",
+                "resource_ids": [
+                    "cioh:mareas",
+                    "cioh:oceanografia-operacional",
+                ],
+                "why_default": "Investigación oceanográfica e hidrográfica nacional.",
+            },
+        ],
+    },
     "inundaciones": {
         "need": "análisis de inundaciones en microcuenca",
         "match_any": ("inundaciones", "inundacion", "microcuenca"),
@@ -388,7 +452,13 @@ def match_need_profile(concepts: list[str], query_norm: str) -> dict[str, Any] |
     """Selecciona el perfil de necesidad más específico que coincida."""
     concept_set = set(concepts)
     # Preferir perfiles en orden de especificidad
-    order = ("inundaciones", "precipitacion", "biodiversidad", "erosion")
+    order = (
+        "inundaciones_maritimas",
+        "inundaciones",
+        "precipitacion",
+        "biodiversidad",
+        "erosion",
+    )
     for key in order:
         profile = NEED_PROFILES[key]
         triggers = profile["match_any"]

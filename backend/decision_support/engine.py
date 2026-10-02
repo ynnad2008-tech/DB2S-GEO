@@ -26,11 +26,14 @@ if TYPE_CHECKING:
     from backend.recommendation.engine import RecommendationEngine
 
 # Fuentes habilitadas para rutas de decisión (curaduría humana explícita).
-# MVP original + 38 fuentes de Colombia verificadas y cargadas (2026-10-02).
+# MVP original + 38 fuentes de Colombia verificadas y cargadas (2026-10-02)
+# + dimar/cioh (perfil de inundación marítima y costera).
 MVP_SOURCES = frozenset(
     {
         # MVP original
         "ideam", "invemar", "gbif", "fao", "worldpop", "gee",
+        # Autoridades marinas nacionales
+        "dimar", "cioh",
         # Fuentes de Colombia verificadas y cargadas al catálogo
         "anh", "barranquilla", "cali", "cartagena", "cormagdalena", "cvc",
         "gob-antioquia", "gob-atlantico", "gob-bolivar", "gob-boyaca",

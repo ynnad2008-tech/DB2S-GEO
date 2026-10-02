@@ -18,16 +18,15 @@ data = r.json()
 print("RECOMMEND ENGINE — Top 8 resultados:")
 print(f"  Total: {data.get('count', 0)} resultados")
 print()
-for i, item in enumerate(data.get("results", [])[:8]):
-    title = item.get("title", item.get("resource", "?"))
-    source = item.get("source", "?")
+for i, item in enumerate(data.get("recommendations", [])[:8]):
+    source = item.get("source_id", item.get("source", "?"))
     score = item.get("score", 0)
-    why = item.get("why", [])
+    why = item.get("reason", [])
     if isinstance(why, str):
         why = [why]
     why_str = "; ".join(why[:2]) if why else "sin justificación"
-    print(f"  {i+1}. [{source}] {title}")
-    print(f"     Score: {score} | {why_str}")
+    print(f"  {i+1}. [{source}] Score: {score}")
+    print(f"     {why_str}")
     print()
 
 # ── 2. DECISION SUPPORT ──
@@ -35,18 +34,18 @@ r2 = client.get("/decision-support", params={"q": Q, "limit": 6})
 ds = r2.json()
 print("-" * 70)
 print("DECISION SUPPORT:")
-print(f"  Intención detectada: {ds.get('intent', '?')}")
+print(f"  Intención detectada: {ds.get('intents', '?')}")
 print(f"  Necesidad: {ds.get('need', '?')}")
-print(f"  Acciones recomendadas ({ds.get('count', 0)}):")
+print(f"  Rutas recomendadas ({ds.get('count', 0)}):")
 print()
-for i, action in enumerate(ds.get("actions", [])[:6]):
-    verb = action.get("verb", "?").upper()
-    what = action.get("what", "?")
-    source = action.get("source", "?")
-    complexity = action.get("complexity", "?")
-    why = action.get("why", "?")
-    print(f"  {i+1}. {verb}: {what}")
-    print(f"     Fuente: {source} | Complejidad: {complexity}")
+for i, action in enumerate(ds.get("routes", [])[:6]):
+    title = action.get("title", "?")
+    what = action.get("what_to_do", "?")
+    source = action.get("source_id", action.get("source", "?"))
+    why = action.get("why", [])
+    why = "; ".join(why[:2]) if isinstance(why, list) else why
+    print(f"  {i+1}. {title}")
+    print(f"     Fuente: {source} | {what[:80]}")
     print(f"     {why}")
     print()
 
@@ -76,11 +75,9 @@ for sid in ["ideam", "invemar", "dimar", "cioh", "mapbiomas", "gee", "nasa"]:
 print("-" * 70)
 r = client.get("/graph/domain/observacion_tierra")
 kg = r.json()
-items = kg.get("resources", kg.get("items", []))
-ids = set()
-for item in items[:15]:
-    ids.add(item.get("source_id", item.get("source", "?")))
-print(f"  Knowledge Graph — observacion_tierra: {','.join(sorted(ids))}")
+resources = kg.get("resources", [])
+print(f"  Knowledge Graph — observacion_tierra: {len(resources)} recursos "
+      f"→ {', '.join(resources[:15])}{'…' if len(resources) > 15 else ''}")
 
 print()
 print("=" * 70)
