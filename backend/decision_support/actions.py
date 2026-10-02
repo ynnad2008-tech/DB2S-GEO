@@ -61,6 +61,202 @@ SOURCE_WHERE: dict[str, dict[str, Any]] = {
             "realizar_analisis_geoespacial_avanzado",
         ],
     },
+    # --- Ministerios de Colombia (verificados 2026-10-02) ---
+    "minsalud": {
+        "where": ["Portal institucional MinSalud"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "mineducacion": {
+        "where": ["Portal institucional MinEducación", "Geoportal MinEducación (ArcGIS REST)"],
+        "access_methods": ["portal", "arcgis"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "minagricultura": {
+        "where": ["Portal institucional MinAgricultura", "Agronet / EVA"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "mincomercio": {
+        "where": ["Portal institucional MinComercio"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "mintic": {
+        "where": ["Portal institucional MinTIC"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    # --- Corporaciones y agencias ---
+    "anh": {
+        "where": ["Portal institucional ANH"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "cvc": {
+        "where": ["Portal institucional CVC"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "cormagdalena": {
+        "where": ["Portal institucional Cormagdalena"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    # --- Institutos de investigación ---
+    "humboldt": {
+        "where": ["Portal institucional IAvH"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "sinchi": {
+        "where": ["Portal institucional SINCHI"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "ipse": {
+        "where": ["Portal institucional IPSE"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    # --- Gobernaciones (verificadas 2026-10-02) ---
+    "gob-antioquia": {
+        "where": ["Portal institucional — Gobernación de Antioquia"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-cundinamarca": {
+        "where": ["Portal institucional — Gobernación de Cundinamarca"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-tolima": {
+        "where": ["Portal institucional — Gobernación del Tolima"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-valle": {
+        "where": ["Portal institucional — Gobernación del Valle del Cauca"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-santander": {
+        "where": ["Portal institucional — Gobernación de Santander"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-boyaca": {
+        "where": ["Portal institucional — Gobernación de Boyacá"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-narino": {
+        "where": ["Portal institucional — Gobernación de Nariño"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-caldas": {
+        "where": ["Portal institucional — Gobernación de Caldas"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-risaralda": {
+        "where": ["Portal institucional — Gobernación de Risaralda"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-quindio": {
+        "where": ["Portal institucional — Gobernación del Quindío"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-cauca": {
+        "where": ["Portal institucional — Gobernación del Cauca"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-huila": {
+        "where": ["Portal institucional — Gobernación del Huila"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-nortedesantander": {
+        "where": ["Portal institucional — Gobernación de Norte de Santander"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-cesar": {
+        "where": ["Portal institucional — Gobernación del Cesar"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-magdalena": {
+        "where": ["Portal institucional — Gobernación del Magdalena"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-cordoba": {
+        "where": ["Portal institucional — Gobernación de Córdoba"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-sucre": {
+        "where": ["Portal institucional — Gobernación de Sucre"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-bolivar": {
+        "where": ["Portal institucional — Gobernación de Bolívar"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-atlantico": {
+        "where": ["Portal institucional — Gobernación del Atlántico"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "gob-choco": {
+        "where": ["Portal institucional — Gobernación del Chocó"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    # --- Alcaldías (verificadas 2026-10-02) ---
+    "cali": {
+        "where": ["Portal institucional — Alcaldía de Cali"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "barranquilla": {
+        "where": ["Portal institucional — Alcaldía de Barranquilla"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "cartagena": {
+        "where": ["Portal institucional — Alcaldía de Cartagena"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "pereira": {
+        "where": ["Portal institucional — Alcaldía de Pereira"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "manizales": {
+        "where": ["Portal institucional — Alcaldía de Manizales"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    # --- Universidades ---
+    "unal": {
+        "where": ["Portal institucional UNAL"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional"],
+    },
+    "uniandes": {
+        "where": ["Portal institucional Uniandes"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional"],
+    },
 }
 
 # Perfiles de necesidad: varias rutas complementarias (ej. inundaciones)

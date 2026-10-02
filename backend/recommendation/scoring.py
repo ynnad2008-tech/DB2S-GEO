@@ -46,6 +46,16 @@ GENERIC_KEYWORDS = frozenset(
         # Descriptores vacíos
         "estudio", "analisis", "investigacion", "proyecto",
         "desarrollo", "gestion", "planificacion", "evaluacion",
+        # Preposiciones y conectores españoles: hacen match por subcadena
+        # en etiquetas ("Gobernación del X") y dispersan el ranking.
+        "a", "al", "ante", "bajo", "con", "contra", "de", "del",
+        "desde", "durante", "e", "el", "en", "entre", "hacia", "hasta",
+        "la", "las", "lo", "los", "mediante", "ni", "o", "para", "pero",
+        "por", "que", "segun", "si", "sin", "sobre", "su", "sus", "tras",
+        "u", "un", "una", "unas", "unos", "y",
+        "cada", "como", "cual", "cuales", "cuando", "cuyo", "cuyos",
+        "donde", "eso", "esta", "estas", "este", "estos", "mas", "muy",
+        "no", "tambien", "ya",
     }
 )
 

@@ -25,7 +25,24 @@ if TYPE_CHECKING:
     from backend.metadata.engine import MetadataEngine
     from backend.recommendation.engine import RecommendationEngine
 
-MVP_SOURCES = frozenset({"ideam", "invemar", "gbif", "fao", "worldpop", "gee"})
+# Fuentes habilitadas para rutas de decisión (curaduría humana explícita).
+# MVP original + 38 fuentes de Colombia verificadas y cargadas (2026-10-02).
+MVP_SOURCES = frozenset(
+    {
+        # MVP original
+        "ideam", "invemar", "gbif", "fao", "worldpop", "gee",
+        # Fuentes de Colombia verificadas y cargadas al catálogo
+        "anh", "barranquilla", "cali", "cartagena", "cormagdalena", "cvc",
+        "gob-antioquia", "gob-atlantico", "gob-bolivar", "gob-boyaca",
+        "gob-caldas", "gob-cauca", "gob-cesar", "gob-choco", "gob-cordoba",
+        "gob-cundinamarca", "gob-huila", "gob-magdalena", "gob-narino",
+        "gob-nortedesantander", "gob-quindio", "gob-risaralda",
+        "gob-santander", "gob-sucre", "gob-tolima", "gob-valle",
+        "humboldt", "ipse", "manizales", "minagricultura", "mincomercio",
+        "mineducacion", "minsalud", "mintic", "pereira", "sinchi",
+        "unal", "uniandes",
+    }
+)
 
 
 class DecisionSupportEngine:
@@ -192,12 +209,14 @@ class DecisionSupportEngine:
             if extra:
                 search_q = f"{query} {' '.join(extra)}"
 
-        payload = self._recommendation.recommend(search_q, limit=max(limit, 8))
+        # Ventana amplia: 71 fuentes activas compiten por las rutas;
+        # 8 dejaba por fuera matches legítimos de fuentes nuevas.
+        payload = self._recommendation.recommend(search_q, limit=max(limit, 15))
         recommendations = payload.get("recommendations") or []
 
         # Si la consulta enriquecida falla, reintentar con query original
         if not recommendations:
-            payload = self._recommendation.recommend(query, limit=max(limit, 8))
+            payload = self._recommendation.recommend(query, limit=max(limit, 15))
             recommendations = payload.get("recommendations") or []
 
         # Segunda pasada por conceptos individuales si aún vacío
