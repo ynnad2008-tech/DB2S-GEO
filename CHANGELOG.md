@@ -6,6 +6,34 @@ El formato se inspira en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1
 
 ---
 
+## [v0.6.0] — 2026-10-03
+
+Filtro geográfico `coverage` en Discovery, Recomendación y Decision Support.
+
+### Añadido
+
+- `backend/metadata/coverage.py`: coberturas colombianas curadas (nacional,
+  32 departamentos, ciudades clave, regiones y cuencas) con jerarquía
+  ciudad→departamento y semántica de cobertura (el país cubre lo
+  subnacional; el departamento cubre sus ciudades; los globales cubren
+  todo, opcional con `include_global`).
+- `/sources?coverage=` y `/recommend?coverage=` — filtro explícito con
+  `include_global` (default true).
+- `/decision-support`: **detección automática** de cobertura desde la
+  consulta ("… en Cali" → cali) con filtro en ambas vías (perfiles y
+  recomendaciones). La respuesta expone `coverage` (requested,
+  detected_auto, include_global).
+- Corrige el caso U2 de la evaluación de usuario final: consultas con
+  ciudad ya no recomiendan fuentes de otras ciudades.
+
+### Añadido — Desempate de scores (v0.5.x)
+
+- Ranking por profundidad de evidencia ante empates de score: recursos →
+  keywords → dominios coincidentes → orden estable. Expuesto en
+  `/recommend/info`.
+
+---
+
 ## [v0.5.0] — 2026-10-03
 
 Catálogo 81 fuentes · Geoservicios verificados · Intérprete NL Gemini.

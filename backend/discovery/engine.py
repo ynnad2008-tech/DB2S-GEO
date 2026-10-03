@@ -16,6 +16,7 @@ from __future__ import annotations
 
 from typing import Any
 
+from backend.metadata.coverage import matches_coverage
 from connectors.base import BaseConnector
 from connectors.registry import build_mvp_connectors
 
@@ -61,8 +62,11 @@ class DiscoveryEngine:
         self,
         query: str | None = None,
         domain: str | None = None,
+        *,
+        coverage: str | None = None,
+        include_global: bool = True,
     ) -> list[dict[str, Any]]:
-        """Busca fuentes registradas por texto y/o dominio."""
+        """Busca fuentes registradas por texto, dominio y/o cobertura."""
         q = (query or "").strip().lower()
         d = (domain or "").strip().lower()
         results: list[dict[str, Any]] = []
@@ -70,6 +74,12 @@ class DiscoveryEngine:
         for connector in self._connectors.values():
             identity = self._normalize_identity(connector)
             domains = [x.lower() for x in identity.get("domains", [])]
+            if coverage and not matches_coverage(
+                identity.get("country_or_scope", ""),
+                coverage,
+                include_global=include_global,
+            ):
+                continue
             if d and d not in domains:
                 continue
             if q:

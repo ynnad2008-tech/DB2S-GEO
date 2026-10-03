@@ -10,6 +10,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Any
 
 from backend.knowledge_graph.models import node_id
+from backend.metadata.coverage import matches_coverage, normalize_coverage
 from backend.recommendation.scoring import (
     WEIGHT_DOMAIN_MATCH,
     WEIGHT_KEYWORD_EXACT,
@@ -62,8 +63,20 @@ class RecommendationEngine:
 
     # --- API pública ---
 
-    def recommend(self, query: str, *, limit: int = 10) -> dict[str, Any]:
-        """Recomienda fuentes a partir de texto libre (keyword/dominio/fuente/recurso)."""
+    def recommend(
+        self,
+        query: str,
+        *,
+        limit: int = 10,
+        coverage: str | None = None,
+        include_global: bool = True,
+    ) -> dict[str, Any]:
+        """Recomienda fuentes a partir de texto libre (keyword/dominio/fuente/recurso).
+
+        coverage: filtra por cobertura espacial curada (p. ej. "tolima",
+        "colombia", "global"). include_global: los datasets globales cubren
+        todo — por defecto se incluyen.
+        """
         q = (query or "").strip()
         if not q:
             return self._empty_response(query="", mode="query")
@@ -79,13 +92,27 @@ class RecommendationEngine:
         self._score_resource_hits(tokens, accumulators)
         self._apply_official_bonus(accumulators)
 
-        recommendations = self._rank(accumulators, limit=limit)
+        ranked = self._rank(accumulators, limit=None if coverage else limit)
+        if coverage:
+            before = len(ranked)
+            ranked = [
+                r for r in ranked
+                if self._source_matches_coverage(r["source_id"], coverage, include_global)
+            ]
+            ranked = ranked[:limit]
+        else:
+            before = None
         return {
             "query": q,
             "tokens": tokens,
             "mode": "query",
-            "count": len(recommendations),
-            "recommendations": recommendations,
+            "count": len(ranked),
+            "recommendations": ranked,
+            "coverage": {
+                "requested": normalize_coverage(coverage) if coverage else None,
+                "include_global": include_global if coverage else None,
+                "candidates_antes_filtro": before,
+            },
             "explainability": "required",
             "method": "knowledge_graph_relations",
             "ai": False,
@@ -571,6 +598,24 @@ class RecommendationEngine:
             )
         )
         return results[:limit]
+
+    def _source_matches_coverage(
+        self,
+        source_id: str,
+        coverage: str,
+        include_global: bool,
+    ) -> bool:
+        """Consulta el scope de la fuente (discovery) contra la cobertura pedida."""
+        if self._discovery is None:
+            return True  # sin discovery no se puede determinar: no filtrar
+        source = self._discovery.get_source(source_id)
+        if source is None:
+            return False
+        return matches_coverage(
+            source.get("country_or_scope", ""),
+            coverage,
+            include_global=include_global,
+        )
 
     @staticmethod
     def _source_key(nid: str) -> str:

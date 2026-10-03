@@ -318,10 +318,14 @@ def list_sources(
     request: Request,
     q: str | None = Query(default=None, description="Búsqueda por texto"),
     domain: str | None = Query(default=None, description="Filtro por dominio"),
+    coverage: str | None = Query(default=None, description="Filtro por cobertura (ej. colombia, tolima, cali)"),
+    include_global: bool = Query(default=True, description="Incluir fuentes globales en el filtro coverage"),
 ) -> dict[str, Any]:
     discovery = _discovery(request)
-    if q or domain:
-        items = discovery.search(query=q, domain=domain)
+    if q or domain or coverage:
+        items = discovery.search(
+            query=q, domain=domain, coverage=coverage, include_global=include_global
+        )
     else:
         items = discovery.list_sources()
     payload = {
@@ -330,6 +334,8 @@ def list_sources(
         "curation": "human",
         "security": "read_only",
     }
+    if coverage:
+        payload["coverage"] = {"requested": coverage, "include_global": include_global}
     if q:
         try:
             _observatory(request).log_from_search(q, payload)
@@ -504,8 +510,12 @@ def recommend_query(
     request: Request,
     q: str = Query(..., description="Keyword, dominio, fuente o recurso"),
     limit: int = Query(default=10, ge=1, le=50),
+    coverage: str | None = Query(default=None, description="Filtro por cobertura (ej. colombia, tolima, cali)"),
+    include_global: bool = Query(default=True, description="Incluir fuentes globales en el filtro coverage"),
 ) -> dict[str, Any]:
-    payload = _recommend(request).recommend(q, limit=limit)
+    payload = _recommend(request).recommend(
+        q, limit=limit, coverage=coverage, include_global=include_global
+    )
     try:
         _observatory(request).log_from_recommend(q, payload)
     except Exception:
@@ -686,12 +696,16 @@ def decision_support_advise(
     request: Request,
     q: str = Query(..., description="Consulta orientada a un problema o necesidad"),
     limit: int = Query(default=6, ge=1, le=20),
+    coverage: str | None = Query(default=None, description="Cobertura explícita; si se omite se detecta de la consulta"),
+    include_global: bool = Query(default=True, description="Incluir fuentes globales en el filtro coverage"),
 ) -> dict[str, Any]:
     """
     Devuelve rutas de acción: qué hacer, dónde, fuente, recursos y por qué.
     No modifica el catálogo.
     """
-    payload = _decision_support(request).advise(q, limit=limit)
+    payload = _decision_support(request).advise(
+        q, limit=limit, coverage=coverage, include_global=include_global
+    )
     try:
         _observatory(request).log_from_decision_support(q, payload)
     except Exception:

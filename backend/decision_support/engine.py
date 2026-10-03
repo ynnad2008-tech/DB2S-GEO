@@ -17,6 +17,7 @@ from backend.decision_support.actions import (
 )
 from backend.decision_support.intents import INTENT_LABELS
 from backend.decision_support.llm_interpreter import interpret_query
+from backend.metadata.coverage import detect_coverage, matches_coverage
 from backend.recommendation.scoring import normalize_token
 
 if TYPE_CHECKING:
@@ -105,11 +106,22 @@ class DecisionSupportEngine:
             },
         }
 
-    def advise(self, query: str, *, limit: int = 6) -> dict[str, Any]:
+    def advise(
+        self,
+        query: str,
+        *,
+        limit: int = 6,
+        coverage: str | None = None,
+        include_global: bool = True,
+    ) -> dict[str, Any]:
         """
         Responde una consulta orientada a problemas con rutas de acción.
 
         Cada ruta incluye: qué hacer, dónde, fuente, recursos y por qué.
+
+        coverage: cobertura espacial explícita; si se omite, se detecta
+        automáticamente desde la consulta ("… en el Tolima" → tolima).
+        include_global: los datasets globales cubren todo (default True).
         """
         q = (query or "").strip()
         if not q:
@@ -122,12 +134,25 @@ class DecisionSupportEngine:
         need = interpretation["need"]
         query_norm = normalize_token(q)
 
+        # Cobertura: explícita o detectada desde la consulta
+        detected = coverage
+        detected_auto = False
+        if not detected:
+            detected = detect_coverage(q)
+            detected_auto = detected is not None
+
         profile = match_need_profile(concepts, query_norm)
         if profile is not None:
-            routes = self._routes_from_profile(profile, intents, limit=limit)
+            routes = self._routes_from_profile(
+                profile, intents, limit=limit,
+                coverage=detected, include_global=include_global,
+            )
             need = profile.get("need") or need
         else:
-            routes = self._routes_from_recommendations(q, concepts, intents, limit=limit)
+            routes = self._routes_from_recommendations(
+                q, concepts, intents, limit=limit,
+                coverage=detected, include_global=include_global,
+            )
 
         return {
             "query": q,
@@ -140,6 +165,11 @@ class DecisionSupportEngine:
                 "model": interpretation["model"],
                 "fallback": interpretation["fallback"],
                 "error": interpretation["error"],
+            },
+            "coverage": {
+                "requested": detected,
+                "detected_auto": detected_auto,
+                "include_global": include_global,
             },
             "count": len(routes),
             "routes": routes,
@@ -157,6 +187,8 @@ class DecisionSupportEngine:
         intents: list[str],
         *,
         limit: int,
+        coverage: str | None = None,
+        include_global: bool = True,
     ) -> list[dict[str, Any]]:
         routes: list[dict[str, Any]] = []
         primary_intent = intents[0] if intents else "estudiar"
@@ -170,6 +202,13 @@ class DecisionSupportEngine:
 
             source_meta = self._source_meta(source_id)
             if source_meta is None:
+                continue
+
+            if coverage and not matches_coverage(
+                source_meta.get("country_or_scope", ""),
+                coverage,
+                include_global=include_global,
+            ):
                 continue
 
             # Preferir categoría del perfil; ajustar si la intención es descargar
@@ -216,6 +255,8 @@ class DecisionSupportEngine:
         intents: list[str],
         *,
         limit: int,
+        coverage: str | None = None,
+        include_global: bool = True,
     ) -> list[dict[str, Any]]:
         if self._recommendation is None:
             return []
@@ -228,14 +269,20 @@ class DecisionSupportEngine:
             if extra:
                 search_q = f"{query} {' '.join(extra)}"
 
-        # Ventana amplia: 71 fuentes activas compiten por las rutas;
+        # Ventana amplia: 81 fuentes activas compiten por las rutas;
         # 8 dejaba por fuera matches legítimos de fuentes nuevas.
-        payload = self._recommendation.recommend(search_q, limit=max(limit, 15))
+        payload = self._recommendation.recommend(
+            search_q, limit=max(limit, 15),
+            coverage=coverage, include_global=include_global,
+        )
         recommendations = payload.get("recommendations") or []
 
         # Si la consulta enriquecida falla, reintentar con query original
         if not recommendations:
-            payload = self._recommendation.recommend(query, limit=max(limit, 15))
+            payload = self._recommendation.recommend(
+                query, limit=max(limit, 15),
+                coverage=coverage, include_global=include_global,
+            )
             recommendations = payload.get("recommendations") or []
 
         # Segunda pasada por conceptos individuales si aún vacío
