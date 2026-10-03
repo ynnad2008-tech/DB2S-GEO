@@ -273,6 +273,57 @@ SOURCE_WHERE: dict[str, dict[str, Any]] = {
         "access_methods": ["portal"],
         "default_categories": ["consultar_informacion_institucional"],
     },
+    # --- Fuentes globales validadas por el curador (2026-10-03) ---
+    "hydrosheds": {
+        "where": ["Portal HydroSHEDS", "Productos hidrográficos (descargas)"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "hydroatlas": {
+        "where": ["HydroATLAS — portal de datos (HydroSHEDS)"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "grdc": {
+        "where": ["GRDC — portal institucional (BfG)"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "worldclim": {
+        "where": ["Portal WorldClim", "Descargas de datos climáticos"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "chelsa": {
+        "where": ["Portal CHELSA"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "wdpa": {
+        "where": ["Protected Planet — WDPA"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "iucn_red_list": {
+        "where": ["IUCN Red List — portal"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "birdlife": {
+        "where": ["BirdLife International — portal", "BirdLife Data Zone"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "copernicus_marine": {
+        "where": ["Copernicus Marine — portal de productos oceánicos"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
+    "emodnet": {
+        "where": ["EMODnet — portal", "EMODnet Bathymetry"],
+        "access_methods": ["portal"],
+        "default_categories": ["consultar_informacion_institucional", "descargar_datos"],
+    },
 }
 
 # Perfiles de necesidad: varias rutas complementarias (ej. inundaciones)

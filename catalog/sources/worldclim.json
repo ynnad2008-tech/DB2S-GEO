@@ -1,0 +1,99 @@
+{
+  "id": "worldclim",
+  "name": "WorldClim",
+  "description": "WorldClim: variables bioclimáticas y datos climáticos mensuales globales (históricos y proyecciones CMIP6) ampliamente usados en modelación ecológica y de cuencas. DB2S-GEO solo documenta el acceso.",
+  "url": "https://worldclim.org/",
+  "category": "plataforma",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "WorldClim (Universidad de California, Berkeley)",
+  "domains": [
+    "clima"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "worldclim:portal",
+      "name": "Portal WorldClim",
+      "description": "Portal oficial de WorldClim con catálogo de datos climáticos globales.",
+      "url": "https://worldclim.org/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "clima"
+      ],
+      "keywords": [
+        "worldclim",
+        "bioclimaticas",
+        "clima",
+        "precipitacion",
+        "temperatura",
+        "cmip6",
+        "global"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://worldclim.org/",
+          "label": "Portal WorldClim"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://worldclim.org/",
+      "doi": "",
+      "citation_reference": "WorldClim (Universidad de California, Berkeley). Portal WorldClim. https://worldclim.org/"
+    },
+    {
+      "id": "worldclim:descargas",
+      "name": "WorldClim — descargas de datos",
+      "description": "Página de descarga de variables bioclimáticas, clima mensual y CMIP6.",
+      "url": "https://worldclim.org/data/index.html",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "clima"
+      ],
+      "keywords": [
+        "worldclim",
+        "bioclimaticas",
+        "clima",
+        "precipitacion",
+        "temperatura",
+        "cmip6",
+        "global"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://worldclim.org/data/index.html",
+          "label": "WorldClim — descargas de datos"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://worldclim.org/data/index.html",
+      "doi": "",
+      "citation_reference": "WorldClim (Universidad de California, Berkeley). WorldClim — descargas de datos. https://worldclim.org/data/index.html"
+    }
+  ],
+  "status_updated_at": "2026-10-03T15:05:48.614951+00:00"
+}

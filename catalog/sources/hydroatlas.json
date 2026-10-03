@@ -1,0 +1,59 @@
+{
+  "id": "hydroatlas",
+  "name": "HydroATLAS",
+  "description": "HydroATLAS: compendio global de atributos hidro-ambientales por subcuenca (56 atributos, 12 dominios) asociado a HydroSHEDS, útil para caracterización de cuencas. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.hydrosheds.org/hydroatlas",
+  "category": "plataforma",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "WWF / HydroSHEDS (HydroATLAS)",
+  "domains": [
+    "hidrologia"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "hydroatlas:portal",
+      "name": "HydroATLAS — portal de datos",
+      "description": "Portal oficial de HydroATLAS (alojado en HydroSHEDS) con atributos por subcuenca.",
+      "url": "https://www.hydrosheds.org/hydroatlas",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "hidrologia"
+      ],
+      "keywords": [
+        "hydroatlas",
+        "cuencas",
+        "atributos",
+        "subcuencas",
+        "hidroambientales",
+        "global"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.hydrosheds.org/hydroatlas",
+          "label": "HydroATLAS — portal de datos"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.hydrosheds.org/hydroatlas",
+      "doi": "",
+      "citation_reference": "WWF / HydroSHEDS (HydroATLAS). HydroATLAS — portal de datos. https://www.hydrosheds.org/hydroatlas"
+    }
+  ],
+  "status_updated_at": "2026-10-03T15:05:48.101909+00:00"
+}

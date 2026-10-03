@@ -34,3 +34,13 @@ def active_catalog_ids() -> set[str]:
 @pytest.fixture(scope="session")
 def active_catalog_count() -> int:
     return len(_active_catalog_ids())
+
+
+@pytest.fixture(autouse=True)
+def _sin_llm_en_tests(monkeypatch: pytest.MonkeyPatch) -> None:
+    """La suite es hermética: nunca llama a Gemini (ni a la red).
+
+    Los tests del intérprete re-establecen la key explícitamente cuando
+    necesitan probar la vía LLM con _call_gemini mockeado.
+    """
+    monkeypatch.delenv("GEMINI_API_KEY", raising=False)

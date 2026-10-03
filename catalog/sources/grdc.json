@@ -1,0 +1,59 @@
+{
+  "id": "grdc",
+  "name": "Global Runoff Data Centre (GRDC)",
+  "description": "Global Runoff Data Centre: repositorio internacional de series de caudales de estaciones hidrométricas de todo el mundo, bajo la OMM. DB2S-GEO solo documenta el acceso; no descarga series.",
+  "url": "https://www.bafg.de/GRDC/EN/Home/homepage_node.html",
+  "category": "plataforma",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Global Runoff Data Centre (GRDC), BfG",
+  "domains": [
+    "hidrologia"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "grdc:portal",
+      "name": "GRDC — portal institucional",
+      "description": "Portal del GRDC (BfG, Alemania): catálogo de estaciones y datos de caudales.",
+      "url": "https://www.bafg.de/GRDC/EN/Home/homepage_node.html",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "hidrologia"
+      ],
+      "keywords": [
+        "grdc",
+        "caudales",
+        "estaciones",
+        "escorrentia",
+        "hidrometricas",
+        "global"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.bafg.de/GRDC/EN/Home/homepage_node.html",
+          "label": "GRDC — portal institucional"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.bafg.de/GRDC/EN/Home/homepage_node.html",
+      "doi": "",
+      "citation_reference": "Global Runoff Data Centre (GRDC), BfG. GRDC — portal institucional. https://www.bafg.de/GRDC/EN/Home/homepage_node.html"
+    }
+  ],
+  "status_updated_at": "2026-10-03T15:05:48.356035+00:00"
+}

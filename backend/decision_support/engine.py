@@ -15,8 +15,8 @@ from backend.decision_support.actions import (
     match_need_profile,
     where_for_source,
 )
-from backend.decision_support.concepts import expand_concepts, primary_need_label
-from backend.decision_support.intents import INTENT_LABELS, detect_intents
+from backend.decision_support.intents import INTENT_LABELS
+from backend.decision_support.llm_interpreter import interpret_query
 from backend.recommendation.scoring import normalize_token
 
 if TYPE_CHECKING:
@@ -44,6 +44,9 @@ MVP_SOURCES = frozenset(
         "humboldt", "ipse", "manizales", "minagricultura", "mincomercio",
         "mineducacion", "minsalud", "mintic", "pereira", "sinchi",
         "unal", "uniandes",
+        # Fuentes globales validadas por el curador (2026-10-03)
+        "hydrosheds", "hydroatlas", "grdc", "worldclim", "chelsa",
+        "wdpa", "iucn_red_list", "birdlife", "copernicus_marine", "emodnet",
     }
 )
 
@@ -95,6 +98,11 @@ class DecisionSupportEngine:
             "curation": "human",
             "read_only": True,
             "invents_sources": False,
+            "nl_interpreter": {
+                "engine": "gemini (opcional)",
+                "fallback": "deterministic",
+                "config_env": ["GEMINI_API_KEY", "GEMINI_MODEL", "GEMINI_TIMEOUT"],
+            },
         }
 
     def advise(self, query: str, *, limit: int = 6) -> dict[str, Any]:
@@ -107,9 +115,11 @@ class DecisionSupportEngine:
         if not q:
             return self._empty(query="")
 
-        intents = detect_intents(q)
-        concepts = expand_concepts(q)
-        need = primary_need_label(concepts, q)
+        # Intérprete NL (Gemini opcional con fallback determinista garantizado)
+        interpretation = interpret_query(q)
+        intents = interpretation["intents"]
+        concepts = interpretation["concepts"]
+        need = interpretation["need"]
         query_norm = normalize_token(q)
 
         profile = match_need_profile(concepts, query_norm)
@@ -125,6 +135,12 @@ class DecisionSupportEngine:
             "intents": intents,
             "intent_labels": [INTENT_LABELS.get(i, i) for i in intents],
             "concepts": concepts,
+            "interpretation": {
+                "source": interpretation["source"],
+                "model": interpretation["model"],
+                "fallback": interpretation["fallback"],
+                "error": interpretation["error"],
+            },
             "count": len(routes),
             "routes": routes,
             "explainability": "required",

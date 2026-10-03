@@ -6,6 +6,44 @@ El formato se inspira en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1
 
 ---
 
+## [v0.5.0] — 2026-10-03
+
+Catálogo 81 fuentes · Geoservicios verificados · Intérprete NL Gemini.
+
+### Añadido — Geoservicios verificados
+
+- 50 endpoints ArcGIS REST verificados y cargados como recursos `geoservice`
+  en 8 fuentes: ANI, ANSV, IDEAM, IGAC, INVEMAR, INVIAS, SGC y UPIT.
+- Acceso a nivel de usuario vía `/sources/{id}/access?resource_id=...`
+  (endpoints, método, read_only). Solo URLs con respuesta real; los dominios
+  inexistentes o rutas 404 del CSV se descartaron.
+
+### Añadido — Fuentes globales validadas por el curador (+10)
+
+- HydroSHEDS, HydroATLAS, GRDC, WorldClim, CHELSA, WDPA (Protected Planet),
+  IUCN Red List, BirdLife, Copernicus Marine y EMODnet — verificadas y
+  activas; integradas a Decision Support (`MVP_SOURCES`, `SOURCE_WHERE`).
+
+### Añadido — Intérprete NL opcional (Gemini)
+
+- `backend/decision_support/llm_interpreter.py`: interpreta consultas en
+  lenguaje natural (intents/need/concepts) con Gemini vía API key de AI
+  Studio (`GEMINI_API_KEY`, `GEMINI_MODEL`, `GEMINI_TIMEOUT`).
+- Cadena de modelos con reintento: GEMINI_MODEL → gemini-3.7-flash →
+  gemini-3.1-pro-preview. Fallback determinista garantizado (sin key, sin
+  red, cuota o JSON inválido) y trazabilidad en `interpretation` de la
+  respuesta. Los motores de decisión siguen siendo deterministas
+  (`ai: false`, sin inventar fuentes).
+
+### Corregido — Disparadores de perfiles
+
+- `concepts.py`: eliminada la expansión inversa de alias — "precipitación"
+  ya no dispara el perfil de inundaciones; "cobertura" ya no dispara erosión.
+- `match_need_profile`: disparo directo en consulta o ≥2 conceptos.
+- 2 tests de regresión; suite 113/113.
+
+---
+
 ## [v0.4.0] — 2026-10-02
 
 Catálogo 71 fuentes · Decision Support ampliado · Perfil de inundación marítima.
