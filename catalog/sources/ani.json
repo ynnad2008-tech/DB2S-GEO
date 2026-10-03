@@ -195,6 +195,65 @@
       "documentation_url": "https://www.ani.gov.co/zonas-portuarias/zona-portuaria-de-buenaventura",
       "doi": "",
       "citation_reference": "Agencia Nacional de Infraestructura (ANI). Fichas y concesiones de zonas portuarias. https://www.ani.gov.co/zonas-portuarias/"
+    },
+    {
+      "id": "ani:arcgis-rest",
+      "name": "Servicios ArcGIS REST — ANI",
+      "description": "Servicios ArcGIS REST verificados por el curador de DB2S-GEO el 2026-10-03: ANI — infraestructura de transporte. Capas consumibles en ArcGIS Pro y QGIS. DB2S-GEO solo documenta el acceso; no descarga capas.",
+      "url": "https://sig.ani.gov.co/arcgis/rest/services",
+      "category": "geoservice",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "infraestructura",
+        "economia",
+        "oceanos_costas"
+      ],
+      "keywords": [
+        "vias",
+        "concesiones",
+        "puertos",
+        "transporte",
+        "arcgis",
+        "rest",
+        "geoservicio",
+        "servicios"
+      ],
+      "access_methods": [
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://sig.ani.gov.co/arcgis/rest/services",
+          "label": "Directorio ArcGIS REST ANI"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://sig.ani.gov.co/arcgis/rest/services/Visores/RedConcesionada/MapServer",
+          "label": "Red concesionada"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://sig.ani.gov.co/arcgis/rest/services/Visores/Proyectos4G/MapServer",
+          "label": "Proyectos 4G"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://sig.ani.gov.co/arcgis/rest/services/Visores/Puertos/FeatureServer",
+          "label": "Puertos"
+        }
+      ],
+      "formats": [
+        "servicios REST",
+        "MapServer",
+        "FeatureServer"
+      ],
+      "documentation_url": "https://sig.ani.gov.co/arcgis/rest/services",
+      "doi": "",
+      "citation_reference": "Agencia Nacional de Infraestructura (ANI). Servicios ArcGIS REST — ANI. https://sig.ani.gov.co/arcgis/rest/services"
     }
   ]
 }

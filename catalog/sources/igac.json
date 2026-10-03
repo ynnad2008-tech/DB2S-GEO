@@ -630,6 +630,87 @@
       "documentation_url": "https://www.igac.gov.co/catastro-multiproposito/catastro-multiproposito",
       "doi": "",
       "citation_reference": "Instituto Geográfico Agustín Codazzi (IGAC). Jurisdicción de gestores catastrales habilitados. https://www.igac.gov.co/el-igac/areas-estrategicas/direccion-de-regulacion-y-habilitacion"
+    },
+    {
+      "id": "igac:arcgis-rest",
+      "name": "Servicios ArcGIS REST — IGAC",
+      "description": "Servicios ArcGIS REST verificados por el curador de DB2S-GEO el 2026-10-03: IGAC — cartografía, catastro y agrología. Capas consumibles en ArcGIS Pro y QGIS. DB2S-GEO solo documenta el acceso; no descarga capas.",
+      "url": "https://mapas2.igac.gov.co/server/rest/services",
+      "category": "geoservice",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "cartografia_base",
+        "agricultura",
+        "catastro",
+        "observacion_tierra",
+        "ordenamiento",
+        "suelos"
+      ],
+      "keywords": [
+        "cartografia",
+        "limites",
+        "catastro",
+        "agrologia",
+        "ortofotos",
+        "dem",
+        "geodesia",
+        "arcgis",
+        "rest",
+        "geoservicio",
+        "servicios"
+      ],
+      "access_methods": [
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://mapas2.igac.gov.co/server/rest/services",
+          "label": "Directorio ArcGIS REST IGAC"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas2.igac.gov.co/image/rest/services",
+          "label": "Directorio ImageServer IGAC"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas2.igac.gov.co/server/rest/services/limites/limites/MapServer",
+          "label": "Límites administrativos"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas2.igac.gov.co/server/rest/services/carto/carto100000colombia2019/MapServer",
+          "label": "Cartografía básica 1:100.000"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas2.igac.gov.co/image/rest/services/orto/",
+          "label": "Ortoimágenes"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas2.igac.gov.co/image/rest/services/md/",
+          "label": "Modelos digitales de elevación"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas2.igac.gov.co/server/rest/services/agrologia",
+          "label": "Agrología"
+        }
+      ],
+      "formats": [
+        "servicios REST",
+        "MapServer",
+        "ImageServer",
+        "WMTS"
+      ],
+      "documentation_url": "https://mapas2.igac.gov.co/server/rest/services",
+      "doi": "",
+      "citation_reference": "Instituto Geográfico Agustín Codazzi. Servicios ArcGIS REST — IGAC. https://mapas2.igac.gov.co/server/rest/services"
     }
   ]
 }

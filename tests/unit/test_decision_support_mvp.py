@@ -77,6 +77,26 @@ def test_advise_inundacion_maritima(dss: DecisionSupportEngine) -> None:
     assert "cioh" in source_ids
 
 
+def test_precipitacion_no_cae_en_inundaciones(dss: DecisionSupportEngine) -> None:
+    # Regresión: antes la expansión inversa de conceptos agregaba
+    # "inundaciones" a consultas de precipitación y las desviaba al
+    # perfil fluvial (ideam/gee/worldpop con exposición poblacional).
+    payload = dss.advise("necesito datos de precipitacion en el tolima")
+    assert "inundac" not in payload["need"].lower()
+    assert "precipit" in payload["need"].lower()
+    source_ids = {r["source_id"] for r in payload["routes"]}
+    assert "ideam" in source_ids
+    assert not any(r["category"] == "obtener_informacion_complementaria"
+                   and r["source_id"] == "worldpop" for r in payload["routes"])
+
+
+def test_cobertura_educativa_no_cae_en_erosion(dss: DecisionSupportEngine) -> None:
+    # Regresión: "cobertura" (valor del alias de erosión) re-agregaba
+    # "suelos" → "erosion" y secuestraba consultas ajenas al perfil.
+    payload = dss.advise("cobertura educativa")
+    assert "erosi" not in payload["need"].lower()
+
+
 def test_advise_precipitacion_routes(dss: DecisionSupportEngine) -> None:
     payload = dss.advise("Quiero datos de precipitación")
     assert payload["count"] >= 1

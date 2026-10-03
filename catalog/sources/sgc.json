@@ -210,6 +210,85 @@
       "documentation_url": "https://geoportal.sgc.gov.co",
       "doi": "",
       "citation_reference": "Servicio Geológico Colombiano. Inventario de puntos de agua en Colombia. https://www2.sgc.gov.co/sgc/mapas/Paginas/inventario-de-puntos-de-agua-en-Colombia.aspx"
+    },
+    {
+      "id": "sgc:arcgis-rest",
+      "name": "Servicios ArcGIS REST — SGC",
+      "description": "Servicios ArcGIS REST verificados por el curador de DB2S-GEO el 2026-10-03: SGC — geología, amenazas y volcanes. Capas consumibles en ArcGIS Pro y QGIS. DB2S-GEO solo documenta el acceso; no descarga capas.",
+      "url": "https://geoportal.sgc.gov.co/arcgis/rest/services",
+      "category": "geoservice",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "geologia",
+        "hidrologia",
+        "observacion_tierra",
+        "riesgo",
+        "suelos"
+      ],
+      "keywords": [
+        "geologia",
+        "fallas",
+        "amenaza_sismica",
+        "movimientos_masa",
+        "hidrogeologia",
+        "volcanes",
+        "acuiferos",
+        "arcgis",
+        "rest",
+        "geoservicio",
+        "servicios"
+      ],
+      "access_methods": [
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.sgc.gov.co/arcgis/rest/services",
+          "label": "Directorio ArcGIS REST SGC"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.sgc.gov.co/arcgis/rest/services/Geologia/Geologia_100K/MapServer",
+          "label": "Geología 1:100.000"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.sgc.gov.co/arcgis/rest/services/Geologia/Geologia_500K/MapServer",
+          "label": "Geología 1:500.000"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.sgc.gov.co/arcgis/rest/services/Geologia/Fallas_Geologicas/FeatureServer",
+          "label": "Fallas geológicas"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.sgc.gov.co/arcgis/rest/services/Amenazas/Movimientos_Masa/MapServer",
+          "label": "Movimientos en masa"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.sgc.gov.co/arcgis/rest/services/Amenaza_Sismica/Mapa_Amenaza_Sismica_Nacional_PGA2475/MapServer",
+          "label": "Amenaza sísmica nacional (PGA 2475)"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.sgc.gov.co/arcgis/rest/services/Hidrogeologia/Hidrogeologia/MapServer",
+          "label": "Hidrogeología"
+        }
+      ],
+      "formats": [
+        "servicios REST",
+        "MapServer",
+        "FeatureServer"
+      ],
+      "documentation_url": "https://geoportal.sgc.gov.co/arcgis/rest/services",
+      "doi": "",
+      "citation_reference": "Servicio Geológico Colombiano. Servicios ArcGIS REST — SGC. https://geoportal.sgc.gov.co/arcgis/rest/services"
     }
   ]
 }

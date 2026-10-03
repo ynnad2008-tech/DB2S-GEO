@@ -431,6 +431,77 @@
       "documentation_url": "https://siamexplorer.invemar.gov.co/",
       "doi": "",
       "citation_reference": "INVEMAR. Sistema de Información Ambiental Marina (SIAM). Instituto de Investigaciones Marinas y Costeras José Benito Vives de Andréis. https://siamexplorer.invemar.gov.co/"
+    },
+    {
+      "id": "invemar:arcgis-rest",
+      "name": "Servicios ArcGIS REST — INVEMAR",
+      "description": "Servicios ArcGIS REST verificados por el curador de DB2S-GEO el 2026-10-03: INVEMAR — información marino-costera. Capas consumibles en ArcGIS Pro y QGIS. DB2S-GEO solo documenta el acceso; no descarga capas.",
+      "url": "https://gis.invemar.org.co/arcgis/rest/services",
+      "category": "geoservice",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "oceanos_costas",
+        "biodiversidad"
+      ],
+      "keywords": [
+        "siam",
+        "biodiversidad",
+        "marina",
+        "manglares",
+        "erosion",
+        "costera",
+        "ecorregiones",
+        "arcgis",
+        "rest",
+        "geoservicio",
+        "servicios"
+      ],
+      "access_methods": [
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://gis.invemar.org.co/arcgis/rest/services",
+          "label": "Directorio ArcGIS REST INVEMAR"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://gis.invemar.org.co/arcgis/rest/services/SIAM/1_TM_SIAM/MapServer",
+          "label": "SIAM — territorial marino"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://gis.invemar.org.co/arcgis/rest/services/SIAM/3_TM_SIAMBiodiv_Ecos/MapServer",
+          "label": "SIAM — biodiversidad y ecosistemas"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://gis.invemar.org.co/arcgis/rest/services/OOEE_EROSION/MapServer",
+          "label": "Erosión costera"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://gis.invemar.org.co/arcgis/rest/services/SIGMA/MANGLARES_COLOMBIA/MapServer",
+          "label": "Manglares de Colombia"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://gis.invemar.org.co/arcgis/rest/services/Hosted/Ecorregiones_Marinas_de_Colombia/FeatureServer",
+          "label": "Ecorregiones marinas de Colombia"
+        }
+      ],
+      "formats": [
+        "servicios REST",
+        "MapServer",
+        "FeatureServer"
+      ],
+      "documentation_url": "https://gis.invemar.org.co/arcgis/rest/services",
+      "doi": "",
+      "citation_reference": "Instituto de Investigaciones Marinas y Costeras José Benito Vives de Andréis. Servicios ArcGIS REST — INVEMAR. https://gis.invemar.org.co/arcgis/rest/services"
     }
   ]
 }

@@ -449,7 +449,15 @@ NEED_PROFILES: dict[str, dict[str, Any]] = {
 
 
 def match_need_profile(concepts: list[str], query_norm: str) -> dict[str, Any] | None:
-    """Selecciona el perfil de necesidad más específico que coincida."""
+    """Selecciona el perfil de necesidad más específico que coincida.
+
+    Regla estricta de disparo (evita desviar la intención del usuario):
+    - disparador directo en la consulta → coincide;
+    - si no, se exigen ≥2 disparadores en conceptos expandidos (evidencia
+      conceptual fuerte). Un solo concepto no basta: antes "precipitacion"
+      (concepto de inundaciones) o "suelos" (de erosión) secuestraban
+      consultas no relacionadas.
+    """
     concept_set = set(concepts)
     # Preferir perfiles en orden de especificidad
     order = (
@@ -462,7 +470,9 @@ def match_need_profile(concepts: list[str], query_norm: str) -> dict[str, Any] |
     for key in order:
         profile = NEED_PROFILES[key]
         triggers = profile["match_any"]
-        if any(t in concept_set or t in query_norm for t in triggers):
+        direct = [t for t in triggers if t in query_norm]
+        in_concepts = [t for t in triggers if t in concept_set]
+        if direct or len(in_concepts) >= 2:
             return {"profile_id": key, **profile}
     return None
 

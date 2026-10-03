@@ -221,6 +221,65 @@
       "documentation_url": "https://www.invias.gov.co/publicaciones/6264/sistema-de-informacion-vial/",
       "doi": "",
       "citation_reference": "Instituto Nacional de Vías (INVIAS). Datos abiertos de infraestructura vial. https://inviasopendata-invias.opendata.arcgis.com/"
+    },
+    {
+      "id": "invias:arcgis-rest",
+      "name": "Servicios ArcGIS REST — INVIAS",
+      "description": "Servicios ArcGIS REST verificados por el curador de DB2S-GEO el 2026-10-03: INVIAS — red vial nacional. Capas consumibles en ArcGIS Pro y QGIS. DB2S-GEO solo documenta el acceso; no descarga capas.",
+      "url": "https://hermes.invias.gov.co/arcgis/rest/services",
+      "category": "geoservice",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "infraestructura",
+        "biodiversidad",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "vias",
+        "carreteras",
+        "opendata",
+        "transporte",
+        "arcgis",
+        "rest",
+        "geoservicio",
+        "servicios"
+      ],
+      "access_methods": [
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://hermes.invias.gov.co/arcgis/rest/services",
+          "label": "Directorio ArcGIS REST INVIAS"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://hermes.invias.gov.co/arcgis/rest/services/OpenData/ServiciosOpenData/MapServer",
+          "label": "Datos abiertos INVIAS"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://hermes.invias.gov.co/arcgis/rest/services/OpenData/ServiciosOpenData/FeatureServer",
+          "label": "Datos abiertos INVIAS (features)"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://hermes2.invias.gov.co/server/rest/services/N_767/Consulta767/MapServer",
+          "label": "Consulta 767 (Hermes)"
+        }
+      ],
+      "formats": [
+        "servicios REST",
+        "MapServer",
+        "FeatureServer"
+      ],
+      "documentation_url": "https://hermes.invias.gov.co/arcgis/rest/services",
+      "doi": "",
+      "citation_reference": "Instituto Nacional de Vías (INVIAS). Servicios ArcGIS REST — INVIAS. https://hermes.invias.gov.co/arcgis/rest/services"
     }
   ]
 }

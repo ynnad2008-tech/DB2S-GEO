@@ -80,6 +80,46 @@
       "documentation_url": "https://upit.gov.co/",
       "doi": "",
       "citation_reference": "Unidad de Planeación de Infraestructura de Transporte (UPIT). Hub de Mapas — infraestructura de transporte. https://upithub-upit.hub.arcgis.com/"
+    },
+    {
+      "id": "upit:arcgis-rest",
+      "name": "Servicios ArcGIS REST — UPIT",
+      "description": "Servicios ArcGIS REST verificados por el curador de DB2S-GEO el 2026-10-03: UPIT — planeación de infraestructura de transporte. Capas consumibles en ArcGIS Pro y QGIS. DB2S-GEO solo documenta el acceso; no descarga capas.",
+      "url": "https://gis.upit.gov.co/wa_server/rest/services",
+      "category": "geoservice",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "infraestructura",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "infraestructura",
+        "transporte",
+        "planeacion",
+        "arcgis",
+        "rest",
+        "geoservicio",
+        "servicios"
+      ],
+      "access_methods": [
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://gis.upit.gov.co/wa_server/rest/services",
+          "label": "Directorio ArcGIS REST UPIT"
+        }
+      ],
+      "formats": [
+        "servicios REST"
+      ],
+      "documentation_url": "https://gis.upit.gov.co/wa_server/rest/services",
+      "doi": "",
+      "citation_reference": "Unidad de Planeación de Infraestructura de Transporte (UPIT) — Ministerio de Transporte. Servicios ArcGIS REST — UPIT. https://gis.upit.gov.co/wa_server/rest/services"
     }
   ]
 }

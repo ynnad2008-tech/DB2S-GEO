@@ -99,10 +99,11 @@ def expand_concepts(query: str) -> list[str]:
             tokens.update(normalize_token(v) for v in alias_vals)
 
     for alias_key, alias_vals in CONCEPT_ALIASES.items():
+        # Solo expansión directa (clave → valores). Sin expansión inversa:
+        # antes, "precipitacion" re-agregaba "inundaciones" (por ser valor de
+        # su alias) y desviaba consultas de lluvia hacia el perfil de
+        # inundaciones fluviales.
         if alias_key in tokens or alias_key in base:
-            tokens.add(alias_key)
-            tokens.update(normalize_token(v) for v in alias_vals)
-        elif any(normalize_token(v) in tokens for v in alias_vals):
             tokens.add(alias_key)
             tokens.update(normalize_token(v) for v in alias_vals)
 

@@ -554,6 +554,85 @@
       "documentation_url": "https://sirh.ideam.gov.co/Sirh/pages/inicio.html",
       "doi": "",
       "citation_reference": "IDEAM. SIRH — Sistema de Información del Recurso Hídrico. https://sirh.ideam.gov.co/Sirh/pages/inicio.html"
+    },
+    {
+      "id": "ideam:arcgis-rest",
+      "name": "Servicios ArcGIS REST — IDEAM",
+      "description": "Servicios ArcGIS REST verificados por el curador de DB2S-GEO el 2026-10-03: IDEAM — hidrología, clima y ecosistemas. Capas consumibles en ArcGIS Pro y QGIS. DB2S-GEO solo documenta el acceso; no descarga capas.",
+      "url": "https://visualizador.ideam.gov.co/gisserver/rest/services",
+      "category": "geoservice",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "hidrologia",
+        "biodiversidad",
+        "clima",
+        "observacion_tierra",
+        "riesgo"
+      ],
+      "keywords": [
+        "hidrologia",
+        "calidad",
+        "agua",
+        "agrometeorologia",
+        "amenaza",
+        "ecosistemas",
+        "estaciones",
+        "arcgis",
+        "rest",
+        "geoservicio",
+        "servicios"
+      ],
+      "access_methods": [
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services",
+          "label": "Directorio ArcGIS REST IDEAM"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Calidad_Agua/FeatureServer",
+          "label": "Calidad del agua"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Oferta_Agua_Superficial_Subterranea/FeatureServer",
+          "label": "Oferta de agua superficial y subterránea"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Agrometeorologia/FeatureServer",
+          "label": "Agrometeorología"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Amenaza_Ambiental/MapServer",
+          "label": "Amenaza ambiental"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Estado_Ecosistemas/MapServer",
+          "label": "Estado de los ecosistemas"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://dhime.ideam.gov.co/server/rest/services/CNE/CatalogoNacionalEstaciones/MapServer",
+          "label": "Catálogo Nacional de Estaciones (DHIME)"
+        }
+      ],
+      "formats": [
+        "servicios REST",
+        "FeatureServer",
+        "MapServer"
+      ],
+      "documentation_url": "https://visualizador.ideam.gov.co/gisserver/rest/services",
+      "doi": "",
+      "citation_reference": "Instituto de Hidrología, Meteorología y Estudios Ambientales (IDEAM). Servicios ArcGIS REST — IDEAM. https://visualizador.ideam.gov.co/gisserver/rest/services"
     }
   ]
 }
