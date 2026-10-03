@@ -362,6 +362,13 @@ class RecommendationEngine:
                 "related_sources",
                 "related_resources",
             ],
+            "ranking": [
+                "score_desc",
+                "tiebreak_evidencia_recursos",
+                "tiebreak_evidencia_keywords",
+                "tiebreak_evidencia_dominios",
+                "orden_estable_source_id",
+            ],
             "curation": "human",
             "read_only": True,
         }
@@ -551,7 +558,18 @@ class RecommendationEngine:
             item = finalize(acc)
             if item is not None:
                 results.append(item)
-        results.sort(key=lambda x: (-x["score"], x["source"]))
+        # Desempate explicable: score → profundidad de evidencia
+        # (recursos, keywords y dominios coincidentes) → orden estable.
+        # Antes los empates en 100 quedaban por orden alfabético (azar).
+        results.sort(
+            key=lambda x: (
+                -x["score"],
+                -len(x.get("resources") or []),
+                -len(x.get("keywords") or []),
+                -len(x.get("domains") or []),
+                x["source"],
+            )
+        )
         return results[:limit]
 
     @staticmethod
