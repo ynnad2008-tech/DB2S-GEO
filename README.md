@@ -7,6 +7,7 @@
 > ✅ **¡Validada por humanos!** — Supervisado, recomendaciones explicables, sin auto-aplicación al catálogo.
 
 Repositorio oficial: [github.com/ynnad2008-tech/DB2S-GEO](https://github.com/ynnad2008-tech/DB2S-GEO)
+https://db2s-geo-546367148987.us-central1.run.app/workbench/
 
 ---
 
