@@ -708,6 +708,96 @@
       "documentation_url": "https://visualizador.ideam.gov.co/gisserver/rest/services",
       "doi": "",
       "citation_reference": "Instituto de Hidrología, Meteorología y Estudios Ambientales (IDEAM). Servicios ArcGIS REST — IDEAM. https://visualizador.ideam.gov.co/gisserver/rest/services"
+    },
+    {
+      "id": "ideam:dhime",
+      "name": "DHIME — series hidrometeorológicas de estaciones (CNE)",
+      "description": "Portal oficial de consulta y descarga de series del Catálogo Nacional de Estaciones (CNE): precipitación, temperatura, niveles, evaporación y más, diarias y mensuales. Acceso verificado por descarga real del curador (375.919 registros, Pasto, 2026-09-26).",
+      "url": "https://modulopersonalizado.ideam.gov.co/",
+      "category": "service",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "clima",
+        "hidrologia",
+        "riesgo"
+      ],
+      "keywords": [
+        "dhime",
+        "cne",
+        "estaciones",
+        "series",
+        "hidrometeorologicas",
+        "descarga",
+        "precipitacion",
+        "temperatura",
+        "niveles"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://modulopersonalizado.ideam.gov.co/",
+          "label": "DHIME — portal de consulta y descarga"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://dhime.ideam.gov.co/server/rest/services/CNE/CatalogoNacionalEstaciones/MapServer",
+          "label": "CNE — Catálogo Nacional de Estaciones (REST)"
+        }
+      ],
+      "formats": [
+        "CSV",
+        "descarga portal"
+      ],
+      "documentation_url": "https://modulopersonalizado.ideam.gov.co/",
+      "doi": "",
+      "citation_reference": "Instituto de Hidrología, Meteorología y Estudios Ambientales (IDEAM). DHIME — series hidrometeorológicas de estaciones (CNE). https://modulopersonalizado.ideam.gov.co/"
+    },
+    {
+      "id": "ideam:siivra",
+      "name": "SIIVRA — vulnerabilidad, riesgo y adaptación al cambio climático",
+      "description": "Sistema Integrador de Información sobre Vulnerabilidad, Riesgo y Adaptación al Cambio Climático del IDEAM: amenaza, sensibilidad, capacidad adaptativa y monitoreo de la adaptación (metas NDC).",
+      "url": "https://siivra.ideam.gov.co/",
+      "category": "platform",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "clima",
+        "hidrologia",
+        "riesgo"
+      ],
+      "keywords": [
+        "siivra",
+        "vulnerabilidad",
+        "riesgo",
+        "adaptacion",
+        "cambio_climatico",
+        "ndc",
+        "amenaza"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://siivra.ideam.gov.co/",
+          "label": "SIIVRA — portal oficial"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://siivra.ideam.gov.co/",
+      "doi": "",
+      "citation_reference": "Instituto de Hidrología, Meteorología y Estudios Ambientales (IDEAM). SIIVRA — vulnerabilidad, riesgo y adaptación al cambio climático. https://siivra.ideam.gov.co/"
     }
   ]
 }
