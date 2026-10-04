@@ -312,6 +312,11 @@
           "method": "arcgis",
           "url": "https://geoportal.sgc.gov.co/arcgis/rest/services/Hidrogeologia_Por_Regiones/Hidrogeologia_de_La_Sabana_de_Bogota_V2002/MapServer",
           "label": "Hidrogeología — Sabana de Bogotá"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://srvags.sgc.gov.co/arcgis/rest/services/Mapa_Nacional_Amenaza_Mov_Masa_100K/Mapa_Nacional_Amenaza_Movimientos_Masa_100K/MapServer",
+          "label": "Mapa nacional de amenaza por movimientos en masa 1:100K"
         }
       ],
       "formats": [

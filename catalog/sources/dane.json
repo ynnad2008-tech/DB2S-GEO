@@ -162,7 +162,10 @@
         "departamentos",
         "cartografia",
         "censal",
-        "rest"
+        "rest",
+        "mgn",
+        "veredas",
+        "marco_geoestadistico"
       ],
       "access_methods": [
         "portal",
@@ -178,6 +181,16 @@
           "method": "arcgis",
           "url": "https://geoportal.dane.gov.co/servicios/descarga-y-metadatos/datos-geoestadisticos/",
           "label": "Descarga de datos geoestadísticos"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.dane.gov.co/mparcgis/rest/services/MGN2024/Serv_CapasMGN_2024/FeatureServer",
+          "label": "Marco Geoestadístico Nacional MGN2024 (FeatureServer)"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.dane.gov.co/mparcgis/rest/services/NIVEL_DE_REFERENCIA_DE_VEREDAS/Serv_CapasNivelReferenciaVeredas_2024/FeatureServer",
+          "label": "Nivel de referencia de veredas 2024 (FeatureServer)"
         }
       ],
       "formats": [

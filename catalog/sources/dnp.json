@@ -134,6 +134,45 @@
       "documentation_url": "https://mapainversiones.dnp.gov.co/Home/AcercaDeMapaInversiones",
       "doi": "",
       "citation_reference": "Departamento Nacional de Planeación (DNP). MapaInversiones — plataforma de inversión pública georreferenciada. https://mapainversiones.dnp.gov.co/"
+    },
+    {
+      "id": "dnp:terridata",
+      "name": "TerriData — fichas territoriales municipales (DNP)",
+      "description": "TerriData del DNP: indicadores y fichas de caracterización territorial por municipio y departamento para planeación y ordenamiento.",
+      "url": "https://terridata.dnp.gov.co/",
+      "category": "platform",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "ordenamiento",
+        "poblacion",
+        "economia"
+      ],
+      "keywords": [
+        "terridata",
+        "municipal",
+        "indicadores",
+        "planeacion",
+        "fichas"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://terridata.dnp.gov.co/",
+          "label": "TerriData"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://terridata.dnp.gov.co/",
+      "doi": "",
+      "citation_reference": "Departamento Nacional de Planeación. TerriData. https://terridata.dnp.gov.co/"
     }
   ]
 }

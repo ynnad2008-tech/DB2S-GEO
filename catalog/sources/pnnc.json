@@ -1,0 +1,94 @@
+{
+  "id": "pnnc",
+  "name": "Parques Nacionales Naturales de Colombia",
+  "description": "Parques Nacionales Naturales de Colombia: administra el RUNAP (Registro Único Nacional de Áreas Protegidas, Decreto 2372 de 2010). Geoservicio verificado por descarga real del curador (2026-09-06).",
+  "url": "https://mapas.parquesnacionales.gov.co/arcgis/rest/services/pnn/runap/MapServer",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Parques Nacionales Naturales de Colombia",
+  "domains": [
+    "biodiversidad"
+  ],
+  "license": "Datos abiertos (Decreto 2372 de 2010)",
+  "version": "1.0.0",
+  "curation": "human",
+  "resources": [
+    {
+      "id": "pnnc:runap",
+      "name": "RUNAP — Registro Único de Áreas Protegidas (MapServer)",
+      "description": "MapServer oficial del RUNAP con las áreas protegidas de Colombia (nacionales, regionales y reservas de la sociedad civil), actualizado a LADM-COL en diciembre de 2024.",
+      "url": "https://mapas.parquesnacionales.gov.co/arcgis/rest/services/pnn/runap/MapServer",
+      "category": "geoservice",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "runap",
+        "areas_protegidas",
+        "parques",
+        "conservacion",
+        "ladm"
+      ],
+      "access_methods": [
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://mapas.parquesnacionales.gov.co/arcgis/rest/services/pnn/runap/MapServer",
+          "label": "RUNAP — MapServer"
+        }
+      ],
+      "formats": [
+        "servicios REST"
+      ],
+      "documentation_url": "https://www.parquesnacionales.gov.co/",
+      "doi": "",
+      "citation_reference": "Parques Nacionales Naturales de Colombia. RUNAP. https://mapas.parquesnacionales.gov.co/arcgis/rest/services/pnn/runap/MapServer"
+    },
+    {
+      "id": "pnnc:portal",
+      "name": "Portal institucional — Parques Nacionales",
+      "description": "Portal oficial de Parques Nacionales Naturales de Colombia.",
+      "url": "https://www.parquesnacionales.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "runap",
+        "areas_protegidas",
+        "parques",
+        "conservacion"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.parquesnacionales.gov.co/",
+          "label": "PNNC — portal"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.parquesnacionales.gov.co/",
+      "doi": "",
+      "citation_reference": "Parques Nacionales Naturales de Colombia. Portal institucional."
+    }
+  ]
+}

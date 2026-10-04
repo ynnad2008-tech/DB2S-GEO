@@ -1,0 +1,99 @@
+{
+  "id": "openstreetmap",
+  "name": "OpenStreetMap",
+  "description": "OpenStreetMap (OSM): mapa colaborativo del mundo con calles, POIs y edificaciones, base cartográfica abierta. Extractos por país vía Geofabrik. Licencia ODbL 1.0 (citar la fuente).",
+  "url": "https://www.openstreetmap.org/",
+  "category": "plataforma",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "Continua"
+  },
+  "status": "active",
+  "institution": "Fundación OpenStreetMap / colaboradores OSM",
+  "domains": [
+    "cartografia_base"
+  ],
+  "license": "ODbL 1.0 (© colaboradores de OpenStreetMap)",
+  "version": "1.0.0",
+  "curation": "human",
+  "resources": [
+    {
+      "id": "openstreetmap:portal",
+      "name": "Portal OpenStreetMap",
+      "description": "Mapa colaborativo global y edición de datos OSM.",
+      "url": "https://www.openstreetmap.org/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "Continua"
+      },
+      "domains": [
+        "cartografia_base"
+      ],
+      "keywords": [
+        "osm",
+        "openstreetmap",
+        "pois",
+        "calles",
+        "base"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.openstreetmap.org/",
+          "label": "OpenStreetMap"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.openstreetmap.org/copyright",
+      "doi": "",
+      "citation_reference": "© colaboradores de OpenStreetMap (ODbL). https://www.openstreetmap.org/"
+    },
+    {
+      "id": "openstreetmap:geofabrik",
+      "name": "Geofabrik — extractos OSM por país",
+      "description": "Descarga directa de extractos OSM por país y región (Colombia incluida) en formatos SHP/PBF; verificado por descarga real del curador.",
+      "url": "https://download.geofabrik.de/south-america/colombia.html",
+      "category": "dataset",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Actualización diaria"
+      },
+      "domains": [
+        "cartografia_base"
+      ],
+      "keywords": [
+        "geofabrik",
+        "osm",
+        "extractos",
+        "descarga",
+        "shp",
+        "pbf"
+      ],
+      "access_methods": [
+        "portal",
+        "download"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://download.geofabrik.de/south-america/colombia.html",
+          "label": "Geofabrik — Colombia"
+        }
+      ],
+      "formats": [
+        "SHP",
+        "PBF",
+        "descarga"
+      ],
+      "documentation_url": "https://download.geofabrik.de/south-america/colombia.html",
+      "doi": "",
+      "citation_reference": "Geofabrik. Extracto OSM de Colombia. https://download.geofabrik.de/south-america/colombia.html"
+    }
+  ]
+}

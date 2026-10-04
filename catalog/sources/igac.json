@@ -357,7 +357,8 @@
         "catastral",
         "registro",
         "sinic",
-        "igac"
+        "igac",
+        "catastro_publico"
       ],
       "access_methods": [
         "portal"
@@ -377,6 +378,11 @@
           "method": "portal",
           "url": "https://www.igac.gov.co/datos-abiertos/datos-abiertos-geoespaciales",
           "label": "Datos abiertos geoespaciales / catastro IGAC"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://services2.arcgis.com/RVvWzU3lgJISqdke/ArcGIS/rest/services/CATASTRO_PUBLICO_31072026/FeatureServer",
+          "label": "Catastro público LADM-COL (corte 31/07/2026, FeatureServer)"
         }
       ],
       "formats": [
@@ -415,7 +421,9 @@
         "codigo",
         "predial",
         "csv",
-        "igac"
+        "igac",
+        "ladm",
+        "catastro_publico"
       ],
       "access_methods": [
         "portal"
@@ -435,6 +443,11 @@
           "method": "portal",
           "url": "https://www.igac.gov.co/datos-abiertos/datos-abiertos-geoespaciales",
           "label": "Datos abiertos geoespaciales IGAC"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://services2.arcgis.com/RVvWzU3lgJISqdke/ArcGIS/rest/services/CATASTRO_PUBLICO_31072026/FeatureServer",
+          "label": "Catastro público LADM-COL (corte 31/07/2026, FeatureServer)"
         }
       ],
       "formats": [
@@ -471,7 +484,9 @@
         "base",
         "catastral",
         "geograficos",
-        "igac"
+        "igac",
+        "ladm",
+        "catastro_publico"
       ],
       "access_methods": [
         "portal",
@@ -492,6 +507,11 @@
           "method": "arcgis",
           "url": "https://mapas.igac.gov.co/server/rest/services/catastro",
           "label": "Carpeta REST servicios Catastro IGAC"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://services2.arcgis.com/RVvWzU3lgJISqdke/ArcGIS/rest/services/CATASTRO_PUBLICO_31072026/FeatureServer",
+          "label": "Catastro público LADM-COL (corte 31/07/2026, FeatureServer)"
         }
       ],
       "formats": [
