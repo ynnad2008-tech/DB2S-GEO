@@ -53,11 +53,12 @@ jobs:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
       - uses: google-github-actions/setup-gcloud@v2
       - name: Build and deploy Cloud Run
+        env:
+          REGION: ${{ vars.GCP_REGION || 'us-central1' }}
+          SERVICE: ${{ vars.GCP_SERVICE || 'db2s-geo' }}
         run: |
           set -euo pipefail
           PROJECT_ID="${{ secrets.GCP_PROJECT_ID }}"
-          REGION="us-central1"
-          SERVICE="db2s-geo"
           TAG="gcr.io/${PROJECT_ID}/${SERVICE}:${GITHUB_SHA}"
           gcloud config set project "${PROJECT_ID}"
           gcloud builds submit --tag "${TAG}"
