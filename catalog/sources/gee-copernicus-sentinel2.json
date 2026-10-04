@@ -162,7 +162,10 @@
         "tipo_cobertura",
         "uso",
         "uso_del_suelo",
-        "uso_suelo"
+        "uso_suelo",
+        "habitat",
+        "provision",
+        "ecosistemas"
       ],
       "access_methods": [
         "platform",

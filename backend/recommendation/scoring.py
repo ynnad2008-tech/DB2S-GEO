@@ -81,7 +81,7 @@ CURATED_ALIASES: dict[str, list[str]] = {
                 "microcuenca", "microcuencas"],
     "inundaciones": ["inundacion", "inundaciones", "riesgo", "hidrologia", "desbordamiento"],
     # Coberturas y uso del suelo (clave para el caso Buenaventura)
-    "coberturas": ["coberturas", "cobertura", "uso_suelo", "landcover", "lulc", "mapbiomas"],
+    "coberturas": ["coberturas", "cobertura", "uso_suelo", "landcover", "lulc", "mapbiomas", "habitat"],
     "deforestacion": ["deforestacion", "bosques", "perdida_bosque", "gfw", "alertas", "cobertura_forestal"],
     "uso_suelo": ["uso_suelo", "coberturas", "landcover", "lulc", "mapbiomas", "clasificacion"],
     # Biodiversidad
@@ -89,6 +89,9 @@ CURATED_ALIASES: dict[str, list[str]] = {
     "aves": ["aves", "pajaros", "ebird", "ornitologia", "biodiversidad"],
     "ecosistemas": ["ecosistemas", "ecosistema", "ecosistemica", "ecosistemico",
                     "ecosistemicos", "bioma", "habitat", "biodiversidad", "conservacion"],
+    # Servicios ecosistémicos (provisión, hábitat, regulación…)
+    "servicios_ecosistemicos": ["servicios_ecosistemicos", "provision", "habitat",
+                                "regulacion", "soporte", "ecosistemas"],
     # Suelos
     "suelos": ["suelos", "suelo", "edafologia", "soilgrids", "carbono_organico", "ph", "textura"],
     # Geología
