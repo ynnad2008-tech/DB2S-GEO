@@ -42,7 +42,8 @@
         "hidrologia",
         "navegabilidad",
         "fluvial",
-        "cuenca"
+        "cuenca",
+        "pomca"
       ],
       "access_methods": [
         "portal"

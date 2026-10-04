@@ -38,7 +38,8 @@
         "riesgo",
         "cuencas",
         "paramos",
-        "humedales"
+        "humedales",
+        "pomca"
       ],
       "access_methods": [
         "arcgis"
@@ -78,7 +79,8 @@
         "riesgo",
         "cuencas",
         "paramos",
-        "humedales"
+        "humedales",
+        "pomca"
       ],
       "access_methods": [
         "portal"

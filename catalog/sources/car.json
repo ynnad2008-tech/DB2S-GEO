@@ -39,7 +39,8 @@
         "sumapaz",
         "riesgo",
         "hidrologia",
-        "humedales"
+        "humedales",
+        "pomca"
       ],
       "access_methods": [
         "arcgis"
@@ -80,7 +81,8 @@
         "sumapaz",
         "riesgo",
         "hidrologia",
-        "humedales"
+        "humedales",
+        "pomca"
       ],
       "access_methods": [
         "portal"

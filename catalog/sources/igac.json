@@ -663,7 +663,10 @@
         "servicios",
         "cartografia_basica",
         "topografia",
-        "1_25000"
+        "1_25000",
+        "pot",
+        "ordenamiento",
+        "pdet"
       ],
       "access_methods": [
         "arcgis"
@@ -738,6 +741,26 @@
           "method": "arcgis",
           "url": "https://mapas2.igac.gov.co/server/rest/services/carto/carto25000colombia2017/MapServer",
           "label": "Cartografía básica 1:25.000 — Colombia 2017"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas.igac.gov.co/server/rest/services/ordenamientoterritorial/clasificaciondelsuelopot/MapServer",
+          "label": "Ordenamiento — clasificación del suelo POT"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas.igac.gov.co/server/rest/services/ordenamientoterritorial/datosnacionalespot/MapServer",
+          "label": "Ordenamiento — datos nacionales POT"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas.igac.gov.co/server/rest/services/ordenamientoterritorial/estadodelospod/MapServer",
+          "label": "Ordenamiento — estado de los POD"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas.igac.gov.co/server/rest/services/ordenamientoterritorial/municipiosPDET/MapServer",
+          "label": "Ordenamiento — municipios PDET"
         }
       ],
       "formats": [
@@ -749,6 +772,43 @@
       "documentation_url": "https://mapas2.igac.gov.co/server/rest/services",
       "doi": "",
       "citation_reference": "Instituto Geográfico Agustín Codazzi. Servicios ArcGIS REST — IGAC. https://mapas2.igac.gov.co/server/rest/services"
+    },
+    {
+      "id": "igac:sigot",
+      "name": "SIGOT — Sistema de Información para el Ordenamiento Territorial",
+      "description": "SIGOT del IGAC: información geográfica para el ordenamiento territorial municipal (POT, POD). Nota: responde 421 a clientes automáticos desde redes externas (edge/WAF); el acceso web normal funciona.",
+      "url": "https://sigot.igac.gov.co/",
+      "category": "platform",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "ordenamiento",
+        "cartografia_base"
+      ],
+      "keywords": [
+        "sigot",
+        "ordenamiento",
+        "pot",
+        "municipal"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://sigot.igac.gov.co/",
+          "label": "SIGOT"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://sigot.igac.gov.co/",
+      "doi": "",
+      "citation_reference": "Instituto Geográfico Agustín Codazzi. SIGOT. https://sigot.igac.gov.co/"
     }
   ]
 }

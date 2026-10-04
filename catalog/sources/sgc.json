@@ -239,7 +239,10 @@
         "arcgis",
         "rest",
         "geoservicio",
-        "servicios"
+        "servicios",
+        "simma",
+        "geomorfodinamica",
+        "vulcanologia"
       ],
       "access_methods": [
         "arcgis"
@@ -279,6 +282,36 @@
           "method": "arcgis",
           "url": "https://geoportal.sgc.gov.co/arcgis/rest/services/Hidrogeologia/Hidrogeologia/MapServer",
           "label": "Hidrogeología"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.sgc.gov.co/arcgis/rest/services/SIMMA/Capas_Principales/MapServer",
+          "label": "SIMMA — capas principales"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.sgc.gov.co/arcgis/rest/services/Geomorfodinamica/Geomorfodinamica/MapServer",
+          "label": "Geomorfodinámica"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.sgc.gov.co/arcgis/rest/services/Mapa_Geologico_Colombia_2015/Mapa_Geologico_Colombia_2015/MapServer",
+          "label": "Mapa geológico de Colombia 2015"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.sgc.gov.co/arcgis/rest/services/Amenaza_Volcanica/Amenaza_Volcanica/MapServer",
+          "label": "Amenaza volcánica"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.sgc.gov.co/arcgis/rest/services/Zonificacion_Amenazas_Mov_Masa/Zonificacion_Amenaza_por_Movimientos_Masa_Cardique/MapServer",
+          "label": "Zonificación amenaza por movimientos en masa (Cardique)"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.sgc.gov.co/arcgis/rest/services/Hidrogeologia_Por_Regiones/Hidrogeologia_de_La_Sabana_de_Bogota_V2002/MapServer",
+          "label": "Hidrogeología — Sabana de Bogotá"
         }
       ],
       "formats": [
@@ -289,6 +322,153 @@
       "documentation_url": "https://geoportal.sgc.gov.co/arcgis/rest/services",
       "doi": "",
       "citation_reference": "Servicio Geológico Colombiano. Servicios ArcGIS REST — SGC. https://geoportal.sgc.gov.co/arcgis/rest/services"
+    },
+    {
+      "id": "sgc:simma",
+      "name": "SIMMA — Sistema de Información de Mapas (SGC)",
+      "description": "Plataforma SIMMA del SGC: mapas y capas temáticas institucionales.",
+      "url": "https://simma.sgc.gov.co/",
+      "category": "platform",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "geologia",
+        "riesgo"
+      ],
+      "keywords": [
+        "simma",
+        "mapas",
+        "geologia",
+        "capas"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://simma.sgc.gov.co/",
+          "label": "SIMMA — Sistema de Información de Mapas (SGC)"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://simma.sgc.gov.co/",
+      "doi": "",
+      "citation_reference": "Servicio Geológico Colombiano. SIMMA — Sistema de Información de Mapas (SGC). https://simma.sgc.gov.co/"
+    },
+    {
+      "id": "sgc:catalogo-geoservicios",
+      "name": "Catálogo de geoservicios — SGC",
+      "description": "Catálogo oficial de geoservicios del Servicio Geológico Colombiano.",
+      "url": "https://www2.sgc.gov.co/sgc/mapas/Geoservicio/Paginas/geoservicios.aspx",
+      "category": "catalog",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "geologia",
+        "riesgo"
+      ],
+      "keywords": [
+        "catalogo",
+        "geoservicios",
+        "wms",
+        "rest"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www2.sgc.gov.co/sgc/mapas/Geoservicio/Paginas/geoservicios.aspx",
+          "label": "Catálogo de geoservicios — SGC"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www2.sgc.gov.co/sgc/mapas/Geoservicio/Paginas/geoservicios.aspx",
+      "doi": "",
+      "citation_reference": "Servicio Geológico Colombiano. Catálogo de geoservicios — SGC. https://www2.sgc.gov.co/sgc/mapas/Geoservicio/Paginas/geoservicios.aspx"
+    },
+    {
+      "id": "sgc:srvags",
+      "name": "Sistema de aguas subterráneas — SGC",
+      "description": "Plataforma de información de aguas subterráneas del SGC.",
+      "url": "https://srvags.sgc.gov.co/",
+      "category": "platform",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "geologia",
+        "riesgo"
+      ],
+      "keywords": [
+        "aguas_subterraneas",
+        "hidrogeologia",
+        "pozos"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://srvags.sgc.gov.co/",
+          "label": "Sistema de aguas subterráneas — SGC"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://srvags.sgc.gov.co/",
+      "doi": "",
+      "citation_reference": "Servicio Geológico Colombiano. Sistema de aguas subterráneas — SGC. https://srvags.sgc.gov.co/"
+    },
+    {
+      "id": "sgc:sismos",
+      "name": "Portal de sismos — SGC",
+      "description": "Portal de sismicidad nacional (red de monitoreo sísmico). Nota: responde 403 a clientes automáticos (WAF); acceso web normal.",
+      "url": "https://www.sgc.gov.co/sismos",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "geologia",
+        "riesgo"
+      ],
+      "keywords": [
+        "sismos",
+        "sismologia",
+        "monitoreo",
+        "terremotos"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.sgc.gov.co/sismos",
+          "label": "Portal de sismos — SGC"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.sgc.gov.co/sismos",
+      "doi": "",
+      "citation_reference": "Servicio Geológico Colombiano. Portal de sismos — SGC. https://www.sgc.gov.co/sismos"
     }
   ]
 }
