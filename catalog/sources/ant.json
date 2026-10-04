@@ -125,6 +125,45 @@
       "documentation_url": "https://www.ant.gov.co/geovisor-su288/",
       "doi": "",
       "citation_reference": "ANT. Geovisor SU288. https://www.ant.gov.co/geovisor-su288/"
+    },
+    {
+      "id": "ant:datos-abiertos",
+      "name": "Datos Abiertos ANT (ArcGIS Hub) — tierras étnicas y campesinas",
+      "description": "Hub de datos abiertos de la ANT: resguardos indígenas, consejos comunitarios de comunidades negras, comunidades campesinas, baldíos y Fondo de Tierras, con capas geográficas descargables.",
+      "url": "https://data-agenciadetierras.opendata.arcgis.com/",
+      "category": "platform",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "ordenamiento"
+      ],
+      "keywords": [
+        "datos_abiertos",
+        "resguardos",
+        "comunidades_campesinas",
+        "consejos_comunitarios",
+        "tierras_colectivas",
+        "baldios"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://data-agenciadetierras.opendata.arcgis.com/",
+          "label": "ANT — Datos Abiertos"
+        }
+      ],
+      "formats": [
+        "portal",
+        "datos abiertos"
+      ],
+      "documentation_url": "https://data-agenciadetierras.opendata.arcgis.com/",
+      "doi": "",
+      "citation_reference": "ANT. Datos Abiertos. https://data-agenciadetierras.opendata.arcgis.com/"
     }
   ]
 }

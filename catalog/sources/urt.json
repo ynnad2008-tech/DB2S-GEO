@@ -55,6 +55,80 @@
       "documentation_url": "https://www.urt.gov.co/",
       "doi": "",
       "citation_reference": "Unidad de Restitución de Tierras. Portal institucional. https://www.urt.gov.co/"
+    },
+    {
+      "id": "urt:datos-abiertos",
+      "name": "Datos Abiertos URT (ArcGIS Hub)",
+      "description": "Hub de datos abiertos de la URT: sentencias de restitución, registro de tierras despojadas y abandonadas, microzonas y cartografía del proceso restitutivo.",
+      "url": "https://urtdatosabiertos-uaegrtd.opendata.arcgis.com/",
+      "category": "platform",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "ordenamiento"
+      ],
+      "keywords": [
+        "datos_abiertos",
+        "sentencias",
+        "restitucion",
+        "despojo",
+        "microzonas"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://urtdatosabiertos-uaegrtd.opendata.arcgis.com/",
+          "label": "URT — Datos Abiertos"
+        }
+      ],
+      "formats": [
+        "portal",
+        "datos abiertos"
+      ],
+      "documentation_url": "https://urtdatosabiertos-uaegrtd.opendata.arcgis.com/",
+      "doi": "",
+      "citation_reference": "URT. Datos Abiertos. https://urtdatosabiertos-uaegrtd.opendata.arcgis.com/"
+    },
+    {
+      "id": "urt:visor-experiencias",
+      "name": "Visor de restitución — URT (ArcGIS Experience)",
+      "description": "Visor interactivo del proceso de restitución de tierras (ArcGIS Experience Builder): solicitudes, sentencias y avance territorial.",
+      "url": "https://experience.arcgis.com/experience/2ed8c79ef59d4a238b5fe43341110634/",
+      "category": "platform",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "ordenamiento"
+      ],
+      "keywords": [
+        "restitucion",
+        "sentencias",
+        "visor",
+        "proceso"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://experience.arcgis.com/experience/2ed8c79ef59d4a238b5fe43341110634/",
+          "label": "URT — visor de restitución"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://experience.arcgis.com/experience/2ed8c79ef59d4a238b5fe43341110634/",
+      "doi": "",
+      "citation_reference": "URT. Visor de restitución (ArcGIS Experience)."
     }
   ]
 }
