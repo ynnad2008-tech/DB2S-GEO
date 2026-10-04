@@ -72,7 +72,7 @@ jobs:
             --min-instances 0 \
             --max-instances 1 \
             --port 8080 \
-            --set-env-vars "ENVIRONMENT=release,TELEMETRY_DB_PATH=/tmp/telemetry/queries.db"
+            --update-env-vars "ENVIRONMENT=release,TELEMETRY_DB_PATH=/tmp/telemetry/queries.db"
           URL=$(gcloud run services describe "${SERVICE}" --region "${REGION}" --format='value(status.url)')
           echo "Deployed to: ${URL}"
           echo ""
