@@ -21,7 +21,7 @@
       "id": "cioh:oceanografia-operacional",
       "name": "Oceanografía Operacional",
       "description": "Monitoreo continuo de variables oceanográficas y meteorológicas en el Caribe colombiano: TSM, salinidad, corrientes, nivel del mar, oleaje. Boyas, mareógrafos y sensores remotos.",
-      "url": "https://www.dimar.mil.co",
+      "url": "https://cioh.dimar.mil.co/",
       "category": "platform",
       "coverage": {
         "spatial": "Caribe colombiano",
@@ -72,16 +72,17 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.dimar.mil.co/cioh",
-          "label": "Oceanografía Operacional CIOH"
+          "url": "https://cioh.dimar.mil.co/",
+          "label": "Oceanografía Operacional"
         }
-      ]
+      ],
+      "documentation_url": "https://cioh.dimar.mil.co/"
     },
     {
       "id": "cioh:meteorologia-marina",
       "name": "Meteorología Marina y Clima Marítimo",
       "description": "Datos meteorológicos marinos de estaciones costeras y boyas. Series históricas de viento, presión, temperatura del aire, humedad. Boletines meteomarinos diarios.",
-      "url": "https://www.dimar.mil.co",
+      "url": "https://www.dimar.mil.co/pronosticos-del-mar",
       "category": "dataset",
       "coverage": {
         "spatial": "Caribe y Pacífico colombiano",
@@ -137,16 +138,17 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.dimar.mil.co",
-          "label": "DIMAR - Meteorologia Marina"
+          "url": "https://www.dimar.mil.co/pronosticos-del-mar",
+          "label": "Meteorología Marina y Clima Marítimo"
         }
-      ]
+      ],
+      "documentation_url": "https://www.dimar.mil.co/pronosticos-del-mar"
     },
     {
       "id": "cioh:mareas",
       "name": "Mareas y Nivel del Mar",
       "description": "Pronósticos de mareas para puertos colombianos Caribe y Pacífico. Datos históricos de nivel del mar de la red de mareógrafos. Componentes armónicas calculadas.",
-      "url": "https://www.dimar.mil.co",
+      "url": "https://www.dimar.mil.co/pronosticos-del-mar",
       "category": "dataset",
       "coverage": {
         "spatial": "Puertos colombianos Caribe y Pacífico",
@@ -188,16 +190,17 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.dimar.mil.co",
-          "label": "DIMAR - Pronosticos de Marea"
+          "url": "https://www.dimar.mil.co/pronosticos-del-mar",
+          "label": "Mareas y Nivel del Mar"
         }
-      ]
+      ],
+      "documentation_url": "https://www.dimar.mil.co/pronosticos-del-mar"
     },
     {
       "id": "cioh:batimetria-caribe",
       "name": "Batimetría Caribe y Pacífico",
       "description": "Datos batimétricos multihaz y monohaz. Levantamientos del SHN operados por CIOH. Plataforma continental, talud, cañones submarinos y cuencas oceánicas.",
-      "url": "https://www.dimar.mil.co",
+      "url": "https://cioh.dimar.mil.co/",
       "category": "dataset",
       "coverage": {
         "spatial": "Caribe y Pacífico colombiano",
@@ -220,17 +223,18 @@
       ],
       "endpoints": [
         {
-          "method": "wcs",
-          "url": "https://www.dimar.mil.co/cioh",
-          "label": "Batimetría CIOH"
+          "method": "portal",
+          "url": "https://cioh.dimar.mil.co/",
+          "label": "Batimetría Caribe y Pacífico"
         }
-      ]
+      ],
+      "documentation_url": "https://cioh.dimar.mil.co/"
     },
     {
       "id": "cioh:avisos-navegantes",
       "name": "Avisos a los Navegantes",
       "description": "Boletines periódicos de seguridad marítima: cambios en ayudas a la navegación, nuevos peligros, obras marítimas, dragados, obstrucciones, actualizaciones de cartas.",
-      "url": "https://www.dimar.mil.co",
+      "url": "https://cioh.dimar.mil.co/",
       "category": "alert",
       "coverage": {
         "spatial": "Colombia (Caribe y Pacífico)",
@@ -273,10 +277,11 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.dimar.mil.co",
-          "label": "DIMAR - Avisos a Navegantes"
+          "url": "https://cioh.dimar.mil.co/",
+          "label": "Avisos a los Navegantes"
         }
-      ]
+      ],
+      "documentation_url": "https://cioh.dimar.mil.co/"
     }
   ]
 }

@@ -156,7 +156,6 @@
         "aguas",
         "ambiental",
         "area_protegida",
-        "biodiversidad",
         "bioma",
         "cienaga",
         "clima",
@@ -166,7 +165,6 @@
         "cuenca",
         "diversidad",
         "ecosistema",
-        "ecosistemas",
         "especie",
         "especies",
         "estuario",
@@ -195,7 +193,6 @@
         "temperatura",
         "viento",
         "paramos",
-        "alta_montana",
         "humedales"
       ],
       "access_methods": [

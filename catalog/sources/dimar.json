@@ -67,7 +67,7 @@
       "id": "dimar:cartas-nauticas",
       "name": "Cartas Náuticas Electrónicas (ENC)",
       "description": "63 Cartas Náuticas Electrónicas (ENC) con cobertura 100% en cartas de paso y puerto, 76% en costeras. Servicio Hidrográfico Nacional. Estándar IHO S-57.",
-      "url": "https://www.dimar.mil.co",
+      "url": "https://cecoldo.dimar.mil.co/geonetwork/srv/eng/catalog.search",
       "category": "dataset",
       "coverage": {
         "spatial": "Colombia (Caribe y Pacífico)",
@@ -93,16 +93,17 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://cecoldo.dimar.mil.co/geonetwork/srv/eng/catalog.search#/home",
-          "label": "DIMAR - Cartografia Nautica"
+          "url": "https://cecoldo.dimar.mil.co/geonetwork/srv/eng/catalog.search",
+          "label": "Cartas Náuticas Electrónicas (ENC)"
         }
-      ]
+      ],
+      "documentation_url": "https://cecoldo.dimar.mil.co/geonetwork/srv/eng/catalog.search"
     },
     {
       "id": "dimar:batimetria",
       "name": "Superficies Batimétricas",
       "description": "494 superficies batimétricas en formato .csar del Caribe y Pacífico colombiano. Levantamientos hidrográficos del SHN. Usadas en cartografía náutica y modelación oceanográfica.",
-      "url": "https://www.dimar.mil.co",
+      "url": "https://services6.arcgis.com/RB7c27NVd25mjSSc/ArcGIS/rest/services",
       "category": "dataset",
       "coverage": {
         "spatial": "Colombia (Caribe y Pacífico)",
@@ -160,11 +161,12 @@
       ],
       "endpoints": [
         {
-          "method": "portal",
+          "method": "arcgis",
           "url": "https://services6.arcgis.com/RB7c27NVd25mjSSc/ArcGIS/rest/services",
-          "label": "DIMAR - Datos Batimetricos"
+          "label": "Superficies Batimétricas"
         }
-      ]
+      ],
+      "documentation_url": "https://services6.arcgis.com/RB7c27NVd25mjSSc/ArcGIS/rest/services"
     },
     {
       "id": "dimar:senalizacion-maritima",
@@ -224,7 +226,7 @@
       "id": "dimar:cecoldodigital",
       "name": "Cecoldo — Repositorio Digital",
       "description": "Centro Colombiano de Datos Oceanográficos. Repositorio con datos primarios de investigación marina, atlas oceanográficos, climatología y series históricas.",
-      "url": "https://www.dimar.mil.co",
+      "url": "https://cecoldo.dimar.mil.co/datosDimar/pages/inicio/inicio.xhtml",
       "category": "repository",
       "coverage": {
         "spatial": "Colombia (Caribe y Pacífico)",
@@ -281,15 +283,16 @@
         {
           "method": "portal",
           "url": "https://cecoldo.dimar.mil.co/datosDimar/pages/inicio/inicio.xhtml",
-          "label": "DIMAR - Cecoldo"
+          "label": "Cecoldo — Repositorio Digital"
         }
-      ]
+      ],
+      "documentation_url": "https://cecoldo.dimar.mil.co/datosDimar/pages/inicio/inicio.xhtml"
     },
     {
       "id": "dimar:ide-maritima",
       "name": "IDE Marítima, Fluvial y Costera",
       "description": "Infraestructura de Datos Espaciales Marítima con servicios OGC (WMS, WFS, WCS, WMTS). Cartografía náutica, batimetría, litorales y oceanografía. Implementada con SFE/ArcGIS.",
-      "url": "https://litorales-dimar.hub.arcgis.com",
+      "url": "https://ide.dimar.mil.co/",
       "category": "platform",
       "coverage": {
         "spatial": "Colombia (Caribe y Pacífico)",
@@ -344,16 +347,12 @@
       ],
       "endpoints": [
         {
-          "method": "ogc",
-          "url": "https://litorales-dimar.hub.arcgis.com",
-          "label": "IDE Marítima (WMS/WFS)"
-        },
-        {
           "method": "portal",
-          "url": "https://litorales-dimar.hub.arcgis.com",
-          "label": "Portal IDE Marítima"
+          "url": "https://ide.dimar.mil.co/",
+          "label": "IDE Marítima, Fluvial y Costera"
         }
-      ]
+      ],
+      "documentation_url": "https://ide.dimar.mil.co/"
     }
   ]
 }

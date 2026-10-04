@@ -38,10 +38,7 @@
         "riesgo",
         "cuencas",
         "paramos",
-        "humedales",
-        "alta_montana",
-        "ecosistemas",
-        "biodiversidad"
+        "humedales"
       ],
       "access_methods": [
         "arcgis"
@@ -81,10 +78,7 @@
         "riesgo",
         "cuencas",
         "paramos",
-        "humedales",
-        "alta_montana",
-        "ecosistemas",
-        "biodiversidad"
+        "humedales"
       ],
       "access_methods": [
         "portal"

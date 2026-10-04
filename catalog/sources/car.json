@@ -39,10 +39,7 @@
         "sumapaz",
         "riesgo",
         "hidrologia",
-        "humedales",
-        "alta_montana",
-        "ecosistemas",
-        "biodiversidad"
+        "humedales"
       ],
       "access_methods": [
         "arcgis"
@@ -83,10 +80,7 @@
         "sumapaz",
         "riesgo",
         "hidrologia",
-        "humedales",
-        "alta_montana",
-        "ecosistemas",
-        "biodiversidad"
+        "humedales"
       ],
       "access_methods": [
         "portal"
