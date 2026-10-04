@@ -48,7 +48,7 @@ def test_workbench_html(client: TestClient) -> None:
     assert "home-advice" in text
     assert "© DB2S-GEO · 2026" in text
     assert "Dany Arbey Benavides" in text
-    assert "0.1.0-preview" in text or "v0.1.0 Preview" in text
+    assert "v0.8.0" in text
     assert "github.com" not in text.lower()
     assert "obs-cloud" in text
     assert "home-cloud" in text
@@ -125,4 +125,4 @@ def test_root_lists_workbench(client: TestClient) -> None:
     body = response.json()
     assert body.get("workbench") == "/workbench/"
     assert "GET /workbench/" in body["endpoints"]
-    assert body.get("version", "").startswith("0.2")
+    assert body.get("version", "").startswith("0.8")

@@ -37,21 +37,20 @@ jobs:
       - run: pip install -e .
       - run: python -m pytest tests/unit -q
 
-  # Activar con variable de repo DEPLOY_CLOUD_RUN=true + secrets GCP_*
+  # Activar con variable de repo DEPLOY_CLOUD_RUN=true + secret GCP_SA_KEY
+  # (clave JSON de service account creada en la consola de GCP, sin CLI).
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name == 'push' && vars.DEPLOY_CLOUD_RUN == 'true'
     needs: [validate-catalog, unit-tests]
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write
     steps:
       - uses: actions/checkout@v4
-      - name: Authenticate to Google Cloud
+      - name: Authenticate to Google Cloud (service account key)
         uses: google-github-actions/auth@v2
         with:
-          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
-          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
       - uses: google-github-actions/setup-gcloud@v2
       - name: Build and deploy Cloud Run
         run: |
@@ -69,8 +68,10 @@ jobs:
             --allow-unauthenticated \
             --memory 512Mi \
             --cpu 1 \
+            --min-instances 0 \
+            --max-instances 1 \
             --port 8080 \
-            --set-env-vars "ENVIRONMENT=preview,TELEMETRY_DB_PATH=/tmp/telemetry/queries.db"
+            --set-env-vars "ENVIRONMENT=release,TELEMETRY_DB_PATH=/tmp/telemetry/queries.db"
           URL=$(gcloud run services describe "${SERVICE}" --region "${REGION}" --format='value(status.url)')
           echo "Deployed to: ${URL}"
           echo ""

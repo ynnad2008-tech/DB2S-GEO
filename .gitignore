@@ -106,3 +106,4 @@ deployment/env/.env
 .cache/
 
 
+data/auto_curation/

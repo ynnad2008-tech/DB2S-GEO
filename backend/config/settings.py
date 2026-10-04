@@ -10,8 +10,8 @@ from __future__ import annotations
 import os
 
 ENVIRONMENT = os.environ.get("ENVIRONMENT", "preview")
-APP_PHASE = "preview"
-APP_VERSION = "0.2.0-preview"
+APP_PHASE = "release"
+APP_VERSION = "0.8.0"
 READ_ONLY = True
 DOWNLOADS_ENABLED = False
 GRAPH_BACKEND = "python_memory"

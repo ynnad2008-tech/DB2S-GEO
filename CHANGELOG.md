@@ -6,6 +6,22 @@ El formato se inspira en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1
 
 ---
 
+## [v0.8.0] — 2026-10-03
+
+Versión final (release): 116 fuentes, auto-curador, chat y despliegue preparado.
+
+### Cambiado
+
+- Fase `release` y versión `0.8.0` en API, config y workbench.
+- Workflow de deploy simplificado: autenticación por clave JSON de service
+  account (`GCP_SA_KEY`, sin CLI), `min-instances 0` / `max-instances 1`
+  para permanecer en el free tier de Cloud Run.
+- README actualizado a la gobernanza de curaduría asistida por IA.
+- Log de auto-curaduría excluido del versionado (`.gitignore`).
+- Suite 146/146.
+
+---
+
 ## [v0.7.3] — 2026-10-03
 
 Chat de seguimiento interactivo (hilo conversacional).

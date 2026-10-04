@@ -2,9 +2,11 @@
 
 **Plataforma de conocimiento geoespacial**
 
-**Estado:** v0.1.0-preview · **Autor:** Dany Arbey Benavides
+**Estado:** v0.8.0 · **Autor:** Dany Arbey Benavides
 
-> ✅ **¡Validada por humanos!** — Supervisado, recomendaciones explicables, sin auto-aplicación al catálogo.
+> ✅ **Curaduría asistida por IA** — 116 fuentes verificadas por HTTP,
+> recomendaciones explicables y crecimiento autogestionado con trazabilidad.
+> La IA puede cometer errores: verifica las fuentes antes de usarlas.
 
 Repositorio oficial: [github.com/ynnad2008-tech/DB2S-GEO](https://github.com/ynnad2008-tech/DB2S-GEO)
 https://db2s-geo-546367148987.us-central1.run.app/workbench/
@@ -34,13 +36,16 @@ No es solo un catálogo: orienta hacia **acciones concretas** (qué hacer, dónd
 
 | Capacidad | Descripción |
 |-----------|-------------|
-| Discovery Engine | Catálogo MVP curado (IDEAM, INVEMAR, GBIF, FAO, WorldPop, GEE) |
+| Discovery Engine | Catálogo de 116 fuentes verificadas (Colombia, Centroamérica, Perú, México y globales) |
 | Metadata Engine | Metadatos normalizados y evaluables |
 | Knowledge Graph | Institution → Source → Resource → Domain → Keyword |
-| Recommendation Engine | Score, razones y relaciones explicables |
+| Recommendation Engine | Score, razones y relaciones explicables (sin caja negra) |
 | Decision Support Engine | Rutas de acción (qué / dónde / fuente / recursos / por qué) |
-| Watcher Engine | Monitoreo de cambios sin auto-aplicación |
-| Source Discovery Assistant | Candidatos para curaduría humana |
+| Asistente conversacional | Chat de seguimiento con contexto del hilo (Gemini interpreta y narra; los motores deciden) |
+| Filtro de cobertura | La geografía de la consulta ("en el Tolima") filtra fuentes pertinentes |
+| Geoservicios | Acceso de usuario a endpoints ArcGIS REST / WMS verificados |
+| Auto Curator | Crecimiento autogestionado: Gemini propone desde los vacíos de consulta; verificación HTTP obligatoria; trazabilidad completa |
+| Watcher Engine | Monitoreo de cambios |
 | Knowledge Usage Observatory | Consultas anónimas, tendencias y vacíos |
 | Curator Workbench | Consola HTML/CSS/JS responsive (móvil incluido) |
 
@@ -73,18 +78,18 @@ Herramientas de IA (Copilot, Cursor, DeepSeek) usadas como asistentes técnicos;
 ## Cómo citar esta plataforma
 
 ```text
-Benavides, D. A. (2026). DB2S-GEO: Plataforma de conocimiento geoespacial (versión 0.9 Alpha) [plataforma de software]. Consultado el [fecha].
+Benavides, D. A. (2026). DB2S-GEO: Plataforma de conocimiento geoespacial (versión 0.8.0) [plataforma de software]. Consultado el [fecha].
 ```
 
 También disponible en el Workbench: **Cómo citar esta plataforma**.
 
 ---
 
-## Estado Alpha
+## Estado
 
-La arquitectura principal se considera **funcional** para demostraciones, pruebas en internet y validación móvil.
+La plataforma integra interpretación de lenguaje natural con **Gemini** (intérprete, narrador y curador automático) sobre motores deterministas y explicables: las recomendaciones siempre muestran sus razones y las fuentes solo se incorporan tras verificación HTTP.
 
-**Prioridad actual:** presentación, documentación, identidad, trazabilidad y despliegue.  
-**Fuera de alcance Alpha:** nuevos motores, taxonomías ampliadas, autenticación de usuarios o capas de IA generativa.
+**Pendientes operativos:** despliegue público en Cloud Run y validación con usuarios externos.  
+**Fuera de alcance actual:** autenticación de usuarios y capas adicionales de IA generativa más allá del intérprete/narrador.
 
 © DB2S-GEO · 2026 · Dany Arbey Benavides
