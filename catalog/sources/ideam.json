@@ -593,7 +593,12 @@
         "incendios",
         "snif",
         "sisaire",
-        "capasgeo"
+        "capasgeo",
+        "bosque_no_bosque",
+        "atlas_climatologico",
+        "cambio_climatico",
+        "el_nino",
+        "cobertura_bosque"
       ],
       "access_methods": [
         "arcgis"
@@ -658,6 +663,41 @@
           "method": "arcgis",
           "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Capas_Ideam/MapServer",
           "label": "Capas IDEAM (catálogo CAPASGEO)"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Dinamica_Cambio_Cobertura_Bosque/MapServer",
+          "label": "Bosque / No Bosque — dinámica de cambio de cobertura"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Superficie_Bosque/MapServer",
+          "label": "Superficie de bosque"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Clima_Precipitacion/MapServer",
+          "label": "Atlas climatológico — precipitación"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Clima_Temperatura/MapServer",
+          "label": "Atlas climatológico — temperatura"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Escenario_Cambio_Climatico/MapServer",
+          "label": "Escenarios de cambio climático"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Riesgo_Ambiental/MapServer",
+          "label": "Riesgo ambiental"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Fenomeno_El_nino/MapServer",
+          "label": "Fenómeno El Niño / La Niña"
         }
       ],
       "formats": [
