@@ -1,0 +1,60 @@
+{
+  "id": "urt",
+  "name": "URT — Unidad de Restitución de Tierras",
+  "description": "Unidad de Restitución de Tierras: restituye tierras despojadas o abandonadas por el conflicto (Ley 1448 de 2011); gestiona el Registro de Tierras Despojadas y microzonas. Geoservicios públicos no documentados; interoperabilidad institucional vía X-Road. DB2S-GEO solo documenta el acceso disponible.",
+  "url": "https://www.urt.gov.co/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Unidad de Restitución de Tierras (URT)",
+  "domains": [
+    "ordenamiento"
+  ],
+  "license": "Según términos de la entidad",
+  "version": "1.0.0",
+  "curation": "human",
+  "resources": [
+    {
+      "id": "urt:portal",
+      "name": "Portal institucional — URT",
+      "description": "Portal oficial de la URT con información de restitución, sentencias y registro de tierras despojadas.",
+      "url": "https://www.urt.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "ordenamiento"
+      ],
+      "keywords": [
+        "urt",
+        "restitucion",
+        "tierras",
+        "despojo",
+        "abandono",
+        "sentencias",
+        "microzonas"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.urt.gov.co/",
+          "label": "URT"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.urt.gov.co/",
+      "doi": "",
+      "citation_reference": "Unidad de Restitución de Tierras. Portal institucional. https://www.urt.gov.co/"
+    }
+  ]
+}

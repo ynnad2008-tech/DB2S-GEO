@@ -1,0 +1,130 @@
+{
+  "id": "ant",
+  "name": "ANT — Agencia Nacional de Tierras",
+  "description": "Agencia Nacional de Tierras: administra las tierras rurales de la Nación (baldíos, Fondo de Tierras, formalización) y publica el geovisor de procesos agrarios SU288. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.ant.gov.co/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Agencia Nacional de Tierras (ANT)",
+  "domains": [
+    "ordenamiento"
+  ],
+  "license": "Según términos de la entidad",
+  "version": "1.0.0",
+  "curation": "human",
+  "resources": [
+    {
+      "id": "ant:portal",
+      "name": "Portal institucional — ANT",
+      "description": "Portal oficial de la Agencia Nacional de Tierras.",
+      "url": "https://www.ant.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "ordenamiento"
+      ],
+      "keywords": [
+        "ant",
+        "tierras",
+        "baldios",
+        "formalizacion"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.ant.gov.co/",
+          "label": "ANT"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.ant.gov.co/",
+      "doi": "",
+      "citation_reference": "Agencia Nacional de Tierras. Portal institucional. https://www.ant.gov.co/"
+    },
+    {
+      "id": "ant:geoportal",
+      "name": "Geoportal ANT (ArcGIS Enterprise)",
+      "description": "Portal SIG corporativo de la ANT con visores de procesos agrarios (clarificación, recuperación de baldíos, SU288).",
+      "url": "https://geoportal.ant.gov.co/portal/home/",
+      "category": "platform",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "ordenamiento"
+      ],
+      "keywords": [
+        "geoportal",
+        "ant",
+        "procesos_agrarios",
+        "su288"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://geoportal.ant.gov.co/portal/home/",
+          "label": "Geoportal ANT"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://geoportal.ant.gov.co/portal/home/",
+      "doi": "",
+      "citation_reference": "ANT. Geoportal. https://geoportal.ant.gov.co/portal/"
+    },
+    {
+      "id": "ant:geovisor-su288",
+      "name": "Geovisor SU288 — procesos agrarios (ANT)",
+      "description": "Geovisor público de procesos agrarios para el cumplimiento de la Sentencia SU288/22: 21.684 registros de clarificación y recuperación de baldíos, Fondo de Tierras y adjudicaciones.",
+      "url": "https://www.ant.gov.co/geovisor-su288/",
+      "category": "platform",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "ordenamiento"
+      ],
+      "keywords": [
+        "su288",
+        "procesos_agrarios",
+        "baldios",
+        "fondo_tierras",
+        "adjudicacion"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.ant.gov.co/geovisor-su288/",
+          "label": "Geovisor SU288"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.ant.gov.co/geovisor-su288/",
+      "doi": "",
+      "citation_reference": "ANT. Geovisor SU288. https://www.ant.gov.co/geovisor-su288/"
+    }
+  ]
+}

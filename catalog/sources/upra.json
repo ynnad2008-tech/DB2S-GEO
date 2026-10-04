@@ -222,6 +222,94 @@
       "documentation_url": "https://upra.gov.co/es-co/planificacion-del-ordenamiento-agropecuario/sistemas-de-informacion",
       "doi": "",
       "citation_reference": "Unidad de Planificación Rural Agropecuaria (UPRA). Zonificación productiva y evaluación de tierras por cadena — SIPRA. https://sipra.upra.gov.co/"
+    },
+    {
+      "id": "upra:tiempos-desplazamiento",
+      "name": "Tiempos de desplazamiento — UPRA (accesibilidad territorial)",
+      "description": "Capas de tiempos de desplazamiento (isócronas de accesibilidad) a nivel nacional, cabeceras municipales y ciudades capitales, publicadas por la UPRA en su SIG corporativo.",
+      "url": "https://sig.upra.gov.co/portal/home/",
+      "category": "geoservice",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "ordenamiento",
+        "agricultura",
+        "poblacion"
+      ],
+      "keywords": [
+        "tiempos_desplazamiento",
+        "accesibilidad",
+        "isocronas",
+        "rural",
+        "cabeceras",
+        "movilidad"
+      ],
+      "access_methods": [
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://sig.upra.gov.co/server/rest/services/referencia_geografica/tiempos_desplazamiento/MapServer",
+          "label": "Tiempos de desplazamiento — nacional"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://sig.upra.gov.co/server/rest/services/referencia_geografica/tiempos_desplazamiento_cabeceras_municipales/MapServer",
+          "label": "Tiempos de desplazamiento — cabeceras municipales"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://sig.upra.gov.co/server/rest/services/referencia_geografica/tiempos_desplazamiento_ciudades_capitales/MapServer",
+          "label": "Tiempos de desplazamiento — ciudades capitales"
+        }
+      ],
+      "formats": [
+        "servicios REST"
+      ],
+      "documentation_url": "https://sig.upra.gov.co/portal/home/",
+      "doi": "",
+      "citation_reference": "Unidad de Planificación Rural Agropecuaria (UPRA) — Ministerio de Agricultura y Desarrollo Rural. Tiempos de desplazamiento. https://sig.upra.gov.co/portal/"
+    },
+    {
+      "id": "upra:portal-sig",
+      "name": "SIG UPRA — portal corporativo (ArcGIS Enterprise)",
+      "description": "Portal corporativo SIG de la UPRA con galerías de capas temáticas (tiempos de desplazamiento, LADM-COL rural, costos de producción agropecuaria, monitoreo de cultivos y más).",
+      "url": "https://sig.upra.gov.co/portal/home/",
+      "category": "platform",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "agricultura",
+        "ordenamiento"
+      ],
+      "keywords": [
+        "sig",
+        "portal",
+        "upra",
+        "capas",
+        "galeria"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://sig.upra.gov.co/portal/home/",
+          "label": "SIG UPRA — galería de capas"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://sig.upra.gov.co/portal/home/",
+      "doi": "",
+      "citation_reference": "Unidad de Planificación Rural Agropecuaria (UPRA) — Ministerio de Agricultura y Desarrollo Rural. SIG UPRA. https://sig.upra.gov.co/portal/"
     }
   ]
 }
