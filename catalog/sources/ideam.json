@@ -359,6 +359,11 @@
           "method": "portal",
           "url": "https://www.ideam.gov.co",
           "label": "IDEAM - Consulta Meteorologica"
+        },
+        {
+          "method": "ftp",
+          "url": "ftp://ftp.ideam.gov.co",
+          "label": "FTP IDEAM — datos históricos (puerto 21 verificado)"
         }
       ],
       "formats": [
@@ -583,7 +588,12 @@
         "arcgis",
         "rest",
         "geoservicio",
-        "servicios"
+        "servicios",
+        "deforestacion",
+        "incendios",
+        "snif",
+        "sisaire",
+        "capasgeo"
       ],
       "access_methods": [
         "arcgis"
@@ -623,6 +633,31 @@
           "method": "arcgis",
           "url": "https://dhime.ideam.gov.co/server/rest/services/CNE/CatalogoNacionalEstaciones/MapServer",
           "label": "Catálogo Nacional de Estaciones (DHIME)"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Tematica/Incendios/MapServer",
+          "label": "Incendios — monitoreo temático"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/SNIF/SNIF_Final/MapServer",
+          "label": "SNIF — bosques y deforestación"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/SISAIRE/ValidadorMunicipios/MapServer",
+          "label": "SISAIRE — calidad del aire"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Clima_Analisis_Climatico/MapServer",
+          "label": "Clima — análisis climático"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Capas_Ideam/MapServer",
+          "label": "Capas IDEAM (catálogo CAPASGEO)"
         }
       ],
       "formats": [
