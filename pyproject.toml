@@ -16,6 +16,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0.0",
+    "httpx2",  # starlette.testclient moderno requiere httpx2 (antes httpx)
 ]
 
 [build-system]
