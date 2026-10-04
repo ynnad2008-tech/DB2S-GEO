@@ -1,0 +1,108 @@
+{
+  "id": "cornare",
+  "name": "Cornare",
+  "description": "Cornare: autoridad ambiental del oriente antioqueño; publica cuencas, riesgo y biodiversidad regional. DB2S-GEO solo documenta el acceso.",
+  "url": "https://geoportal.cornare.gov.co/arcgis/rest/services",
+  "category": "organismo",
+  "coverage": {
+    "spatial": "Antioquia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Corporación Autónoma Regional de las Cuencas de los Ríos Negro y Nare",
+  "domains": [
+    "hidrologia",
+    "riesgo"
+  ],
+  "license": "Según términos de la entidad",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "cornare:geoservice",
+      "name": "Servicios ArcGIS REST — Cornare",
+      "description": "Directorio ArcGIS REST verificado de Cornare.",
+      "url": "https://geoportal.cornare.gov.co/arcgis/rest/services",
+      "category": "geoservice",
+      "coverage": {
+        "spatial": "Antioquia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "hidrologia",
+        "riesgo"
+      ],
+      "keywords": [
+        "cornare",
+        "antioquia",
+        "hidrologia",
+        "riesgo",
+        "cuencas",
+        "paramos",
+        "humedales",
+        "alta_montana",
+        "ecosistemas",
+        "biodiversidad"
+      ],
+      "access_methods": [
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://geoportal.cornare.gov.co/arcgis/rest/services",
+          "label": "Servicios ArcGIS REST — Cornare"
+        }
+      ],
+      "formats": [
+        "servicios REST"
+      ],
+      "documentation_url": "https://geoportal.cornare.gov.co/arcgis/rest/services",
+      "doi": "",
+      "citation_reference": "Corporación Autónoma Regional de las Cuencas de los Ríos Negro y Nare. Servicios ArcGIS REST — Cornare. https://geoportal.cornare.gov.co/arcgis/rest/services"
+    },
+    {
+      "id": "cornare:portal",
+      "name": "Portal institucional — Cornare",
+      "description": "Portal oficial de Cornare, autoridad ambiental del oriente antioqueño.",
+      "url": "https://www.cornare.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Antioquia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "hidrologia",
+        "riesgo"
+      ],
+      "keywords": [
+        "cornare",
+        "antioquia",
+        "hidrologia",
+        "riesgo",
+        "cuencas",
+        "paramos",
+        "humedales",
+        "alta_montana",
+        "ecosistemas",
+        "biodiversidad"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.cornare.gov.co/",
+          "label": "Portal institucional — Cornare"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.cornare.gov.co/",
+      "doi": "",
+      "citation_reference": "Corporación Autónoma Regional de las Cuencas de los Ríos Negro y Nare. Portal institucional — Cornare. https://www.cornare.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T02:58:44.413299+00:00"
+}

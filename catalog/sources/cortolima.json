@@ -1,0 +1,65 @@
+{
+  "id": "cortolima",
+  "name": "Cortolima",
+  "description": "Cortolima: autoridad ambiental del Tolima; publica información hidrológica, de riesgo y ambiental del departamento. DB2S-GEO solo documenta el acceso.",
+  "url": "https://cortolima.gov.co/",
+  "category": "organismo",
+  "coverage": {
+    "spatial": "Tolima",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Corporación Autónoma Regional del Tolima (Cortolima)",
+  "domains": [
+    "hidrologia",
+    "riesgo"
+  ],
+  "license": "Según términos de la entidad",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "cortolima:portal",
+      "name": "Portal institucional — Cortolima",
+      "description": "Portal oficial de Cortolima, autoridad ambiental del departamento del Tolima.",
+      "url": "https://cortolima.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Tolima",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "hidrologia",
+        "riesgo"
+      ],
+      "keywords": [
+        "cortolima",
+        "tolima",
+        "hidrologia",
+        "riesgo",
+        "paramos",
+        "cuencas",
+        "humedales",
+        "alta_montana",
+        "ecosistemas",
+        "biodiversidad"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://cortolima.gov.co/",
+          "label": "Portal institucional — Cortolima"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://cortolima.gov.co/",
+      "doi": "",
+      "citation_reference": "Corporación Autónoma Regional del Tolima (Cortolima). Portal institucional — Cortolima. https://cortolima.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T02:58:44.948812+00:00"
+}

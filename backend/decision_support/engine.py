@@ -57,6 +57,8 @@ MVP_SOURCES = frozenset(
         "birdcast", "chirps", "desinventar", "earth-search", "emdat",
         "gmw", "gpm", "gsw", "hdx", "inat", "inform", "noaa", "obis",
         "openalex", "openlandmap", "pc", "semanticscholar", "usgs-hazards",
+        # MinAmbiente y CAR verificadas (2026-10-04)
+        "minambiente", "car", "corantioquia", "cornare", "carder", "cortolima",
     }
 )
 

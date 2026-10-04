@@ -1,0 +1,103 @@
+{
+  "id": "minambiente",
+  "name": "MinAmbiente",
+  "description": "Ministerio de Ambiente y Desarrollo Sostenible de Colombia: política ambiental, páramos, humedales, bosques y áreas protegidas. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.minambiente.gov.co/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Ministerio de Ambiente y Desarrollo Sostenible",
+  "domains": [
+    "biodiversidad"
+  ],
+  "license": "Según términos de la entidad",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "minambiente:portal",
+      "name": "Portal institucional — MinAmbiente",
+      "description": "Portal oficial del Ministerio de Ambiente y Desarrollo Sostenible.",
+      "url": "https://www.minambiente.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "minambiente",
+        "paramos",
+        "humedales",
+        "bosques",
+        "conservacion",
+        "ambiente",
+        "alta_montana",
+        "ecosistemas",
+        "biodiversidad"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.minambiente.gov.co/",
+          "label": "Portal institucional — MinAmbiente"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.minambiente.gov.co/",
+      "doi": "",
+      "citation_reference": "Ministerio de Ambiente y Desarrollo Sostenible. Portal institucional — MinAmbiente. https://www.minambiente.gov.co/"
+    },
+    {
+      "id": "minambiente:catalog",
+      "name": "Geonetwork — catálogo de metadatos ambientales",
+      "description": "Catálogo de metadatos geográficos ambientales (Geonetwork) del Ministerio de Ambiente.",
+      "url": "https://geonetwork.minambiente.gov.co/geonetwork",
+      "category": "catalog",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "minambiente",
+        "paramos",
+        "humedales",
+        "bosques",
+        "conservacion",
+        "ambiente",
+        "alta_montana",
+        "ecosistemas",
+        "biodiversidad"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://geonetwork.minambiente.gov.co/geonetwork",
+          "label": "Geonetwork — catálogo de metadatos ambientales"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://geonetwork.minambiente.gov.co/geonetwork",
+      "doi": "",
+      "citation_reference": "Ministerio de Ambiente y Desarrollo Sostenible. Geonetwork — catálogo de metadatos ambientales. https://geonetwork.minambiente.gov.co/geonetwork"
+    }
+  ],
+  "status_updated_at": "2026-10-04T02:58:43.554373+00:00"
+}

@@ -1,0 +1,65 @@
+{
+  "id": "carder",
+  "name": "CARDER",
+  "description": "CARDER: autoridad ambiental de Risaralda; publica información hidrológica, de riesgo y de páramos regionales. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.carder.gov.co/",
+  "category": "organismo",
+  "coverage": {
+    "spatial": "Risaralda",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Corporación Autónoma Regional de Risaralda (CARDER)",
+  "domains": [
+    "hidrologia",
+    "riesgo"
+  ],
+  "license": "Según términos de la entidad",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "carder:portal",
+      "name": "Portal institucional — CARDER",
+      "description": "Portal oficial de la CARDER, autoridad ambiental de Risaralda.",
+      "url": "https://www.carder.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Risaralda",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "hidrologia",
+        "riesgo"
+      ],
+      "keywords": [
+        "carder",
+        "risaralda",
+        "hidrologia",
+        "riesgo",
+        "paramos",
+        "cuencas",
+        "humedales",
+        "alta_montana",
+        "ecosistemas",
+        "biodiversidad"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.carder.gov.co/",
+          "label": "Portal institucional — CARDER"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.carder.gov.co/",
+      "doi": "",
+      "citation_reference": "Corporación Autónoma Regional de Risaralda (CARDER). Portal institucional — CARDER. https://www.carder.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T02:58:44.669811+00:00"
+}

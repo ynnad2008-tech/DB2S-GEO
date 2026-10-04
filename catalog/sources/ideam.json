@@ -193,7 +193,10 @@
         "sequia",
         "siac",
         "temperatura",
-        "viento"
+        "viento",
+        "paramos",
+        "alta_montana",
+        "humedales"
       ],
       "access_methods": [
         "portal"

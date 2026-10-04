@@ -1,0 +1,110 @@
+{
+  "id": "car",
+  "name": "CAR Cundinamarca",
+  "description": "Corporación Autónoma Regional de Cundinamarca: autoridad ambiental del departamento; publica cuencas, riesgo y páramos (incluido Sumapaz). DB2S-GEO solo documenta el acceso.",
+  "url": "https://sig.car.gov.co/arcgis/rest/services",
+  "category": "organismo",
+  "coverage": {
+    "spatial": "Cundinamarca",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Corporación Autónoma Regional de Cundinamarca (CAR)",
+  "domains": [
+    "hidrologia",
+    "riesgo"
+  ],
+  "license": "Según términos de la entidad",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "car:geoservice",
+      "name": "Servicios ArcGIS REST — CAR Cundinamarca",
+      "description": "Directorio ArcGIS REST verificado de la CAR Cundinamarca.",
+      "url": "https://sig.car.gov.co/arcgis/rest/services",
+      "category": "geoservice",
+      "coverage": {
+        "spatial": "Cundinamarca",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "hidrologia",
+        "riesgo"
+      ],
+      "keywords": [
+        "car",
+        "cundinamarca",
+        "cuencas",
+        "paramos",
+        "sumapaz",
+        "riesgo",
+        "hidrologia",
+        "humedales",
+        "alta_montana",
+        "ecosistemas",
+        "biodiversidad"
+      ],
+      "access_methods": [
+        "arcgis"
+      ],
+      "endpoints": [
+        {
+          "method": "arcgis",
+          "url": "https://sig.car.gov.co/arcgis/rest/services",
+          "label": "Servicios ArcGIS REST — CAR Cundinamarca"
+        }
+      ],
+      "formats": [
+        "servicios REST"
+      ],
+      "documentation_url": "https://sig.car.gov.co/arcgis/rest/services",
+      "doi": "",
+      "citation_reference": "Corporación Autónoma Regional de Cundinamarca (CAR). Servicios ArcGIS REST — CAR Cundinamarca. https://sig.car.gov.co/arcgis/rest/services"
+    },
+    {
+      "id": "car:portal",
+      "name": "Portal institucional — CAR Cundinamarca",
+      "description": "Portal oficial de la Corporación Autónoma Regional de Cundinamarca.",
+      "url": "https://www.car.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Cundinamarca",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "hidrologia",
+        "riesgo"
+      ],
+      "keywords": [
+        "car",
+        "cundinamarca",
+        "cuencas",
+        "paramos",
+        "sumapaz",
+        "riesgo",
+        "hidrologia",
+        "humedales",
+        "alta_montana",
+        "ecosistemas",
+        "biodiversidad"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.car.gov.co/",
+          "label": "Portal institucional — CAR Cundinamarca"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.car.gov.co/",
+      "doi": "",
+      "citation_reference": "Corporación Autónoma Regional de Cundinamarca (CAR). Portal institucional — CAR Cundinamarca. https://www.car.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T02:58:43.862146+00:00"
+}

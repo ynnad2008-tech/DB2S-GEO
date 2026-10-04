@@ -39,7 +39,10 @@
         "biodiversidad",
         "investigacion",
         "biologica",
-        "ecosistemas"
+        "ecosistemas",
+        "paramos",
+        "alta_montana",
+        "humedales"
       ],
       "access_methods": [
         "portal"

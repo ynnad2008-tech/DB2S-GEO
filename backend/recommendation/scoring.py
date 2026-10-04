@@ -121,6 +121,9 @@ CURATED_ALIASES: dict[str, list[str]] = {
                   "uso_suelo", "coberturas"],
     "zonificacion": ["zonificacion", "ordenamiento", "uso_suelo", "aptitud",
                      "coberturas"],
+    # Ecosistemas estratégicos colombianos
+    "paramos": ["paramos", "paramo", "humedales", "alta_montana",
+                "ecosistemas", "biodiversidad"],
 }
 
 
