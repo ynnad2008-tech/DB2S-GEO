@@ -660,7 +660,10 @@
         "arcgis",
         "rest",
         "geoservicio",
-        "servicios"
+        "servicios",
+        "cartografia_basica",
+        "topografia",
+        "1_25000"
       ],
       "access_methods": [
         "arcgis"
@@ -730,6 +733,11 @@
           "method": "arcgis",
           "url": "https://mapas.igac.gov.co/server/rest/services/atlas/biomas/MapServer",
           "label": "Atlas — biomas de Colombia"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas2.igac.gov.co/server/rest/services/carto/carto25000colombia2017/MapServer",
+          "label": "Cartografía básica 1:25.000 — Colombia 2017"
         }
       ],
       "formats": [

@@ -113,6 +113,9 @@ CURATED_ALIASES: dict[str, list[str]] = {
     "pacifico": ["pacifico", "pacifico_colombiano", "choco_biogeografico"],
     "caribe": ["caribe", "caribe_colombiano"],
     "amazonia": ["amazonia", "amazonas", "leticia", "caqueta", "putumayo", "guaviare"],
+    # Topografía / cartografía base
+    "topografia": ["topografia", "topografica", "cartografia",
+                   "elevacion", "dem", "relieve", "cartografia_basica"],
     # Infraestructura (sin expandir a ciudades específicas)
     "transporte": ["transporte", "infraestructura", "vias", "carreteras", "aeropuertos"],
     "puertos": ["puertos", "portuario", "portuaria"],
