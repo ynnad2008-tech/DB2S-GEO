@@ -119,7 +119,7 @@
     },
     {
       "id": "gee-copernicus-sentinel2:dynamicworld",
-      "name": "Dynamic World â€” cobertura del suelo (GOOGLE/DYNAMICWORLD/V1)",
+      "name": "Dynamic World — cobertura del suelo (GOOGLE/DYNAMICWORLD/V1)",
       "description": "Producto Dynamic World de cobertura del suelo casi en tiempo real (10 clases), accesible via Google Earth Engine (GOOGLE/DYNAMICWORLD/V1). Apoya monitoreo territorial, cambio de uso y clasificacion dinamica. DB2S-GEO no ejecuta codigo GEE ni descarga colecciones.",
       "url": "https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_DYNAMICWORLD_V1",
       "category": "collection",
