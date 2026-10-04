@@ -8,7 +8,7 @@ El formato se inspira en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1
 
 ## [v0.8.0] — 2026-10-03
 
-> Despliegue Cloud Run activado el 2026-10-03 vía GitHub Actions.
+> Despliegue Cloud Run activado el 2026-10-03 vía GitHub Actions (servicio db2s-geo).
 
 Versión final (release): 116 fuentes, auto-curador, chat y despliegue preparado.
 
