@@ -66,3 +66,20 @@ curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" "$SERVICE_UR
 - URL: `…/workbench/`
 - Texto: Preview privada 0.1.0 — no beta pública.
 - Limitación conocida: evitar consultas con solo la palabra «Colombia».
+
+
+---
+
+## Despliegue automatizado (GitHub Actions, activado 2026-10-03)
+
+El push a  ejecuta :
+validación del catálogo → tests unitarios → build en Cloud Build →
+deploy a Cloud Run (servicio ) → smoke tests contra la URL pública.
+
+Requisitos en GitHub (Settings → Secrets and variables → Actions):
+- Secret  (clave JSON de service account)
+- Secret 
+- Variable 
+- Variables opcionales:  (default ),  (default )
+
+Sin CLI local: toda la operación ocurre en GitHub Actions y Google Cloud.
