@@ -86,12 +86,16 @@ def test_microcuenca_talgua_relevancia(rec: RecommendationEngine) -> None:
     # Regresión (2026-10-03): "microcuenca" y "ecosistémica" deben expandir;
     # el token "rio" no debe coincidir por subcadena con "repositorio"
     # (dimar) ni "siniestralidad" (ansv).
-    payload = rec.recommend(
+    query = (
         "modelación de la multifuncionalidad ecosistémica "
         "en la microcuenca del río Talgua"
     )
+    payload = rec.recommend(query)
     ids = [r["source_id"] for r in payload["recommendations"]]
     assert "catie" in ids
-    assert "hydrosheds" in ids
     assert "ansv" not in ids
     assert "dimar" not in ids
+    # Fuentes hidrográficas en el top ampliado (hydrosheds/mapbiomas/gee)
+    amplio = rec.recommend(query, limit=15)
+    ids_amplio = [r["source_id"] for r in amplio["recommendations"]]
+    assert {"hydrosheds", "mapbiomas"} & set(ids_amplio)

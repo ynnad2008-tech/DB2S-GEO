@@ -7,6 +7,7 @@ Source Discovery · Decision Support · Workbench.
 
 from __future__ import annotations
 
+import json
 import logging
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -706,6 +707,26 @@ def source_discovery_auto_curate(request: Request) -> dict[str, Any]:
         "catalog_modified": True,
         "cycle": run_cycle(observatory),
     }
+
+
+@app.get("/source-discovery/auto-curate/log")
+def source_discovery_auto_curate_log(
+    request: Request,
+    limit: int = Query(default=50, ge=1, le=500),
+) -> dict[str, Any]:
+    """Últimos eventos del log de curaduría automática (JSONL)."""
+    from backend.source_discovery.auto_curator import DEFAULT_LOG_DIR
+
+    entries: list[dict[str, Any]] = []
+    path = DEFAULT_LOG_DIR / "log.jsonl"
+    if path.exists():
+        for line in path.read_text(encoding="utf-8").splitlines()[-limit:]:
+            try:
+                entries.append(json.loads(line))
+            except json.JSONDecodeError:
+                continue
+    entries.reverse()
+    return {"count": len(entries), "entries": entries}
 
 
 # --- Fase 8: Decision Support ---

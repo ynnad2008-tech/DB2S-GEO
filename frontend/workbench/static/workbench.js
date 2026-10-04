@@ -329,6 +329,12 @@ function reasonsHtml(reasons, titleMap, limit = 4) {
     .join("");
 }
 
+const CURATION_LABELS = {
+  human: "curaduría humana",
+  "llm-verified": "IA · URL verificada",
+  "llm-enriched": "IA · enriquecida",
+};
+
 function candidateStatusBadges(c) {
   const parts = [];
   if (c.already_registered) {
@@ -336,14 +342,15 @@ function candidateStatusBadges(c) {
   }
   const curation = c.curation || "human_required";
   if (curation === "human_required" && !c.already_registered) {
-    parts.push('<span class="pill badge-pending">Pendiente de revisión</span>');
+    parts.push('<span class="pill badge-pending">Propuesta IA · pendiente</span>');
   } else if (curation === "human_required" && c.already_registered) {
     /* already shown Ya en catálogo */
   } else if (curation && curation !== "human_required") {
-    parts.push(`<span class="pill">${esc(curation)}</span>`);
+    const label = CURATION_LABELS[curation] || curation;
+    parts.push(`<span class="pill">${esc(label)}</span>`);
   }
   if (!parts.length) {
-    parts.push('<span class="pill badge-pending">Pendiente de revisión</span>');
+    parts.push('<span class="pill badge-pending">Propuesta IA · pendiente</span>');
   }
   return parts.join(" ");
 }
@@ -506,14 +513,7 @@ function loadPanel(name) {
     recommend: () => setStatus("Escriba un tema y pulse Recomendar."),
     monitor: loadWatcher,
     observatory: loadObservatory,
-    admin: () => {
-      loadCandidates();
-      loadGraphAdvanced();
-    },
-    about: () => setStatus("Acerca de DB2S-GEO · Alpha"),
-    cite: loadCite,
-    author: () => setStatus("Autoría · Dany Arbey Benavides"),
-    support: () => setStatus("Apoya el desarrollo · aportes voluntarios"),
+    admin: loadAutoCurateLog,
   };
   (map[name] || (() => {}))();
 }
@@ -877,69 +877,44 @@ async function runWatcher() {
   }
 }
 
-/* ---------- Administración / candidatos ---------- */
-async function loadCandidates() {
+/* ---------- Administración / Auto Curator ---------- */
+async function loadAutoCurateLog() {
   try {
-    setStatus("Cargando candidatos…");
-    const data = await api("/source-discovery/candidates");
-    const items = data.candidates || [];
-    $("#cand-body").innerHTML = items.length
-      ? items
-          .map(
-            (c) => `
-        <tr data-id="${esc(c.id)}">
-          <td>
-            ${
-              isHttpUrl(c.url)
-                ? formatExtLink(c.name || c.url, c.url)
-                : `<strong>${esc(c.name)}</strong>`
-            }
-            <div class="url-secondary">${
-              isHttpUrl(c.url) ? formatExtLink(c.url, c.url) : esc(c.url || "—")
-            }</div>
-            <a href="#cand-detail-wrap" class="text-link cand-detail-link" data-id="${esc(c.id)}">Ver detalle</a>
-          </td>
-          <td>${esc(c.source_type)}</td>
-          <td>${esc(c.institution)}</td>
-          <td>${esc(c.confidence)}</td>
-          <td class="cand-status">${candidateStatusBadges(c)}</td>
-        </tr>`
-          )
+    const body = $("#auto-curate-log-body");
+    if (!body) return;
+    const data = await api("/source-discovery/auto-curate/log");
+    const entries = data.entries || [];
+    body.innerHTML = entries.length
+      ? entries
+          .map((e) => {
+            const t = new Date(e.timestamp).toLocaleString("es-CO", {
+              hour12: false,
+            });
+            const detail = Object.entries(e)
+              .filter(([k]) => !["timestamp", "action"].includes(k))
+              .map(([k, v]) => `${k}: ${esc(v)}`)
+              .join(" · ");
+            return `<tr><td>${esc(t)}</td><td>${esc(e.action)}</td><td>${detail}</td></tr>`;
+          })
           .join("")
-      : `<tr><td colspan="5" class="empty">Sin candidatos</td></tr>`;
-
-    $$("#cand-body .cand-detail-link").forEach((link) => {
-      link.addEventListener("click", async (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const detail = await api(`/source-discovery/candidates/${link.dataset.id}`);
-        showCandidateJson(detail);
-        setStatus(`Detalle de candidato · ${detail.name || link.dataset.id}`, "ok");
-      });
-    });
-    setStatus(`${data.count} candidatos pendientes de curaduría`, "ok");
-    updateCandidatesNav(data.count);
+      : `<tr><td colspan="3" class="empty">Sin ciclos registrados todavía</td></tr>`;
+    setStatus(`${entries.length} eventos en el log de curaduría`, "ok");
   } catch (err) {
     setStatus(err.message, "error");
   }
 }
 
-async function analyzeCandidate() {
+async function runAutoCurate() {
   try {
-    const url = $("#cand-url").value.trim();
-    if (!url) {
-      setStatus("Indique una URL.", "error");
-      return;
-    }
-    setStatus("Analizando URL…");
-    const data = await api("/source-discovery/analyze", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url, persist: true }),
-    });
-    showCandidateJson(data);
-    setStatus(`Propuesta: ${data.name} · confianza ${data.confidence}`, "ok");
-    await loadCandidates();
+    setStatus("Ejecutando ciclo de curaduría (Gemini + verificación HTTP)…");
+    const data = await api("/source-discovery/auto-curate", { method: "POST" });
+    const c = data.cycle || {};
+    setStatus(
+      `Ciclo: ${c.geoservice_added || 0} geoservicios · ${c.portal_added || 0} portales · ` +
+        `${c.enriched || 0} enriquecidas${c.error ? ` · ${c.error}` : ""}`,
+      c.error ? "error" : "ok"
+    );
+    await loadAutoCurateLog();
   } catch (err) {
     setStatus(err.message, "error");
   }
@@ -1220,11 +1195,8 @@ function boot() {
 
   $("#obs-refresh")?.addEventListener("click", loadObservatory);
 
-  $("#cand-refresh")?.addEventListener("click", loadCandidates);
-  $("#cand-analyze")?.addEventListener("click", analyzeCandidate);
-  $("#cand-url")?.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") analyzeCandidate();
-  });
+  $("#auto-curate-run")?.addEventListener("click", runAutoCurate);
+  $("#auto-curate-log-refresh")?.addEventListener("click", loadAutoCurateLog);
 
   $("#nodes-refresh")?.addEventListener("click", () =>
     loadNodes().catch((e) => setStatus(e.message, "error"))

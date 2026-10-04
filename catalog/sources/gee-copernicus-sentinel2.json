@@ -165,7 +165,13 @@
         "uso_suelo",
         "habitat",
         "provision",
-        "ecosistemas"
+        "ecosistemas",
+        "ganaderia",
+        "pastos",
+        "agricultura",
+        "zonificacion",
+        "aptitud",
+        "ordenamiento"
       ],
       "access_methods": [
         "platform",

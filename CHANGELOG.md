@@ -6,6 +6,37 @@ El formato se inspira en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1
 
 ---
 
+## [v0.7.2] — 2026-10-03
+
+Workbench simplificado (solo paneles funcionales) · narrador Gemini · uso del suelo en consultas agro.
+
+### Cambiado — Frontend
+
+- Fuera las secciones informativas (Acerca de, Cómo citar, Autoría, Apoyo)
+  y las vistas técnicas avanzadas: solo los 6 paneles funcionales.
+- El panel manual de candidatos fue reemplazado por el panel
+  **Auto Curator** (ejecutar ciclo + log de trazabilidad).
+- Textos de gobernanza actualizados: "Curaduría asistida por IA · fuentes
+  verificadas automáticamente" y aviso "La IA puede cometer errores" en
+  hero, administración, principios y footer.
+
+### Añadido — Narrador Gemini (inmersivo)
+
+- `llm_narrator.py`: resumen en lenguaje natural de cada orientación y
+  preguntas de seguimiento, con fallback determinista garantizado
+  (campo `narrative` en /decision-support).
+
+### Añadido — Uso del suelo en consultas agro
+
+- Aliases `ganaderia` y `zonificacion` → uso_suelo/coberturas/aptitud:
+  consultas de ganadería ahora alcanzan MapBiomas, IGAC, UPRA y GEE.
+- DynamicWorld enriquecido con keywords agro/uso del suelo (subió de
+  "sin match" a top-13 con razones pertinentes).
+- `GET /source-discovery/auto-curate/log` para el panel del workbench.
+- Suite 144/144.
+
+---
+
 ## [v0.7.1] — 2026-10-03
 
 Crecimiento autogestionado del catálogo (Auto Curator) con prioridad de geoservicios.

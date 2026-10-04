@@ -17,6 +17,7 @@ from backend.decision_support.actions import (
 )
 from backend.decision_support.intents import INTENT_LABELS
 from backend.decision_support.llm_interpreter import interpret_query
+from backend.decision_support.llm_narrator import narrate_orientation
 from backend.metadata.coverage import detect_coverage, matches_coverage
 from backend.recommendation.scoring import normalize_token
 
@@ -178,6 +179,9 @@ class DecisionSupportEngine:
                 coverage=detected, include_global=include_global,
             )
 
+        # Narrador inmersivo (Gemini) con fallback determinista
+        narrative = narrate_orientation(q, need, routes)
+
         return {
             "query": q,
             "need": need,
@@ -195,6 +199,7 @@ class DecisionSupportEngine:
                 "detected_auto": detected_auto,
                 "include_global": include_global,
             },
+            "narrative": narrative,
             "count": len(routes),
             "routes": routes,
             "explainability": "required",

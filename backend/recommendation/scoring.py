@@ -116,6 +116,11 @@ CURATED_ALIASES: dict[str, list[str]] = {
     # Infraestructura (sin expandir a ciudades específicas)
     "transporte": ["transporte", "infraestructura", "vias", "carreteras", "aeropuertos"],
     "puertos": ["puertos", "portuario", "portuaria"],
+    # Uso del suelo / agro (ganadería y zonificación implican coberturas)
+    "ganaderia": ["ganaderia", "ganadera", "pastos", "agricultura",
+                  "uso_suelo", "coberturas"],
+    "zonificacion": ["zonificacion", "ordenamiento", "uso_suelo", "aptitud",
+                     "coberturas"],
 }
 
 

@@ -127,6 +127,44 @@ def test_intents_desconocidos_se_descartan(monkeypatch: pytest.MonkeyPatch) -> N
     assert r["concepts"] == ["dem", "suelos"]  # "a" corto, "colombia" genérica
 
 
+def test_narrador_fallback_determinista() -> None:
+    from backend.decision_support.llm_narrator import narrate_orientation
+
+    routes = [{"source": "IDEAM", "source_id": "ideam", "title": "Datos hidrológicos",
+               "why": ["fuente oficial"]}]
+    r = narrate_orientation("inundaciones", "análisis de inundaciones", routes)
+    assert r["source"] == "deterministic"
+    assert "IDEAM" in r["summary"]
+    assert r["followups"] == []
+
+
+def test_narrador_gemini_valido(monkeypatch: pytest.MonkeyPatch) -> None:
+    from backend.decision_support import llm_narrator
+
+    monkeypatch.setenv("GEMINI_API_KEY", "clave-de-prueba")
+    monkeypatch.setattr(
+        llm_narrator, "_call_gemini",
+        lambda *a, **k: '{"summary": "Usa IDEAM y GEE.", "followups": ["¿período?", "¿escala?"]}',
+    )
+    routes = [{"source": "IDEAM", "title": "Datos hidrológicos", "why": ["x"]}]
+    r = llm_narrator.narrate_orientation("q", "need", routes)
+    assert r["source"] == "gemini"
+    assert "IDEAM" in r["summary"]
+    assert r["followups"] == ["¿período?", "¿escala?"]
+
+
+def test_narrador_gemini_error_cae_a_fallback(monkeypatch: pytest.MonkeyPatch) -> None:
+    from backend.decision_support import llm_narrator
+
+    monkeypatch.setenv("GEMINI_API_KEY", "clave-de-prueba")
+    monkeypatch.setattr(llm_narrator, "_call_gemini",
+                        lambda *a, **k: (_ for _ in ()).throw(TimeoutError("sin red")))
+    routes = [{"source": "IDEAM", "title": "t", "why": ["x"]}]
+    r = llm_narrator.narrate_orientation("q", "need", routes)
+    assert r["source"] == "deterministic"
+    assert "IDEAM" in r["summary"]
+
+
 def test_circuit_breaker_evita_reintentos(monkeypatch: pytest.MonkeyPatch) -> None:
     import urllib.error
 

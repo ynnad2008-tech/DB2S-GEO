@@ -343,6 +343,14 @@ body {
   max-width: 34rem;
 }
 
+.ai-note {
+  margin: 0.4rem 0 1.1rem;
+  color: var(--warn, #8a6d1a);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  max-width: 34rem;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
