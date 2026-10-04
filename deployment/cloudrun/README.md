@@ -68,18 +68,19 @@ curl -H "Authorization: Bearer $(gcloud auth print-identity-token)" "$SERVICE_UR
 - Limitación conocida: evitar consultas con solo la palabra «Colombia».
 
 
+
 ---
 
 ## Despliegue automatizado (GitHub Actions, activado 2026-10-03)
 
-El push a  ejecuta :
+El push a `main` ejecuta `.github/workflows/catalog-and-deploy.yml`:
 validación del catálogo → tests unitarios → build en Cloud Build →
-deploy a Cloud Run (servicio ) → smoke tests contra la URL pública.
+deploy a Cloud Run (servicio `db2s-geo`) → smoke tests contra la URL pública.
 
 Requisitos en GitHub (Settings → Secrets and variables → Actions):
-- Secret  (clave JSON de service account)
-- Secret 
-- Variable 
-- Variables opcionales:  (default ),  (default )
+- Secret `GCP_SA_KEY` (clave JSON de service account)
+- Secret `GCP_PROJECT_ID`
+- Variable `DEPLOY_CLOUD_RUN=true`
+- Variables opcionales: `GCP_SERVICE` (default `db2s-geo`), `GCP_REGION` (default `us-central1`)
 
 Sin CLI local: toda la operación ocurre en GitHub Actions y Google Cloud.
