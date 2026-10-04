@@ -700,6 +700,36 @@
           "method": "arcgis",
           "url": "https://mapas2.igac.gov.co/server/rest/services/agrologia",
           "label": "Agrología"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas.igac.gov.co/server/rest/services/catastro/Gestores_Catastrales/MapServer",
+          "label": "Catastro — gestores catastrales"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas.igac.gov.co/server/rest/services/carto/carto100000curvasdenivel/MapServer",
+          "label": "Cartografía base 1:100.000 — curvas de nivel"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas.igac.gov.co/server/rest/services/agrologia/areashomogeneasdetierraterritorionacional/MapServer",
+          "label": "Agrología — áreas homogéneas de tierra"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas.igac.gov.co/server/rest/services/relieve/srtm30metros/MapServer",
+          "label": "Relieve — SRTM 30 m"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas.igac.gov.co/image/rest/services",
+          "label": "Imágenes ortorectificadas satelitales (ImageServer)"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://mapas.igac.gov.co/server/rest/services/atlas/biomas/MapServer",
+          "label": "Atlas — biomas de Colombia"
         }
       ],
       "formats": [
