@@ -19,9 +19,9 @@
   "resources": [
     {
       "id": "invemar:geovisor",
-      "name": "Geovisor INVEMAR",
-      "description": "Geovisor y acceso cartográfico a información marina y costera producida o publicada por INVEMAR.",
-      "url": "https://www.invemar.org.co",
+      "name": "Geovisores SIAM — INVEMAR (SIBM, SICAM, SIGMA)",
+      "description": "Portal de geovisores del SIAM que deriva a los visores temáticos de INVEMAR (SIBM biodiversidad, SICAM, SIGMA ambiental marino). DB2S-GEO solo documenta el acceso.",
+      "url": "https://geovisorsiam.invemar.org.co/",
       "category": "portal",
       "coverage": {
         "spatial": "Colombia (marino-costero)",
@@ -65,15 +65,15 @@
       "endpoints": [
         {
           "method": "portal",
-          "url": "https://www.invemar.org.co",
-          "label": "Portal institucional INVEMAR"
+          "url": "https://geovisorsiam.invemar.org.co/",
+          "label": "Geovisores SIAM — INVEMAR"
         }
       ],
       "formats": [
         "servicios web",
         "mapas"
       ],
-      "documentation_url": "https://www.invemar.org.co",
+      "documentation_url": "https://geovisorsiam.invemar.org.co/",
       "doi": "",
       "citation_reference": "INVEMAR. Geovisor e información marina y costera. Instituto de Investigaciones Marinas y Costeras."
     },
@@ -480,18 +480,23 @@
         },
         {
           "method": "arcgis",
-          "url": "https://gis.invemar.org.co/arcgis/rest/services/OOEE_EROSION/MapServer",
-          "label": "Erosión costera"
+          "url": "https://gis.invemar.org.co/arcgis/rest/services/SIGMA/AMP_SIGMA/MapServer",
+          "label": "SIGMA — áreas marinas protegidas"
         },
         {
           "method": "arcgis",
-          "url": "https://gis.invemar.org.co/arcgis/rest/services/SIGMA/MANGLARES_COLOMBIA/MapServer",
+          "url": "https://gis.invemar.org.co/arcgis/rest/services/REDCAM/1_TM_REDCAM_CGSM/MapServer",
+          "label": "REDCAM — calidad ambiental marina"
+        },
+        {
+          "method": "arcgis",
+          "url": "https://gis.invemar.org.co/arcgis/rest/services/Manglares/1_TM_Manglares_Colombia/MapServer",
           "label": "Manglares de Colombia"
         },
         {
           "method": "arcgis",
-          "url": "https://gis.invemar.org.co/arcgis/rest/services/Hosted/Ecorregiones_Marinas_de_Colombia/FeatureServer",
-          "label": "Ecorregiones marinas de Colombia"
+          "url": "https://gis.invemar.org.co/arcgis/rest/services/ErosionCostera/1_TM_ErosionCostera/MapServer",
+          "label": "Erosión costera"
         }
       ],
       "formats": [
