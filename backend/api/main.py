@@ -797,9 +797,20 @@ def decision_support_chat(
                     coverage = inherited
                     break
 
+    # Preguntas anafóricas ("¿y la serie histórica?"): enriquecer el ruteo
+    # con las preguntas previas del usuario para conservar los conceptos.
+    prior = " ".join(
+        str(h.get("text") or "")
+        for h in (body.history or [])[-4:]
+        if str(h.get("role")) == "user"
+    )[:400]
+    routing_q = f"{body.query} {prior}".strip()
+
     payload = _decision_support(request).advise(
-        body.query, limit=limit, coverage=coverage, include_global=include_global
+        routing_q, limit=limit, coverage=coverage, include_global=include_global
     )
+    # La respuesta conversa sobre la pregunta del usuario, no la enriquecida
+    payload["query"] = body.query
     payload["mode"] = "chat"
     payload["narrative"] = narrate_chat(
         body.query, payload["need"], payload["routes"], body.history or []
