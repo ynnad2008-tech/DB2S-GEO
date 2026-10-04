@@ -18,6 +18,7 @@ from backend.recommendation.scoring import (
     WEIGHT_RELATED_KEYWORD,
     WEIGHT_RESOURCE_MATCH,
     WEIGHT_SOURCE_MATCH,
+    _word_forms,
     add_reason,
     add_relation,
     empty_accumulator,
@@ -421,12 +422,20 @@ class RecommendationEngine:
         for token in tokens:
             if is_generic_keyword(token):
                 continue
-            kw_nid = node_id("Keyword", token)
-            kw_node = self._kg.graph.get_node(kw_nid)
+            # Coincidencia por formas singular/plural: el token "cuenca"
+            # también alcanza la keyword "cuencas" del grafo.
+            kw_node = None
+            for form in _word_forms(token):
+                if is_generic_keyword(form):
+                    continue
+                node = self._kg.graph.get_node(node_id("Keyword", form))
+                if node is not None:
+                    kw_node = node
+                    break
             if kw_node is None:
                 continue
             resources = self._kg.graph.neighbors(
-                kw_nid, direction="in", rel_type="associated_with"
+                kw_node["id"], direction="in", rel_type="associated_with"
             )
             for res in resources:
                 sources = self._kg.graph.neighbors(
@@ -450,7 +459,7 @@ class RecommendationEngine:
                         weight = 5
                     acc["score_raw"] += weight
                     add_reason(acc, f"keyword {token}")
-                    add_relation(acc, "associated_with", res["id"], kw_nid)
+                    add_relation(acc, "associated_with", res["id"], kw_node["id"])
                     add_relation(acc, "contains", src["id"], res["id"])
                     rid = self._node_key(res["id"])
                     if rid not in acc["matched_resources"]:
@@ -534,7 +543,16 @@ class RecommendationEngine:
             rid = self._node_key(node["id"])
             label = normalize_token(node["label"])
             rid_norm = normalize_token(rid)
-            if not any(t in rid_norm or t in label or rid_norm.endswith(t) for t in tokens):
+            # Match por palabras completas (con formas singular/plural) y
+            # sufijos de id — no por subcadenas: "rio" no debe coincidir
+            # con "repositorio" ni "siniestralidad".
+            words: set[str] = set()
+            for part in label.split("_") + rid_norm.split("_"):
+                words.update(_word_forms(part))
+            if not any(
+                _word_forms(t) & words or rid_norm.endswith(t)
+                for t in tokens
+            ):
                 continue
             sources = self._kg.graph.neighbors(
                 node["id"], direction="in", rel_type="contains"

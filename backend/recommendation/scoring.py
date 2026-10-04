@@ -77,7 +77,8 @@ CURATED_ALIASES: dict[str, list[str]] = {
     # razones ajenas ("keyword cartagena" en consultas de Buenaventura).
     "bahia": ["bahia", "golfo", "ensenada", "estuario"],
     # Hidrología
-    "cuencas": ["hidrologia", "cuencas", "caudales", "rios", "cuenca"],
+    "cuencas": ["hidrologia", "cuencas", "caudales", "rios", "cuenca",
+                "microcuenca", "microcuencas"],
     "inundaciones": ["inundacion", "inundaciones", "riesgo", "hidrologia", "desbordamiento"],
     # Coberturas y uso del suelo (clave para el caso Buenaventura)
     "coberturas": ["coberturas", "cobertura", "uso_suelo", "landcover", "lulc", "mapbiomas"],
@@ -86,7 +87,8 @@ CURATED_ALIASES: dict[str, list[str]] = {
     # Biodiversidad
     "biodiversidad": ["biodiversidad", "especies", "fauna", "flora", "habitat", "conservacion"],
     "aves": ["aves", "pajaros", "ebird", "ornitologia", "biodiversidad"],
-    "ecosistemas": ["ecosistemas", "ecosistema", "bioma", "habitat", "biodiversidad", "conservacion"],
+    "ecosistemas": ["ecosistemas", "ecosistema", "ecosistemica", "ecosistemico",
+                    "ecosistemicos", "bioma", "habitat", "biodiversidad", "conservacion"],
     # Suelos
     "suelos": ["suelos", "suelo", "edafologia", "soilgrids", "carbono_organico", "ph", "textura"],
     # Geología

@@ -80,3 +80,18 @@ def test_manglares_alias(rec: RecommendationEngine) -> None:
     payload = rec.recommend("manglares")
     assert payload["count"] >= 1
     assert any(r["source_id"] == "invemar" for r in payload["recommendations"])
+
+
+def test_microcuenca_talgua_relevancia(rec: RecommendationEngine) -> None:
+    # Regresión (2026-10-03): "microcuenca" y "ecosistémica" deben expandir;
+    # el token "rio" no debe coincidir por subcadena con "repositorio"
+    # (dimar) ni "siniestralidad" (ansv).
+    payload = rec.recommend(
+        "modelación de la multifuncionalidad ecosistémica "
+        "en la microcuenca del río Talgua"
+    )
+    ids = [r["source_id"] for r in payload["recommendations"]]
+    assert "catie" in ids
+    assert "hydrosheds" in ids
+    assert "ansv" not in ids
+    assert "dimar" not in ids
