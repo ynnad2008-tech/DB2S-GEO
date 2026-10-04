@@ -77,7 +77,9 @@ jobs:
           echo "Deployed to: ${URL}"
           echo ""
           echo "=== Smoke tests ==="
-          curl -fsS "${URL}/healthz" && echo "  PASS healthz"
+          # /healthz puede ser bloqueado por capas de API Gateway propias
+          # del proyecto; /health sirve igual como sonda de vida.
+          curl -fsS "${URL}/health" && echo "  PASS health"
           curl -fsS "${URL}/version" && echo "  PASS version"
           curl -fsS "${URL}/graph/stats" && echo "  PASS graph/stats"
           EXPECTED=$(python -c "import json,glob;print(sum(1 for p in glob.glob('catalog/sources/*.json') if json.load(open(p,encoding='utf-8')).get('status')=='active'))")
