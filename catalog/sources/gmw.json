@@ -1,0 +1,59 @@
+{
+  "id": "gmw",
+  "name": "Global Mangrove Watch",
+  "description": "Global Mangrove Watch: monitoreo global de manglares con series temporales y alertas de cambio. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.globalmangrovewatch.org/",
+  "category": "plataforma",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Global Mangrove Watch (JAXA / Wetlands International)",
+  "domains": [
+    "biodiversidad",
+    "oceanos_costas"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "gmw:portal",
+      "name": "Portal — Global Mangrove Watch",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.globalmangrovewatch.org/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "biodiversidad",
+        "oceanos_costas"
+      ],
+      "keywords": [
+        "gmw",
+        "manglares",
+        "monitoreo",
+        "alertas"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.globalmangrovewatch.org/",
+          "label": "Global Mangrove Watch"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.globalmangrovewatch.org/",
+      "doi": "",
+      "citation_reference": "Global Mangrove Watch (JAXA / Wetlands International). Global Mangrove Watch. https://www.globalmangrovewatch.org/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:33.871355+00:00"
+}

@@ -1,0 +1,60 @@
+{
+  "id": "cenaos-hn",
+  "name": "CENAOS Honduras",
+  "description": "Centro Nacional de Estudios Atmosféricos, Oceanográficos y Sísmicos de Honduras: pronósticos, alertas hidrometeorológicas y monitoreo sísmico. DB2S-GEO solo documenta el acceso.",
+  "url": "https://cenaos.copeco.gob.hn/",
+  "category": "instituto",
+  "coverage": {
+    "spatial": "Honduras",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Centro Nacional de Estudios Atmosféricos, Oceanográficos y Sísmicos (CENAOS-COPECO)",
+  "domains": [
+    "clima",
+    "riesgo"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "cenaos-hn:portal",
+      "name": "Portal — CENAOS Honduras",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://cenaos.copeco.gob.hn/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Honduras",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "clima",
+        "riesgo"
+      ],
+      "keywords": [
+        "cenaos",
+        "copeco",
+        "meteorologia",
+        "sismico",
+        "alertas"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://cenaos.copeco.gob.hn/",
+          "label": "CENAOS Honduras"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://cenaos.copeco.gob.hn/",
+      "doi": "",
+      "citation_reference": "Centro Nacional de Estudios Atmosféricos, Oceanográficos y Sísmicos (CENAOS-COPECO). CENAOS Honduras. https://cenaos.copeco.gob.hn/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:31.706053+00:00"
+}

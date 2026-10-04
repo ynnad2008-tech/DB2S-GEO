@@ -1,0 +1,57 @@
+{
+  "id": "imn-cr",
+  "name": "IMN Costa Rica",
+  "description": "Instituto Meteorológico Nacional de Costa Rica: pronósticos, clima y meteorología oficial del país. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.imn.ac.cr/",
+  "category": "instituto",
+  "coverage": {
+    "spatial": "Costa Rica",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Instituto Meteorológico Nacional (IMN)",
+  "domains": [
+    "clima"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "imn-cr:portal",
+      "name": "Portal — IMN Costa Rica",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.imn.ac.cr/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Costa Rica",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "clima"
+      ],
+      "keywords": [
+        "imn",
+        "meteorologia",
+        "clima",
+        "pronostico"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.imn.ac.cr/",
+          "label": "IMN Costa Rica"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.imn.ac.cr/",
+      "doi": "",
+      "citation_reference": "Instituto Meteorológico Nacional (IMN). IMN Costa Rica. https://www.imn.ac.cr/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:35.238321+00:00"
+}

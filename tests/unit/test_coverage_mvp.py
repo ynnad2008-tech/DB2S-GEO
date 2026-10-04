@@ -51,6 +51,29 @@ def test_cobertura_colombia_incluye_subnacionales() -> None:
     assert not matches_coverage("Honduras", "colombia")
 
 
+def test_cobertura_paises_regionales() -> None:
+    # Nacional cubre sus subnacionales
+    assert matches_coverage("Honduras", "honduras")
+    assert matches_coverage("Honduras", "tegucigalpa")
+    assert matches_coverage("Costa Rica", "san_jose")
+    assert matches_coverage("Perú", "cusco")
+    assert matches_coverage("México", "guadalajara")
+    # Países no se cruzan
+    assert not matches_coverage("Honduras", "colombia")
+    assert not matches_coverage("Costa Rica", "honduras")
+    assert not matches_coverage("Perú", "mexico")
+    # Global opcional
+    assert matches_coverage("Global", "honduras", include_global=True)
+    assert not matches_coverage("Global", "honduras", include_global=False)
+
+
+def test_detecta_paises_regionales() -> None:
+    assert detect_coverage("datos de precipitacion en tegucigalpa") == "tegucigalpa"
+    assert detect_coverage("ordenamiento territorial en san jose") == "san_jose"
+    assert detect_coverage("inundaciones en honduras") == "honduras"
+    assert detect_coverage("cuencas en costa rica") == "costa_rica"
+
+
 def test_normalize_coverage_limpia_parentesis() -> None:
     assert normalize_coverage("Colombia (32 departamentos según operación)") == "colombia"
     assert normalize_coverage("Valle del Cauca") == "valle_del_cauca"

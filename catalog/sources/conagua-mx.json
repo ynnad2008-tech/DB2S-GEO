@@ -1,0 +1,59 @@
+{
+  "id": "conagua-mx",
+  "name": "CONAGUA México",
+  "description": "Comisión Nacional del Agua de México: información hidrológica, climatológica y de aguas nacionales. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.conagua.gob.mx/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "México",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Comisión Nacional del Agua (CONAGUA)",
+  "domains": [
+    "hidrologia",
+    "clima"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "conagua-mx:portal",
+      "name": "Portal — CONAGUA México",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.conagua.gob.mx/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "México",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "hidrologia",
+        "clima"
+      ],
+      "keywords": [
+        "conagua",
+        "hidrologia",
+        "clima",
+        "aguas_nacionales"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.conagua.gob.mx/",
+          "label": "CONAGUA México"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.conagua.gob.mx/",
+      "doi": "",
+      "citation_reference": "Comisión Nacional del Agua (CONAGUA). CONAGUA México. https://www.conagua.gob.mx/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:32.528668+00:00"
+}

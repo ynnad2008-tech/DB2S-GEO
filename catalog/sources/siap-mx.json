@@ -1,0 +1,57 @@
+{
+  "id": "siap-mx",
+  "name": "SIAP México",
+  "description": "Servicio de Información Agroalimentaria y Pesquera de México: estadísticas agrícolas, pecuarias y pesqueras. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.gob.mx/siap",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "México",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Servicio de Información Agroalimentaria y Pesquera (SIAP)",
+  "domains": [
+    "agricultura"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "siap-mx:portal",
+      "name": "Portal — SIAP México",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.gob.mx/siap",
+      "category": "portal",
+      "coverage": {
+        "spatial": "México",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "agricultura"
+      ],
+      "keywords": [
+        "siap",
+        "agroalimentaria",
+        "pesquera",
+        "agricultura"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.gob.mx/siap",
+          "label": "SIAP México"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.gob.mx/siap",
+      "doi": "",
+      "citation_reference": "Servicio de Información Agroalimentaria y Pesquera (SIAP). SIAP México. https://www.gob.mx/siap"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:39.606497+00:00"
+}

@@ -1,0 +1,57 @@
+{
+  "id": "ign-pe",
+  "name": "IGN Perú",
+  "description": "Instituto Geográfico Nacional del Perú: cartografía básica oficial, geodesia y datos geoespaciales del país. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.ign.gob.pe/",
+  "category": "instituto",
+  "coverage": {
+    "spatial": "Perú",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Instituto Geográfico Nacional del Perú (IGN)",
+  "domains": [
+    "cartografia_base"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "ign-pe:portal",
+      "name": "Portal — IGN Perú",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.ign.gob.pe/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Perú",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "cartografia_base"
+      ],
+      "keywords": [
+        "ign",
+        "cartografia",
+        "geodesia",
+        "geoespacial"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.ign.gob.pe/",
+          "label": "IGN Perú"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.ign.gob.pe/",
+      "doi": "",
+      "citation_reference": "Instituto Geográfico Nacional del Perú (IGN). IGN Perú. https://www.ign.gob.pe/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:34.945910+00:00"
+}

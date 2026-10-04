@@ -378,7 +378,9 @@ NEED_PROFILES: dict[str, dict[str, Any]] = {
     },
     "inundaciones": {
         "need": "análisis de inundaciones en microcuenca",
-        "match_any": ("inundaciones", "inundacion", "microcuenca"),
+        # "microcuenca" fuera de los disparadores: mencionarla no implica
+        # inundación (p. ej. "modelación ecosistémica en la microcuenca").
+        "match_any": ("inundaciones", "inundacion"),
         "routes": [
             {
                 "title": "Datos hidrológicos",
@@ -543,7 +545,8 @@ def match_need_profile(concepts: list[str], query_norm: str) -> dict[str, Any] |
 def category_for_intent(intent: str, source_id: str) -> str:
     """Elige categoría de acción según intención + fuente."""
     meta = SOURCE_WHERE.get(source_id, {})
-    defaults = list(meta.get("default_categories") or ["obtener_informacion_complementaria"])
+    # Fuentes sin entrada curada: por defecto son portales institucionales.
+    defaults = list(meta.get("default_categories") or ["consultar_informacion_institucional"])
 
     if intent == "descargar":
         if "descargar_datos" in defaults or source_id != "gee":
@@ -562,9 +565,17 @@ def category_for_intent(intent: str, source_id: str) -> str:
     return defaults[0]
 
 
-def where_for_source(source_id: str, category: str) -> list[str]:
+def where_for_source(
+    source_id: str,
+    category: str,
+    source_label: str | None = None,
+) -> list[str]:
     meta = SOURCE_WHERE.get(source_id, {})
-    where = list(meta.get("where") or ["Consultar metadatos de la fuente en el catálogo"])
+    fallback = (
+        [f"Portal institucional — {source_label}"] if source_label
+        else ["Consultar metadatos de la fuente en el catálogo"]
+    )
+    where = list(meta.get("where") or fallback)
     if category == "consumir_apis":
         return [w for w in where if "API" in w.upper() or "api" in w.lower()] or where
     if category == "descargar_datos":

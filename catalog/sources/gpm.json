@@ -1,0 +1,59 @@
+{
+  "id": "gpm",
+  "name": "GPM",
+  "description": "Global Precipitation Measurement: precipitación satelital global (IMERG) con resolución temporal de 30 minutos. DB2S-GEO solo documenta el acceso.",
+  "url": "https://gpm.nasa.gov/data",
+  "category": "plataforma",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "NASA / JAXA — Global Precipitation Measurement",
+  "domains": [
+    "clima",
+    "hidrologia"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "gpm:portal",
+      "name": "Portal — GPM",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://gpm.nasa.gov/data",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "clima",
+        "hidrologia"
+      ],
+      "keywords": [
+        "gpm",
+        "imerg",
+        "precipitacion",
+        "satelital"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://gpm.nasa.gov/data",
+          "label": "GPM"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://gpm.nasa.gov/data",
+      "doi": "",
+      "citation_reference": "NASA / JAXA — Global Precipitation Measurement. GPM. https://gpm.nasa.gov/data"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:34.156787+00:00"
+}

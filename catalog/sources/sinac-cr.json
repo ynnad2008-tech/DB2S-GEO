@@ -1,0 +1,57 @@
+{
+  "id": "sinac-cr",
+  "name": "SINAC Costa Rica",
+  "description": "Sistema Nacional de Áreas de Conservación de Costa Rica: administra las áreas silvestres protegidas del país. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.sinac.go.cr/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Costa Rica",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Sistema Nacional de Áreas de Conservación (SINAC)",
+  "domains": [
+    "biodiversidad"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "sinac-cr:portal",
+      "name": "Portal — SINAC Costa Rica",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.sinac.go.cr/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Costa Rica",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "sinac",
+        "areas_protegidas",
+        "conservacion",
+        "biodiversidad"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.sinac.go.cr/",
+          "label": "SINAC Costa Rica"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.sinac.go.cr/",
+      "doi": "",
+      "citation_reference": "Sistema Nacional de Áreas de Conservación (SINAC). SINAC Costa Rica. https://www.sinac.go.cr/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:39.902666+00:00"
+}

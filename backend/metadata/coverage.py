@@ -17,7 +17,9 @@ Sin IA: listas curadas y normalización textual.
 
 from __future__ import annotations
 
-from backend.recommendation.scoring import normalize_token
+# NOTA: no se importa recommendation.scoring a nivel de módulo — creaba un
+# ciclo (discovery.engine → coverage → scoring → recommendation.__init__ →
+# recommendation.engine → coverage). normalize_token se importa lazy.
 
 # Departamentos de Colombia (normalizados, sin tildes)
 DEPARTAMENTOS = frozenset(
@@ -49,6 +51,52 @@ REGIONES = frozenset(
         "amazonia", "orinoquia", "caribe", "pacifico", "andina",
         "caribe_colombiano", "pacifico_colombiano", "cuenca_del_magdalena",
     }
+)
+
+# ── Otros países de la expansión regional (2026-10-03) ──
+# Lugares clave por país (normalizados); el nombre del país es cobertura
+# nacional y cubre sus subnacionales.
+PAISES_LUGARES: dict[str, frozenset[str]] = {
+    "honduras": frozenset(
+        {
+            "tegucigalpa", "san_pedro_sula", "catacamas", "olancho",
+            "la_ceiba", "comayagua", "choluteca", "siguatepeque",
+        }
+    ),
+    "costa_rica": frozenset(
+        {
+            "san_jose", "heredia", "cartago", "alajuela", "limon",
+            "puntarenas", "guanacaste",
+        }
+    ),
+    "mexico": frozenset(
+        {
+            "cdmx", "ciudad_de_mexico", "guadalajara", "monterrey",
+            "yucatan", "chiapas", "oaxaca", "veracruz", "sonora",
+        }
+    ),
+    "peru": frozenset(
+        {
+            "lima", "cusco", "arequipa", "loreto", "piura", "trujillo",
+            "puno", "ica", "ancash", "junin",
+        }
+    ),
+}
+
+# País → lugares (incluida la cobertura nacional)
+COUNTRY_SCOPES: dict[str, frozenset[str]] = {
+    "colombia": DEPARTAMENTOS | CIUDADES | REGIONES | frozenset({"colombia"}),
+    "honduras": PAISES_LUGARES["honduras"] | frozenset({"honduras"}),
+    "costa_rica": PAISES_LUGARES["costa_rica"] | frozenset({"costa_rica"}),
+    "mexico": PAISES_LUGARES["mexico"] | frozenset({"mexico"}),
+    "peru": PAISES_LUGARES["peru"] | frozenset({"peru"}),
+}
+
+NATIONAL_KEYS = frozenset(COUNTRY_SCOPES.keys())
+
+# Frases multi-palabra de los nuevos países (detección)
+PHRASES_PAISES: tuple[str, ...] = (
+    "san_jose", "san_pedro_sula", "ciudad_de_mexico", "costa_rica",
 )
 
 # Alias de detección → cobertura canónica
@@ -83,6 +131,8 @@ def normalize_coverage(text: str) -> str:
     Los paréntesis explicativos de las fichas ("Colombia (32 departamentos…)"
     → "colombia") se eliminan.
     """
+    from backend.recommendation.scoring import normalize_token  # lazy: evita ciclo
+
     value = normalize_token(text or "")
     if "_(" in value:
         value = value.split("_(")[0]
@@ -135,28 +185,30 @@ def matches_coverage(
     *,
     include_global: bool = True,
 ) -> bool:
-    """Indica si un scope cubre la cobertura pedida."""
+    """Indica si un scope cubre la cobertura pedida.
+
+    Semántica: cobertura nacional → sus subnacionales; cobertura subnacional
+    → el propio lugar, su contenedor (departamento → ciudad) y su país;
+    los globales cubren todo (opcional con include_global).
+    """
     scope = normalize_coverage(country_or_scope)
     cov = normalize_coverage(coverage)
-    if not cov or cov == "colombia":
+    if not cov:
+        return True
+    if cov in NATIONAL_KEYS:
         if scope == "global":
             return include_global
-        return (
-            scope == "colombia"
-            or scope in DEPARTAMENTOS
-            or scope in CIUDADES
-            or scope in REGIONES
-        )
+        return scope in COUNTRY_SCOPES[cov]
     if cov == "global":
         return scope == "global"
-    # Cobertura subnacional: la cubren el propio lugar, su contenedor
-    # (departamento → ciudad), el país entero y (opcionalmente) los globales.
     if scope == cov:
         return True
     if cov in CIUDADES and scope == CITY_TO_DEPT.get(cov):
         return True
-    if is_national_colombia(scope):
-        return True
+    # El país cubre sus subnacionales (p. ej. scope Honduras, cov tegucigalpa)
+    for country, lugares in COUNTRY_SCOPES.items():
+        if scope == country and cov in lugares:
+            return True
     if scope == "global":
         return include_global
     if cov in REGIONES and scope == cov:
@@ -165,12 +217,19 @@ def matches_coverage(
 
 
 def detect_coverage(query: str) -> str | None:
-    """Detecta cobertura colombiana mencionada en la consulta (o None)."""
+    """Detecta cobertura mencionada en la consulta (o None).
+
+    Reconoce Colombia (nacional, departamentos, ciudades y regiones) y los
+    países de la expansión regional (honduras, costa_rica, mexico, peru)
+    con sus ciudades clave.
+    """
+    from backend.recommendation.scoring import normalize_token  # lazy: evita ciclo
+
     norm = normalize_token(query or "")
     if not norm:
         return None
     # Frases multi-palabra primero
-    for phrase in PHRASES:
+    for phrase in PHRASES + PHRASES_PAISES:
         if phrase in norm:
             return DETECTION_ALIASES.get(phrase, phrase)
     # Tokens individuales (match exacto de token, no subcadena:
@@ -179,6 +238,11 @@ def detect_coverage(query: str) -> str | None:
         canon = DETECTION_ALIASES.get(token, token)
         if canon == "colombia":
             return "colombia"
+        if canon in NATIONAL_KEYS:
+            return canon
         if canon in DEPARTAMENTOS or canon in CIUDADES or canon in REGIONES:
             return canon
+        for country, lugares in PAISES_LUGARES.items():
+            if canon in lugares:
+                return canon
     return None

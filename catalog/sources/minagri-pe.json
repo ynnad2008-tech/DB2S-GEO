@@ -1,0 +1,58 @@
+{
+  "id": "minagri-pe",
+  "name": "MIDAGRI Perú",
+  "description": "Ministerio de Desarrollo Agrario y Riego del Perú: información agropecuaria y de riego (antes MINAGRI). DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.gob.pe/midagri",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Perú",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Ministerio de Desarrollo Agrario y Riego (MIDAGRI)",
+  "domains": [
+    "agricultura"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "minagri-pe:portal",
+      "name": "Portal — MIDAGRI Perú",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.gob.pe/midagri",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Perú",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "agricultura"
+      ],
+      "keywords": [
+        "midagri",
+        "minagri",
+        "agricultura",
+        "riego",
+        "agrario"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.gob.pe/midagri",
+          "label": "MIDAGRI Perú"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.gob.pe/midagri",
+      "doi": "",
+      "citation_reference": "Ministerio de Desarrollo Agrario y Riego (MIDAGRI). MIDAGRI Perú. https://www.gob.pe/midagri"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:36.618822+00:00"
+}

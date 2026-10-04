@@ -1,0 +1,58 @@
+{
+  "id": "indeci-pe",
+  "name": "INDECI Perú",
+  "description": "Instituto Nacional de Defensa Civil del Perú: gestión del riesgo de desastres, emergencias y alertas. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.gob.pe/indeci",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Perú",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Instituto Nacional de Defensa Civil (INDECI)",
+  "domains": [
+    "riesgo"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "indeci-pe:portal",
+      "name": "Portal — INDECI Perú",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.gob.pe/indeci",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Perú",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "riesgo"
+      ],
+      "keywords": [
+        "indeci",
+        "defensa_civil",
+        "emergencias",
+        "riesgo",
+        "desastres"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.gob.pe/indeci",
+          "label": "INDECI Perú"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.gob.pe/indeci",
+      "doi": "",
+      "citation_reference": "Instituto Nacional de Defensa Civil (INDECI). INDECI Perú. https://www.gob.pe/indeci"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:35.810231+00:00"
+}

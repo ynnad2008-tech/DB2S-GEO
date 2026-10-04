@@ -106,6 +106,21 @@ def test_temperatura_marina_no_cae_en_precipitacion(dss: DecisionSupportEngine) 
     assert "precipitaci" not in payload["need"].lower()
 
 
+def test_microcuenca_sin_inundacion_no_cae_en_perfil_fluvial(
+    dss: DecisionSupportEngine,
+) -> None:
+    # Regresión: "microcuenca" en la consulta no implica inundación
+    # (p. ej. modelación ecosistémica en la microcuenca del río Talgua).
+    payload = dss.advise(
+        "modelación de la multifuncionalidad ecosistémica "
+        "en la microcuenca del río Talgua"
+    )
+    assert "inundac" not in payload["need"].lower()
+    ids = {r["source_id"] for r in payload["routes"]}
+    # Fuentes de cuencas deben aparecer (catie/hydrosheds/ideam)
+    assert ids & {"catie", "hydrosheds", "ideam", "cenaos-hn"}
+
+
 def test_advise_precipitacion_routes(dss: DecisionSupportEngine) -> None:
     payload = dss.advise("Quiero datos de precipitación")
     assert payload["count"] >= 1

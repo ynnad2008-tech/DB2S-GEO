@@ -6,6 +6,46 @@ El formato se inspira en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1
 
 ---
 
+## [v0.7.0] — 2026-10-03
+
+Expansión total: catálogo 116 fuentes · cobertura regional · perfiles refinados.
+
+### Añadido — Fuentes verificadas (+35)
+
+- **Costa Rica (5)**: CNE, IMN, MINAE, SINAC, SNIT.
+- **Perú (8)**: IGN, MINAM, SENAMHI, SERFOR, SERNANP, MIDAGRI (antes
+  MINAGRI), INDECI, UNMSM-IGGT.
+- **México (2)**: CONAGUA, SIAP (vía gob.mx).
+- **Honduras (1)**: CENAOS-COPECO.
+- **Colombia (1)**: datos.gov.co (portal nacional de datos abiertos).
+- **Globales (18)**: CHIRPS, GPM, Global Surface Water, Global Mangrove
+  Watch, OpenLandMap, OBIS, NOAA, USGS Hazards, DesInventar, EM-DAT,
+  INFORM, HDX, iNaturalist, BirdCast, Earth Search, Planetary Computer,
+  OpenAlex, Semantic Scholar.
+- 12 pendientes con evidencia: INEGI/CONABIO/INEC (TLS o timeout desde la
+  red de curaduría), SINIT/CNA/ESNACIFOR/MiAmbiente/SET (Honduras, DNS),
+  ARESEP/IGN-CR, ERA5 (CDS timeout) y gob-meta (sigue caído).
+
+### Añadido — Cobertura regional
+
+- `coverage.py` generalizado: honduras, costa_rica, mexico y peru con sus
+  ciudades clave; el país cubre sus subnacionales; detección automática en
+  consultas ("en Tegucigalpa" → tegucigalpa).
+
+### Corregido
+
+- Perfil de inundaciones sin "microcuenca" como disparador (mencionar una
+  microcuenca no implica inundación).
+- Perfiles con cobertura geográfica se completan con recomendaciones
+  regionales cuando las plantillas quedan cortas (p. ej. precipitación
+  fuera de Colombia → CHIRPS/GPM/WorldClim).
+- Ciclo de imports en frío (discovery → coverage → scoring → recommendation)
+  resuelto con import lazy de normalize_token en coverage.py.
+- Categorías y "dónde" por defecto para fuentes sin entrada en SOURCE_WHERE.
+- Suite 133/133.
+
+---
+
 ## [v0.6.1] — 2026-10-03
 
 Precisión semántica de consultas: fin del encadenamiento transitivo de aliases.

@@ -1,0 +1,59 @@
+{
+  "id": "gsw",
+  "name": "Global Surface Water",
+  "description": "Global Surface Water: series 1984–2021 de agua superficial global (ocurrencia, cambios, estacionalidad). DB2S-GEO solo documenta el acceso.",
+  "url": "https://global-surface-water.appspot.com/",
+  "category": "plataforma",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "EC JRC / Google — Global Surface Water",
+  "domains": [
+    "hidrologia",
+    "observacion_tierra"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "gsw:portal",
+      "name": "Portal — Global Surface Water",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://global-surface-water.appspot.com/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "hidrologia",
+        "observacion_tierra"
+      ],
+      "keywords": [
+        "gsw",
+        "agua_superficial",
+        "ocurrencia",
+        "series"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://global-surface-water.appspot.com/",
+          "label": "Global Surface Water"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://global-surface-water.appspot.com/",
+      "doi": "",
+      "citation_reference": "EC JRC / Google — Global Surface Water. Global Surface Water. https://global-surface-water.appspot.com/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:34.424172+00:00"
+}

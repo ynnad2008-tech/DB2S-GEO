@@ -1,0 +1,57 @@
+{
+  "id": "emdat",
+  "name": "EM-DAT",
+  "description": "EM-DAT: base de datos internacional de desastres con eventos, impactos y pérdidas por país. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.emdat.be/",
+  "category": "plataforma",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Centre for Research on the Epidemiology of Disasters (CRED)",
+  "domains": [
+    "riesgo"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "emdat:portal",
+      "name": "Portal — EM-DAT",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.emdat.be/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "riesgo"
+      ],
+      "keywords": [
+        "emdat",
+        "desastres",
+        "impactos",
+        "perdidas"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.emdat.be/",
+          "label": "EM-DAT"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.emdat.be/",
+      "doi": "",
+      "citation_reference": "Centre for Research on the Epidemiology of Disasters (CRED). EM-DAT. https://www.emdat.be/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:33.612245+00:00"
+}

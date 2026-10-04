@@ -1,0 +1,59 @@
+{
+  "id": "snit-cr",
+  "name": "SNIT Costa Rica",
+  "description": "Sistema Nacional de Información Territorial de Costa Rica: geoportal oficial con cartografía y datos territoriales del país. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.snitcr.go.cr/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Costa Rica",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Sistema Nacional de Información Territorial (SNIT)",
+  "domains": [
+    "cartografia_base",
+    "ordenamiento"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "snit-cr:portal",
+      "name": "Portal — SNIT Costa Rica",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.snitcr.go.cr/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Costa Rica",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "cartografia_base",
+        "ordenamiento"
+      ],
+      "keywords": [
+        "snit",
+        "cartografia",
+        "territorial",
+        "geoportal"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.snitcr.go.cr/",
+          "label": "SNIT Costa Rica"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.snitcr.go.cr/",
+      "doi": "",
+      "citation_reference": "Sistema Nacional de Información Territorial (SNIT). SNIT Costa Rica. https://www.snitcr.go.cr/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:40.163518+00:00"
+}

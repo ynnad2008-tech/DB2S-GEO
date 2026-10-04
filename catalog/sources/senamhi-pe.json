@@ -1,0 +1,60 @@
+{
+  "id": "senamhi-pe",
+  "name": "SENAMHI Perú",
+  "description": "Servicio Nacional de Meteorología e Hidrología del Perú: pronósticos, clima y datos hidrometeorológicos oficiales. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.senamhi.gob.pe/",
+  "category": "instituto",
+  "coverage": {
+    "spatial": "Perú",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Servicio Nacional de Meteorología e Hidrología (SENAMHI)",
+  "domains": [
+    "clima",
+    "hidrologia"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "senamhi-pe:portal",
+      "name": "Portal — SENAMHI Perú",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.senamhi.gob.pe/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Perú",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "clima",
+        "hidrologia"
+      ],
+      "keywords": [
+        "senamhi",
+        "meteorologia",
+        "clima",
+        "hidrologia",
+        "pronostico"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.senamhi.gob.pe/",
+          "label": "SENAMHI Perú"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.senamhi.gob.pe/",
+      "doi": "",
+      "citation_reference": "Servicio Nacional de Meteorología e Hidrología (SENAMHI). SENAMHI Perú. https://www.senamhi.gob.pe/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:38.806348+00:00"
+}

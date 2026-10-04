@@ -1,0 +1,57 @@
+{
+  "id": "inat",
+  "name": "iNaturalist",
+  "description": "iNaturalist: observaciones ciudadanas de biodiversidad global con registros georreferenciados. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.inaturalist.org/",
+  "category": "plataforma",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "iNaturalist (California Academy of Sciences / National Geographic)",
+  "domains": [
+    "biodiversidad"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "inat:portal",
+      "name": "Portal — iNaturalist",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.inaturalist.org/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "inaturalist",
+        "observaciones",
+        "ciudadana",
+        "biodiversidad"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.inaturalist.org/",
+          "label": "iNaturalist"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.inaturalist.org/",
+      "doi": "",
+      "citation_reference": "iNaturalist (California Academy of Sciences / National Geographic). iNaturalist. https://www.inaturalist.org/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:35.520011+00:00"
+}

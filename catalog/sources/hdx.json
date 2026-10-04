@@ -1,0 +1,57 @@
+{
+  "id": "hdx",
+  "name": "HDX",
+  "description": "Humanitarian Data Exchange: datos humanitarios y de desarrollo por país, incluyendo contextos de crisis. DB2S-GEO solo documenta el acceso.",
+  "url": "https://data.humdata.org/",
+  "category": "plataforma",
+  "coverage": {
+    "spatial": "Global",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "OCHA — Humanitarian Data Exchange",
+  "domains": [
+    "poblacion"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "hdx:portal",
+      "name": "Portal — HDX",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://data.humdata.org/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Global",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "poblacion"
+      ],
+      "keywords": [
+        "hdx",
+        "humanitario",
+        "ocha",
+        "datos"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://data.humdata.org/",
+          "label": "HDX"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://data.humdata.org/",
+      "doi": "",
+      "citation_reference": "OCHA — Humanitarian Data Exchange. HDX. https://data.humdata.org/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:34.683845+00:00"
+}

@@ -1,0 +1,59 @@
+{
+  "id": "datos-gov-co",
+  "name": "datos.gov.co",
+  "description": "Portal Nacional de Datos Abiertos de Colombia: conjuntos de datos públicos del Estado, incluyendo información geográfica. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.datos.gov.co/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Colombia",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Gobierno de Colombia — Portal Nacional de Datos Abiertos",
+  "domains": [
+    "cartografia_base",
+    "ordenamiento"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "datos-gov-co:portal",
+      "name": "Portal — datos.gov.co",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.datos.gov.co/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Colombia",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "cartografia_base",
+        "ordenamiento"
+      ],
+      "keywords": [
+        "datos_abiertos",
+        "gobierno_abierto",
+        "portal",
+        "datasets"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.datos.gov.co/",
+          "label": "datos.gov.co"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.datos.gov.co/",
+      "doi": "",
+      "citation_reference": "Gobierno de Colombia — Portal Nacional de Datos Abiertos. datos.gov.co. https://www.datos.gov.co/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:32.805128+00:00"
+}

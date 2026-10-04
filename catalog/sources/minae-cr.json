@@ -1,0 +1,57 @@
+{
+  "id": "minae-cr",
+  "name": "MINAE Costa Rica",
+  "description": "Ministerio de Ambiente y Energía de Costa Rica: política ambiental, conservación y biodiversidad. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.minae.go.cr/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Costa Rica",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Ministerio de Ambiente y Energía (MINAE)",
+  "domains": [
+    "biodiversidad"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "minae-cr:portal",
+      "name": "Portal — MINAE Costa Rica",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.minae.go.cr/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Costa Rica",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "minae",
+        "ambiente",
+        "conservacion",
+        "biodiversidad"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.minae.go.cr/",
+          "label": "MINAE Costa Rica"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.minae.go.cr/",
+      "doi": "",
+      "citation_reference": "Ministerio de Ambiente y Energía (MINAE). MINAE Costa Rica. https://www.minae.go.cr/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:36.346888+00:00"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "cne-cr",
+  "name": "CNE Costa Rica",
+  "description": "Comisión Nacional de Emergencias de Costa Rica: ente rector de la gestión del riesgo ante desastres; publica información de amenazas, vulnerabilidad y emergencias. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.cne.go.cr/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Costa Rica",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Comisión Nacional de Emergencias (CNE)",
+  "domains": [
+    "riesgo"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "cne-cr:portal",
+      "name": "Portal — CNE Costa Rica",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.cne.go.cr/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Costa Rica",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "riesgo"
+      ],
+      "keywords": [
+        "cne",
+        "emergencias",
+        "riesgo",
+        "amenazas",
+        "vulnerabilidad"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.cne.go.cr/",
+          "label": "CNE Costa Rica"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.cne.go.cr/",
+      "doi": "",
+      "citation_reference": "Comisión Nacional de Emergencias (CNE). CNE Costa Rica. https://www.cne.go.cr/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:32.258146+00:00"
+}

@@ -48,6 +48,14 @@ MVP_SOURCES = frozenset(
         # Fuentes globales validadas por el curador (2026-10-03)
         "hydrosheds", "hydroatlas", "grdc", "worldclim", "chelsa",
         "wdpa", "iucn_red_list", "birdlife", "copernicus_marine", "emodnet",
+        # Expansión total verificada (2026-10-03): países y globales
+        "cne-cr", "imn-cr", "minae-cr", "sinac-cr", "snit-cr",
+        "ign-pe", "minam-pe", "senamhi-pe", "serfor-pe", "sernanp-pe",
+        "minagri-pe", "indeci-pe", "unmsm",
+        "conagua-mx", "siap-mx", "cenaos-hn", "datos-gov-co",
+        "birdcast", "chirps", "desinventar", "earth-search", "emdat",
+        "gmw", "gpm", "gsw", "hdx", "inat", "inform", "noaa", "obis",
+        "openalex", "openlandmap", "pc", "semanticscholar", "usgs-hazards",
     }
 )
 
@@ -148,6 +156,22 @@ class DecisionSupportEngine:
                 coverage=detected, include_global=include_global,
             )
             need = profile.get("need") or need
+            # Con cobertura geográfica, las plantillas pueden quedarse cortas
+            # (p. ej. perfil de precipitación fuera de Colombia): completar
+            # con rutas de recomendación que sí cubran el lugar consultado.
+            if detected and len(routes) < limit:
+                extra = self._routes_from_recommendations(
+                    q, concepts, intents, limit=limit - len(routes),
+                    coverage=detected, include_global=include_global,
+                )
+                seen_ids = {r["source_id"] for r in routes}
+                for route in extra:
+                    if route["source_id"] in seen_ids:
+                        continue
+                    route["rank"] = len(routes) + 1
+                    routes.append(route)
+                    seen_ids.add(route["source_id"])
+                routes = routes[:limit]
         else:
             routes = self._routes_from_recommendations(
                 q, concepts, intents, limit=limit,
@@ -235,7 +259,9 @@ class DecisionSupportEngine:
                     title=template.get("title") or ACTION_CATEGORIES.get(category, category),
                     category=category,
                     what_to_do=template.get("what_to_do") or INTENT_LABELS.get(primary_intent, ""),
-                    where=where_for_source(source_id, category),
+                    where=where_for_source(
+                        source_id, category, source_meta.get("source")
+                    ),
                     source_id=source_id,
                     source=source_meta.get("source") or source_id,
                     institution=source_meta.get("institution"),
@@ -335,7 +361,9 @@ class DecisionSupportEngine:
                     title=titles.get(category, item.get("source") or sid),
                     category=category,
                     what_to_do=what,
-                    where=where_for_source(sid, category),
+                    where=where_for_source(
+                        sid, category, item.get("source")
+                    ),
                     source_id=sid,
                     source=item.get("source") or sid,
                     institution=self._source_meta(sid) or {},

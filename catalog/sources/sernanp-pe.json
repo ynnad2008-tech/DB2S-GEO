@@ -1,0 +1,57 @@
+{
+  "id": "sernanp-pe",
+  "name": "SERNANP Perú",
+  "description": "Servicio Nacional de Áreas Naturales Protegidas por el Estado del Perú: parques, reservas y santuarios. DB2S-GEO solo documenta el acceso.",
+  "url": "https://www.sernanp.gob.pe/",
+  "category": "gobierno",
+  "coverage": {
+    "spatial": "Perú",
+    "temporal": "Según publicación de la fuente"
+  },
+  "status": "active",
+  "institution": "Servicio Nacional de Áreas Naturales Protegidas (SERNANP)",
+  "domains": [
+    "biodiversidad"
+  ],
+  "license": "Según términos de la fuente",
+  "version": "1.0.0",
+  "resources": [
+    {
+      "id": "sernanp-pe:portal",
+      "name": "Portal — SERNANP Perú",
+      "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
+      "url": "https://www.sernanp.gob.pe/",
+      "category": "portal",
+      "coverage": {
+        "spatial": "Perú",
+        "temporal": "Según publicación de la fuente"
+      },
+      "domains": [
+        "biodiversidad"
+      ],
+      "keywords": [
+        "sernanp",
+        "areas_protegidas",
+        "conservacion",
+        "parques"
+      ],
+      "access_methods": [
+        "portal"
+      ],
+      "endpoints": [
+        {
+          "method": "portal",
+          "url": "https://www.sernanp.gob.pe/",
+          "label": "SERNANP Perú"
+        }
+      ],
+      "formats": [
+        "portal"
+      ],
+      "documentation_url": "https://www.sernanp.gob.pe/",
+      "doi": "",
+      "citation_reference": "Servicio Nacional de Áreas Naturales Protegidas (SERNANP). SERNANP Perú. https://www.sernanp.gob.pe/"
+    }
+  ],
+  "status_updated_at": "2026-10-04T00:47:39.330943+00:00"
+}
