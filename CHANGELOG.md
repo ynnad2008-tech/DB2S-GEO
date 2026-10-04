@@ -6,6 +6,23 @@ El formato se inspira en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1
 
 ---
 
+## [v0.7.3] — 2026-10-03
+
+Chat de seguimiento interactivo (hilo conversacional).
+
+### Añadido
+
+- `POST /decision-support/chat`: preguntas de seguimiento con historial;
+  re-ejecuta la orientación y Gemini narra con el contexto del hilo
+  (servidor stateless: el historial lo envía el cliente).
+- Herencia de cobertura desde el hilo: si la pregunta de seguimiento no
+  menciona lugar, se conserva el detectado en preguntas anteriores.
+- Workbench: resumen narrativo + chips de preguntas sugeridas en la
+  orientación, botón "Nuevo tema" para reiniciar el hilo.
+- Suite 146/146.
+
+---
+
 ## [v0.7.2] — 2026-10-03
 
 Workbench simplificado (solo paneles funcionales) · narrador Gemini · uso del suelo en consultas agro.

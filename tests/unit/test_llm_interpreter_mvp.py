@@ -165,6 +165,47 @@ def test_narrador_gemini_error_cae_a_fallback(monkeypatch: pytest.MonkeyPatch) -
     assert "IDEAM" in r["summary"]
 
 
+def test_narrador_chat_con_historial(monkeypatch: pytest.MonkeyPatch) -> None:
+    from backend.decision_support import llm_narrator
+
+    monkeypatch.setenv("GEMINI_API_KEY", "clave-de-prueba")
+    capturados: list[str] = []
+
+    def _fake(prompt, *, model, key, timeout):
+        capturados.append(prompt)
+        return '{"summary": "Sobre el Tolima, usa IDEAM.", "followups": ["¿serie histórica?"]}'
+
+    monkeypatch.setattr(llm_narrator, "_call_gemini", _fake)
+    routes = [{"source": "IDEAM", "title": "Datos hidrológicos", "why": ["x"]}]
+    r = llm_narrator.narrate_chat(
+        "¿y la serie histórica?",
+        "datos hidrológicos",
+        routes,
+        [{"role": "user", "text": "precipitación en el Tolima"},
+         {"role": "assistant", "text": "usa IDEAM"}],
+    )
+    assert r["source"] == "gemini"
+    assert "Tolima" in r["summary"]
+    assert r["followups"] == ["¿serie histórica?"]
+    assert "precipitación en el Tolima" in capturados[0]  # historial en el prompt
+
+
+def test_chat_endpoint_determinista() -> None:
+    from fastapi.testclient import TestClient
+
+    from backend.api.main import app
+
+    with TestClient(app) as client:
+        res = client.post(
+            "/decision-support/chat",
+            json={"query": "inundacion maritima", "history": []},
+        )
+        assert res.status_code == 200
+        body = res.json()
+        assert body["mode"] == "chat"
+        assert body["narrative"]["source"] == "deterministic"
+
+
 def test_circuit_breaker_evita_reintentos(monkeypatch: pytest.MonkeyPatch) -> None:
     import urllib.error
 

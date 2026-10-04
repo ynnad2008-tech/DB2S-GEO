@@ -351,6 +351,26 @@ body {
   max-width: 34rem;
 }
 
+.home-advice-narrative {
+  margin: 0 0 1rem;
+  padding: 0.8rem 1rem;
+  border-left: 3px solid var(--brand, #1b7f5a);
+  background: var(--brand-soft, #eef6f2);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.home-advice-narrative p {
+  margin: 0 0 0.5rem;
+}
+
+.home-advice-followups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;

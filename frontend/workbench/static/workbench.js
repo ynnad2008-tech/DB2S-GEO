@@ -1255,13 +1255,32 @@ function boot() {
   loadHome();
 }
 
+/** Hilo conversacional en memoria (stateless en el servidor). */
+let adviceThread = [];
+
+function pushThread(role, text) {
+  adviceThread = [...adviceThread.slice(-9), { role, text }];
+}
+
 async function runHomeAdvice(q) {
   const box = $("#home-advice");
   if (!box) return;
   box.hidden = false;
   box.innerHTML = `<p class="home-advice-loading">Orientando con el catálogo curado…</p>`;
   setStatus("Orientando…");
-  const data = await api(`/decision-support?q=${encodeURIComponent(q)}&limit=4`);
+  // Con historial previo, usar el endpoint conversacional (narrador con contexto)
+  const useChat = adviceThread.length > 0;
+  let data;
+  if (useChat) {
+    pushThread("user", q);
+    data = await api("/decision-support/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query: q, history: adviceThread.slice(0, -1) }),
+    });
+  } else {
+    data = await api(`/decision-support?q=${encodeURIComponent(q)}&limit=4`);
+  }
   const routes = data.routes || [];
   if (!routes.length) {
     box.innerHTML = `
@@ -1287,11 +1306,20 @@ async function runHomeAdvice(q) {
     })
   );
 
+  const narrative = data.narrative || {};
+  const followups = (narrative.followups || [])
+    .map((f) => `<button type="button" class="chip followup-chip">${esc(f)}</button>`)
+    .join("");
   box.innerHTML = `
     <div class="home-advice-head">
       <h2>Orientación</h2>
-      <p>${esc(data.count || routes.length)} rutas · Decision Support (explicable, sin LLM)</p>
+      <p>${esc(data.count || routes.length)} rutas · Decision Support explicable · interpretación ${esc(data.interpretation?.source || "deterministic")}</p>
     </div>
+    ${narrative.summary ? `
+    <div class="home-advice-narrative">
+      <p>${esc(narrative.summary)}</p>
+      ${followups ? `<div class="home-advice-followups">${followups}</div>` : ""}
+    </div>` : ""}
     <div class="home-advice-list">
       ${routes
         .map((r) => {
@@ -1313,6 +1341,7 @@ async function runHomeAdvice(q) {
     </div>
     <div class="home-advice-actions">
       <button type="button" class="btn" id="home-to-rec">Ver ranking completo</button>
+      <button type="button" class="btn" id="home-thread-reset">Nuevo tema</button>
     </div>`;
   $("#home-to-rec")?.addEventListener("click", () => {
     go("recommend");
@@ -1320,6 +1349,19 @@ async function runHomeAdvice(q) {
     $("#rec-input").value = q;
     runRecommend();
   });
+  $("#home-thread-reset")?.addEventListener("click", () => {
+    adviceThread = [];
+    box.innerHTML = "";
+    setStatus("Hilo reiniciado. Escriba un nuevo tema.");
+  });
+  box.querySelectorAll(".followup-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const fq = chip.textContent;
+      $("#home-q").value = fq;
+      runHomeAdvice(fq).catch((err) => setStatus(err.message, "error"));
+    });
+  });
+  pushThread("assistant", narrative.summary || `Orientación: ${routes.length} rutas`);
   setStatus("Orientación lista", "ok");
 }
 

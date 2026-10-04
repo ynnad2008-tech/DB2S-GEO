@@ -52,6 +52,14 @@ class AnalyzeRequest(BaseModel):
     persist: bool = Field(default=True, description="Guardar como candidato")
 
 
+class ChatRequest(BaseModel):
+    query: str = Field(..., description="Pregunta de seguimiento del hilo")
+    history: list[dict[str, str]] = Field(
+        default_factory=list,
+        description='Hilo previo: [{"role": "user"|"assistant", "text": ...}]',
+    )
+
+
 class TelemetryClickRequest(BaseModel):
     resource_id: str = Field(..., min_length=1, max_length=200)
     source_id: str | None = Field(default=None, max_length=120)
@@ -759,6 +767,45 @@ def decision_support_advise(
         pass
     try:
         get_telemetry_store().log(q, int(payload.get("count") or 0))
+    except Exception:
+        pass
+    return payload
+
+
+@app.post("/decision-support/chat")
+def decision_support_chat(
+    body: ChatRequest,
+    request: Request,
+    limit: int = Query(default=6, ge=1, le=20),
+    coverage: str | None = Query(default=None),
+    include_global: bool = Query(default=True),
+) -> dict[str, Any]:
+    """
+    Hilo conversacional: cada pregunta de seguimiento re-ejecuta la
+    orientación y Gemini narra con el contexto del hilo (stateless: el
+    historial lo envía el cliente).
+    """
+    from backend.decision_support.llm_narrator import narrate_chat
+    from backend.metadata.coverage import detect_coverage
+
+    # Heredar cobertura del hilo si la pregunta de seguimiento no menciona lugar
+    if not coverage:
+        for h in body.history or []:
+            if str(h.get("role")) == "user":
+                inherited = detect_coverage(str(h.get("text") or ""))
+                if inherited:
+                    coverage = inherited
+                    break
+
+    payload = _decision_support(request).advise(
+        body.query, limit=limit, coverage=coverage, include_global=include_global
+    )
+    payload["mode"] = "chat"
+    payload["narrative"] = narrate_chat(
+        body.query, payload["need"], payload["routes"], body.history or []
+    )
+    try:
+        _observatory(request).log_from_decision_support(body.query, payload)
     except Exception:
         pass
     return payload
