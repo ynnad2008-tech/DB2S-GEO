@@ -20,7 +20,7 @@
       "id": "grdc:portal",
       "name": "GRDC — portal institucional",
       "description": "Portal del GRDC (BfG, Alemania): catálogo de estaciones y datos de caudales.",
-      "url": "https://www.bafg.de/GRDC/EN/Home/homepage_node.html",
+      "url": "https://portal.grdc.bafg.de/",
       "category": "portal",
       "coverage": {
         "spatial": "Global",
@@ -50,7 +50,7 @@
       "formats": [
         "portal"
       ],
-      "documentation_url": "https://www.bafg.de/GRDC/EN/Home/homepage_node.html",
+      "documentation_url": "https://portal.grdc.bafg.de/",
       "doi": "",
       "citation_reference": "Global Runoff Data Centre (GRDC), BfG. GRDC — portal institucional. https://www.bafg.de/GRDC/EN/Home/homepage_node.html"
     }

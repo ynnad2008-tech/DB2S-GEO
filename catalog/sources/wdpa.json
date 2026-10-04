@@ -45,6 +45,11 @@
           "method": "portal",
           "url": "https://www.protectedplanet.net/",
           "label": "Protected Planet — WDPA"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.protectedplanet.net/en/search-areas",
+          "label": "Buscador de áreas protegidas (acceso directo)"
         }
       ],
       "formats": [

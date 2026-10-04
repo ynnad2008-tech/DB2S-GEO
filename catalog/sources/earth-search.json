@@ -44,6 +44,11 @@
           "method": "portal",
           "url": "https://earth-search.aws.element84.com/",
           "label": "Earth Search"
+        },
+        {
+          "method": "portal",
+          "url": "https://earth-search.aws.element84.com/v1",
+          "label": "API STAC Earth Search (acceso directo)"
         }
       ],
       "formats": [

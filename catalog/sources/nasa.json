@@ -359,6 +359,11 @@
           "method": "portal",
           "url": "https://search.earthdata.nasa.gov",
           "label": "Earthdata Search"
+        },
+        {
+          "method": "portal",
+          "url": "https://search.earthdata.nasa.gov/search",
+          "label": "Earthdata Search (acceso directo)"
         }
       ],
       "formats": [

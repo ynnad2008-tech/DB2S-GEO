@@ -43,6 +43,11 @@
           "method": "portal",
           "url": "https://www.inaturalist.org/",
           "label": "iNaturalist"
+        },
+        {
+          "method": "portal",
+          "url": "https://api.inaturalist.org/v1/",
+          "label": "API iNaturalist v1 (acceso directo)"
         }
       ],
       "formats": [

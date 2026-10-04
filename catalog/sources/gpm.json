@@ -45,6 +45,11 @@
           "method": "portal",
           "url": "https://gpm.nasa.gov/data",
           "label": "GPM"
+        },
+        {
+          "method": "portal",
+          "url": "https://disc.gsfc.nasa.gov/datasets?keywords=IMERG",
+          "label": "GES DISC — IMERG (acceso directo)"
         }
       ],
       "formats": [

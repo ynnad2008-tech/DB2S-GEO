@@ -52,6 +52,11 @@
           "method": "portal",
           "url": "https://marine.copernicus.eu/",
           "label": "Copernicus Marine — portal"
+        },
+        {
+          "method": "portal",
+          "url": "https://data.marine.copernicus.eu/",
+          "label": "Visor de datos CMEMS (acceso directo)"
         }
       ],
       "formats": [

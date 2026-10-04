@@ -20,7 +20,7 @@
       "id": "emdat:portal",
       "name": "Portal — EM-DAT",
       "description": "Portal oficial verificado por el curador de DB2S-GEO el 2026-10-03. DB2S-GEO solo documenta el acceso.",
-      "url": "https://www.emdat.be/",
+      "url": "https://public.emdat.be/",
       "category": "portal",
       "coverage": {
         "spatial": "Global",
@@ -48,7 +48,7 @@
       "formats": [
         "portal"
       ],
-      "documentation_url": "https://www.emdat.be/",
+      "documentation_url": "https://public.emdat.be/",
       "doi": "",
       "citation_reference": "Centre for Research on the Epidemiology of Disasters (CRED). EM-DAT. https://www.emdat.be/"
     }

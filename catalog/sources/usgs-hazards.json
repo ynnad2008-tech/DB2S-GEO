@@ -45,6 +45,11 @@
           "method": "portal",
           "url": "https://earthquake.usgs.gov/",
           "label": "USGS Hazards"
+        },
+        {
+          "method": "portal",
+          "url": "https://earthquake.usgs.gov/fdsnws/event/1/",
+          "label": "API FDSN de terremotos (acceso directo)"
         }
       ],
       "formats": [

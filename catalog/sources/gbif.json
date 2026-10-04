@@ -64,6 +64,11 @@
           "method": "portal",
           "url": "https://www.gbif.org",
           "label": "Portal GBIF"
+        },
+        {
+          "method": "portal",
+          "url": "https://api.gbif.org/v1/",
+          "label": "API GBIF v1 (acceso directo)"
         }
       ],
       "formats": [

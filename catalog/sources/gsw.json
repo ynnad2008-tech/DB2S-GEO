@@ -45,6 +45,11 @@
           "method": "portal",
           "url": "https://global-surface-water.appspot.com/",
           "label": "Global Surface Water"
+        },
+        {
+          "method": "portal",
+          "url": "https://global-surface-water.appspot.com/download",
+          "label": "Descargas GSW (acceso directo)"
         }
       ],
       "formats": [

@@ -45,6 +45,11 @@
           "method": "portal",
           "url": "https://www.hydrosheds.org/",
           "label": "Portal HydroSHEDS"
+        },
+        {
+          "method": "portal",
+          "url": "https://data.hydrosheds.org/",
+          "label": "Datos HydroSHEDS (acceso directo)"
         }
       ],
       "formats": [

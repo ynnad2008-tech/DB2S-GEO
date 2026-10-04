@@ -46,6 +46,11 @@
           "method": "portal",
           "url": "https://worldclim.org/",
           "label": "Portal WorldClim"
+        },
+        {
+          "method": "portal",
+          "url": "https://geodata.ucdavis.edu/climate/worldclim/2_1/",
+          "label": "Datos WorldClim 2.1 (acceso directo)"
         }
       ],
       "formats": [

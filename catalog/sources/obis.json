@@ -45,6 +45,11 @@
           "method": "portal",
           "url": "https://obis.org/",
           "label": "OBIS"
+        },
+        {
+          "method": "portal",
+          "url": "https://api.obis.org/v3/",
+          "label": "API OBIS v3 (acceso directo)"
         }
       ],
       "formats": [

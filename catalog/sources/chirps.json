@@ -45,6 +45,11 @@
           "method": "portal",
           "url": "https://www.chc.ucsb.edu/data/chirps",
           "label": "CHIRPS"
+        },
+        {
+          "method": "portal",
+          "url": "https://data.chc.ucsb.edu/products/CHIRPS-2.0/",
+          "label": "Datos CHIRPS-2.0 (acceso directo)"
         }
       ],
       "formats": [

@@ -43,6 +43,11 @@
           "method": "portal",
           "url": "https://data.humdata.org/",
           "label": "HDX"
+        },
+        {
+          "method": "portal",
+          "url": "https://data.humdata.org/api/3/action/package_search",
+          "label": "API HDX (acceso directo)"
         }
       ],
       "formats": [

@@ -43,6 +43,11 @@
           "method": "portal",
           "url": "https://birdcast.info/",
           "label": "BirdCast"
+        },
+        {
+          "method": "portal",
+          "url": "https://dashboard.birdcast.info/",
+          "label": "Dashboard BirdCast (acceso directo)"
         }
       ],
       "formats": [

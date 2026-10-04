@@ -45,6 +45,11 @@
           "method": "portal",
           "url": "https://www.iucnredlist.org/",
           "label": "IUCN Red List — portal"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.iucnredlist.org/search",
+          "label": "Buscador de especies (acceso directo)"
         }
       ],
       "formats": [

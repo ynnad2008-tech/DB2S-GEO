@@ -20,7 +20,7 @@
       "id": "worldpop:population-density",
       "name": "WorldPop Population Density",
       "description": "Rasters de densidad poblacional a alta resolución espacial producidos por WorldPop.",
-      "url": "https://hub.worldpop.org",
+      "url": "https://hub.worldpop.org/",
       "category": "dataset",
       "coverage": {
         "spatial": "Global / por país",
@@ -64,7 +64,7 @@
         "GeoTIFF",
         "metadata"
       ],
-      "documentation_url": "https://www.worldpop.org/methods/",
+      "documentation_url": "https://hub.worldpop.org/",
       "doi": "10.5258/SOTON/WP00647",
       "citation_reference": "WorldPop. Open Spatial Demographic Data and Research. University of Southampton."
     },

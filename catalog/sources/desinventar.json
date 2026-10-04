@@ -43,6 +43,11 @@
           "method": "portal",
           "url": "https://www.desinventar.net/",
           "label": "DesInventar"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.desinventar.net/DesInventar/statistics.jsp",
+          "label": "Consulta de estadísticas DesInventar (acceso directo)"
         }
       ],
       "formats": [

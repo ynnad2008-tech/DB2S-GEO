@@ -45,6 +45,11 @@
           "method": "portal",
           "url": "https://emodnet.ec.europa.eu/",
           "label": "EMODnet — portal"
+        },
+        {
+          "method": "portal",
+          "url": "https://emodnet.ec.europa.eu/geoviewer/",
+          "label": "Geoviewer EMODnet (acceso directo)"
         }
       ],
       "formats": [

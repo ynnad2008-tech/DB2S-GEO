@@ -45,6 +45,11 @@
           "method": "portal",
           "url": "https://planetarycomputer.microsoft.com/",
           "label": "Planetary Computer"
+        },
+        {
+          "method": "portal",
+          "url": "https://planetarycomputer.microsoft.com/catalog",
+          "label": "Catálogo Planetary Computer (acceso directo)"
         }
       ],
       "formats": [

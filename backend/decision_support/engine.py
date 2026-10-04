@@ -27,6 +27,25 @@ if TYPE_CHECKING:
     from backend.metadata.engine import MetadataEngine
     from backend.recommendation.engine import RecommendationEngine
 
+def _all_active_catalog_ids() -> frozenset[str]:
+    """IDs activos del catálogo: toda fuente verificada es enrutable.
+
+    Antes MVP_SOURCES era una lista manual que quedaba incompleta
+    (excluía a IGAC, DANE, SGC… en las rutas de decisión).
+    """
+    try:
+        from connectors.catalog_loader import (
+            build_connectors_from_catalog,
+            catalog_available,
+        )
+
+        if catalog_available():
+            return frozenset(build_connectors_from_catalog().keys())
+    except Exception:
+        pass
+    return frozenset()
+
+
 # Fuentes habilitadas para rutas de decisión (curaduría humana explícita).
 # MVP original + 38 fuentes de Colombia verificadas y cargadas (2026-10-02)
 # + dimar/cioh (perfil de inundación marítima y costera).
@@ -60,7 +79,7 @@ MVP_SOURCES = frozenset(
         # MinAmbiente y CAR verificadas (2026-10-04)
         "minambiente", "car", "corantioquia", "cornare", "carder", "cortolima",
     }
-)
+) | _all_active_catalog_ids()
 
 
 class DecisionSupportEngine:

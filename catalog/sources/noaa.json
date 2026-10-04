@@ -45,6 +45,11 @@
           "method": "portal",
           "url": "https://www.noaa.gov/",
           "label": "NOAA"
+        },
+        {
+          "method": "portal",
+          "url": "https://www.ncei.noaa.gov/",
+          "label": "NCEI — datos climáticos (acceso directo)"
         }
       ],
       "formats": [
