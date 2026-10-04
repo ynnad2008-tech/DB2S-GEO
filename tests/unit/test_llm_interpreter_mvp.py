@@ -21,6 +21,7 @@ def sin_api_key(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.delenv("GEMINI_API_KEY", raising=False)
     monkeypatch.delenv("GEMINI_MODEL", raising=False)
     monkeypatch.delenv("GEMINI_TIMEOUT", raising=False)
+    llm_interpreter._clear_cooldown()  # estado global limpio entre tests
 
 
 def test_sin_key_usa_determinista() -> None:
@@ -124,3 +125,34 @@ def test_intents_desconocidos_se_descartan(monkeypatch: pytest.MonkeyPatch) -> N
     assert r["source"] == "gemini"
     assert r["intents"] == ["analizar"]  # "volar" no existe
     assert r["concepts"] == ["dem", "suelos"]  # "a" corto, "colombia" genérica
+
+
+def test_circuit_breaker_evita_reintentos(monkeypatch: pytest.MonkeyPatch) -> None:
+    import urllib.error
+
+    monkeypatch.setenv("GEMINI_API_KEY", "clave-de-prueba")
+    llamadas: list[str] = []
+
+    def _fake_call(prompt, *, model, key, timeout):
+        llamadas.append(model)
+        raise urllib.error.HTTPError("url", 429, "cuota", {}, None)
+
+    monkeypatch.setattr(llm_interpreter, "_call_gemini", _fake_call)
+
+    # Primera consulta: intenta la cadena y entra en cooldown
+    r1 = llm_interpreter.interpret_query("x")
+    assert r1["fallback"] is True
+    assert len(llamadas) >= 2  # reintento en el primer modelo
+    llamadas.clear()
+
+    # Segunda consulta: cooldown activo → fallback inmediato, sin llamadas
+    r2 = llm_interpreter.interpret_query("y")
+    assert r2["fallback"] is True
+    assert "cooldown" in r2["error"]
+    assert llamadas == []
+
+    # Al liberar el cooldown, vuelve a intentar
+    llm_interpreter._clear_cooldown()
+    r3 = llm_interpreter.interpret_query("z")
+    assert r3["fallback"] is True
+    assert len(llamadas) >= 2

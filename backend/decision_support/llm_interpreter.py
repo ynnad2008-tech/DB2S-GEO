@@ -33,6 +33,27 @@ GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/{mode
 MODEL_CHAIN = ["gemini-3.7-flash", "gemini-3.1-pro-preview"]
 MAX_CONCEPTS = 10
 
+# Circuit breaker: tras 429/503 (cuota/demanda), Gemini entra en cooldown
+# para no pagar latencia de reintentos en cada consulta.
+_last_unavailable_at: float | None = None
+UNAVAILABLE_COOLDOWN = 60.0  # segundos
+
+
+def _gemini_on_cooldown() -> bool:
+    if _last_unavailable_at is None:
+        return False
+    return time.monotonic() - _last_unavailable_at < UNAVAILABLE_COOLDOWN
+
+
+def _set_cooldown() -> None:
+    global _last_unavailable_at
+    _last_unavailable_at = time.monotonic()
+
+
+def _clear_cooldown() -> None:
+    global _last_unavailable_at
+    _last_unavailable_at = None
+
 _ALLOWED_INTENTS = list(INTENT_LABELS.keys())
 
 _PROMPT = (
@@ -139,6 +160,14 @@ def interpret_query(query: str) -> dict[str, Any]:
     if not key:
         return deterministic
 
+    # Circuit breaker: si Gemini viene fallando por cuota/demanda, ir
+    # directo al fallback rápido en vez de pagar reintentos por consulta.
+    if _gemini_on_cooldown():
+        result = dict(deterministic)
+        result["fallback"] = True
+        result["error"] = "gemini en cooldown (429/503 previo)"
+        return result
+
     models: list[str] = []
     env_model = os.environ.get("GEMINI_MODEL", "").strip()
     if env_model:
@@ -153,6 +182,7 @@ def interpret_query(query: str) -> dict[str, Any]:
         try:
             raw = _call_gemini(prompt, model=model, key=key, timeout=timeout)
             parsed = _sanitize_interpretation(raw, query)
+            _clear_cooldown()
             return {
                 "source": "gemini",
                 "model": model,
@@ -163,11 +193,12 @@ def interpret_query(query: str) -> dict[str, Any]:
         except urllib.error.HTTPError as exc:
             last_error = exc
             if exc.code in (503, 429):
-                # alta demanda / cuota: un solo reintento breve, luego siguiente modelo
+                # alta demanda / cuota: un solo reintento breve, luego cooldown
                 time.sleep(1.0)
                 try:
                     raw = _call_gemini(prompt, model=model, key=key, timeout=timeout)
                     parsed = _sanitize_interpretation(raw, query)
+                    _clear_cooldown()
                     return {
                         "source": "gemini",
                         "model": model,
@@ -177,7 +208,8 @@ def interpret_query(query: str) -> dict[str, Any]:
                     }
                 except Exception as exc2:
                     last_error = exc2
-                    continue
+                    _set_cooldown()
+                    break
             continue  # 4xx (modelo retirado, clave sin permiso…) → siguiente modelo
         except Exception as exc:  # sin red, timeout, JSON inválido…
             last_error = exc
