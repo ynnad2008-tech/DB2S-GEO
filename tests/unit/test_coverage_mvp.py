@@ -71,6 +71,28 @@ def test_no_detecta_falsos_positivos() -> None:
     assert detect_coverage("precipitacion") is None
 
 
+# --- regresión: expansión de tokens sin encadenamiento transitivo ---
+
+def test_expansion_tokens_un_solo_salto() -> None:
+    from backend.recommendation.scoring import expand_query_tokens
+
+    tokens = expand_query_tokens(
+        "susceptibilidad al cambio de temperaturas en ecosistemas marinos"
+    )
+    # relevantes presentes
+    assert "temperatura" in tokens
+    assert "tsm" in tokens
+    assert "ecosistemas" in tokens
+    assert "marino" in tokens
+    assert "oceanos_costas" in tokens
+    # ruido transitivo ausente (antes: bahia → caribe → morfometria…)
+    assert "bahia" not in tokens
+    assert "barranquilla" not in tokens
+    assert "alos_palsar" not in tokens
+    assert "dem" not in tokens
+    assert "deslizamiento" not in tokens
+
+
 # --- API: /sources?coverage= ---
 
 @pytest.fixture

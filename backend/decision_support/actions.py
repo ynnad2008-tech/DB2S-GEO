@@ -424,6 +424,10 @@ NEED_PROFILES: dict[str, dict[str, Any]] = {
     },
     "precipitacion": {
         "need": "datos de precipitación",
+        # Solo disparo directo: la cadena de conceptos (clima → precipitacion
+        # → lluvia) producía ≥2 disparadores falsos en consultas de
+        # temperatura/clima y secuestraba la intención del usuario.
+        "require_direct": True,
         "match_any": ("precipitacion", "lluvia"),
         "routes": [
             {
@@ -454,6 +458,10 @@ NEED_PROFILES: dict[str, dict[str, Any]] = {
     },
     "biodiversidad": {
         "need": "biodiversidad / especies",
+        # Solo disparo directo: la cadena ecosistemas → biodiversidad →
+        # especies → occurrence producía 3 disparadores falsos y desviaba
+        # consultas mixtas (p. ej. temperatura en ecosistemas marinos).
+        "require_direct": True,
         "match_any": ("biodiversidad", "especies", "occurrence"),
         "routes": [
             {
@@ -522,8 +530,12 @@ def match_need_profile(concepts: list[str], query_norm: str) -> dict[str, Any] |
         profile = NEED_PROFILES[key]
         triggers = profile["match_any"]
         direct = [t for t in triggers if t in query_norm]
+        if direct:
+            return {"profile_id": key, **profile}
+        if profile.get("require_direct"):
+            continue
         in_concepts = [t for t in triggers if t in concept_set]
-        if direct or len(in_concepts) >= 2:
+        if len(in_concepts) >= 2:
             return {"profile_id": key, **profile}
     return None
 

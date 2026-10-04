@@ -6,6 +6,31 @@ El formato se inspira en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1
 
 ---
 
+## [v0.6.1] — 2026-10-03
+
+Precisión semántica de consultas: fin del encadenamiento transitivo de aliases.
+
+### Corregido
+
+- `expand_query_tokens` / `expand_concepts`: expansión de aliases de **un
+  solo salto** sobre los tokens del usuario (con formas singular/plural).
+  Antes la cadena transitiva (ecosistemas → manglares → costas → bahía →
+  caribe → morfometría) contaminaba consultas marinas con ASF/SGC/GFW.
+- Aliases geográficos sin ciudades: la geografía se maneja con el filtro
+  `coverage`, no con keywords ("cartagena"/"barranquilla" ya no aparecen
+  como razón en consultas de Buenaventura).
+- Perfiles `precipitacion` y `biodiversidad` con `require_direct`: la
+  cadena conceptual clima→precipitación→lluvia ya no secuestra consultas
+  de temperatura; la etiqueta de necesidad prioriza temperatura/clima.
+- `_routes_from_recommendations`: consulta original primero; el
+  enriquecimiento con conceptos solo como respaldo de recall (evita el
+  segundo salto de expansión).
+- Copernicus Marine enriquecido con keywords SST (temperatura superficial
+  del mar) — ahora aparece en consultas de temperatura marina.
+- 2 tests de regresión nuevos; suite 129/129.
+
+---
+
 ## [v0.6.0] — 2026-10-03
 
 Filtro geográfico `coverage` en Discovery, Recomendación y Decision Support.

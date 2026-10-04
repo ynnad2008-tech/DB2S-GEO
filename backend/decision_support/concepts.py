@@ -7,7 +7,7 @@ Sin embeddings.
 
 from __future__ import annotations
 
-from backend.recommendation.scoring import CURATED_ALIASES, normalize_token
+from backend.recommendation.scoring import CURATED_ALIASES, _word_forms, normalize_token
 
 # Equivalencias adicionales orientadas a necesidades (Fase 8).
 CONCEPT_ALIASES: dict[str, list[str]] = {
@@ -91,10 +91,18 @@ def expand_concepts(query: str) -> list[str]:
         if len(part) >= 3 and part not in _STOPWORDS:
             tokens.add(part)
 
+    # Expansión de un solo salto sobre los tokens del usuario (formas
+    # singular/plural): los tokens agregados por un alias no disparan otros
+    # aliases. Antes la cadena transitiva (ecosistemas → manglares → costas
+    # → costera…) desviaba consultas de temperatura marina hacia el perfil
+    # de inundación costera.
+    snapshot: set[str] = set(tokens)
+    for token in list(tokens):
+        snapshot.update(_word_forms(token))
     for alias_key, alias_vals in CURATED_ALIASES.items():
-        if alias_key in tokens or any(
-            normalize_token(v) in tokens for v in alias_vals
-        ):
+        key_forms = _word_forms(alias_key)
+        value_forms = {normalize_token(v) for v in alias_vals}
+        if snapshot & key_forms or snapshot & value_forms:
             tokens.add(alias_key)
             tokens.update(normalize_token(v) for v in alias_vals)
 
@@ -121,13 +129,17 @@ def primary_need_label(concepts: list[str], query: str) -> str:
     priority = (
         "inundaciones",
         "inundacion",
+        # temperatura/clima antes que precipitacion: la cadena conceptual
+        # clima → precipitacion no debe etiquetar consultas de temperatura
+        # como "datos de precipitación".
+        "temperatura",
+        "clima",
         "precipitacion",
         "hidrologia",
         "erosion",
         "biodiversidad",
         "poblacion",
         "manglares",
-        "clima",
         "suelos",
         "agua",
     )
@@ -136,13 +148,14 @@ def primary_need_label(concepts: list[str], query: str) -> str:
             labels = {
                 "inundaciones": "análisis de inundaciones / hidrología",
                 "inundacion": "análisis de inundaciones / hidrología",
+                "temperatura": "información de temperatura y clima",
+                "clima": "información climática",
                 "precipitacion": "datos de precipitación",
                 "hidrologia": "datos hidrológicos",
                 "erosion": "análisis de erosión / suelos",
                 "biodiversidad": "biodiversidad y especies",
                 "poblacion": "información poblacional",
                 "manglares": "ecosistemas de manglar",
-                "clima": "información climática",
                 "suelos": "suelos y cobertura",
                 "agua": "recursos hídricos",
             }

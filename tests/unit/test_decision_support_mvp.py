@@ -97,6 +97,15 @@ def test_cobertura_educativa_no_cae_en_erosion(dss: DecisionSupportEngine) -> No
     assert "erosi" not in payload["need"].lower()
 
 
+def test_temperatura_marina_no_cae_en_precipitacion(dss: DecisionSupportEngine) -> None:
+    # Regresión: la cadena clima → precipitacion → lluvia disparaba el
+    # perfil de "datos de precipitación" para consultas de temperatura.
+    payload = dss.advise(
+        "susceptibilidad al cambio de temperaturas en ecosistemas marinos"
+    )
+    assert "precipitaci" not in payload["need"].lower()
+
+
 def test_advise_precipitacion_routes(dss: DecisionSupportEngine) -> None:
     payload = dss.advise("Quiero datos de precipitación")
     assert payload["count"] >= 1

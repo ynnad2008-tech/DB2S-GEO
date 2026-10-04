@@ -68,9 +68,14 @@ CURATED_ALIASES: dict[str, list[str]] = {
     "clima": ["clima", "meteorologia", "precipitacion", "temperatura", "evapotranspiracion"],
     # Océanos y costas
     "oceanos": ["oceanos_costas", "marino", "costas", "dimar", "invemar", "cioh"],
-    "manglares": ["manglar", "manglares", "costas", "humedal", "ecosistemas", "inundacion"],
+    # Sin "inundacion": asociación débil que secuestraba la etiqueta de
+    # necesidad en consultas de ecosistemas (p. ej. marinos + temperatura).
+    "manglares": ["manglar", "manglares", "costas", "humedal", "ecosistemas"],
     "costas": ["costas", "costero", "costera", "litoral", "bahia", "playa", "erosion_costera"],
-    "bahia": ["bahia", "golfo", "ensenada", "estuario", "buenaventura", "cartagena"],
+    # Sin ciudades (buenaventura/cartagena): la geografía se maneja con el
+    # filtro coverage; mezclar ciudades en aliases conceptuales generaba
+    # razones ajenas ("keyword cartagena" en consultas de Buenaventura).
+    "bahia": ["bahia", "golfo", "ensenada", "estuario"],
     # Hidrología
     "cuencas": ["hidrologia", "cuencas", "caudales", "rios", "cuenca"],
     "inundaciones": ["inundacion", "inundaciones", "riesgo", "hidrologia", "desbordamiento"],
@@ -97,10 +102,11 @@ CURATED_ALIASES: dict[str, list[str]] = {
                     "alos_palsar", "srtm", "topografia", "cuenca", "hidrologia"],
     # Riesgo
     "riesgo": ["riesgo", "amenaza", "vulnerabilidad", "desastre", "inundacion", "deslizamiento"],
-    # Regiones geográficas (solo lugares de la misma región)
-    "buenaventura": ["buenaventura", "pacifico", "pacifico_colombiano", "tumaco"],
-    "pacifico": ["pacifico", "pacifico_colombiano", "buenaventura", "tumaco", "choco_biogeografico"],
-    "caribe": ["caribe", "caribe_colombiano", "cartagena", "santa_marta", "barranquilla"],
+    # Regiones geográficas: solo regiones, sin ciudades (la cobertura
+    # específica la maneja el filtro coverage).
+    "buenaventura": ["buenaventura", "pacifico", "pacifico_colombiano"],
+    "pacifico": ["pacifico", "pacifico_colombiano", "choco_biogeografico"],
+    "caribe": ["caribe", "caribe_colombiano"],
     "amazonia": ["amazonia", "amazonas", "leticia", "caqueta", "putumayo", "guaviare"],
     # Infraestructura (sin expandir a ciudades específicas)
     "transporte": ["transporte", "infraestructura", "vias", "carreteras", "aeropuertos"],
@@ -127,15 +133,39 @@ def is_generic_keyword(token: str) -> bool:
     return normalize_token(token) in GENERIC_KEYWORDS
 
 
+def _word_forms(token: str) -> set[str]:
+    """Formas simple/plural de un token para matching de alias."""
+    forms = {token}
+    if len(token) > 4 and token.endswith("s"):
+        forms.add(token[:-1])
+    return forms
+
+
 def expand_query_tokens(query: str) -> list[str]:
-    """Tokens de búsqueda incluyendo alias curados (sin genéricos)."""
+    """Tokens de búsqueda incluyendo alias curados (sin genéricos).
+
+    Expansión de UN solo salto sobre los tokens originales del usuario
+    (con formas singular/plural). Antes la expansión se encadenaba
+    transitivamente (ecosistemas → manglares → costas → bahía → caribe…)
+    y contaminaba consultas con temas ajenos (morfometría, deslizamientos)
+    en consultas marinas.
+    """
     base = normalize_token(query)
     raw: set[str] = {base}
     if "_" in base:
         raw.update(p for p in base.split("_") if p)
+    # Snapshot de los tokens del usuario: solo contra estos se compara;
+    # los tokens agregados por un alias no disparan otros alias.
+    snapshot: set[str] = set(raw)
+    for token in list(raw):
+        snapshot.update(_word_forms(token))
     for alias_key, alias_vals in CURATED_ALIASES.items():
-        if base == alias_key or base in alias_vals or any(
-            normalize_token(v) in raw for v in alias_vals
+        key_forms = _word_forms(alias_key)
+        value_forms = {normalize_token(v) for v in alias_vals}
+        if (
+            base == alias_key
+            or snapshot & key_forms
+            or snapshot & value_forms
         ):
             raw.add(alias_key)
             raw.update(normalize_token(v) for v in alias_vals)

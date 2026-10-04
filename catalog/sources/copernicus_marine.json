@@ -37,7 +37,12 @@
         "oceanografia",
         "nivel_mar",
         "corrientes",
-        "global"
+        "global",
+        "sst",
+        "temperatura",
+        "marino",
+        "tsm",
+        "corrientes_marinas"
       ],
       "access_methods": [
         "portal"

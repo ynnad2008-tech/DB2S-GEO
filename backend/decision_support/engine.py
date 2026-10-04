@@ -261,26 +261,24 @@ class DecisionSupportEngine:
         if self._recommendation is None:
             return []
 
-        # Consulta enriquecida con conceptos para mejor recall
-        search_q = query
-        if concepts:
-            # Usar los conceptos más informativos (no stopwords cortas)
-            extra = [c for c in concepts if len(c) > 3][:6]
-            if extra:
-                search_q = f"{query} {' '.join(extra)}"
-
         # Ventana amplia: 81 fuentes activas compiten por las rutas;
         # 8 dejaba por fuera matches legítimos de fuentes nuevas.
+        # Consulta ORIGINAL primero: enriquecerla con conceptos expandidos
+        # reinyectaba tokens ajenos ("cartagena" → caribe → barranquilla)
+        # como segundo salto de expansión en el recomendador.
         payload = self._recommendation.recommend(
-            search_q, limit=max(limit, 15),
+            query, limit=max(limit, 15),
             coverage=coverage, include_global=include_global,
         )
         recommendations = payload.get("recommendations") or []
 
-        # Si la consulta enriquecida falla, reintentar con query original
-        if not recommendations:
+        # Respaldo de recall: si la consulta original no produce resultados,
+        # reintentar enriquecida con los conceptos más informativos.
+        if not recommendations and concepts:
+            extra = [c for c in concepts if len(c) > 3][:6]
+            search_q = f"{query} {' '.join(extra)}"
             payload = self._recommendation.recommend(
-                query, limit=max(limit, 15),
+                search_q, limit=max(limit, 15),
                 coverage=coverage, include_global=include_global,
             )
             recommendations = payload.get("recommendations") or []
