@@ -6,6 +6,31 @@ El formato se inspira en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1
 
 ---
 
+## [v0.7.1] — 2026-10-03
+
+Crecimiento autogestionado del catálogo (Auto Curator) con prioridad de geoservicios.
+
+### Añadido
+
+- `backend/source_discovery/auto_curator.py`: ciclo automático — Gemini
+  propone fuentes desde los vacíos del Observatorio; compuerta HTTP
+  determinista obligatoria (portal y geoservicio con su protocolo);
+  fichas nuevas activadas con `curation: llm-verified`.
+- **Geoservicios primero (mandatorio)**: el prompt prioriza fuentes con
+  ArcGIS REST/WMS/WFS; el geoservicio verificado es el recurso primario
+  de la ficha; los portales solo rellenan si faltan para el tope.
+- Enriquecimiento de fichas existentes: solo AGREGA keywords propuestas
+  por Gemini desde las interacciones (nunca borra; tope 5/fuente).
+- Log JSONL completo en `data/auto_curation/log.jsonl` (propuestas,
+  rechazos, altas y errores).
+- Endpoint `POST /source-discovery/auto-curate` con guarda
+  `AUTO_CURATION=on` (403 si está apagada).
+- Servicios ecosistémicos como alias (`provision`, `habitat`, …) y
+  DynamicWorld vinculado a hábitat.
+- Suite 141/141.
+
+---
+
 ## [v0.7.0] — 2026-10-03
 
 Expansión total: catálogo 116 fuentes · cobertura regional · perfiles refinados.

@@ -682,6 +682,32 @@ def source_discovery_candidate(
     return item
 
 
+@app.post("/source-discovery/auto-curate")
+def source_discovery_auto_curate(request: Request) -> dict[str, Any]:
+    """
+    Ciclo de crecimiento autogestionado (Auto Curator).
+
+    Gemini propone fuentes desde los vacíos del Observatorio; la compuerta
+    de verificación HTTP es obligatoria. Solo fuentes verificadas se activan
+    (curation: llm-verified) y las fichas existentes solo reciben keywords
+    nuevas. Requiere AUTO_CURATION=on y GEMINI_API_KEY.
+    """
+    from backend.source_discovery.auto_curator import enabled, run_cycle
+
+    if not enabled():
+        raise HTTPException(
+            status_code=403,
+            detail="AUTO_CURATION deshabilitada (env AUTO_CURATION=on)",
+        )
+    observatory = _observatory(request)
+    return {
+        "engine": "AutoCurator",
+        "governance": "auto_total_verificacion_http",
+        "catalog_modified": True,
+        "cycle": run_cycle(observatory),
+    }
+
+
 # --- Fase 8: Decision Support ---
 
 
